@@ -1,0 +1,18 @@
+.ui-paginator {
+  text-align: right !important;
+}
+
+.ui-paginator span {
+  text-align: left !important;
+}
+
+.btn-space {
+  margin-right: 5px;
+}
+
+
+.td-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

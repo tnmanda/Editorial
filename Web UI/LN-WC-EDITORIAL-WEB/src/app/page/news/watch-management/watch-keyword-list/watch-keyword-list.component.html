@@ -1,0 +1,68 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Keyword List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtWatchKeyword.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtWatchKeyword [value]="watchKeywords" [globalFilterFields]="['keyword', 'fkWatchID','engTran','dateAdded']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'keyword'">Keyword<p-sortIcon [field]="'keyword'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'fkWatchID'">Watch<p-sortIcon [field]="'fkWatchID'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'engTran'">Eng Tran<p-sortIcon [field]="'engTran'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'dateAdded'">Date Added<p-sortIcon [field]="'dateAdded'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-keyword>
+              <tr>
+
+                  <td class="td-cell">{{keyword.keyword}}</td>
+                  <td class="td-cell">{{keyword.fkWatchID}}</td>
+                  <td class="td-cell">{{keyword.engTran}}</td>
+                  <td class="td-cell">{{keyword.dateAdded | date: 'MM/dd/yyyy HH:mm:ss a'}}</td>
+                  <td >
+
+                      <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="showEditDialog(keyword.pkKeywordID)"></button>
+                      <button pButton pTooltip="Delete" tooltipPosition="bottom" type="button" icon="fa fa-trash" class="ui-button-danger" (click)="showDeleteDialog(keyword.pkKeywordID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add Watch Dialog -->
+<app-watch-keyword-add-dialog [display]="displayAddDialog" [selectedWatch]="selectedWatch" (displayChange)="onAddDialogClose($event)"></app-watch-keyword-add-dialog>
+<!-- Edit User Map Dialog -->
+<div *ngIf="selectedWatchKeyword">
+  <app-watch-keyword-edit-dialog [display]="displayEditDialog" [selectedWatchKeyword]="selectedWatchKeyword" (displayChange)="onEditDialogClose($event)"></app-watch-keyword-edit-dialog>
+</div>
+<!-- Delete Watch Dialog -->
+<div *ngIf="selectedWatchKeyword">
+  <app-watch-keyword-delete-dialog [display]="displayDeleteDialog" [selectedWatchKeyword]="selectedWatchKeyword" (displayChange)="onDeleteDialogClose($event)"></app-watch-keyword-delete-dialog>
+</div>
+
+<p-toast></p-toast>

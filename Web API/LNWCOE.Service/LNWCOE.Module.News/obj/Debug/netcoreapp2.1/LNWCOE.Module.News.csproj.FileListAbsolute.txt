@@ -1,0 +1,9 @@
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.News\bin\Debug\netcoreapp2.1\LNWCOE.Module.News.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.News\bin\Debug\netcoreapp2.1\LNWCOE.Module.News.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.News\bin\Debug\netcoreapp2.1\LNWCOE.Module.News.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.News\obj\Debug\netcoreapp2.1\LNWCOE.Module.News.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.News\obj\Debug\netcoreapp2.1\LNWCOE.Module.News.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.News\obj\Debug\netcoreapp2.1\LNWCOE.Module.News.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.News\obj\Debug\netcoreapp2.1\LNWCOE.Module.News.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.News\obj\Debug\netcoreapp2.1\LNWCOE.Module.News.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.News\obj\Debug\netcoreapp2.1\LNWCOE.Module.News.csprojAssemblyReference.cache

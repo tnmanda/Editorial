@@ -1,0 +1,831 @@
+2018-11-23 18:49:21.695 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-23 18:49:24.591 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-23 18:49:24.591 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-23 18:49:24.800 +08:00 [Information] Request finished in 214.5562ms 200 
+2018-11-23 18:49:26.187 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-23 18:49:26.255 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-23 18:49:26.268 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.5429ms.
+2018-11-23 18:49:26.314 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-23 18:49:26.530 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 332.6007ms
+2018-11-23 18:49:26.549 +08:00 [Information] Request finished in 1978.599ms 200 application/json; charset=utf-8
+2018-11-23 18:49:26.757 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/favicon.ico  
+2018-11-23 18:49:26.768 +08:00 [Information] Request finished in 10.4521ms 404 
+2018-11-23 18:53:26.857 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-23 18:53:28.589 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-23 18:53:28.589 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-23 18:53:28.589 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-11-23 18:53:28.891 +08:00 [Information] Request finished in 292.5959ms 200 
+2018-11-23 18:53:30.002 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-23 18:53:30.092 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-23 18:53:30.105 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.9901ms.
+2018-11-23 18:53:30.127 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-11-23 18:53:30.168 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-23 18:53:30.606 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 588.4125ms
+2018-11-23 18:53:30.619 +08:00 [Information] Request finished in 2052.1268ms 200 application/json; charset=utf-8
+2018-11-23 18:53:31.573 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-11-23 18:53:33.683 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 18:53:35.168 +08:00 [Information] Executed DbCommand ("145"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-11-23 18:53:35.803 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-11-23 18:53:36.118 +08:00 [Information] Executed DbCommand ("90"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-11-23 18:53:36.228 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 4643.2882ms.
+2018-11-23 18:53:36.233 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType10`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-23 18:53:36.251 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 6123.7547ms
+2018-11-23 18:53:36.259 +08:00 [Information] Request finished in 7692.021ms 200 application/json; charset=utf-8
+2018-11-23 18:53:54.074 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches  
+2018-11-23 18:53:54.078 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 18:53:54.123 +08:00 [Information] Authorization failed.
+2018-11-23 18:53:54.127 +08:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-23 18:53:54.133 +08:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-23 18:53:54.156 +08:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-23 18:53:54.156 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 77.956ms
+2018-11-23 18:53:54.158 +08:00 [Information] Request finished in 84.2991ms 401 
+2018-11-23 18:53:59.259 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches  
+2018-11-23 18:53:59.262 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 18:53:59.263 +08:00 [Information] Authorization failed.
+2018-11-23 18:53:59.264 +08:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-23 18:53:59.264 +08:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-23 18:53:59.264 +08:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-23 18:53:59.264 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 1.8552ms
+2018-11-23 18:53:59.264 +08:00 [Information] Request finished in 5.18ms 401 
+2018-11-23 18:54:04.127 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches  
+2018-11-23 18:54:04.194 +08:00 [Information] Successfully validated the token.
+2018-11-23 18:54:04.207 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 18:54:04.208 +08:00 [Information] Authorization was successful.
+2018-11-23 18:54:04.225 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-23 18:54:04.251 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 18:54:04.307 +08:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [f].[pkWatchID], [f].[Caption], [f].[Comments], [f].[Description], [f].[InArtikleDescription], [f].[InArtikleTitle], [f].[LastFilterDate], [f].[MAtchAllKeywords], [f].[WholeWords], [f].[fkLanguageID]
+FROM [Feeder_watches] AS [f]"
+2018-11-23 18:54:04.332 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 106.7157ms.
+2018-11-23 18:54:04.332 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.News.Feeder_watches, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-23 18:54:04.362 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 154.5707ms
+2018-11-23 18:54:04.363 +08:00 [Information] Request finished in 235.9468ms 200 application/json; charset=utf-8
+2018-11-23 18:55:19.267 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/Feeder_watches application/json 330
+2018-11-23 18:55:19.268 +08:00 [Information] Successfully validated the token.
+2018-11-23 18:55:19.274 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)"
+2018-11-23 18:55:19.274 +08:00 [Information] Authorization was successful.
+2018-11-23 18:55:19.303 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)" with arguments (["LNWCOE.Models.News.Feeder_watches"]) - Validation state: Valid
+2018-11-23 18:55:26.557 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 18:55:30.178 +08:00 [Information] Executed DbCommand ("57"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime2), @p7='?', @p8='?', @p9='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Feeder_watches] ([pkWatchID], [Caption], [Comments], [Description], [InArtikleDescription], [InArtikleTitle], [LastFilterDate], [MAtchAllKeywords], [WholeWords], [fkLanguageID])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);"
+2018-11-23 18:55:37.009 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtRouteResult" in 17705.2394ms.
+2018-11-23 18:55:37.009 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 18:55:39.156 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)" in 19882.0921ms
+2018-11-23 18:55:39.157 +08:00 [Information] Request finished in 19889.7433ms 201 application/json; charset=utf-8
+2018-11-23 18:55:47.295 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/2  
+2018-11-23 18:55:47.301 +08:00 [Information] Successfully validated the token.
+2018-11-23 18:55:47.749 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 18:55:47.749 +08:00 [Information] Authorization was successful.
+2018-11-23 18:55:47.763 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["2"]) - Validation state: Valid
+2018-11-23 18:55:47.765 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 18:55:47.816 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 18:55:47.819 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 55.6136ms.
+2018-11-23 18:55:47.819 +08:00 [Information] Executing ObjectResult, writing value of type '"null"'.
+2018-11-23 18:55:47.820 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 71.6962ms
+2018-11-23 18:55:47.821 +08:00 [Information] Request finished in 525.7766ms 204 
+2018-11-23 18:55:55.231 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/10  
+2018-11-23 18:55:55.232 +08:00 [Information] Successfully validated the token.
+2018-11-23 18:55:55.233 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 18:55:55.233 +08:00 [Information] Authorization was successful.
+2018-11-23 18:55:55.236 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["10"]) - Validation state: Valid
+2018-11-23 18:55:55.237 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 18:55:55.253 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 18:55:55.253 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 17.2247ms.
+2018-11-23 18:55:55.253 +08:00 [Information] Executing ObjectResult, writing value of type '"null"'.
+2018-11-23 18:55:55.253 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 20.7553ms
+2018-11-23 18:55:55.254 +08:00 [Information] Request finished in 22.189ms 204 
+2018-11-23 18:55:59.007 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/  
+2018-11-23 18:55:59.008 +08:00 [Information] Successfully validated the token.
+2018-11-23 18:55:59.008 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 18:55:59.008 +08:00 [Information] Authorization was successful.
+2018-11-23 18:55:59.008 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-23 18:55:59.009 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 18:55:59.013 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [f].[pkWatchID], [f].[Caption], [f].[Comments], [f].[Description], [f].[InArtikleDescription], [f].[InArtikleTitle], [f].[LastFilterDate], [f].[MAtchAllKeywords], [f].[WholeWords], [f].[fkLanguageID]
+FROM [Feeder_watches] AS [f]"
+2018-11-23 18:55:59.016 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 7.7605ms.
+2018-11-23 18:55:59.017 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.News.Feeder_watches, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-23 18:55:59.020 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 11.5919ms
+2018-11-23 18:55:59.020 +08:00 [Information] Request finished in 12.9177ms 200 application/json; charset=utf-8
+2018-11-23 18:56:04.189 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/17  
+2018-11-23 18:56:04.189 +08:00 [Information] Successfully validated the token.
+2018-11-23 18:56:04.190 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 18:56:04.190 +08:00 [Information] Authorization was successful.
+2018-11-23 18:56:04.190 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["17"]) - Validation state: Valid
+2018-11-23 18:56:04.191 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 18:56:04.196 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 18:56:04.197 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 6.3913ms.
+2018-11-23 18:56:04.197 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 18:56:04.197 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 7.2557ms
+2018-11-23 18:56:04.197 +08:00 [Information] Request finished in 8.4132ms 200 application/json; charset=utf-8
+2018-11-23 18:56:12.286 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/666  
+2018-11-23 18:56:12.287 +08:00 [Information] Successfully validated the token.
+2018-11-23 18:56:12.287 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 18:56:12.287 +08:00 [Information] Authorization was successful.
+2018-11-23 18:56:12.287 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["666"]) - Validation state: Valid
+2018-11-23 18:56:12.288 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 18:56:12.297 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 18:56:12.297 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 9.7525ms.
+2018-11-23 18:56:12.298 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 18:56:12.298 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 10.7946ms
+2018-11-23 18:56:12.299 +08:00 [Information] Request finished in 12.2315ms 200 application/json; charset=utf-8
+2018-11-23 18:58:19.447 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-23 18:58:20.844 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-23 18:58:20.844 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-23 18:58:21.104 +08:00 [Information] Request finished in 255.8516ms 200 
+2018-11-23 18:58:22.346 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-23 18:58:22.475 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-23 18:58:22.500 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.4567ms.
+2018-11-23 18:58:22.560 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-23 18:58:22.768 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 412.2219ms
+2018-11-23 18:58:22.788 +08:00 [Information] Request finished in 1966.9747ms 200 application/json; charset=utf-8
+2018-11-23 19:00:02.470 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/Feeder_watches application/json 304
+2018-11-23 19:00:02.676 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:00:02.756 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)"
+2018-11-23 19:00:02.841 +08:00 [Information] Authorization was successful.
+2018-11-23 19:00:03.598 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)" with arguments (["LNWCOE.Models.News.Feeder_watches"]) - Validation state: Valid
+2018-11-23 19:00:19.120 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:00:20.096 +08:00 [Information] Executed DbCommand ("71"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT MAX([id].[pkWatchID])
+FROM [Feeder_watches] AS [id]"
+2018-11-23 19:00:50.588 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-23 19:00:51.835 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/666  
+2018-11-23 19:00:52.218 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:00:52.859 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:00:52.907 +08:00 [Information] Authorization was successful.
+2018-11-23 19:00:53.248 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["666"]) - Validation state: Valid
+2018-11-23 19:00:54.011 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:00:54.939 +08:00 [Information] Executed DbCommand ("91"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:00:55.111 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1850.0964ms.
+2018-11-23 19:00:55.156 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:00:55.330 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 2463.5883ms
+2018-11-23 19:00:55.365 +08:00 [Information] Request finished in 3538.0772ms 200 application/json; charset=utf-8
+2018-11-23 19:01:00.892 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/667  
+2018-11-23 19:01:00.894 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:01:00.898 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:01:00.898 +08:00 [Information] Authorization was successful.
+2018-11-23 19:01:00.901 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["667"]) - Validation state: Valid
+2018-11-23 19:01:00.902 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:01:00.924 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:01:00.924 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 23.6898ms.
+2018-11-23 19:01:00.925 +08:00 [Information] Executing ObjectResult, writing value of type '"null"'.
+2018-11-23 19:01:00.927 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 29.4269ms
+2018-11-23 19:01:00.931 +08:00 [Information] Request finished in 39.0459ms 204 
+2018-11-23 19:01:05.447 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/Feeder_watches application/json 304
+2018-11-23 19:01:05.449 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:01:05.454 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)"
+2018-11-23 19:01:05.455 +08:00 [Information] Authorization was successful.
+2018-11-23 19:01:05.635 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)" with arguments (["LNWCOE.Models.News.Feeder_watches"]) - Validation state: Valid
+2018-11-23 19:01:05.640 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:01:05.735 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT MAX([id].[pkWatchID])
+FROM [Feeder_watches] AS [id]"
+2018-11-23 19:01:06.003 +08:00 [Information] Executed DbCommand ("32"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime2), @p7='?', @p8='?', @p9='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Feeder_watches] ([pkWatchID], [Caption], [Comments], [Description], [InArtikleDescription], [InArtikleTitle], [LastFilterDate], [MAtchAllKeywords], [WholeWords], [fkLanguageID])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);"
+2018-11-23 19:01:06.033 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtRouteResult" in 397.8879ms.
+2018-11-23 19:01:06.033 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:01:06.066 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)" in 611.0191ms
+2018-11-23 19:01:06.066 +08:00 [Information] Request finished in 619.5398ms 201 application/json; charset=utf-8
+2018-11-23 19:01:14.405 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/Feeder_watches application/json 304
+2018-11-23 19:01:14.405 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:01:14.405 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)"
+2018-11-23 19:01:14.406 +08:00 [Information] Authorization was successful.
+2018-11-23 19:01:14.463 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)" with arguments (["LNWCOE.Models.News.Feeder_watches"]) - Validation state: Valid
+2018-11-23 19:01:14.464 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:01:14.468 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT MAX([id].[pkWatchID])
+FROM [Feeder_watches] AS [id]"
+2018-11-23 19:01:14.489 +08:00 [Information] Executed DbCommand ("19"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime2), @p7='?', @p8='?', @p9='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Feeder_watches] ([pkWatchID], [Caption], [Comments], [Description], [InArtikleDescription], [InArtikleTitle], [LastFilterDate], [MAtchAllKeywords], [WholeWords], [fkLanguageID])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);"
+2018-11-23 19:01:14.490 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtRouteResult" in 26.6702ms.
+2018-11-23 19:01:14.490 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:01:14.491 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)" in 85.4132ms
+2018-11-23 19:01:14.491 +08:00 [Information] Request finished in 86.4692ms 201 application/json; charset=utf-8
+2018-11-23 19:01:24.484 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/Feeder_watches application/json 304
+2018-11-23 19:01:24.485 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:01:24.485 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)"
+2018-11-23 19:01:24.485 +08:00 [Information] Authorization was successful.
+2018-11-23 19:01:24.486 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)" with arguments (["LNWCOE.Models.News.Feeder_watches"]) - Validation state: Valid
+2018-11-23 19:01:24.487 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:01:24.492 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT MAX([id].[pkWatchID])
+FROM [Feeder_watches] AS [id]"
+2018-11-23 19:01:24.576 +08:00 [Information] Executed DbCommand ("82"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime2), @p7='?', @p8='?', @p9='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Feeder_watches] ([pkWatchID], [Caption], [Comments], [Description], [InArtikleDescription], [InArtikleTitle], [LastFilterDate], [MAtchAllKeywords], [WholeWords], [fkLanguageID])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);"
+2018-11-23 19:01:24.577 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtRouteResult" in 90.1938ms.
+2018-11-23 19:01:24.577 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:01:24.577 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Create (LNWCOE)" in 92.0225ms
+2018-11-23 19:01:24.577 +08:00 [Information] Request finished in 93.0031ms 201 application/json; charset=utf-8
+2018-11-23 19:01:43.760 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-23 19:01:45.493 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/  
+2018-11-23 19:01:45.493 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-23 19:01:45.493 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-23 19:01:45.738 +08:00 [Information] Request finished in 246.4657ms 200 
+2018-11-23 19:01:46.120 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:01:46.754 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:01:46.754 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-23 19:01:46.829 +08:00 [Information] Authorization was successful.
+2018-11-23 19:01:46.848 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-23 19:01:46.862 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.8075ms.
+2018-11-23 19:01:46.933 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-23 19:01:47.064 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 300.752ms
+2018-11-23 19:01:47.079 +08:00 [Information] Request finished in 1605.7778ms 200 application/json; charset=utf-8
+2018-11-23 19:01:47.143 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-23 19:01:47.992 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:01:48.851 +08:00 [Information] Executed DbCommand ("50"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [f].[pkWatchID], [f].[Caption], [f].[Comments], [f].[Description], [f].[InArtikleDescription], [f].[InArtikleTitle], [f].[LastFilterDate], [f].[MAtchAllKeywords], [f].[WholeWords], [f].[fkLanguageID]
+FROM [Feeder_watches] AS [f]"
+2018-11-23 19:01:49.089 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1945.9736ms.
+2018-11-23 19:01:49.096 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.News.Feeder_watches, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-23 19:01:49.188 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 2430.3359ms
+2018-11-23 19:01:49.196 +08:00 [Information] Request finished in 3722.0367ms 200 application/json; charset=utf-8
+2018-11-23 19:02:35.309 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/669  
+2018-11-23 19:02:35.312 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:02:35.359 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:02:35.366 +08:00 [Information] Authorization was successful.
+2018-11-23 19:02:35.489 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["669"]) - Validation state: Valid
+2018-11-23 19:02:35.516 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:02:35.839 +08:00 [Information] Executed DbCommand ("103"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:02:35.846 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 341.5599ms.
+2018-11-23 19:02:35.846 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:02:35.846 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 486.8618ms
+2018-11-23 19:02:35.847 +08:00 [Information] Request finished in 537.387ms 200 application/json; charset=utf-8
+2018-11-23 19:02:42.316 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/668  
+2018-11-23 19:02:42.317 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:02:42.321 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:02:42.322 +08:00 [Information] Authorization was successful.
+2018-11-23 19:02:42.324 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["668"]) - Validation state: Valid
+2018-11-23 19:02:42.325 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:02:42.339 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:02:42.339 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 14.4173ms.
+2018-11-23 19:02:42.339 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:02:42.340 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 18.0294ms
+2018-11-23 19:02:42.340 +08:00 [Information] Request finished in 23.3149ms 200 application/json; charset=utf-8
+2018-11-23 19:02:46.006 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/669  
+2018-11-23 19:02:46.006 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:02:46.007 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:02:46.007 +08:00 [Information] Authorization was successful.
+2018-11-23 19:02:46.007 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["669"]) - Validation state: Valid
+2018-11-23 19:02:46.008 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:02:46.011 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:02:46.012 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.4223ms.
+2018-11-23 19:02:46.012 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:02:46.012 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 5.3127ms
+2018-11-23 19:02:46.012 +08:00 [Information] Request finished in 6.4896ms 200 application/json; charset=utf-8
+2018-11-23 19:03:03.463 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/669  
+2018-11-23 19:03:03.463 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:03:03.465 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:03:03.466 +08:00 [Information] Authorization was successful.
+2018-11-23 19:03:03.466 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["669"]) - Validation state: Valid
+2018-11-23 19:03:03.467 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:03:03.473 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:03:03.473 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 6.4422ms.
+2018-11-23 19:03:03.473 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:03:03.473 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 7.4718ms
+2018-11-23 19:03:03.474 +08:00 [Information] Request finished in 10.7413ms 200 application/json; charset=utf-8
+2018-11-23 19:03:11.771 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/669  
+2018-11-23 19:03:11.772 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:03:11.772 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:03:11.772 +08:00 [Information] Authorization was successful.
+2018-11-23 19:03:11.773 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["669"]) - Validation state: Valid
+2018-11-23 19:03:11.773 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:03:11.777 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:03:11.777 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.2935ms.
+2018-11-23 19:03:11.777 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:03:11.778 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 5.2969ms
+2018-11-23 19:03:11.778 +08:00 [Information] Request finished in 6.4734ms 200 application/json; charset=utf-8
+2018-11-23 19:03:17.826 +08:00 [Information] Request starting HTTP/1.1 DELETE http://localhost:57308/api/News/Feeder_watches/669  0
+2018-11-23 19:03:17.827 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:03:17.830 +08:00 [Information] Route matched with "{action = \"Delete\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)"
+2018-11-23 19:03:17.830 +08:00 [Information] Authorization was successful.
+2018-11-23 19:03:17.830 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)" with arguments (["669"]) - Validation state: Valid
+2018-11-23 19:03:20.563 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:03:20.577 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[pkWatchID], [t].[Caption], [t].[Comments], [t].[Description], [t].[InArtikleDescription], [t].[InArtikleTitle], [t].[LastFilterDate], [t].[MAtchAllKeywords], [t].[WholeWords], [t].[fkLanguageID]
+FROM [Feeder_watches] AS [t]
+WHERE [t].[pkWatchID] = @__id_0"
+2018-11-23 19:03:23.268 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [Feeder_watches]
+WHERE [pkWatchID] = @p0;
+SELECT @@ROWCOUNT;"
+2018-11-23 19:03:24.921 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 7090.2953ms.
+2018-11-23 19:03:24.928 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-23 19:03:24.929 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)" in 7098.961ms
+2018-11-23 19:03:24.929 +08:00 [Information] Request finished in 7103.0942ms 200 
+2018-11-23 19:03:28.452 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/669  
+2018-11-23 19:03:28.452 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:03:28.453 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:03:28.453 +08:00 [Information] Authorization was successful.
+2018-11-23 19:03:28.453 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["669"]) - Validation state: Valid
+2018-11-23 19:03:28.454 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:03:28.457 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:03:28.457 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.2927ms.
+2018-11-23 19:03:28.458 +08:00 [Information] Executing ObjectResult, writing value of type '"null"'.
+2018-11-23 19:03:28.459 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 6.7381ms
+2018-11-23 19:03:28.460 +08:00 [Information] Request finished in 7.9063ms 204 
+2018-11-23 19:03:32.844 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/668  
+2018-11-23 19:03:32.844 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:03:32.844 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:03:32.845 +08:00 [Information] Authorization was successful.
+2018-11-23 19:03:32.845 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["668"]) - Validation state: Valid
+2018-11-23 19:03:32.845 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:03:32.849 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:03:32.850 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.5696ms.
+2018-11-23 19:03:32.850 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:03:32.850 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 5.4289ms
+2018-11-23 19:03:32.850 +08:00 [Information] Request finished in 6.6706ms 200 application/json; charset=utf-8
+2018-11-23 19:03:38.187 +08:00 [Information] Request starting HTTP/1.1 DELETE http://localhost:57308/api/News/Feeder_watches/669  0
+2018-11-23 19:03:38.191 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:03:38.193 +08:00 [Information] Route matched with "{action = \"Delete\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)"
+2018-11-23 19:03:38.193 +08:00 [Information] Authorization was successful.
+2018-11-23 19:03:38.193 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)" with arguments (["669"]) - Validation state: Valid
+2018-11-23 19:03:38.194 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:03:38.197 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[pkWatchID], [t].[Caption], [t].[Comments], [t].[Description], [t].[InArtikleDescription], [t].[InArtikleTitle], [t].[LastFilterDate], [t].[MAtchAllKeywords], [t].[WholeWords], [t].[fkLanguageID]
+FROM [Feeder_watches] AS [t]
+WHERE [t].[pkWatchID] = @__id_0"
+2018-11-23 19:03:38.198 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.NotFoundResult" in 4.3425ms.
+2018-11-23 19:03:38.198 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-11-23 19:03:38.198 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)" in 5.5375ms
+2018-11-23 19:03:38.198 +08:00 [Information] Request finished in 11.2565ms 404 
+2018-11-23 19:03:42.291 +08:00 [Information] Request starting HTTP/1.1 DELETE http://localhost:57308/api/News/Feeder_watches/668  0
+2018-11-23 19:03:42.291 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:03:42.291 +08:00 [Information] Route matched with "{action = \"Delete\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)"
+2018-11-23 19:03:42.292 +08:00 [Information] Authorization was successful.
+2018-11-23 19:03:42.292 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)" with arguments (["668"]) - Validation state: Valid
+2018-11-23 19:03:42.293 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:03:42.298 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[pkWatchID], [t].[Caption], [t].[Comments], [t].[Description], [t].[InArtikleDescription], [t].[InArtikleTitle], [t].[LastFilterDate], [t].[MAtchAllKeywords], [t].[WholeWords], [t].[fkLanguageID]
+FROM [Feeder_watches] AS [t]
+WHERE [t].[pkWatchID] = @__id_0"
+2018-11-23 19:03:42.333 +08:00 [Information] Executed DbCommand ("33"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [Feeder_watches]
+WHERE [pkWatchID] = @p0;
+SELECT @@ROWCOUNT;"
+2018-11-23 19:03:42.335 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 42.3222ms.
+2018-11-23 19:03:42.335 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-23 19:03:42.335 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)" in 43.5453ms
+2018-11-23 19:03:42.335 +08:00 [Information] Request finished in 44.5732ms 200 
+2018-11-23 19:03:44.994 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/668  
+2018-11-23 19:03:44.994 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:03:44.994 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:03:44.994 +08:00 [Information] Authorization was successful.
+2018-11-23 19:03:44.995 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["668"]) - Validation state: Valid
+2018-11-23 19:03:44.995 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:03:44.999 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:03:44.999 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.1912ms.
+2018-11-23 19:03:44.999 +08:00 [Information] Executing ObjectResult, writing value of type '"null"'.
+2018-11-23 19:03:44.999 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 5.0342ms
+2018-11-23 19:03:44.999 +08:00 [Information] Request finished in 5.9148ms 204 
+2018-11-23 19:03:48.727 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/667  
+2018-11-23 19:03:48.728 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:03:48.728 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:03:48.728 +08:00 [Information] Authorization was successful.
+2018-11-23 19:03:48.728 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["667"]) - Validation state: Valid
+2018-11-23 19:03:48.729 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:03:48.732 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:03:48.732 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.4658ms.
+2018-11-23 19:03:48.732 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:03:48.732 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 4.1923ms
+2018-11-23 19:03:48.732 +08:00 [Information] Request finished in 4.9307ms 200 application/json; charset=utf-8
+2018-11-23 19:03:54.377 +08:00 [Information] Request starting HTTP/1.1 DELETE http://localhost:57308/api/News/Feeder_watches/667  0
+2018-11-23 19:03:54.378 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:03:54.378 +08:00 [Information] Route matched with "{action = \"Delete\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)"
+2018-11-23 19:03:54.378 +08:00 [Information] Authorization was successful.
+2018-11-23 19:03:54.378 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)" with arguments (["667"]) - Validation state: Valid
+2018-11-23 19:03:54.379 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:03:54.383 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[pkWatchID], [t].[Caption], [t].[Comments], [t].[Description], [t].[InArtikleDescription], [t].[InArtikleTitle], [t].[LastFilterDate], [t].[MAtchAllKeywords], [t].[WholeWords], [t].[fkLanguageID]
+FROM [Feeder_watches] AS [t]
+WHERE [t].[pkWatchID] = @__id_0"
+2018-11-23 19:03:54.387 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [Feeder_watches]
+WHERE [pkWatchID] = @p0;
+SELECT @@ROWCOUNT;"
+2018-11-23 19:03:54.388 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 9.5715ms.
+2018-11-23 19:03:54.388 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-23 19:03:54.388 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)" in 10.4952ms
+2018-11-23 19:03:54.388 +08:00 [Information] Request finished in 11.5263ms 200 
+2018-11-23 19:03:56.417 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/667  
+2018-11-23 19:03:56.417 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:03:56.418 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:03:56.418 +08:00 [Information] Authorization was successful.
+2018-11-23 19:04:00.859 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["667"]) - Validation state: Valid
+2018-11-23 19:04:00.860 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:04:00.865 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:04:00.865 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 5.7734ms.
+2018-11-23 19:04:00.865 +08:00 [Information] Executing ObjectResult, writing value of type '"null"'.
+2018-11-23 19:04:00.865 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 4447.5428ms
+2018-11-23 19:04:00.865 +08:00 [Information] Request finished in 4448.6312ms 204 
+2018-11-23 19:04:09.010 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/666  
+2018-11-23 19:04:09.010 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:04:09.010 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:04:09.010 +08:00 [Information] Authorization was successful.
+2018-11-23 19:04:09.011 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["666"]) - Validation state: Valid
+2018-11-23 19:04:09.011 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:04:09.015 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:04:09.016 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.9201ms.
+2018-11-23 19:04:09.016 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:04:09.016 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 5.6197ms
+2018-11-23 19:04:09.016 +08:00 [Information] Request finished in 6.4837ms 200 application/json; charset=utf-8
+2018-11-23 19:04:53.632 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/News/Feeder_watches application/json 295
+2018-11-23 19:04:53.641 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)"
+2018-11-23 19:04:53.641 +08:00 [Information] Authorization failed.
+2018-11-23 19:04:53.645 +08:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-23 19:04:53.657 +08:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-23 19:04:53.682 +08:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-23 19:04:53.682 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" in 41.0295ms
+2018-11-23 19:04:53.697 +08:00 [Information] Request finished in 52.2493ms 401 
+2018-11-23 19:04:53.761 +08:00 [Information] Connection id ""0HLIH6C7BL9KO"", Request id ""0HLIH6C7BL9KO:00000007"": the application completed without reading the entire request body.
+2018-11-23 19:04:59.116 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/News/Feeder_watches application/json 295
+2018-11-23 19:04:59.117 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:04:59.117 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)"
+2018-11-23 19:04:59.117 +08:00 [Information] Authorization was successful.
+2018-11-23 19:04:59.357 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" with arguments ([""]) - Validation state: Invalid
+2018-11-23 19:04:59.361 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:05:20.542 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" in 21424.5668ms
+2018-11-23 19:05:20.544 +08:00 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. To show additional information call EnableSensitiveDataLogging() when overriding DbContext.OnConfiguring. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, String& parameterName)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, String& parameterName)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ParameterExtractingExpressionVisitor.TryExtractParameter(Expression expression)
+   at System.Linq.Expressions.MemberExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   at System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ParameterExtractingExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at System.Linq.Expressions.ExpressionVisitor.VisitUnary(UnaryExpression node)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ParameterExtractingExpressionVisitor.VisitUnary(UnaryExpression unaryExpression)
+   at System.Linq.Expressions.UnaryExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ParameterExtractingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ParameterExtractingExpressionVisitor.ExtractParameters(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry(Feeder_watches objupd) in C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\Modules\NEWS\Feeder_watchesController.cs:line 94
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__23.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__16.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2018-11-23 19:05:20.743 +08:00 [Information] Request finished in 21628.1091ms 404 
+2018-11-23 19:05:26.763 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/News/Feeder_watches application/json 295
+2018-11-23 19:05:26.764 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:05:26.764 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)"
+2018-11-23 19:05:26.764 +08:00 [Information] Authorization was successful.
+2018-11-23 19:05:26.772 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" with arguments ([""]) - Validation state: Invalid
+2018-11-23 19:05:26.773 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:05:29.088 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" in 2323.3689ms
+2018-11-23 19:05:29.094 +08:00 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. To show additional information call EnableSensitiveDataLogging() when overriding DbContext.OnConfiguring. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, String& parameterName)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, String& parameterName)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ParameterExtractingExpressionVisitor.TryExtractParameter(Expression expression)
+   at System.Linq.Expressions.MemberExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   at System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ParameterExtractingExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at System.Linq.Expressions.ExpressionVisitor.VisitUnary(UnaryExpression node)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ParameterExtractingExpressionVisitor.VisitUnary(UnaryExpression unaryExpression)
+   at System.Linq.Expressions.UnaryExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ParameterExtractingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ParameterExtractingExpressionVisitor.ExtractParameters(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry(Feeder_watches objupd) in C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\Modules\NEWS\Feeder_watchesController.cs:line 94
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__23.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__16.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2018-11-23 19:05:29.224 +08:00 [Information] Request finished in 2460.6229ms 404 
+2018-11-23 19:05:34.869 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/666  
+2018-11-23 19:05:34.870 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:05:34.870 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:05:34.870 +08:00 [Information] Authorization was successful.
+2018-11-23 19:05:34.870 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["666"]) - Validation state: Valid
+2018-11-23 19:05:34.872 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:05:34.875 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:05:34.876 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 5.2531ms.
+2018-11-23 19:05:34.876 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:05:34.876 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 6.1155ms
+2018-11-23 19:05:34.876 +08:00 [Information] Request finished in 7.6148ms 200 application/json; charset=utf-8
+2018-11-23 19:05:38.243 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/News/Feeder_watches application/json 295
+2018-11-23 19:05:38.244 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:05:38.244 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)"
+2018-11-23 19:05:38.244 +08:00 [Information] Authorization was successful.
+2018-11-23 19:05:38.251 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" with arguments ([""]) - Validation state: Invalid
+2018-11-23 19:06:19.827 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:07:26.588 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-23 19:07:28.831 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-23 19:07:28.831 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-23 19:07:29.166 +08:00 [Information] Request finished in 347.8343ms 200 
+2018-11-23 19:07:29.946 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/666  
+2018-11-23 19:07:30.543 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:07:31.069 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:07:31.069 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-23 19:07:31.165 +08:00 [Information] Authorization was successful.
+2018-11-23 19:07:31.229 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-23 19:07:31.295 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 18.1807ms.
+2018-11-23 19:07:31.452 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-23 19:07:31.695 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 604.5756ms
+2018-11-23 19:07:31.738 +08:00 [Information] Request finished in 2933.349ms 200 application/json; charset=utf-8
+2018-11-23 19:07:32.089 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["666"]) - Validation state: Valid
+2018-11-23 19:07:33.462 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:07:34.657 +08:00 [Information] Executed DbCommand ("142"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:07:35.021 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2918.0222ms.
+2018-11-23 19:07:35.033 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:07:35.118 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 4043.2284ms
+2018-11-23 19:07:35.147 +08:00 [Information] Request finished in 5201.1019ms 200 application/json; charset=utf-8
+2018-11-23 19:07:49.419 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/666  
+2018-11-23 19:07:49.420 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:07:49.425 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:07:49.426 +08:00 [Information] Authorization was successful.
+2018-11-23 19:07:49.428 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["666"]) - Validation state: Valid
+2018-11-23 19:07:49.430 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:07:49.451 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:07:49.452 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 23.0775ms.
+2018-11-23 19:07:49.452 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:07:49.452 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 26.7457ms
+2018-11-23 19:07:49.452 +08:00 [Information] Request finished in 33.3835ms 200 application/json; charset=utf-8
+2018-11-23 19:07:55.975 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/News/Feeder_watches application/json 295
+2018-11-23 19:07:55.975 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:07:55.980 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)"
+2018-11-23 19:07:55.981 +08:00 [Information] Authorization was successful.
+2018-11-23 19:07:56.222 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" with arguments ([""]) - Validation state: Invalid
+2018-11-23 19:08:05.898 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.NotFoundResult" in 9676.1522ms.
+2018-11-23 19:08:05.904 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-11-23 19:08:05.906 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" in 9924.7616ms
+2018-11-23 19:08:05.907 +08:00 [Information] Request finished in 9932.2144ms 404 
+2018-11-23 19:08:18.974 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/News/Feeder_watches application/json 301
+2018-11-23 19:08:18.974 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:08:18.975 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)"
+2018-11-23 19:08:18.975 +08:00 [Information] Authorization was successful.
+2018-11-23 19:08:19.032 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" with arguments ([""]) - Validation state: Invalid
+2018-11-23 19:08:23.156 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.NotFoundResult" in 4122.5751ms.
+2018-11-23 19:08:23.157 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-11-23 19:08:23.160 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" in 4184.9743ms
+2018-11-23 19:08:23.167 +08:00 [Information] Request finished in 4192.4813ms 404 
+2018-11-23 19:08:33.771 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/News/Feeder_watches application/json 311
+2018-11-23 19:08:33.771 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:08:33.772 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)"
+2018-11-23 19:08:33.772 +08:00 [Information] Authorization was successful.
+2018-11-23 19:08:33.773 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" with arguments ([""]) - Validation state: Invalid
+2018-11-23 19:08:35.284 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.NotFoundResult" in 1510.0491ms.
+2018-11-23 19:08:35.284 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-11-23 19:08:35.284 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" in 1511.8672ms
+2018-11-23 19:08:35.284 +08:00 [Information] Request finished in 1513.3728ms 404 
+2018-11-23 19:08:44.340 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/News/Feeder_watches application/json 312
+2018-11-23 19:08:44.341 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:08:44.341 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)"
+2018-11-23 19:08:44.341 +08:00 [Information] Authorization was successful.
+2018-11-23 19:08:44.351 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" with arguments ([""]) - Validation state: Invalid
+2018-11-23 19:08:48.872 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.NotFoundResult" in 4520.2801ms.
+2018-11-23 19:08:48.872 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-11-23 19:08:48.872 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" in 4530.5047ms
+2018-11-23 19:08:48.872 +08:00 [Information] Request finished in 4531.8747ms 404 
+2018-11-23 19:09:22.016 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/News/Feeder_watches application/json 302
+2018-11-23 19:09:22.017 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:09:22.018 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)"
+2018-11-23 19:09:22.018 +08:00 [Information] Authorization was successful.
+2018-11-23 19:09:22.048 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" with arguments (["LNWCOE.Models.News.Feeder_watches"]) - Validation state: Valid
+2018-11-23 19:09:28.995 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:09:29.017 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__objupd_pkWatchID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[pkWatchID], [t].[Caption], [t].[Comments], [t].[Description], [t].[InArtikleDescription], [t].[InArtikleTitle], [t].[LastFilterDate], [t].[MAtchAllKeywords], [t].[WholeWords], [t].[fkLanguageID]
+FROM [Feeder_watches] AS [t]
+WHERE [t].[pkWatchID] = @__objupd_pkWatchID_0"
+2018-11-23 19:09:29.265 +08:00 [Information] Executed DbCommand ("27"ms) [Parameters=["@p4='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = Boolean)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Feeder_watches] SET [Comments] = @p0, [Description] = @p1, [MAtchAllKeywords] = @p2, [WholeWords] = @p3
+WHERE [pkWatchID] = @p4;
+SELECT @@ROWCOUNT;"
+2018-11-23 19:09:29.292 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 7243.6568ms.
+2018-11-23 19:09:29.292 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-23 19:09:29.292 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.UpdateEntry (LNWCOE)" in 7273.9514ms
+2018-11-23 19:09:29.292 +08:00 [Information] Request finished in 7275.9824ms 200 
+2018-11-23 19:09:34.991 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/Feeder_watches/666  
+2018-11-23 19:09:34.992 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:09:34.992 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)"
+2018-11-23 19:09:34.992 +08:00 [Information] Authorization was successful.
+2018-11-23 19:09:34.993 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" with arguments (["666"]) - Validation state: Valid
+2018-11-23 19:09:34.994 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:09:34.997 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[pkWatchID], [x].[Caption], [x].[Comments], [x].[Description], [x].[InArtikleDescription], [x].[InArtikleTitle], [x].[LastFilterDate], [x].[MAtchAllKeywords], [x].[WholeWords], [x].[fkLanguageID]
+FROM [Feeder_watches] AS [x]
+WHERE [x].[pkWatchID] = @__id_0"
+2018-11-23 19:09:35.384 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 390.9462ms.
+2018-11-23 19:09:35.384 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.Feeder_watches"'.
+2018-11-23 19:09:35.385 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Get (LNWCOE)" in 392.3424ms
+2018-11-23 19:09:35.386 +08:00 [Information] Request finished in 394.2391ms 200 application/json; charset=utf-8
+2018-11-23 19:09:43.783 +08:00 [Information] Request starting HTTP/1.1 DELETE http://localhost:57308/api/News/Feeder_watches/666  0
+2018-11-23 19:09:43.783 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:09:43.786 +08:00 [Information] Route matched with "{action = \"Delete\", controller = \"Feeder_watches\"}". Executing action "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)"
+2018-11-23 19:09:43.787 +08:00 [Information] Authorization was successful.
+2018-11-23 19:09:43.787 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)" with arguments (["666"]) - Validation state: Valid
+2018-11-23 19:09:43.789 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:09:43.813 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[pkWatchID], [t].[Caption], [t].[Comments], [t].[Description], [t].[InArtikleDescription], [t].[InArtikleTitle], [t].[LastFilterDate], [t].[MAtchAllKeywords], [t].[WholeWords], [t].[fkLanguageID]
+FROM [Feeder_watches] AS [t]
+WHERE [t].[pkWatchID] = @__id_0"
+2018-11-23 19:09:43.826 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [Feeder_watches]
+WHERE [pkWatchID] = @p0;
+SELECT @@ROWCOUNT;"
+2018-11-23 19:09:43.835 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 47.051ms.
+2018-11-23 19:09:43.835 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-23 19:09:43.835 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.Feeder_watchesController.Delete (LNWCOE)" in 48.0766ms
+2018-11-23 19:09:43.835 +08:00 [Information] Request finished in 52.4812ms 200 
+2018-11-23 19:15:12.138 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/NewsStatus  
+2018-11-23 19:15:12.139 +08:00 [Information] Successfully validated the token.
+2018-11-23 19:15:12.143 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"NewsStatus\"}". Executing action "LNWCOE.Modules.NEWS.NewsStatusController.Get (LNWCOE)"
+2018-11-23 19:15:12.143 +08:00 [Information] Authorization was successful.
+2018-11-23 19:15:14.163 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsStatusController.Get (LNWCOE)" - Validation state: Valid
+2018-11-23 19:15:15.003 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-23 19:15:15.075 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[NewsStatusID], [n].[CreatedBy], [n].[DateCreatedUTC], [n].[LastUpdatedUTC], [n].[NewsState], [n].[NewsStatusDescription], [n].[NewsStatusValue], [n].[UpdatedBy]
+FROM [NewsStatus] AS [n]"
+2018-11-23 19:15:15.098 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsStatusController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 934.7531ms.
+2018-11-23 19:15:15.099 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.News.NewsStatus, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-23 19:15:15.111 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsStatusController.Get (LNWCOE)" in 2967.9774ms
+2018-11-23 19:15:15.113 +08:00 [Information] Request finished in 2974.5497ms 200 application/json; charset=utf-8

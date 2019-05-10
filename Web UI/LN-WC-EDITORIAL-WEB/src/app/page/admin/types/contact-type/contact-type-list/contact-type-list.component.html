@@ -1,0 +1,68 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Contact List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtContactType.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtContactType [value]="contactTypes" [globalFilterFields]="['contactTypeName']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'contactTypeName'">Name <p-sortIcon [field]="'contactTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'contactTypeDesc'">Description <p-sortIcon [field]="'contactTypeDesc'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isInList'">In List <p-sortIcon [field]="'isInList'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isActive'">Is Active <p-sortIcon [field]="'isActive'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-contactType>
+              <tr>
+                  <td class="td-cell">{{contactType.contactTypeName}}</td>
+                  <td class="td-cell">{{contactType.contactTypeDesc}}</td>
+                  <td class="td-cell">
+                    <div class="badge badge-pill badge-secondary">{{contactType.isInList}}</div>
+                  </td>
+                  <td class="td-cell"><div class="badge badge-pill badge-secondary">{{contactType.isActive}}</div></td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-edit" class="ui-button-secondary btn-space" (click)="showEditDialog(contactType.contactTypeID)"></button>
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showDeleteDialog(contactType.contactTypeID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add Contact Type Dialog -->
+<app-contact-type-add-dialog  [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-contact-type-add-dialog>
+<!-- Edit Contact Type Dialog -->
+<div *ngIf="selectedContactType">
+  <app-contact-type-edit-dialog [display]="displayEditDialog" [selectedContactType]="selectedContactType" (displayChange)="onEditDialogClose($event)"></app-contact-type-edit-dialog>
+</div>
+<!-- Delete Contact Type Dialog -->
+<div *ngIf="selectedContactType">
+  <app-contact-type-delete-dialog [display]="displayDeleteDialog" [selectedContactType]="selectedContactType" (displayChange)="onDeleteDialogClose($event)"></app-contact-type-delete-dialog>
+</div>
+
+<p-toast></p-toast>

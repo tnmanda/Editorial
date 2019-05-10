@@ -1,0 +1,118 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="fas fa-edit"></i> CREATE BATCH</span>
+      </div>
+  </p-header>
+      <br>
+      <form (ngSubmit)="onSaveBwq(bwqForm)" [formGroup]="bwqForm" #formDirective="ngForm">
+      <p-panel header="STEP 1: DETAILS OF NEW BATCH" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+
+            <div class="ui-fluid">
+              <div class="row">
+                <div class="col-lg-6">
+
+                  <div class="form-group">
+                      <label for="batchName">Batch Name</label>
+                      <input  name="batchName" type="text" class="form-control" pInputText placeholder="Enter batch name" formControlName="batchName">
+                  </div>
+                  <div class="form-group">
+                      <label for="description">Description</label>
+                        <textarea pInputTextarea [rows]="3" name="description" class="form-control" placeholder="Enter description" formControlName="description"></textarea>
+                  </div>
+                  <div class="form-group">
+                      <label for="priority">Priority</label>
+                      <p-dropdown name="priority" [autoWidth]="false" [options]="bwqPriorities" placeholder="Select priority" optionLabel="itemText" formControlName="priorityCollectionItem"></p-dropdown>
+                  </div>
+
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="startDate">Start Date</label>
+                    <p-calendar [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:3000" [showIcon]="true" formControlName="startDate"></p-calendar>
+                  </div>
+                  <div class="form-group">
+                    <label for="dueDate">Due Date:</label>
+                    <p-calendar [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:3000" [showIcon]="true" formControlName="dueDate"></p-calendar>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+      </p-panel>
+
+      <p-panel header="STEP 2: WHAT RESEARCHERS SHOULD REVIEW" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+        <br>
+          <div class="alert alert-warning" role="alert">
+              At least one (1) research item and instruction must be supplied before performing save.
+          </div>
+          <div class="row">
+              <div class="col-lg-5">
+                  <p-panel header="ADD NEW INSTRUCTION" [style]="{'margin-bottom':'20px'}">
+                    <form (ngSubmit)="onSaveInstruction(instructionForm)" [formGroup]="instructionForm" #formDirective="ngForm">
+                        <div class="ui-fluid">
+                          <div class="form-group">
+                              <label for="field">Field</label>
+                              <p-dropdown name="field" [autoWidth]="false" [options]="bwqFieldSelects" placeholder="Select field" optionLabel="fieldDisplayName" filter="true" formControlName="bwqFieldSelect"></p-dropdown>
+                          </div>
+                          <div class="form-group">
+                              <label for="description">Instruction</label>
+                                <textarea pInputTextarea [rows]="3" name="description" class="form-control" placeholder="Enter description" formControlName="instructions"></textarea>
+                          </div>
+                          <div class="text-right">
+                              <button type="submit" class="btn btn-info">ADD INSTRUCTION</button>
+                            </div>
+                        </div>
+                    </form>
+                  </p-panel>
+              </div>
+              <div class="col-lg-7">
+                  <p-table #dtInstruction [value]="bwqInstructions"  [rows]="10">
+                      <ng-template pTemplate="header">
+                          <tr>
+                              <th [pSortableColumn]="'field'">Field <p-sortIcon [field]="'field'"></p-sortIcon></th>
+                              <th [pSortableColumn]="'instruction'">Instruction <p-sortIcon [field]="'instruction'"></p-sortIcon></th>
+                              <th width="10%">Option</th>
+                          </tr>
+                      </ng-template>
+                      <ng-template pTemplate="body" let-instruction>
+                          <tr>
+                              <td class="td-cell">{{instruction.bwqFieldSelect.fieldDisplayName}}</td>
+                              <td class="td-cell">{{instruction.instructions}}</td>
+                              <td><button pButton pTooltip="Delete" tooltipPosition="bottom" type="button" icon="fa fa-trash" class="ui-button-danger" (click)="onDeleteInstruction(instruction.bwqInstructionFakeGUID)"></button></td>
+                          </tr>
+                      </ng-template>
+                  </p-table>
+              </div>
+          </div>
+      </p-panel>
+
+      <p-panel header="STEP 3: BUILD THE ENTITY LIST" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+          <b> Generated Entities: </b><b style="color:red">( {{bwqEntitiesCount}} items )</b>
+          <div class="text-center">
+              <button type="button" class="btn btn-info btn-space" (click)="showSelectParamDialog()">PICK CRITERIA</button>
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">IMPORT LIST</button>
+          </div>
+      </p-panel>
+
+      <div *ngIf="error" class="alert alert-danger alert-dismissible" role="alert">
+          {{ errorMessage }}
+      </div>
+
+      <div class="text-right">
+        <button mat-button type="submit" class="btn btn-success btn-space">CREATE BATCH</button>
+        <button mat-button type="button" class="btn btn-warning btn-space" (click)="onClear()">CLEAR</button>
+        <button mat-button type="button" class="btn btn-default" (click)="onCancel()">CANCEL</button>
+      </div>
+      </form>
+</p-panel>
+
+<!-- Select Param Dialog -->
+<app-select-param-dialog [display]="displaySelectParamDialog" (displayChange)="onSelectParamDialogClose($event)" (outgoingData)="onGeneratedBwqEntities($event)"></app-select-param-dialog>
+
+<p-toast></p-toast>
+
+

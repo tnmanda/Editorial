@@ -1,0 +1,9 @@
+.btn-space {
+  margin-right: 5px;
+}
+
+.td-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

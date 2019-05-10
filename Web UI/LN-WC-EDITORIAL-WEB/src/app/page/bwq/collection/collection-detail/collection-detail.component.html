@@ -1,0 +1,92 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel header="Collection Information:" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+<br>
+  <div  *ngIf="selectedCollection">
+      <div class="col-lg-6">
+            <div class="form-group">
+              <label for="appUserName">Name</label>
+              <input  type="text" class="form-control" pInputText [(ngModel)]="selectedCollection.collectionName" readonly>
+            </div>
+            <div class="form-group">
+              <label for="roleTypeDesc">Description</label>
+              <textarea pInputTextarea [rows]="3" name="roleTypeDesc" class="form-control" [(ngModel)]="selectedCollection.collectionDescription" readonly></textarea>
+            </div>
+            <div class="form-group">
+              <label for="appUserName">Sort</label>
+              <input  type="text" class="form-control" pInputText [(ngModel)]="selectedCollection.sortOrder" readonly>
+            </div>
+            <div class="text-right">
+                <button pButton type="button" label="Back" class="ui-button-secondary" (click)="onBack()"></button>
+            </div>
+      </div>
+    </div>
+    <br>
+</p-panel>
+
+<nav>
+  <div class="nav nav-tabs " id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-collectionItem-tab" data-toggle="tab" href="#nav-collectionItem" role="tab" aria-controls="nav-collectionItem" aria-selected="true"><i class="fas fa-file-alt"></i>  Collection Items</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-collectionItem" role="tabpanel" aria-labelledby="nav-collectionItem-tab">
+    <br>
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="ui-inputgroup">
+                    <input type="text" pInputText placeholder="Global Search..." (input)="dtPageInRole.filterGlobal($event.target.value, 'contains')">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+                </div>
+
+            </div>
+          <div class="col-lg-6">
+              <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+          </div>
+        </div>
+
+        <br>
+        <p-table #dtPageInRole [value]="collectionItems" [globalFilterFields]="['itemText','itemValue','itemDescription']" [paginator]="true" [rows]="10">
+            <ng-template pTemplate="header">
+                <tr>
+
+                    <th [pSortableColumn]="'itemText'">Text <p-sortIcon [field]="'itemText'"></p-sortIcon></th>
+                    <th [pSortableColumn]="'itemValue'">Value <p-sortIcon [field]="'itemValue'"></p-sortIcon></th>
+                    <th [pSortableColumn]="'itemDescription'">Description <p-sortIcon [field]="'itemDescription'"></p-sortIcon></th>
+                    <th width="10%">Option</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-collectionItem>
+                <tr>
+
+                    <td class="td-cell">{{collectionItem.itemText}}</td>
+                    <td class="td-cell">{{collectionItem.itemValue}}</td>
+                    <td class="td-cell">{{collectionItem.itemDescription}}</td>
+                    <td >
+                        <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="showEditDialog(collectionItem.collectionItemID)"></button>
+                        <button pButton pTooltip="Delete" tooltipPosition="bottom" type="button" icon="fa fa-trash" class="ui-button-danger" (click)="showDeleteDialog(collectionItem.collectionItemID)"></button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+  </div>
+</div>
+
+<!-- Add Collection Item Dialog -->
+<div *ngIf="selectedCollection">
+<app-collection-item-add-dialog [display]="displayAddDialog" [selectedCollection]="selectedCollection" (displayChange)="onAddDialogClose($event)"></app-collection-item-add-dialog>
+</div>
+<!-- Edit Collection Item Dialog -->
+<div *ngIf="selectedCollectionItem">
+  <app-collection-item-edit-dialog [display]="displayEditDialog" [selectedCollectionItem]="selectedCollectionItem" (displayChange)="onEditDialogClose($event)"></app-collection-item-edit-dialog>
+</div>
+<!-- Delete Collection Item Dialog -->
+<div *ngIf="selectedCollectionItem">
+  <app-collection-item-delete-dialog [display]="displayDeleteDialog" [selectedCollectionItem]="selectedCollectionItem" (displayChange)="onDeleteDialogClose($event)"></app-collection-item-delete-dialog>
+</div>
+
+<p-toast></p-toast>

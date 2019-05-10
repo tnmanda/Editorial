@@ -1,0 +1,58 @@
+
+<div class="login-container">
+  <div class="login-form">
+    <p-card [style]="{'background-color':'#f2f2f2'}">
+            <form  role="login" (ngSubmit)="onLogin(signInForm)" [formGroup]="signInForm" #formDirective="ngForm">
+                <div class=login-logo>
+                    <img src="../../../../assets/images/lexisnexis-logo.png" class="img-responsive" alt="" width="150px;" />
+                </div>
+                <div class="title-container"><div class="app-title">LN WC Editorial</div></div>
+              <hr>
+              <p-messages ></p-messages>
+              <br>
+              <div class="ui-fluid">
+                <div class="container">
+                  <div class="ui-inputgroup">
+                      <span class="ui-inputgroup-addon"><i class="fas fa-globe"></i></span>
+                      <input type="text" pInputText placeholder="Enter Domain" formControlName="domain">
+                  </div>
+                  <br>
+                  <div class="ui-inputgroup">
+                      <span class="ui-inputgroup-addon"><i class="fas fa-user"></i></span>
+                      <input type="text" pInputText placeholder="Enter Username" formControlName="userName">
+                  </div>
+                  <br>
+                  <div class="ui-inputgroup">
+                      <span class="ui-inputgroup-addon"><i class="fas fa-lock"></i></span>
+                      <input type="password" pInputText placeholder="Enter Password" formControlName="password">
+                  </div>
+                  <br>
+                  <div class="ui-inputgroup">
+                      <span class="ui-inputgroup-addon"><i class="fas fa-users"></i></span>
+                      <input type="text" pInputText placeholder="Enter Group Code" formControlName="groupCode">
+                  </div>
+                  <br>
+                  <div class="ui-inputgroup">
+                      <p-checkbox name="rememberme"  label="Remember me" ></p-checkbox>
+                  </div>
+
+                  <br>
+                  <div *ngIf="isSubmitted">
+                  <p-progressBar mode="indeterminate" [style]="{'height': '6px', 'color':'green'}"></p-progressBar>
+                  </div>
+                  <br>
+                  <button pButton type="submit" class="ui-button-success" label="Sign In"></button>
+                </div>
+            </div>
+
+            </form>
+
+            <p-footer>
+                <div style="text-align:center;">
+                    <label>Version 1.0.0</label>
+                </div>
+            </p-footer>
+    </p-card>
+  </div>
+</div>
+

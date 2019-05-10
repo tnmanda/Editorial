@@ -1,0 +1,17 @@
+2018-10-26 15:34:26.443 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-26 15:34:28.886 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/bwq/BWQEntities/filter application/json 128
+2018-10-26 15:34:29.865 +08:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '10/25/2018 14:34:23', Current time: '10/26/2018 07:34:29'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2018-10-26 15:34:30.213 +08:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '10/25/2018 14:34:23', Current time: '10/26/2018 07:34:29'."
+2018-10-26 15:34:30.874 +08:00 [Information] Route matched with "{action = \"GenBWQEntities\", controller = \"BWQEntities\"}". Executing action "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)"
+2018-10-26 15:34:30.920 +08:00 [Information] Authorization failed.
+2018-10-26 15:34:30.925 +08:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-10-26 15:34:30.940 +08:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-10-26 15:34:30.971 +08:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-10-26 15:34:30.976 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)" in 95.0336ms
+2018-10-26 15:34:31.067 +08:00 [Information] Request finished in 2202.9218ms 401 
+2018-10-26 15:34:31.114 +08:00 [Information] Connection id ""0HLHR2LR4A8K0"", Request id ""0HLHR2LR4A8K0:00000001"": the application completed without reading the entire request body.

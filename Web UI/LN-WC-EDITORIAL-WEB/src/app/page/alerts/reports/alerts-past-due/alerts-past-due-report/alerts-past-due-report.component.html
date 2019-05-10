@@ -1,0 +1,50 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Past Due Alert List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtPastDueAlerts.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+
+      </div>
+
+      <br>
+      <p-table #dtPastDueAlerts [value]="alertPastDues" [globalFilterFields]="['alertJobQueueID', 'jobId', 'jobName', 'dueDate','dateCreated','source']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th width="10%" [pSortableColumn]="'alertJobQueueID'">Job ID <p-sortIcon [field]="'alertJobQueueID'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'jobName'">Job Name <p-sortIcon [field]="'jobName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'dueDate'">Due Date <p-sortIcon [field]="'dueDate'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'dateCreated'">Date Created <p-sortIcon [field]="'dateCreated'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'source'">Source <p-sortIcon [field]="'source'"></p-sortIcon></th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-alertPastDue>
+              <tr>
+                  <td class="td-cell">{{alertPastDue.alertJobQueueID}}</td>
+                  <td class="td-cell">{{alertPastDue.jobName}}</td>
+                  <td class="td-cell">{{alertPastDue.dueDate | date: 'MM/dd/yyyy'}}</td>
+                  <td class="td-cell">{{alertPastDue.dateCreated | date: 'MM/dd/yyyy'}}</td>
+                  <td class="td-cell">{{alertPastDue.source}}</td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<p-toast></p-toast>

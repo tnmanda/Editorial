@@ -1,0 +1,67 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Address Type List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtAppUser.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtAppUser [value]="addressTypes" [globalFilterFields]="['addressTypeName']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'addressTypeName'">Name <p-sortIcon [field]="'addressTypeName'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isInList'">InList <p-sortIcon [field]="'isInList'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isActive'">Active <p-sortIcon [field]="'isActive'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-addressType>
+              <tr>
+
+                  <td class="td-cell">{{addressType.addressTypeName}}</td>
+                  <td class="td-cell">
+                    <div class="badge badge-pill badge-secondary">{{addressType.isInList}}</div>
+                  </td>
+                  <td class="td-cell"><div class="badge badge-pill badge-secondary">{{addressType.isActive}}</div></td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-edit" class="ui-button-secondary btn-space" (click)="showEditDialog(addressType.addressTypeID)"></button>
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showDeleteDialog(addressType.addressTypeID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add Absence Type Dialog -->
+<app-address-type-add-dialog [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-address-type-add-dialog>
+<!-- Edit Absence Type Dialog -->
+<div *ngIf="selectedAddressType">
+  <app-address-type-edit-dialog [display]="displayEditDialog" [selectedAddressType]="selectedAddressType" (displayChange)="onEditDialogClose($event)"></app-address-type-edit-dialog>
+</div>
+<!-- Delete Absence Type Dialog -->
+<div *ngIf="selectedAddressType">
+  <app-address-type-delete-dialog [display]="displayDeleteDialog" [selectedAddressType]="selectedAddressType" (displayChange)="onDeleteDialogClose($event)"></app-address-type-delete-dialog>
+</div>
+
+<p-toast></p-toast>

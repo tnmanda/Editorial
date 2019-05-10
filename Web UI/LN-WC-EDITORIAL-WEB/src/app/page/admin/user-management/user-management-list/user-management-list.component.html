@@ -1,0 +1,96 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> User List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtAppUser.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New User" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtAppUser [value]="appUsers" [globalFilterFields]="['appUserName', 'email', 'gender', 'operationalRole', 'officeName', 'supervisorName']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th width="5%"></th>
+                  <th [pSortableColumn]="'appUserName'">Name <p-sortIcon [field]="'appUserName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'email'">Email <p-sortIcon [field]="'email'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'gender'">Gender <p-sortIcon [field]="'gender'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'operationalRole'">Role <p-sortIcon [field]="'operationalRole'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'officeName'">Office <p-sortIcon [field]="'officeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'supervisorName'">Supervisor <p-sortIcon [field]="'supervisorName'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isInternal'">Internal <p-sortIcon [field]="'isInternal'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isActive'">Active <p-sortIcon [field]="'isActive'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-appUser>
+              <tr>
+                  <td>
+                    <div class="text-center">
+                        <img src="../../../assets/images/profile-placeholder.png" class="rounded-circle" width="30" height="30" alt="">
+                    </div>
+
+                  </td>
+                  <td class="td-cell">{{appUser.appUserName}}</td>
+                  <td class="td-cell">{{appUser.email}}</td>
+                  <td class="td-cell">{{appUser.genderName}}</td>
+                  <td class="td-cell">{{appUser.operationalRoleName}}</td>
+                  <td class="td-cell">{{appUser.officeName}}</td>
+                  <td class="td-cell">{{appUser.supervisorName}}</td>
+                  <td class="td-cell">
+                      <div *ngIf="appUser.isInternal; else isDisabled">
+                          <div class="badge badge-pill badge-success">{{appUser.isInternal}}</div>
+                      </div>
+                      <ng-template #isDisabled>
+                          <div class="badge badge-pill badge-secondary">{{appUser.isInternal}}</div>
+                      </ng-template>
+                  </td>
+                  <td class="td-cell">
+                      <div *ngIf="appUser.isActive; else isDisabled">
+                          <div class="badge badge-pill badge-success">{{appUser.isActive}}</div>
+                      </div>
+                      <ng-template #isDisabled>
+                          <div class="badge badge-pill badge-secondary">{{appUser.isActive}}</div>
+                      </ng-template>
+                  </td>
+                  <td >
+                      <button pButton pTooltip="View Details" tooltipPosition="bottom" type="button" icon="fa fa-eye" class="ui-button-success btn-space" [routerLink]="['./user-management-detail', appUser.appUserID]"></button>
+                      <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="showEditDialog(appUser.appUserID)"></button>
+                      <button pButton pTooltip="Delete" tooltipPosition="bottom" type="button" icon="fa fa-trash" class="ui-button-danger" (click)="showDeleteDialog(appUser.appUserID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+<p-toast></p-toast>
+<!-- Add App User Dialog -->
+<app-user-management-add-dialog [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-user-management-add-dialog>
+
+<!-- Update App User Dialog -->
+<div *ngIf="selectedAppUser">
+  <app-user-management-edit-dialog [display]="displayEditDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onEditDialogClose($event)"></app-user-management-edit-dialog>
+</div>
+<!-- Delete App User Dialog -->
+<div *ngIf="selectedAppUser">
+  <app-user-management-delete-dialog [display]="displayDeleteDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onDeleteDialogClose($event)"></app-user-management-delete-dialog>
+</div>
+
+

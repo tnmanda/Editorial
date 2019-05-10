@@ -1,0 +1,38 @@
+<p-dialog *ngIf="display" [(visible)]="display" [style]="{}" [modal]="true" [responsive]="true" [width]="550" [baseZIndex]="10000" [closable]="false">
+  <p-header>
+      <i class="fas fa-plus"></i>
+      Add New User Map
+  </p-header>
+  <form (ngSubmit)="onSave(userMapForm)" [formGroup]="userMapForm" #formDirective="ngForm">
+      <div class="ui-fluid">
+          <div class="container">
+            <br>
+            <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible" role="alert">
+                {{ errorMessage }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onCloseMessage()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="form-group">
+              <label for="appUser">App User</label>
+              <p-dropdown name="appUser" [autoWidth]="false" [options]="appUsers" placeholder="Select app user" optionLabel="appUserName"
+              formControlName="appUser" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.appUser.errors }"></p-dropdown>
+            </div>
+
+              <div class="form-group">
+                <label for="humanReviewUserID">Human Review User ID</label>
+                <input name="humanReviewUserID" type="text" class="form-control" pInputText placeholder="Enter human review user"
+                formControlName="humanReviewUserID" [ngClass]="{ 'is-invalid': isSubmitted && f.humanReviewUserID.errors }">
+              </div>
+          </div>
+        </div>
+        <hr>
+
+        <div class="text-right">
+          <button type="submit" pButton label="Submit" class="btn-space"></button>
+          <button type="button" pButton (click)="onClose()"label="Cancel" class="ui-button-secondary"></button>
+        </div>
+
+    </form>
+</p-dialog>

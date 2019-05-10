@@ -1,0 +1,69 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Proficiency List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtProficiencyType.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtProficiencyType [value]="proficiencyTypes" [globalFilterFields]="['proficiencyTypeName']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'proficiencyTypeName'">Name <p-sortIcon [field]="'proficiencyTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'proficiencyTypeDesc'">Description <p-sortIcon [field]="'proficiencyTypeDesc'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isInList'">In List <p-sortIcon [field]="'isInList'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isActive'">Is Active <p-sortIcon [field]="'isActive'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-proficiencyType>
+              <tr>
+
+                  <td class="td-cell">{{proficiencyType.proficiencyTypeName}}</td>
+                  <td class="td-cell">{{proficiencyType.proficiencyTypeDesc}}</td>
+                  <td class="td-cell">
+                    <div class="badge badge-pill badge-secondary">{{proficiencyType.isInList}}</div>
+                  </td>
+                  <td class="td-cell"><div class="badge badge-pill badge-secondary">{{proficiencyType.isActive}}</div></td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-edit" class="ui-button-secondary btn-space" (click)="showEditDialog(proficiencyType.proficiencyTypeID)"></button>
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showDeleteDialog(proficiencyType.proficiencyTypeID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add Proficiency Type Dialog -->
+<app-proficiency-type-add-dialog  [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-proficiency-type-add-dialog>
+<!-- Edit Proficiency Type Dialog -->
+<div *ngIf="selectedProficiencyType">
+  <app-proficiency-type-edit-dialog [display]="displayEditDialog" [selectedProficiencyType]="selectedProficiencyType" (displayChange)="onEditDialogClose($event)"></app-proficiency-type-edit-dialog>
+</div>
+<!-- Delete Proficiency Type Dialog -->
+<div *ngIf="selectedProficiencyType">
+  <app-proficiency-type-delete-dialog [display]="displayDeleteDialog" [selectedProficiencyType]="selectedProficiencyType" (displayChange)="onDeleteDialogClose($event)"></app-proficiency-type-delete-dialog>
+</div>
+
+<p-toast></p-toast>

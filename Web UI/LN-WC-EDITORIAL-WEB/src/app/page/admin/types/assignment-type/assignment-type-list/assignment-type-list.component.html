@@ -1,0 +1,69 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Address List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtAssignmentType.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtAssignmentType [value]="assignmentTypes" [globalFilterFields]="['addressTypeName']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'assignmentTypeName'">Name <p-sortIcon [field]="'assignmentTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'assignmentDescription'">Description <p-sortIcon [field]="'assignmentDescription'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isInList'">In List <p-sortIcon [field]="'isInList'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isActive'">Is Active <p-sortIcon [field]="'isActive'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-assignmentType>
+              <tr>
+
+                  <td class="td-cell">{{assignmentType.assignmentTypeName}}</td>
+                  <td class="td-cell">{{assignmentType.assignmentDescription}}</td>
+                  <td class="td-cell">
+                    <div class="badge badge-pill badge-secondary">{{assignmentType.isInList}}</div>
+                  </td>
+                  <td class="td-cell"><div class="badge badge-pill badge-secondary">{{assignmentType.isActive}}</div></td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-edit" class="ui-button-secondary btn-space" (click)="showEditDialog(assignmentType.assignmentTypeID)"></button>
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showDeleteDialog(assignmentType.assignmentTypeID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add Assignment Type Dialog -->
+<app-assignment-type-add-dialog  [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-assignment-type-add-dialog>
+<!-- Edit Assignment Type Dialog -->
+<div *ngIf="selectedAssignmentType">
+  <app-assignment-type-edit-dialog [display]="displayEditDialog" [selectedAssignmentType]="selectedAssignmentType" (displayChange)="onEditDialogClose($event)"></app-assignment-type-edit-dialog>
+</div>
+<!-- Delete Assignment Type Dialog -->
+<div *ngIf="selectedAssignmentType">
+  <app-assignment-type-delete-dialog [display]="displayDeleteDialog" [selectedAssignmentType]="selectedAssignmentType" (displayChange)="onDeleteDialogClose($event)"></app-assignment-type-delete-dialog>
+</div>
+
+<p-toast></p-toast>

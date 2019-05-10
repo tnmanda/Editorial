@@ -1,0 +1,94 @@
+2018-12-10 16:18:50.354 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-10 16:19:04.960 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-10 16:19:04.960 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-10 16:19:05.353 +08:00 [Information] Request finished in 400.1178ms 200 
+2018-12-10 16:19:11.666 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-10 16:19:11.743 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-10 16:19:11.756 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.8735ms.
+2018-12-10 16:19:11.801 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-10 16:19:12.085 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 405.1213ms
+2018-12-10 16:19:12.098 +08:00 [Information] Request finished in 7161.4143ms 200 application/json; charset=utf-8
+2018-12-10 16:19:13.459 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/favicon.ico  
+2018-12-10 16:19:13.464 +08:00 [Information] Request finished in 4.4073ms 404 
+2018-12-10 16:24:20.775 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-10 16:24:26.094 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-10 16:24:26.094 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-10 16:24:26.548 +08:00 [Information] Request finished in 468.8404ms 200 
+2018-12-10 16:24:28.483 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-10 16:24:28.620 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-10 16:24:28.639 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 6.2403ms.
+2018-12-10 16:24:28.689 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-10 16:24:29.142 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 644.3127ms
+2018-12-10 16:24:29.153 +08:00 [Information] Request finished in 3081.9828ms 200 application/json; charset=utf-8
+2018-12-10 16:24:32.863 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobs/pastdue  
+2018-12-10 16:24:33.197 +08:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{"alg":"HS256","typ":"JWT"}.{"sub":"hrevuser2","sid":"892829272822828287102","jti":"09317a22-2711-48b8-ac40-398f5e559afa","rol":[{"isadm":true,"rname":"hr-admin","grp":[{"gname":"HRWCOJOB"}]}],"dmn_adm":[{"dname":"adf4818b-c41c-4f6a-8560-3e46415d2c93"}],"ips":["127.0.0.1/127.0.0.1"],"exp":1544514639,"iss":"http://humanreview.api.risk.lexisnexis.com","aud":"http://humanreview.risk.lexisnexis.com"}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2018-12-10 16:24:33.837 +08:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{\"alg\":\"HS256\",\"typ\":\"JWT\"}.{\"sub\":\"hrevuser2\",\"sid\":\"892829272822828287102\",\"jti\":\"09317a22-2711-48b8-ac40-398f5e559afa\",\"rol\":[{\"isadm\":true,\"rname\":\"hr-admin\",\"grp\":[{\"gname\":\"HRWCOJOB\"}]}],\"dmn_adm\":[{\"dname\":\"adf4818b-c41c-4f6a-8560-3e46415d2c93\"}],\"ips\":[\"127.0.0.1/127.0.0.1\"],\"exp\":1544514639,\"iss\":\"http://humanreview.api.risk.lexisnexis.com\",\"aud\":\"http://humanreview.risk.lexisnexis.com\"}'."
+2018-12-10 16:24:33.848 +08:00 [Information] Route matched with "{action = \"GetPastDueAlerts\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetPastDueAlerts (LNWCOE)"
+2018-12-10 16:24:33.912 +08:00 [Information] Authorization failed.
+2018-12-10 16:24:33.917 +08:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-12-10 16:24:33.926 +08:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-12-10 16:24:33.953 +08:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-12-10 16:24:33.953 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetPastDueAlerts (LNWCOE)" in 105.2677ms
+2018-12-10 16:24:33.956 +08:00 [Information] Request finished in 1093.0651ms 401 
+2018-12-10 16:24:38.204 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-12-10 16:24:38.241 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-12-10 16:24:39.607 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-12-10 16:24:55.793 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-10 16:24:57.161 +08:00 [Information] Executed DbCommand ("145"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-12-10 16:24:57.281 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-10 16:25:03.771 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-10 16:25:04.096 +08:00 [Information] Executed DbCommand ("87"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-12-10 16:25:04.113 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 24500.1712ms.
+2018-12-10 16:25:04.116 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType11`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-10 16:25:04.136 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 25894.8815ms
+2018-12-10 16:25:04.149 +08:00 [Information] Request finished in 25945.308ms 200 application/json; charset=utf-8
+2018-12-10 16:25:08.217 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobs/pastdue  
+2018-12-10 16:25:08.257 +08:00 [Information] Successfully validated the token.
+2018-12-10 16:25:08.276 +08:00 [Information] Route matched with "{action = \"GetPastDueAlerts\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetPastDueAlerts (LNWCOE)"
+2018-12-10 16:25:08.278 +08:00 [Information] Authorization was successful.
+2018-12-10 16:25:08.279 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetPastDueAlerts (LNWCOE)" - Validation state: Valid
+2018-12-10 16:25:08.285 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-10 16:25:08.404 +08:00 [Information] Executed DbCommand ("35"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""usp_GetPastDueAlerts_sel"
+2018-12-10 16:25:08.416 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetPastDueAlerts (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 137.1109ms.
+2018-12-10 16:25:08.417 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.ALERTS.PastDueAlert, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-10 16:25:08.427 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetPastDueAlerts (LNWCOE)" in 150.69ms
+2018-12-10 16:25:08.427 +08:00 [Information] Request finished in 210.4281ms 200 application/json; charset=utf-8
+2018-12-10 20:43:09.782 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-10 20:43:11.269 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-10 20:43:11.897 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-10 20:43:11.945 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-10 20:43:11.954 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.1009ms.
+2018-12-10 20:43:11.989 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-10 20:43:12.175 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 270.6828ms
+2018-12-10 20:43:12.191 +08:00 [Information] Request finished in 934.2135ms 200 application/json; charset=utf-8

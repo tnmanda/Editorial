@@ -1,0 +1,13 @@
+.input-search {
+  padding-right: 15px;
+}
+
+.text-area-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-area-container > * {
+  width: 100%;
+
+}

@@ -1,0 +1,9 @@
+.custom-navbar {
+  background-color:#f2f2f2;
+  border-bottom: 1px solid #a6a6a6;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+

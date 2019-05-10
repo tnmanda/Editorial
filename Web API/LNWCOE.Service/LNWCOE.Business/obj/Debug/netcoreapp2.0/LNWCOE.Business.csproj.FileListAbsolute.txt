@@ -1,0 +1,14 @@
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Business\obj\Debug\netcoreapp2.0\LNWCOE.Business.csprojAssemblyReference.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Business\obj\Debug\netcoreapp2.0\LNWCOE.Business.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Business\obj\Debug\netcoreapp2.0\LNWCOE.Business.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Business\obj\Debug\netcoreapp2.0\LNWCOE.Business.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Business\bin\Debug\netcoreapp2.0\LNWCOE.Business.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Business\bin\Debug\netcoreapp2.0\LNWCOE.Business.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Business\bin\Debug\netcoreapp2.0\LNWCOE.Business.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Business\bin\Debug\netcoreapp2.0\LNWCOE.Module.Admin.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Business\bin\Debug\netcoreapp2.0\Repository.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Business\bin\Debug\netcoreapp2.0\LNWCOE.Module.Admin.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Business\bin\Debug\netcoreapp2.0\Repository.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Business\obj\Debug\netcoreapp2.0\LNWCOE.Business.csproj.CopyComplete
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Business\obj\Debug\netcoreapp2.0\LNWCOE.Business.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Business\obj\Debug\netcoreapp2.0\LNWCOE.Business.pdb

@@ -1,0 +1,1152 @@
+2018-11-05 16:22:59.593 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-05 16:23:02.420 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-05 16:23:02.420 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-11-05 16:23:02.420 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-05 16:23:02.750 +08:00 [Information] Request finished in 339.6379ms 200 
+2018-11-05 16:23:04.516 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-05 16:23:04.516 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-11-05 16:23:04.616 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-05 16:23:04.634 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.7949ms.
+2018-11-05 16:23:04.756 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-05 16:23:05.305 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 768.7701ms
+2018-11-05 16:23:05.321 +08:00 [Information] Request finished in 2922.7167ms 200 application/json; charset=utf-8
+2018-11-05 16:23:05.705 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/favicon.ico  
+2018-11-05 16:23:05.711 +08:00 [Information] Request finished in 5.7094ms 404 
+2018-11-05 16:23:05.985 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-11-05 16:23:35.865 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 16:23:37.017 +08:00 [Information] Executed DbCommand ("107"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-11-05 16:23:41.810 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-11-05 16:23:42.053 +08:00 [Information] Executed DbCommand ("16"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-11-05 16:23:42.151 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 36157.0802ms.
+2018-11-05 16:23:42.154 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType5`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-05 16:23:42.172 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 37646.4044ms
+2018-11-05 16:23:42.182 +08:00 [Information] Request finished in 39783.3681ms 200 application/json; charset=utf-8
+2018-11-05 16:24:41.688 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 16:24:41.747 +08:00 [Information] Successfully validated the token.
+2018-11-05 16:24:41.762 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 16:24:41.804 +08:00 [Information] Authorization was successful.
+2018-11-05 16:24:41.888 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 16:24:41.898 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 16:24:42.241 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 352.9251ms.
+2018-11-05 16:24:42.241 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 16:24:42.245 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 482.6571ms
+2018-11-05 16:24:42.245 +08:00 [Information] Request finished in 557.7146ms 400 application/json; charset=utf-8
+2018-11-05 16:24:58.322 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 16:24:58.323 +08:00 [Information] Successfully validated the token.
+2018-11-05 16:24:58.326 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 16:24:58.327 +08:00 [Information] Authorization was successful.
+2018-11-05 16:24:58.328 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 16:25:52.120 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 16:27:26.568 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 148231.3127ms.
+2018-11-05 16:27:26.568 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 16:27:26.568 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 148240.3114ms
+2018-11-05 16:27:26.569 +08:00 [Information] Request finished in 148244.7776ms 400 application/json; charset=utf-8
+2018-11-05 16:27:40.573 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 16:27:40.574 +08:00 [Information] Successfully validated the token.
+2018-11-05 16:27:40.574 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 16:27:40.574 +08:00 [Information] Authorization was successful.
+2018-11-05 16:27:40.576 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 16:28:08.813 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 16:29:29.461 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-05 16:29:30.476 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-05 16:29:31.148 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-05 16:29:31.201 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-05 16:29:31.210 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.2328ms.
+2018-11-05 16:29:31.249 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-05 16:29:31.447 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 289.6397ms
+2018-11-05 16:29:31.463 +08:00 [Information] Request finished in 1001.5818ms 200 application/json; charset=utf-8
+2018-11-05 16:31:15.341 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-05 16:31:17.055 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-05 16:31:17.055 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-05 16:31:17.331 +08:00 [Information] Request finished in 283.9832ms 200 
+2018-11-05 16:31:18.225 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-05 16:31:18.286 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-05 16:31:18.298 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.2293ms.
+2018-11-05 16:31:18.337 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-05 16:31:18.552 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 302.467ms
+2018-11-05 16:31:18.588 +08:00 [Information] Request finished in 1556.0166ms 200 application/json; charset=utf-8
+2018-11-05 16:33:08.304 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 16:33:08.498 +08:00 [Information] Successfully validated the token.
+2018-11-05 16:33:08.536 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 16:33:08.575 +08:00 [Information] Authorization was successful.
+2018-11-05 16:33:09.164 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 16:33:21.855 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 16:34:54.995 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-05 16:34:56.748 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-05 16:34:56.748 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-05 16:34:56.997 +08:00 [Information] Request finished in 256.1376ms 200 
+2018-11-05 16:34:57.835 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-05 16:34:57.896 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-05 16:34:57.906 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.3731ms.
+2018-11-05 16:34:57.944 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-05 16:34:58.144 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 298.7589ms
+2018-11-05 16:34:58.161 +08:00 [Information] Request finished in 1431.6886ms 200 application/json; charset=utf-8
+2018-11-05 16:35:11.951 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 16:35:12.111 +08:00 [Information] Successfully validated the token.
+2018-11-05 16:35:12.142 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 16:35:12.175 +08:00 [Information] Authorization was successful.
+2018-11-05 16:35:12.917 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 16:35:17.017 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 16:35:30.409 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 17480.6154ms.
+2018-11-05 16:35:30.413 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 16:35:30.525 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 18383.0007ms
+2018-11-05 16:35:30.548 +08:00 [Information] Request finished in 18597.5965ms 400 application/json; charset=utf-8
+2018-11-05 16:36:18.323 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-05 16:36:20.079 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-05 16:36:20.079 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-05 16:36:20.379 +08:00 [Information] Request finished in 289.3236ms 200 
+2018-11-05 16:36:21.483 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-05 16:36:21.569 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-05 16:36:21.582 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.9384ms.
+2018-11-05 16:36:21.627 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-05 16:36:21.880 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 374.2126ms
+2018-11-05 16:36:21.932 +08:00 [Information] Request finished in 1880.7315ms 200 application/json; charset=utf-8
+2018-11-05 16:36:26.412 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 16:36:26.625 +08:00 [Information] Successfully validated the token.
+2018-11-05 16:36:26.674 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 16:36:26.716 +08:00 [Information] Authorization was successful.
+2018-11-05 16:36:27.524 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 16:36:31.151 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 16:36:41.017 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 13483.8253ms.
+2018-11-05 16:36:41.022 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 16:36:41.042 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 14367.4954ms
+2018-11-05 16:36:41.067 +08:00 [Information] Request finished in 14654.7185ms 400 application/json; charset=utf-8
+2018-11-05 16:36:51.392 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1159
+2018-11-05 16:36:51.392 +08:00 [Information] Successfully validated the token.
+2018-11-05 16:36:51.396 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 16:36:51.397 +08:00 [Information] Authorization was successful.
+2018-11-05 16:36:51.399 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 16:36:57.595 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 16:37:25.129 +08:00 [Information] Executed DbCommand ("27"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-05 16:37:30.148 +08:00 [Information] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 16:37:32.994 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-05 16:37:39.462 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 16:37:41.068 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 16:38:08.356 +08:00 [Error] An exception occurred in the database while saving changes for context type '"LNWCOE.Data.AppDbContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): New transaction is not allowed because there are other threads running in the session.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.TdsExecuteTransactionManagerRequest(Byte[] buffer, TransactionManagerRequestType request, String transactionName, TransactionManagerIsolationLevel isoLevel, Int32 timeout, SqlInternalTransaction transaction, TdsParserStateObject stateObj, Boolean isDelegateControlRequest)
+   at System.Data.SqlClient.SqlInternalConnectionTds.ExecuteTransactionYukon(TransactionRequest transactionRequest, String transactionName, IsolationLevel iso, SqlInternalTransaction internalTransaction, Boolean isDelegateControlRequest)
+   at System.Data.SqlClient.SqlInternalConnection.BeginSqlTransaction(IsolationLevel iso, String transactionName, Boolean shouldReconnect)
+   at System.Data.SqlClient.SqlConnection.BeginTransaction(IsolationLevel iso, String transactionName)
+   at System.Data.SqlClient.SqlConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.BeginTransactionWithNoPreconditions(IsolationLevel isolationLevel)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+ClientConnectionId:a7038e0d-4941-42d2-a90f-5690af7c02ac
+Error Number:3988,State:1,Class:16"
+System.Data.SqlClient.SqlException (0x80131904): New transaction is not allowed because there are other threads running in the session.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.TdsExecuteTransactionManagerRequest(Byte[] buffer, TransactionManagerRequestType request, String transactionName, TransactionManagerIsolationLevel isoLevel, Int32 timeout, SqlInternalTransaction transaction, TdsParserStateObject stateObj, Boolean isDelegateControlRequest)
+   at System.Data.SqlClient.SqlInternalConnectionTds.ExecuteTransactionYukon(TransactionRequest transactionRequest, String transactionName, IsolationLevel iso, SqlInternalTransaction internalTransaction, Boolean isDelegateControlRequest)
+   at System.Data.SqlClient.SqlInternalConnection.BeginSqlTransaction(IsolationLevel iso, String transactionName, Boolean shouldReconnect)
+   at System.Data.SqlClient.SqlConnection.BeginTransaction(IsolationLevel iso, String transactionName)
+   at System.Data.SqlClient.SqlConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.BeginTransactionWithNoPreconditions(IsolationLevel isolationLevel)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+ClientConnectionId:a7038e0d-4941-42d2-a90f-5690af7c02ac
+Error Number:3988,State:1,Class:16
+2018-11-05 16:41:55.823 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-05 16:41:57.479 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-05 16:41:57.479 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-05 16:41:57.729 +08:00 [Information] Request finished in 260.1396ms 200 
+2018-11-05 16:41:58.749 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-05 16:41:58.838 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-05 16:41:58.850 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.6453ms.
+2018-11-05 16:41:58.903 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-05 16:41:59.121 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 360.8342ms
+2018-11-05 16:41:59.144 +08:00 [Information] Request finished in 1688.7918ms 200 application/json; charset=utf-8
+2018-11-05 16:42:12.829 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1159
+2018-11-05 16:42:13.029 +08:00 [Information] Successfully validated the token.
+2018-11-05 16:42:13.073 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 16:42:13.123 +08:00 [Information] Authorization was successful.
+2018-11-05 16:42:14.008 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 16:42:20.859 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 16:42:23.832 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 9813.345ms.
+2018-11-05 16:42:23.836 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 16:42:23.858 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 10784.5477ms
+2018-11-05 16:42:23.886 +08:00 [Information] Request finished in 11057.6569ms 400 application/json; charset=utf-8
+2018-11-05 16:42:39.239 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1159
+2018-11-05 16:42:39.240 +08:00 [Information] Successfully validated the token.
+2018-11-05 16:42:39.244 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 16:42:39.244 +08:00 [Information] Authorization was successful.
+2018-11-05 16:42:39.248 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 16:42:41.169 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 16:42:49.988 +08:00 [Information] Executed DbCommand ("27"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 16:42:51.519 +08:00 [Information] Executed DbCommand ("10"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-05 16:42:52.734 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 16:43:01.112 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 16:43:10.026 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-05 16:43:10.031 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-05 16:43:14.804 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 35555.614ms.
+2018-11-05 16:43:14.805 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 16:43:14.806 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 35561.4791ms
+2018-11-05 16:43:14.808 +08:00 [Information] Request finished in 35568.2485ms 200 application/json; charset=utf-8
+2018-11-05 16:45:11.272 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1153
+2018-11-05 16:45:11.273 +08:00 [Information] Successfully validated the token.
+2018-11-05 16:45:11.273 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 16:45:11.273 +08:00 [Information] Authorization was successful.
+2018-11-05 16:45:11.274 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 16:45:13.108 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 16:45:25.840 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 16:45:27.768 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-05 16:45:29.703 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 16:46:53.871 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 16:48:26.578 +08:00 [Information] Executed DbCommand ("39"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-05 16:48:26.580 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-05 16:48:26.582 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 195306.5124ms.
+2018-11-05 16:48:26.582 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 16:48:26.583 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 195308.4375ms
+2018-11-05 16:48:26.583 +08:00 [Information] Request finished in 195309.6855ms 200 application/json; charset=utf-8
+2018-11-05 16:51:12.495 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1153
+2018-11-05 16:51:12.496 +08:00 [Information] Successfully validated the token.
+2018-11-05 16:51:12.496 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 16:51:12.496 +08:00 [Information] Authorization was successful.
+2018-11-05 16:51:12.500 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 16:51:15.687 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 16:51:30.622 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 16:51:32.190 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-05 16:51:34.583 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 16:52:21.038 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 16:52:39.937 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-05 16:52:39.938 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-05 16:52:39.940 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 87438.9941ms.
+2018-11-05 16:52:39.940 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 16:52:39.941 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 87443.3291ms
+2018-11-05 16:52:39.941 +08:00 [Information] Request finished in 87444.5597ms 200 application/json; charset=utf-8
+2018-11-05 17:45:07.738 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 17:45:07.798 +08:00 [Information] Successfully validated the token.
+2018-11-05 17:45:07.801 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 17:45:07.801 +08:00 [Information] Authorization was successful.
+2018-11-05 17:45:07.844 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 17:45:09.600 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 17:45:11.254 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 3410.0439ms.
+2018-11-05 17:45:11.254 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 17:45:11.255 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 3453.4877ms
+2018-11-05 17:45:11.255 +08:00 [Information] Request finished in 3569.2689ms 400 application/json; charset=utf-8
+2018-11-05 17:45:19.814 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 17:45:19.815 +08:00 [Information] Successfully validated the token.
+2018-11-05 17:45:19.815 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 17:45:19.815 +08:00 [Information] Authorization was successful.
+2018-11-05 17:45:19.816 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 17:45:21.003 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 17:45:22.873 +08:00 [Information] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 17:45:22.877 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-05 17:45:22.898 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 17:45:28.328 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 17:45:28.410 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-05 17:45:28.412 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-05 17:45:28.413 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 8596.7858ms.
+2018-11-05 17:45:28.414 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 17:45:28.414 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 8598.5893ms
+2018-11-05 17:45:28.414 +08:00 [Information] Request finished in 8599.5283ms 200 application/json; charset=utf-8
+2018-11-05 17:57:18.145 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/bwq/BWQInstructions application/json 831
+2018-11-05 17:57:18.145 +08:00 [Information] Successfully validated the token.
+2018-11-05 17:57:18.824 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"BWQInstructions\"}". Executing action "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)"
+2018-11-05 17:57:18.825 +08:00 [Information] Authorization was successful.
+2018-11-05 17:57:19.001 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)" with arguments (["System.Collections.Generic.List`1[LNWCOE.Models.BWQ.BWQInstructions]"]) - Validation state: Valid
+2018-11-05 17:57:34.805 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 17:57:35.081 +08:00 [Information] Executed DbCommand ("13"ms) [Parameters=["@__obj_BWQInstructionsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQInstructionsID] = @__obj_BWQInstructionsID_0"
+2018-11-05 17:57:36.257 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__targetObject_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[BWQEntitiesID], [u].[BWQID], [u].[CategoryName], [u].[CountryName], [u].[CreatedBy], [u].[DateCreatedUTC], [u].[EntityName], [u].[LastUpdatedUTC], [u].[MMMEntityID], [u].[UpdatedBy], [u].[WorkItemID]
+FROM [BWQEntities] AS [u]
+WHERE [u].[BWQEntitiesID] = @__targetObject_BWQEntitiesID_0"
+2018-11-05 17:57:38.903 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__MMMEntity_MMMEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[RecordLockID], [v].[AppUserID], [v].[CreatedBy], [v].[DateCreatedUTC], [v].[DateTimeItemWasLockedUTC], [v].[IDFromWorkUnitsDBTable], [v].[LastUpdatedUTC], [v].[UpdatedBy], [v].[WorkUnitTypeID]
+FROM [RecordLocks] AS [v]
+WHERE ([v].[WorkUnitTypeID] = 6) AND ([v].[IDFromWorkUnitsDBTable] = @__MMMEntity_MMMEntityID_0)"
+2018-11-05 17:57:42.780 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__obj_BWQInstructionsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQInstructionsID] = @__obj_BWQInstructionsID_0"
+2018-11-05 17:57:43.479 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__targetObject_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[BWQEntitiesID], [u].[BWQID], [u].[CategoryName], [u].[CountryName], [u].[CreatedBy], [u].[DateCreatedUTC], [u].[EntityName], [u].[LastUpdatedUTC], [u].[MMMEntityID], [u].[UpdatedBy], [u].[WorkItemID]
+FROM [BWQEntities] AS [u]
+WHERE [u].[BWQEntitiesID] = @__targetObject_BWQEntitiesID_0"
+2018-11-05 17:57:45.804 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__MMMEntity_MMMEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[RecordLockID], [v].[AppUserID], [v].[CreatedBy], [v].[DateCreatedUTC], [v].[DateTimeItemWasLockedUTC], [v].[IDFromWorkUnitsDBTable], [v].[LastUpdatedUTC], [v].[UpdatedBy], [v].[WorkUnitTypeID]
+FROM [RecordLocks] AS [v]
+WHERE ([v].[WorkUnitTypeID] = 6) AND ([v].[IDFromWorkUnitsDBTable] = @__MMMEntity_MMMEntityID_0)"
+2018-11-05 17:57:49.257 +08:00 [Information] Executed DbCommand ("37"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQInstructions] SET [BWQDispositionsID] = @p0, [CreatedBy] = @p1, [DateCreatedUTC] = @p2, [Instructions] = @p3, [LastUpdatedUTC] = @p4, [UpdatedBy] = @p5
+WHERE [BWQInstructionsID] = @p6;
+SELECT @@ROWCOUNT;"
+2018-11-05 17:57:49.275 +08:00 [Information] Executed DbCommand ("17"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQInstructions] SET [BWQDispositionsID] = @p0, [CreatedBy] = @p1, [DateCreatedUTC] = @p2, [Instructions] = @p3, [LastUpdatedUTC] = @p4, [UpdatedBy] = @p5
+WHERE [BWQInstructionsID] = @p6;
+SELECT @@ROWCOUNT;"
+2018-11-05 17:57:49.280 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 30278.2753ms.
+2018-11-05 17:57:49.387 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-05 17:57:49.388 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)" in 30562.7386ms
+2018-11-05 17:57:49.389 +08:00 [Information] Request finished in 31243.5004ms 200 
+2018-11-05 18:46:54.449 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-05 18:46:56.667 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-05 18:46:56.667 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-05 18:46:56.953 +08:00 [Information] Request finished in 276.9495ms 200 
+2018-11-05 18:46:58.111 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-05 18:46:58.180 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-05 18:46:58.193 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.8203ms.
+2018-11-05 18:46:58.233 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-05 18:46:58.437 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 316.2202ms
+2018-11-05 18:46:58.453 +08:00 [Information] Request finished in 1804.0812ms 200 application/json; charset=utf-8
+2018-11-05 18:47:07.243 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/bwq/BWQInstructions application/json 2028
+2018-11-05 18:47:07.527 +08:00 [Information] Successfully validated the token.
+2018-11-05 18:47:07.576 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"BWQInstructions\"}". Executing action "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)"
+2018-11-05 18:47:07.625 +08:00 [Information] Authorization was successful.
+2018-11-05 18:47:08.597 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)" with arguments (["System.Collections.Generic.List`1[LNWCOE.Models.BWQ.BWQInstructions]"]) - Validation state: Valid
+2018-11-05 18:47:26.189 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 18:47:27.435 +08:00 [Error] Failed executing DbCommand ("141"ms) [Parameters=["@__updateobj_BWQInstructionsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[HRToken], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQInstructionsID] = @__updateobj_BWQInstructionsID_0"
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'HRToken'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:7564dfa1-29ad-4ac0-9ef1-1834fd9d7e7d
+Error Number:207,State:1,Class:16
+2018-11-05 18:47:27.739 +08:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"LNWCOE.Data.AppDbContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'HRToken'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:7564dfa1-29ad-4ac0-9ef1-1834fd9d7e7d
+Error Number:207,State:1,Class:16"
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'HRToken'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:7564dfa1-29ad-4ac0-9ef1-1834fd9d7e7d
+Error Number:207,State:1,Class:16
+2018-11-05 18:47:27.797 +08:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"LNWCOE.Data.AppDbContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'HRToken'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+ClientConnectionId:7564dfa1-29ad-4ac0-9ef1-1834fd9d7e7d
+Error Number:207,State:1,Class:16"
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'HRToken'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+ClientConnectionId:7564dfa1-29ad-4ac0-9ef1-1834fd9d7e7d
+Error Number:207,State:1,Class:16
+2018-11-05 18:51:28.734 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-05 18:51:30.009 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/bwq/BWQInstructions application/json 1477
+2018-11-05 18:51:30.493 +08:00 [Information] Successfully validated the token.
+2018-11-05 18:51:31.348 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"BWQInstructions\"}". Executing action "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)"
+2018-11-05 18:51:31.411 +08:00 [Information] Authorization was successful.
+2018-11-05 18:51:32.018 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)" with arguments ([""]) - Validation state: Invalid
+2018-11-05 18:51:32.098 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)" in 740.554ms
+2018-11-05 18:51:32.102 +08:00 [Error] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry(List`1 objupd) in C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\Modules\BWQ\BWQInstructionsController.cs:line 226
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__23.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__16.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2018-11-05 18:51:32.608 +08:00 [Information] Request finished in 2584.1596ms 404 
+2018-11-05 18:54:02.736 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-05 18:54:04.896 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-05 18:54:04.896 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/bwq/BWQInstructions application/json 1477
+2018-11-05 18:54:04.896 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-05 18:54:05.205 +08:00 [Information] Request finished in 308.6422ms 200 
+2018-11-05 18:54:05.771 +08:00 [Information] Successfully validated the token.
+2018-11-05 18:54:06.387 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"BWQInstructions\"}". Executing action "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)"
+2018-11-05 18:54:06.387 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-05 18:54:06.456 +08:00 [Information] Authorization was successful.
+2018-11-05 18:54:06.464 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-05 18:54:06.479 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.5038ms.
+2018-11-05 18:54:06.592 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-05 18:54:06.796 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 370.3011ms
+2018-11-05 18:54:06.820 +08:00 [Information] Request finished in 1949.9487ms 200 application/json; charset=utf-8
+2018-11-05 18:54:08.085 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.BWQInstructionsData"]) - Validation state: Valid
+2018-11-05 18:54:32.211 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 18:54:33.187 +08:00 [Information] Executed DbCommand ("91"ms) [Parameters=["@__updateobj_BWQInstructionsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQInstructionsID] = @__updateobj_BWQInstructionsID_0"
+2018-11-05 18:54:40.425 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__targetObject_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[BWQEntitiesID], [u].[BWQID], [u].[CategoryName], [u].[CountryName], [u].[CreatedBy], [u].[DateCreatedUTC], [u].[EntityName], [u].[LastUpdatedUTC], [u].[MMMEntityID], [u].[UpdatedBy], [u].[WorkItemID]
+FROM [BWQEntities] AS [u]
+WHERE [u].[BWQEntitiesID] = @__targetObject_BWQEntitiesID_0"
+2018-11-05 18:54:53.119 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__MMMEntity_MMMEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[RecordLockID], [v].[AppUserID], [v].[CreatedBy], [v].[DateCreatedUTC], [v].[DateTimeItemWasLockedUTC], [v].[IDFromWorkUnitsDBTable], [v].[LastUpdatedUTC], [v].[UpdatedBy], [v].[WorkUnitTypeID]
+FROM [RecordLocks] AS [v]
+WHERE ([v].[WorkUnitTypeID] = 6) AND ([v].[IDFromWorkUnitsDBTable] = @__MMMEntity_MMMEntityID_0)"
+2018-11-05 18:54:58.023 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__MMMEntity_MMMEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[RecordLockID], [v].[AppUserID], [v].[CreatedBy], [v].[DateCreatedUTC], [v].[DateTimeItemWasLockedUTC], [v].[IDFromWorkUnitsDBTable], [v].[LastUpdatedUTC], [v].[UpdatedBy], [v].[WorkUnitTypeID]
+FROM [RecordLocks] AS [v]
+WHERE ([v].[WorkUnitTypeID] = 6) AND ([v].[IDFromWorkUnitsDBTable] = @__MMMEntity_MMMEntityID_0)"
+2018-11-05 18:55:16.112 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__updateobj_BWQInstructionsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQInstructionsID] = @__updateobj_BWQInstructionsID_0"
+2018-11-05 18:55:16.717 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__targetObject_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[BWQEntitiesID], [u].[BWQID], [u].[CategoryName], [u].[CountryName], [u].[CreatedBy], [u].[DateCreatedUTC], [u].[EntityName], [u].[LastUpdatedUTC], [u].[MMMEntityID], [u].[UpdatedBy], [u].[WorkItemID]
+FROM [BWQEntities] AS [u]
+WHERE [u].[BWQEntitiesID] = @__targetObject_BWQEntitiesID_0"
+2018-11-05 18:55:18.152 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__MMMEntity_MMMEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[RecordLockID], [v].[AppUserID], [v].[CreatedBy], [v].[DateCreatedUTC], [v].[DateTimeItemWasLockedUTC], [v].[IDFromWorkUnitsDBTable], [v].[LastUpdatedUTC], [v].[UpdatedBy], [v].[WorkUnitTypeID]
+FROM [RecordLocks] AS [v]
+WHERE ([v].[WorkUnitTypeID] = 6) AND ([v].[IDFromWorkUnitsDBTable] = @__MMMEntity_MMMEntityID_0)"
+2018-11-05 18:57:02.423 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-05 18:57:04.251 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/bwq/BWQInstructions application/json 1477
+2018-11-05 18:57:04.251 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-05 18:57:04.251 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-05 18:57:04.581 +08:00 [Information] Request finished in 336.1768ms 200 
+2018-11-05 18:57:05.178 +08:00 [Information] Successfully validated the token.
+2018-11-05 18:57:05.861 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"BWQInstructions\"}". Executing action "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)"
+2018-11-05 18:57:05.861 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-05 18:57:05.926 +08:00 [Information] Authorization was successful.
+2018-11-05 18:57:05.929 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-05 18:57:05.944 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.5718ms.
+2018-11-05 18:57:06.025 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-05 18:57:06.202 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 294.463ms
+2018-11-05 18:57:06.235 +08:00 [Information] Request finished in 2008.3448ms 200 application/json; charset=utf-8
+2018-11-05 18:57:06.794 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.BWQInstructionsData"]) - Validation state: Valid
+2018-11-05 18:57:13.676 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 18:57:14.582 +08:00 [Information] Executed DbCommand ("93"ms) [Parameters=["@__updateobj_BWQInstructionsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQInstructionsID] = @__updateobj_BWQInstructionsID_0"
+2018-11-05 18:57:16.394 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__targetObject_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[BWQEntitiesID], [u].[BWQID], [u].[CategoryName], [u].[CountryName], [u].[CreatedBy], [u].[DateCreatedUTC], [u].[EntityName], [u].[LastUpdatedUTC], [u].[MMMEntityID], [u].[UpdatedBy], [u].[WorkItemID]
+FROM [BWQEntities] AS [u]
+WHERE [u].[BWQEntitiesID] = @__targetObject_BWQEntitiesID_0"
+2018-11-05 18:57:20.949 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__BWQEntity_MMMEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[RecordLockID], [v].[AppUserID], [v].[CreatedBy], [v].[DateCreatedUTC], [v].[DateTimeItemWasLockedUTC], [v].[IDFromWorkUnitsDBTable], [v].[LastUpdatedUTC], [v].[UpdatedBy], [v].[WorkUnitTypeID]
+FROM [RecordLocks] AS [v]
+WHERE ([v].[WorkUnitTypeID] = 6) AND ([v].[IDFromWorkUnitsDBTable] = @__BWQEntity_MMMEntityID_0)"
+2018-11-05 18:57:34.950 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__updateobj_BWQInstructionsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQInstructionsID] = @__updateobj_BWQInstructionsID_0"
+2018-11-05 18:57:35.637 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__targetObject_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[BWQEntitiesID], [u].[BWQID], [u].[CategoryName], [u].[CountryName], [u].[CreatedBy], [u].[DateCreatedUTC], [u].[EntityName], [u].[LastUpdatedUTC], [u].[MMMEntityID], [u].[UpdatedBy], [u].[WorkItemID]
+FROM [BWQEntities] AS [u]
+WHERE [u].[BWQEntitiesID] = @__targetObject_BWQEntitiesID_0"
+2018-11-05 18:57:38.076 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__BWQEntity_MMMEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[RecordLockID], [v].[AppUserID], [v].[CreatedBy], [v].[DateCreatedUTC], [v].[DateTimeItemWasLockedUTC], [v].[IDFromWorkUnitsDBTable], [v].[LastUpdatedUTC], [v].[UpdatedBy], [v].[WorkUnitTypeID]
+FROM [RecordLocks] AS [v]
+WHERE ([v].[WorkUnitTypeID] = 6) AND ([v].[IDFromWorkUnitsDBTable] = @__BWQEntity_MMMEntityID_0)"
+2018-11-05 18:57:57.600 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 18:58:44.483 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-05 18:58:46.026 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-05 18:58:46.026 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-05 18:58:46.322 +08:00 [Information] Request finished in 299.5917ms 200 
+2018-11-05 18:58:46.997 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/bwq/BWQInstructions application/json 1477
+2018-11-05 18:58:47.429 +08:00 [Information] Successfully validated the token.
+2018-11-05 18:58:47.587 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-05 18:58:47.587 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"BWQInstructions\"}". Executing action "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)"
+2018-11-05 18:58:47.646 +08:00 [Information] Authorization was successful.
+2018-11-05 18:58:47.651 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-05 18:58:47.665 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.4687ms.
+2018-11-05 18:58:47.738 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-05 18:58:47.881 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 283.1844ms
+2018-11-05 18:58:47.971 +08:00 [Information] Request finished in 1969.6837ms 200 application/json; charset=utf-8
+2018-11-05 18:58:48.664 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.BWQInstructionsData"]) - Validation state: Valid
+2018-11-05 18:58:58.439 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 18:58:59.361 +08:00 [Information] Executed DbCommand ("95"ms) [Parameters=["@__updateobj_BWQInstructionsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQInstructionsID] = @__updateobj_BWQInstructionsID_0"
+2018-11-05 18:58:59.558 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__targetObject_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[BWQEntitiesID], [u].[BWQID], [u].[CategoryName], [u].[CountryName], [u].[CreatedBy], [u].[DateCreatedUTC], [u].[EntityName], [u].[LastUpdatedUTC], [u].[MMMEntityID], [u].[UpdatedBy], [u].[WorkItemID]
+FROM [BWQEntities] AS [u]
+WHERE [u].[BWQEntitiesID] = @__targetObject_BWQEntitiesID_0"
+2018-11-05 18:58:59.632 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__BWQEntity_MMMEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[RecordLockID], [v].[AppUserID], [v].[CreatedBy], [v].[DateCreatedUTC], [v].[DateTimeItemWasLockedUTC], [v].[IDFromWorkUnitsDBTable], [v].[LastUpdatedUTC], [v].[UpdatedBy], [v].[WorkUnitTypeID]
+FROM [RecordLocks] AS [v]
+WHERE ([v].[WorkUnitTypeID] = 6) AND ([v].[IDFromWorkUnitsDBTable] = @__BWQEntity_MMMEntityID_0)"
+2018-11-05 18:58:59.699 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__updateobj_BWQInstructionsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQInstructionsID] = @__updateobj_BWQInstructionsID_0"
+2018-11-05 18:58:59.704 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__targetObject_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[BWQEntitiesID], [u].[BWQID], [u].[CategoryName], [u].[CountryName], [u].[CreatedBy], [u].[DateCreatedUTC], [u].[EntityName], [u].[LastUpdatedUTC], [u].[MMMEntityID], [u].[UpdatedBy], [u].[WorkItemID]
+FROM [BWQEntities] AS [u]
+WHERE [u].[BWQEntitiesID] = @__targetObject_BWQEntitiesID_0"
+2018-11-05 18:58:59.706 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__BWQEntity_MMMEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[RecordLockID], [v].[AppUserID], [v].[CreatedBy], [v].[DateCreatedUTC], [v].[DateTimeItemWasLockedUTC], [v].[IDFromWorkUnitsDBTable], [v].[LastUpdatedUTC], [v].[UpdatedBy], [v].[WorkUnitTypeID]
+FROM [RecordLocks] AS [v]
+WHERE ([v].[WorkUnitTypeID] = 6) AND ([v].[IDFromWorkUnitsDBTable] = @__BWQEntity_MMMEntityID_0)"
+2018-11-05 18:59:05.370 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 18:59:25.239 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 36562.3933ms.
+2018-11-05 18:59:25.245 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-05 18:59:25.247 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)" in 37654.2594ms
+2018-11-05 18:59:25.254 +08:00 [Information] Request finished in 38256.3415ms 200 
+2018-11-05 19:15:44.681 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-05 19:15:46.559 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-05 19:15:46.556 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-05 19:15:46.814 +08:00 [Information] Request finished in 266.794ms 200 
+2018-11-05 19:15:47.957 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-05 19:15:48.079 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-05 19:15:48.096 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 5.0698ms.
+2018-11-05 19:15:48.134 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-05 19:15:48.387 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 407.2094ms
+2018-11-05 19:15:48.444 +08:00 [Information] Request finished in 1910.4975ms 200 application/json; charset=utf-8
+2018-11-05 19:18:30.495 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 19:18:30.674 +08:00 [Information] Successfully validated the token.
+2018-11-05 19:18:30.711 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 19:18:30.749 +08:00 [Information] Authorization was successful.
+2018-11-05 19:18:31.406 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 19:18:34.625 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 19:18:39.365 +08:00 [Information] Executed DbCommand ("28"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 19:18:39.492 +08:00 [Information] Executed DbCommand ("13"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-05 19:18:39.610 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 19:18:40.226 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 8812.818ms.
+2018-11-05 19:18:40.229 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 19:18:40.245 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 9533.3282ms
+2018-11-05 19:18:40.269 +08:00 [Information] Request finished in 9773.8459ms 400 application/json; charset=utf-8
+2018-11-05 19:20:41.579 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 19:20:41.579 +08:00 [Information] Successfully validated the token.
+2018-11-05 19:20:41.583 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 19:20:41.585 +08:00 [Information] Authorization was successful.
+2018-11-05 19:20:41.598 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 19:20:48.437 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 19:20:48.464 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 6866.162ms.
+2018-11-05 19:20:48.466 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 19:20:48.469 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 6885.4067ms
+2018-11-05 19:20:48.470 +08:00 [Information] Request finished in 6891.1402ms 400 application/json; charset=utf-8
+2018-11-05 19:20:55.896 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 19:20:55.899 +08:00 [Information] Successfully validated the token.
+2018-11-05 19:20:55.899 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 19:20:55.900 +08:00 [Information] Authorization was successful.
+2018-11-05 19:20:55.901 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 19:20:55.902 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 19:20:55.941 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 19:20:55.945 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-05 19:20:55.948 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 19:20:56.083 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 181.2011ms.
+2018-11-05 19:20:56.083 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 19:20:56.083 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 183.8334ms
+2018-11-05 19:20:56.084 +08:00 [Information] Request finished in 187.7852ms 400 application/json; charset=utf-8
+2018-11-05 19:21:51.206 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 19:21:51.207 +08:00 [Information] Successfully validated the token.
+2018-11-05 19:21:51.207 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 19:21:51.207 +08:00 [Information] Authorization was successful.
+2018-11-05 19:21:51.208 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 19:21:51.209 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 19:21:51.243 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 19:21:51.246 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-05 19:21:51.249 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 19:23:03.038 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 71828.5983ms.
+2018-11-05 19:23:03.038 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 19:23:03.039 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 71831.0951ms
+2018-11-05 19:23:03.041 +08:00 [Information] Request finished in 71837.0894ms 400 application/json; charset=utf-8
+2018-11-05 19:37:35.150 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-05 19:37:37.599 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-05 19:37:37.602 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 19:37:37.599 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-05 19:37:37.987 +08:00 [Information] Request finished in 379.6052ms 200 
+2018-11-05 19:37:38.660 +08:00 [Information] Successfully validated the token.
+2018-11-05 19:37:39.481 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 19:37:39.481 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-05 19:37:39.544 +08:00 [Information] Authorization was successful.
+2018-11-05 19:37:39.551 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-05 19:37:39.565 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.5795ms.
+2018-11-05 19:37:39.643 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-05 19:37:39.792 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 299.8947ms
+2018-11-05 19:37:39.822 +08:00 [Information] Request finished in 2250.2915ms 200 application/json; charset=utf-8
+2018-11-05 19:37:40.640 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 19:37:42.660 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 19:37:44.430 +08:00 [Information] Executed DbCommand ("23"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 19:37:44.579 +08:00 [Information] Executed DbCommand ("26"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-05 19:37:44.740 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 19:37:59.150 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 19:38:00.463 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-05 19:38:00.467 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-05 19:38:00.492 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 19843.7343ms.
+2018-11-05 19:38:00.495 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 19:38:00.510 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 21022.7073ms
+2018-11-05 19:38:00.544 +08:00 [Information] Request finished in 22972.2014ms 200 application/json; charset=utf-8
+2018-11-05 19:40:07.765 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/bwq/BWQInstructions application/json 1477
+2018-11-05 19:40:07.767 +08:00 [Information] Successfully validated the token.
+2018-11-05 19:40:07.771 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"BWQInstructions\"}". Executing action "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)"
+2018-11-05 19:40:07.771 +08:00 [Information] Authorization was successful.
+2018-11-05 19:40:07.858 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.BWQInstructionsData"]) - Validation state: Valid
+2018-11-05 19:40:07.895 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 19:40:07.928 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__updateobj_BWQInstructionsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQInstructionsID] = @__updateobj_BWQInstructionsID_0"
+2018-11-05 19:40:07.951 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__targetObject_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[BWQEntitiesID], [u].[BWQID], [u].[CategoryName], [u].[CountryName], [u].[CreatedBy], [u].[DateCreatedUTC], [u].[EntityName], [u].[LastUpdatedUTC], [u].[MMMEntityID], [u].[UpdatedBy], [u].[WorkItemID]
+FROM [BWQEntities] AS [u]
+WHERE [u].[BWQEntitiesID] = @__targetObject_BWQEntitiesID_0"
+2018-11-05 19:40:07.975 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__BWQEntity_MMMEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[RecordLockID], [v].[AppUserID], [v].[CreatedBy], [v].[DateCreatedUTC], [v].[DateTimeItemWasLockedUTC], [v].[IDFromWorkUnitsDBTable], [v].[LastUpdatedUTC], [v].[UpdatedBy], [v].[WorkUnitTypeID]
+FROM [RecordLocks] AS [v]
+WHERE ([v].[WorkUnitTypeID] = 6) AND ([v].[IDFromWorkUnitsDBTable] = @__BWQEntity_MMMEntityID_0)"
+2018-11-05 19:40:08.009 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__updateobj_BWQInstructionsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQInstructionsID] = @__updateobj_BWQInstructionsID_0"
+2018-11-05 19:40:08.011 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__targetObject_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[BWQEntitiesID], [u].[BWQID], [u].[CategoryName], [u].[CountryName], [u].[CreatedBy], [u].[DateCreatedUTC], [u].[EntityName], [u].[LastUpdatedUTC], [u].[MMMEntityID], [u].[UpdatedBy], [u].[WorkItemID]
+FROM [BWQEntities] AS [u]
+WHERE [u].[BWQEntitiesID] = @__targetObject_BWQEntitiesID_0"
+2018-11-05 19:40:08.012 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__BWQEntity_MMMEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[RecordLockID], [v].[AppUserID], [v].[CreatedBy], [v].[DateCreatedUTC], [v].[DateTimeItemWasLockedUTC], [v].[IDFromWorkUnitsDBTable], [v].[LastUpdatedUTC], [v].[UpdatedBy], [v].[WorkUnitTypeID]
+FROM [RecordLocks] AS [v]
+WHERE ([v].[WorkUnitTypeID] = 6) AND ([v].[IDFromWorkUnitsDBTable] = @__BWQEntity_MMMEntityID_0)"
+2018-11-05 19:40:08.044 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQInstructions] SET [BWQDispositionsID] = @p0, [CreatedBy] = @p1, [DateCreatedUTC] = @p2, [Instructions] = @p3, [LastUpdatedUTC] = @p4, [UpdatedBy] = @p5
+WHERE [BWQInstructionsID] = @p6;
+SELECT @@ROWCOUNT;"
+2018-11-05 19:40:08.045 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQInstructions] SET [BWQDispositionsID] = @p0, [CreatedBy] = @p1, [DateCreatedUTC] = @p2, [Instructions] = @p3, [LastUpdatedUTC] = @p4, [UpdatedBy] = @p5
+WHERE [BWQInstructionsID] = @p6;
+SELECT @@ROWCOUNT;"
+2018-11-05 19:40:08.050 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 19:40:08.213 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 355.0027ms.
+2018-11-05 19:40:08.220 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-05 19:40:08.221 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)" in 449.7149ms
+2018-11-05 19:40:08.221 +08:00 [Information] Request finished in 455.7566ms 200 
+2018-11-05 19:40:16.842 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/bwq/BWQInstructions application/json 1477
+2018-11-05 19:40:16.842 +08:00 [Information] Successfully validated the token.
+2018-11-05 19:40:16.845 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"BWQInstructions\"}". Executing action "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)"
+2018-11-05 19:40:16.845 +08:00 [Information] Authorization was successful.
+2018-11-05 19:40:16.853 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.BWQInstructionsData"]) - Validation state: Valid
+2018-11-05 19:40:16.854 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 19:40:16.859 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__updateobj_BWQInstructionsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQInstructionsID] = @__updateobj_BWQInstructionsID_0"
+2018-11-05 19:40:16.862 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__targetObject_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[BWQEntitiesID], [u].[BWQID], [u].[CategoryName], [u].[CountryName], [u].[CreatedBy], [u].[DateCreatedUTC], [u].[EntityName], [u].[LastUpdatedUTC], [u].[MMMEntityID], [u].[UpdatedBy], [u].[WorkItemID]
+FROM [BWQEntities] AS [u]
+WHERE [u].[BWQEntitiesID] = @__targetObject_BWQEntitiesID_0"
+2018-11-05 19:40:16.866 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__BWQEntity_MMMEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[RecordLockID], [v].[AppUserID], [v].[CreatedBy], [v].[DateCreatedUTC], [v].[DateTimeItemWasLockedUTC], [v].[IDFromWorkUnitsDBTable], [v].[LastUpdatedUTC], [v].[UpdatedBy], [v].[WorkUnitTypeID]
+FROM [RecordLocks] AS [v]
+WHERE ([v].[WorkUnitTypeID] = 6) AND ([v].[IDFromWorkUnitsDBTable] = @__BWQEntity_MMMEntityID_0)"
+2018-11-05 19:40:16.868 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__updateobj_BWQInstructionsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQInstructionsID] = @__updateobj_BWQInstructionsID_0"
+2018-11-05 19:40:16.871 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__targetObject_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[BWQEntitiesID], [u].[BWQID], [u].[CategoryName], [u].[CountryName], [u].[CreatedBy], [u].[DateCreatedUTC], [u].[EntityName], [u].[LastUpdatedUTC], [u].[MMMEntityID], [u].[UpdatedBy], [u].[WorkItemID]
+FROM [BWQEntities] AS [u]
+WHERE [u].[BWQEntitiesID] = @__targetObject_BWQEntitiesID_0"
+2018-11-05 19:40:16.873 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__BWQEntity_MMMEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[RecordLockID], [v].[AppUserID], [v].[CreatedBy], [v].[DateCreatedUTC], [v].[DateTimeItemWasLockedUTC], [v].[IDFromWorkUnitsDBTable], [v].[LastUpdatedUTC], [v].[UpdatedBy], [v].[WorkUnitTypeID]
+FROM [RecordLocks] AS [v]
+WHERE ([v].[WorkUnitTypeID] = 6) AND ([v].[IDFromWorkUnitsDBTable] = @__BWQEntity_MMMEntityID_0)"
+2018-11-05 19:40:16.877 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 19:40:17.044 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 190.9777ms.
+2018-11-05 19:40:17.044 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-05 19:40:17.045 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)" in 199.417ms
+2018-11-05 19:40:17.045 +08:00 [Information] Request finished in 203.3882ms 200 
+2018-11-05 19:42:35.828 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 19:42:35.829 +08:00 [Information] Successfully validated the token.
+2018-11-05 19:42:35.832 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 19:42:35.832 +08:00 [Information] Authorization was successful.
+2018-11-05 19:42:35.833 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 19:42:35.833 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 19:42:35.867 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 19:42:35.869 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-05 19:42:35.873 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 19:42:37.555 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 19:42:45.328 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-05 19:42:45.329 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-05 19:42:45.330 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 9497.5352ms.
+2018-11-05 19:42:45.331 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 19:42:45.331 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 9499.181ms
+2018-11-05 19:42:45.332 +08:00 [Information] Request finished in 9503.3153ms 200 application/json; charset=utf-8
+2018-11-05 19:44:42.004 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/bwq/BWQInstructions application/json 1477
+2018-11-05 19:44:42.006 +08:00 [Information] Successfully validated the token.
+2018-11-05 19:44:42.006 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"BWQInstructions\"}". Executing action "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)"
+2018-11-05 19:44:42.006 +08:00 [Information] Authorization was successful.
+2018-11-05 19:44:42.007 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.BWQInstructionsData"]) - Validation state: Valid
+2018-11-05 19:44:42.008 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 19:44:42.017 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__updateobj_BWQInstructionsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQInstructionsID] = @__updateobj_BWQInstructionsID_0"
+2018-11-05 19:44:42.022 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__targetObject_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[BWQEntitiesID], [u].[BWQID], [u].[CategoryName], [u].[CountryName], [u].[CreatedBy], [u].[DateCreatedUTC], [u].[EntityName], [u].[LastUpdatedUTC], [u].[MMMEntityID], [u].[UpdatedBy], [u].[WorkItemID]
+FROM [BWQEntities] AS [u]
+WHERE [u].[BWQEntitiesID] = @__targetObject_BWQEntitiesID_0"
+2018-11-05 19:44:42.028 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__BWQEntity_MMMEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[RecordLockID], [v].[AppUserID], [v].[CreatedBy], [v].[DateCreatedUTC], [v].[DateTimeItemWasLockedUTC], [v].[IDFromWorkUnitsDBTable], [v].[LastUpdatedUTC], [v].[UpdatedBy], [v].[WorkUnitTypeID]
+FROM [RecordLocks] AS [v]
+WHERE ([v].[WorkUnitTypeID] = 6) AND ([v].[IDFromWorkUnitsDBTable] = @__BWQEntity_MMMEntityID_0)"
+2018-11-05 19:44:42.031 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__updateobj_BWQInstructionsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQInstructionsID] = @__updateobj_BWQInstructionsID_0"
+2018-11-05 19:44:42.033 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__targetObject_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[BWQEntitiesID], [u].[BWQID], [u].[CategoryName], [u].[CountryName], [u].[CreatedBy], [u].[DateCreatedUTC], [u].[EntityName], [u].[LastUpdatedUTC], [u].[MMMEntityID], [u].[UpdatedBy], [u].[WorkItemID]
+FROM [BWQEntities] AS [u]
+WHERE [u].[BWQEntitiesID] = @__targetObject_BWQEntitiesID_0"
+2018-11-05 19:44:42.036 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__BWQEntity_MMMEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[RecordLockID], [v].[AppUserID], [v].[CreatedBy], [v].[DateCreatedUTC], [v].[DateTimeItemWasLockedUTC], [v].[IDFromWorkUnitsDBTable], [v].[LastUpdatedUTC], [v].[UpdatedBy], [v].[WorkUnitTypeID]
+FROM [RecordLocks] AS [v]
+WHERE ([v].[WorkUnitTypeID] = 6) AND ([v].[IDFromWorkUnitsDBTable] = @__BWQEntity_MMMEntityID_0)"
+2018-11-05 19:44:42.048 +08:00 [Information] Executed DbCommand ("10"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQInstructions] SET [BWQDispositionsID] = @p0, [CreatedBy] = @p1, [DateCreatedUTC] = @p2, [Instructions] = @p3, [LastUpdatedUTC] = @p4, [UpdatedBy] = @p5
+WHERE [BWQInstructionsID] = @p6;
+SELECT @@ROWCOUNT;"
+2018-11-05 19:44:42.050 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQInstructions] SET [BWQDispositionsID] = @p0, [CreatedBy] = @p1, [DateCreatedUTC] = @p2, [Instructions] = @p3, [LastUpdatedUTC] = @p4, [UpdatedBy] = @p5
+WHERE [BWQInstructionsID] = @p6;
+SELECT @@ROWCOUNT;"
+2018-11-05 19:44:42.058 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 19:44:42.191 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 183.545ms.
+2018-11-05 19:44:42.191 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-05 19:44:42.192 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQInstructionsController.UpdateEntry (LNWCOE)" in 185.4583ms
+2018-11-05 19:44:42.192 +08:00 [Information] Request finished in 187.8863ms 200 
+2018-11-05 20:17:39.634 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-05 20:17:40.851 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/bwq/BWQEntities/filter application/json 128
+2018-11-05 20:17:41.241 +08:00 [Information] Successfully validated the token.
+2018-11-05 20:17:41.895 +08:00 [Information] Route matched with "{action = \"GenBWQEntities\", controller = \"BWQEntities\"}". Executing action "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)"
+2018-11-05 20:17:41.943 +08:00 [Information] Authorization was successful.
+2018-11-05 20:17:42.676 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)" with arguments (["LNWCOE.Models.BWQEntityFilter"]) - Validation state: Valid
+2018-11-05 20:17:44.117 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 20:17:46.114 +08:00 [Information] Executed DbCommand ("394"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetBWQEntities_sel @countryName=@p0, @categoryName=@p1, @batchName=@p2, @aging=@p3, @appuser=@p4"
+2018-11-05 20:17:46.322 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 3632.004ms.
+2018-11-05 20:17:46.405 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.BWQEntity, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-05 20:17:46.638 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)" in 4733.9529ms
+2018-11-05 20:17:46.660 +08:00 [Information] Request finished in 5832.9274ms 200 application/json; charset=utf-8
+2018-11-05 20:30:08.142 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-05 20:30:09.980 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-05 20:30:09.980 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-05 20:30:10.248 +08:00 [Information] Request finished in 261.0743ms 200 
+2018-11-05 20:30:11.588 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-05 20:30:11.647 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-05 20:30:11.656 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.2218ms.
+2018-11-05 20:30:11.698 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-05 20:30:12.306 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 709.1347ms
+2018-11-05 20:30:12.318 +08:00 [Information] Request finished in 2356.1523ms 200 application/json; charset=utf-8
+2018-11-05 20:31:22.901 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 20:31:23.119 +08:00 [Information] Successfully validated the token.
+2018-11-05 20:31:23.170 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 20:31:23.210 +08:00 [Information] Authorization was successful.
+2018-11-05 20:31:24.052 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 20:31:25.569 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 20:31:58.713 +08:00 [Information] Executed DbCommand ("30"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-05 20:39:24.595 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 20:39:24.624 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-05 20:39:24.654 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 480591.1096ms.
+2018-11-05 20:39:24.670 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 20:39:24.706 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 481533.1287ms
+2018-11-05 20:39:24.762 +08:00 [Information] Request finished in 481860.4688ms 200 application/json; charset=utf-8
+2018-11-05 20:40:26.856 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 20:40:26.858 +08:00 [Information] Successfully validated the token.
+2018-11-05 20:40:26.862 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 20:40:26.863 +08:00 [Information] Authorization was successful.
+2018-11-05 20:40:26.872 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 20:40:26.875 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 20:40:42.356 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 15482.763ms.
+2018-11-05 20:40:42.360 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 20:40:42.361 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 15498.7899ms
+2018-11-05 20:40:42.362 +08:00 [Information] Request finished in 15505.4712ms 400 application/json; charset=utf-8
+2018-11-05 20:42:39.985 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1157
+2018-11-05 20:42:39.986 +08:00 [Information] Successfully validated the token.
+2018-11-05 20:42:39.987 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-05 20:42:39.988 +08:00 [Information] Authorization was successful.
+2018-11-05 20:42:39.989 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-05 20:42:39.991 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 20:42:41.929 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-05 20:42:41.932 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-05 20:42:42.144 +08:00 [Information] Executed DbCommand ("14"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 20:42:48.796 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-05 20:42:51.160 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-05 20:42:51.164 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-05 20:42:51.186 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 11196.2897ms.
+2018-11-05 20:42:51.186 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-05 20:42:51.186 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 11198.6454ms
+2018-11-05 20:42:51.187 +08:00 [Information] Request finished in 11201.2726ms 200 application/json; charset=utf-8
+2018-11-05 20:56:11.557 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/bwq/BWQEntities/filter application/json 122
+2018-11-05 20:56:11.557 +08:00 [Information] Successfully validated the token.
+2018-11-05 20:56:11.615 +08:00 [Information] Route matched with "{action = \"GenBWQEntities\", controller = \"BWQEntities\"}". Executing action "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)"
+2018-11-05 20:56:11.615 +08:00 [Information] Authorization was successful.
+2018-11-05 20:56:11.630 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)" with arguments (["LNWCOE.Models.BWQEntityFilter"]) - Validation state: Valid
+2018-11-05 20:56:11.635 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 20:56:11.757 +08:00 [Information] Executed DbCommand ("32"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetBWQEntities_sel @countryName=@p0, @categoryName=@p1, @batchName=@p2, @aging=@p3, @appuser=@p4"
+2018-11-05 20:56:11.800 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 169.706ms.
+2018-11-05 20:56:11.814 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.BWQEntity, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-05 20:56:11.826 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)" in 210.3855ms
+2018-11-05 20:56:11.831 +08:00 [Information] Request finished in 273.9178ms 200 application/json; charset=utf-8
+2018-11-05 21:19:31.328 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/bwq/BWQEntities/filter application/json 122
+2018-11-05 21:19:31.329 +08:00 [Information] Successfully validated the token.
+2018-11-05 21:19:31.330 +08:00 [Information] Route matched with "{action = \"GenBWQEntities\", controller = \"BWQEntities\"}". Executing action "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)"
+2018-11-05 21:19:31.330 +08:00 [Information] Authorization was successful.
+2018-11-05 21:19:31.334 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)" with arguments (["LNWCOE.Models.BWQEntityFilter"]) - Validation state: Valid
+2018-11-05 21:19:31.336 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 21:19:31.390 +08:00 [Information] Executed DbCommand ("22"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetBWQEntities_sel @countryName=@p0, @categoryName=@p1, @batchName=@p2, @aging=@p3, @appuser=@p4"
+2018-11-05 21:19:31.391 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 55.5204ms.
+2018-11-05 21:19:31.391 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.BWQEntity, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-05 21:19:31.391 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)" in 61.4127ms
+2018-11-05 21:19:31.392 +08:00 [Information] Request finished in 63.2869ms 200 application/json; charset=utf-8
+2018-11-05 21:23:29.270 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/bwq/BWQEntities/filter application/json 122
+2018-11-05 21:23:29.270 +08:00 [Information] Successfully validated the token.
+2018-11-05 21:23:29.271 +08:00 [Information] Route matched with "{action = \"GenBWQEntities\", controller = \"BWQEntities\"}". Executing action "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)"
+2018-11-05 21:23:29.271 +08:00 [Information] Authorization was successful.
+2018-11-05 21:23:29.273 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)" with arguments (["LNWCOE.Models.BWQEntityFilter"]) - Validation state: Valid
+2018-11-05 21:23:29.273 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-05 21:23:29.312 +08:00 [Information] Executed DbCommand ("37"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetBWQEntities_sel @countryName=@p0, @categoryName=@p1, @batchName=@p2, @aging=@p3, @appuser=@p4"
+2018-11-05 21:23:29.312 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 39.4019ms.
+2018-11-05 21:23:29.312 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.BWQEntity, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-05 21:23:29.313 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQEntitiesController.GenBWQEntities (LNWCOE)" in 41.6853ms
+2018-11-05 21:23:29.313 +08:00 [Information] Request finished in 43.5125ms 200 application/json; charset=utf-8

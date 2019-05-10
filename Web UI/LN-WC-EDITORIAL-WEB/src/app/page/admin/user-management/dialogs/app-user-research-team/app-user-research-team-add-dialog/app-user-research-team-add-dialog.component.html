@@ -1,0 +1,50 @@
+<p-dialog *ngIf="selectedAppUser" [(visible)]="display" [modal]="true" [responsive]="true" [width]="550" [baseZIndex]="10000" [closable]="false">
+  <p-header>
+      <i class="fas fa-plus"></i>
+      Add User Research Team
+  </p-header>
+  <form (ngSubmit)="onSave()" >
+      <div class="ui-fluid">
+          <div class="container">
+            <br>
+            <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible" role="alert">
+                {{ errorMessage }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onCloseMessage()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="form-group">
+                <label for="appUser">User Lead</label>
+                <p-dropdown name="leadUser" [autoWidth]="false" [options]="appUsers"placeholder="Select user lead" optionLabel="appUserName" [(ngModel)]="appUserResearchTeam.leadUser"></p-dropdown>
+            </div>
+            <div class="form-group">
+                <label for="languageType">Language Type</label>
+                <p-dropdown name="languageType" [autoWidth]="false" [options]="languageTypes"placeholder="Select language type" optionLabel="languageTypeName" [(ngModel)]="appUserResearchTeam.languageType"></p-dropdown>
+            </div>
+            <div class="form-group">
+                <label for="workUnitType">Work Unit Type</label>
+                <p-dropdown name="workUnitType" [autoWidth]="false" [options]="workUnitTypes"placeholder="Select work unit type" optionLabel="workUnitTypeName" [(ngModel)]="appUserResearchTeam.workUnitType"></p-dropdown>
+            </div>
+            <div class="form-group">
+              <label for="team">Team</label>
+              <p-dropdown name="team" [autoWidth]="false" [options]="teams"placeholder="Select Team" optionLabel="teamName" [(ngModel)]="appUserResearchTeam.team"></p-dropdown>
+          </div>
+          <div class="form-group">
+              <label for="office">Office</label>
+              <p-dropdown name="office" [autoWidth]="false" [options]="offices"placeholder="Select office" optionLabel="officeName" [(ngModel)]="appUserResearchTeam.office"></p-dropdown>
+          </div>
+          <div class="form-group">
+              <label for="country">Country</label>
+              <p-dropdown name="country" [autoWidth]="false" [options]="countries"placeholder="Select country" optionLabel="countryName" [(ngModel)]="appUserResearchTeam.country"></p-dropdown>
+          </div>
+          </div>
+      </div>
+        <hr>
+        <div class="text-right">
+          <button type="submit" pButton label="Submit" class="btn-space"></button>
+          <button type="button" pButton (click)="onClose()"label="Cancel" class="ui-button-secondary"></button>
+        </div>
+    </form>
+</p-dialog>
+

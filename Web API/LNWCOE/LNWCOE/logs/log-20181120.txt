@@ -1,0 +1,277 @@
+2018-11-20 14:56:41.383 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-20 14:56:44.071 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-20 14:56:44.071 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-20 14:56:44.338 +08:00 [Information] Request finished in 266.064ms 200 
+2018-11-20 14:56:47.099 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-20 14:56:47.164 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-20 14:56:47.174 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.6358ms.
+2018-11-20 14:56:47.213 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-20 14:56:47.404 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 296.7737ms
+2018-11-20 14:56:47.421 +08:00 [Information] Request finished in 3368.4261ms 200 application/json; charset=utf-8
+2018-11-20 14:56:56.065 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-11-20 14:56:56.134 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-11-20 14:56:57.229 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-11-20 14:56:58.603 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-20 14:57:00.205 +08:00 [Information] Executed DbCommand ("142"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-11-20 14:57:00.815 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-11-20 14:57:01.198 +08:00 [Information] Executed DbCommand ("50"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-11-20 14:57:01.233 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobs/nav  
+2018-11-20 14:57:01.295 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 4059.6476ms.
+2018-11-20 14:57:01.300 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType8`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-20 14:57:01.327 +08:00 [Information] Successfully validated the token.
+2018-11-20 14:57:01.334 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 5199.2993ms
+2018-11-20 14:57:01.351 +08:00 [Information] Route matched with "{action = \"GetAlertsNavigation\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)"
+2018-11-20 14:57:01.351 +08:00 [Information] Request finished in 5285.8787ms 200 application/json; charset=utf-8
+2018-11-20 14:57:01.428 +08:00 [Information] Authorization was successful.
+2018-11-20 14:57:01.431 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)" - Validation state: Valid
+2018-11-20 14:57:01.450 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-20 14:57:01.461 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 29.8872ms.
+2018-11-20 14:57:01.483 +08:00 [Information] Executing JsonResult, writing value of type '"Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType2`2[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-20 14:57:01.686 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new AlertJobsNav() {AlertJobsID = [navdata].AlertJobsID, CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, JobName = [navdata].JobName})"' could not be translated and will be evaluated locally.
+2018-11-20 14:57:01.698 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new AlertJobsNav() {AlertJobsID = [navdata].AlertJobsID, CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, JobName = [navdata].JobName})"' could not be translated and will be evaluated locally.
+2018-11-20 14:57:01.703 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 14:57:01.711 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType3`2(CountryName = [bycountry].CountryName, CountryID = [bycountry].CountryID), [bycountry])"' could not be translated and will be evaluated locally.
+2018-11-20 14:57:01.712 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType3`2(CountryName = [bycountry].CountryName, CountryID = [bycountry].CountryID), [bycountry])"' could not be translated and will be evaluated locally.
+2018-11-20 14:57:01.713 +08:00 [Warning] The LINQ expression '"orderby [SubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 14:57:01.715 +08:00 [Warning] The LINQ expression '"GroupBy([subg].JobName, [subg])"' could not be translated and will be evaluated locally.
+2018-11-20 14:57:01.716 +08:00 [Warning] The LINQ expression '"GroupBy([subg].JobName, [subg])"' could not be translated and will be evaluated locally.
+2018-11-20 14:57:01.716 +08:00 [Warning] The LINQ expression '"orderby [SubSubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 14:57:01.778 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_ALERTGetNavigation_sel @p0"
+2018-11-20 14:57:01.822 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)" in 471.5555ms
+2018-11-20 14:57:01.823 +08:00 [Information] Request finished in 590.11ms 200 application/json; charset=utf-8
+2018-11-20 14:58:58.294 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-20 14:58:59.833 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-20 14:58:59.833 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-20 14:58:59.833 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobs/nav  
+2018-11-20 14:59:00.238 +08:00 [Information] Request finished in 333.2079ms 200 
+2018-11-20 14:59:00.771 +08:00 [Information] Successfully validated the token.
+2018-11-20 14:59:01.382 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-20 14:59:01.382 +08:00 [Information] Route matched with "{action = \"GetAlertsNavigation\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)"
+2018-11-20 14:59:01.450 +08:00 [Information] Authorization was successful.
+2018-11-20 14:59:01.459 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-20 14:59:01.475 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.5179ms.
+2018-11-20 14:59:01.546 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-20 14:59:01.672 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 279.547ms
+2018-11-20 14:59:01.692 +08:00 [Information] Request finished in 1885.7401ms 200 application/json; charset=utf-8
+2018-11-20 14:59:01.935 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)" - Validation state: Valid
+2018-11-20 14:59:03.478 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-20 14:59:03.500 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 1564.0446ms.
+2018-11-20 14:59:03.526 +08:00 [Information] Executing JsonResult, writing value of type '"Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType2`2[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType2`2[[<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-20 14:59:04.092 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new AlertJobsNav() {AlertJobsID = [navdata].AlertJobsID, CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, JobName = [navdata].JobName})"' could not be translated and will be evaluated locally.
+2018-11-20 14:59:04.107 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new AlertJobsNav() {AlertJobsID = [navdata].AlertJobsID, CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, JobName = [navdata].JobName})"' could not be translated and will be evaluated locally.
+2018-11-20 14:59:04.111 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 14:59:04.117 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType3`2(CountryName = [bycountry].CountryName, CountryID = [bycountry].CountryID), [bycountry])"' could not be translated and will be evaluated locally.
+2018-11-20 14:59:04.118 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType3`2(CountryName = [bycountry].CountryName, CountryID = [bycountry].CountryID), [bycountry])"' could not be translated and will be evaluated locally.
+2018-11-20 14:59:04.118 +08:00 [Warning] The LINQ expression '"orderby [SubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 14:59:04.119 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType4`2(JobName = [subg].JobName, AlertJobsID = [subg].AlertJobsID), [subg])"' could not be translated and will be evaluated locally.
+2018-11-20 14:59:04.119 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType4`2(JobName = [subg].JobName, AlertJobsID = [subg].AlertJobsID), [subg])"' could not be translated and will be evaluated locally.
+2018-11-20 14:59:04.119 +08:00 [Warning] The LINQ expression '"orderby [SubSubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 14:59:04.571 +08:00 [Information] Executed DbCommand ("109"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_ALERTGetNavigation_sel @p0"
+2018-11-20 14:59:04.703 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)" in 3315.7379ms
+2018-11-20 14:59:04.713 +08:00 [Information] Request finished in 4905.9736ms 200 application/json; charset=utf-8
+2018-11-20 15:00:54.573 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-20 15:00:55.946 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobs/nav  
+2018-11-20 15:00:55.946 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-20 15:00:55.946 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-20 15:00:56.212 +08:00 [Information] Request finished in 251.6146ms 200 
+2018-11-20 15:00:56.626 +08:00 [Information] Successfully validated the token.
+2018-11-20 15:00:57.209 +08:00 [Information] Route matched with "{action = \"GetAlertsNavigation\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)"
+2018-11-20 15:00:57.209 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-20 15:00:57.924 +08:00 [Information] Authorization was successful.
+2018-11-20 15:00:57.933 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-20 15:00:57.952 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.5606ms.
+2018-11-20 15:00:58.043 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-20 15:00:58.157 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 296.5786ms
+2018-11-20 15:00:58.178 +08:00 [Information] Request finished in 2250.696ms 200 application/json; charset=utf-8
+2018-11-20 15:00:58.422 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)" - Validation state: Valid
+2018-11-20 15:00:59.720 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-20 15:00:59.736 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 1313.9471ms.
+2018-11-20 15:00:59.754 +08:00 [Information] Executing JsonResult, writing value of type '"Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType2`2[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType2`2[[<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[<>f__AnonymousType5`2[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-20 15:01:00.287 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new AlertJobsNav() {AlertJobsID = [navdata].AlertJobsID, CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, JobName = [navdata].JobName})"' could not be translated and will be evaluated locally.
+2018-11-20 15:01:00.305 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new AlertJobsNav() {AlertJobsID = [navdata].AlertJobsID, CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, JobName = [navdata].JobName})"' could not be translated and will be evaluated locally.
+2018-11-20 15:01:00.310 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 15:01:00.319 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType3`2(CountryName = [bycountry].CountryName, CountryID = [bycountry].CountryID), [bycountry])"' could not be translated and will be evaluated locally.
+2018-11-20 15:01:00.321 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType3`2(CountryName = [bycountry].CountryName, CountryID = [bycountry].CountryID), [bycountry])"' could not be translated and will be evaluated locally.
+2018-11-20 15:01:00.322 +08:00 [Warning] The LINQ expression '"orderby [SubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 15:01:00.323 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType4`2(JobName = [subg].JobName, AlertJobsID = [subg].AlertJobsID), [subg])"' could not be translated and will be evaluated locally.
+2018-11-20 15:01:00.324 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType4`2(JobName = [subg].JobName, AlertJobsID = [subg].AlertJobsID), [subg])"' could not be translated and will be evaluated locally.
+2018-11-20 15:01:00.325 +08:00 [Warning] The LINQ expression '"orderby [SubSubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 15:01:00.788 +08:00 [Information] Executed DbCommand ("112"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_ALERTGetNavigation_sel @p0"
+2018-11-20 15:01:00.898 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)" in 3041.2804ms
+2018-11-20 15:01:00.907 +08:00 [Information] Request finished in 4979.8391ms 200 application/json; charset=utf-8
+2018-11-20 15:01:52.953 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/AlertJobs/filter application/json 95
+2018-11-20 15:01:52.966 +08:00 [Information] Successfully validated the token.
+2018-11-20 15:01:53.007 +08:00 [Information] Route matched with "{action = \"GetAlertsNavigationFilter\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)"
+2018-11-20 15:01:53.010 +08:00 [Information] Authorization was successful.
+2018-11-20 15:01:53.237 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)" with arguments (["LNWCOE.Models.ALERTS.AlertJobFilter"]) - Validation state: Valid
+2018-11-20 15:01:53.255 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-20 15:01:53.375 +08:00 [Information] Executed DbCommand ("85"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetJobAlertsForQueue_By_Recipient_Job @RecipientID=@p0, @JobID=@p1, @CountryID=@p2, @NameID=@p3, @EmailKey=@p4"
+2018-11-20 15:01:53.442 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 195.3048ms.
+2018-11-20 15:01:53.443 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.ALERTS.AlertJobData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-20 15:01:53.465 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)" in 457.3107ms
+2018-11-20 15:01:53.466 +08:00 [Information] Request finished in 513.5601ms 200 application/json; charset=utf-8
+2018-11-20 15:01:59.674 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/AlertJobs/filter application/json 95
+2018-11-20 15:01:59.681 +08:00 [Information] Successfully validated the token.
+2018-11-20 15:01:59.687 +08:00 [Information] Route matched with "{action = \"GetAlertsNavigationFilter\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)"
+2018-11-20 15:01:59.687 +08:00 [Information] Authorization was successful.
+2018-11-20 15:01:59.698 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)" with arguments (["LNWCOE.Models.ALERTS.AlertJobFilter"]) - Validation state: Valid
+2018-11-20 15:01:59.699 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-20 15:01:59.988 +08:00 [Information] Executed DbCommand ("272"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetJobAlertsForQueue_By_Recipient_Job @RecipientID=@p0, @JobID=@p1, @CountryID=@p2, @NameID=@p3, @EmailKey=@p4"
+2018-11-20 15:01:59.988 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 289.5867ms.
+2018-11-20 15:01:59.988 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.ALERTS.AlertJobData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-20 15:01:59.989 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)" in 301.7681ms
+2018-11-20 15:01:59.989 +08:00 [Information] Request finished in 314.8146ms 200 application/json; charset=utf-8
+2018-11-20 15:02:04.568 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/AlertJobs/filter application/json 95
+2018-11-20 15:02:04.568 +08:00 [Information] Successfully validated the token.
+2018-11-20 15:02:04.569 +08:00 [Information] Route matched with "{action = \"GetAlertsNavigationFilter\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)"
+2018-11-20 15:02:04.569 +08:00 [Information] Authorization was successful.
+2018-11-20 15:02:04.570 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)" with arguments (["LNWCOE.Models.ALERTS.AlertJobFilter"]) - Validation state: Valid
+2018-11-20 15:02:04.570 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-20 15:02:04.598 +08:00 [Information] Executed DbCommand ("27"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetJobAlertsForQueue_By_Recipient_Job @RecipientID=@p0, @JobID=@p1, @CountryID=@p2, @NameID=@p3, @EmailKey=@p4"
+2018-11-20 15:02:04.598 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 28.3958ms.
+2018-11-20 15:02:04.598 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.ALERTS.AlertJobData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-20 15:02:04.599 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)" in 29.8678ms
+2018-11-20 15:02:04.599 +08:00 [Information] Request finished in 31.3659ms 200 application/json; charset=utf-8
+2018-11-20 15:05:52.553 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-20 15:05:54.030 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-20 15:05:54.030 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-20 15:05:54.264 +08:00 [Information] Request finished in 250.1643ms 200 
+2018-11-20 15:05:55.135 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobs/nav  
+2018-11-20 15:05:55.447 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-20 15:05:55.464 +08:00 [Information] Successfully validated the token.
+2018-11-20 15:05:55.483 +08:00 [Information] Route matched with "{action = \"GetAlertsNavigation\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)"
+2018-11-20 15:05:55.525 +08:00 [Information] Authorization was successful.
+2018-11-20 15:05:55.523 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-20 15:05:55.535 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.0111ms.
+2018-11-20 15:05:55.606 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-20 15:05:56.127 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 671.2198ms
+2018-11-20 15:05:56.149 +08:00 [Information] Request finished in 2153.7632ms 200 application/json; charset=utf-8
+2018-11-20 15:05:56.329 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)" - Validation state: Valid
+2018-11-20 15:05:57.729 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-20 15:05:57.747 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 1418.4516ms.
+2018-11-20 15:05:57.772 +08:00 [Information] Executing JsonResult, writing value of type '"Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType2`2[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType2`2[[<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[<>f__AnonymousType5`2[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-20 15:05:58.317 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new AlertJobsNav() {AlertJobsID = [navdata].AlertJobsID, CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, JobName = [navdata].JobName})"' could not be translated and will be evaluated locally.
+2018-11-20 15:05:58.330 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new AlertJobsNav() {AlertJobsID = [navdata].AlertJobsID, CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, JobName = [navdata].JobName})"' could not be translated and will be evaluated locally.
+2018-11-20 15:05:58.335 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 15:05:58.342 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType3`2(CountryName = [bycountry].CountryName, CountryID = [bycountry].CountryID), [bycountry])"' could not be translated and will be evaluated locally.
+2018-11-20 15:05:58.342 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType3`2(CountryName = [bycountry].CountryName, CountryID = [bycountry].CountryID), [bycountry])"' could not be translated and will be evaluated locally.
+2018-11-20 15:05:58.343 +08:00 [Warning] The LINQ expression '"orderby [SubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 15:05:58.343 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType4`2(JobName = [subg].JobName, AlertJobsID = [subg].AlertJobsID), [subg])"' could not be translated and will be evaluated locally.
+2018-11-20 15:05:58.344 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType4`2(JobName = [subg].JobName, AlertJobsID = [subg].AlertJobsID), [subg])"' could not be translated and will be evaluated locally.
+2018-11-20 15:05:58.345 +08:00 [Warning] The LINQ expression '"orderby [SubSubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 15:05:58.806 +08:00 [Information] Executed DbCommand ("101"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_ALERTGetNavigation_sel @p0"
+2018-11-20 15:05:58.916 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)" in 3432.4471ms
+2018-11-20 15:05:58.931 +08:00 [Information] Request finished in 3795.2421ms 200 application/json; charset=utf-8
+2018-11-20 15:07:28.777 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-20 15:07:30.167 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-20 15:07:30.167 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-20 15:07:30.409 +08:00 [Information] Request finished in 228.989ms 200 
+2018-11-20 15:07:31.389 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-20 15:07:31.459 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-20 15:07:31.470 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.752ms.
+2018-11-20 15:07:31.508 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-20 15:07:31.712 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 311.9228ms
+2018-11-20 15:07:31.741 +08:00 [Information] Request finished in 1591.4687ms 200 application/json; charset=utf-8
+2018-11-20 15:07:32.889 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobs/nav  
+2018-11-20 15:07:33.046 +08:00 [Information] Successfully validated the token.
+2018-11-20 15:07:33.059 +08:00 [Information] Route matched with "{action = \"GetAlertsNavigation\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)"
+2018-11-20 15:07:33.091 +08:00 [Information] Authorization was successful.
+2018-11-20 15:07:33.398 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)" - Validation state: Valid
+2018-11-20 15:07:34.693 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-20 15:07:34.710 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 1311.9477ms.
+2018-11-20 15:07:34.730 +08:00 [Information] Executing JsonResult, writing value of type '"Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType2`2[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType2`2[[<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[<>f__AnonymousType5`4[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-20 15:07:35.226 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new AlertJobsNav() {AlertJobsID = [navdata].AlertJobsID, CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, JobName = [navdata].JobName})"' could not be translated and will be evaluated locally.
+2018-11-20 15:07:35.239 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new AlertJobsNav() {AlertJobsID = [navdata].AlertJobsID, CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, JobName = [navdata].JobName})"' could not be translated and will be evaluated locally.
+2018-11-20 15:07:35.243 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 15:07:35.250 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType3`2(CountryName = [bycountry].CountryName, CountryID = [bycountry].CountryID), [bycountry])"' could not be translated and will be evaluated locally.
+2018-11-20 15:07:35.250 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType3`2(CountryName = [bycountry].CountryName, CountryID = [bycountry].CountryID), [bycountry])"' could not be translated and will be evaluated locally.
+2018-11-20 15:07:35.250 +08:00 [Warning] The LINQ expression '"orderby [SubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 15:07:35.251 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType4`2(JobName = [subg].JobName, AlertJobsID = [subg].AlertJobsID), [subg])"' could not be translated and will be evaluated locally.
+2018-11-20 15:07:35.252 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType4`2(JobName = [subg].JobName, AlertJobsID = [subg].AlertJobsID), [subg])"' could not be translated and will be evaluated locally.
+2018-11-20 15:07:35.252 +08:00 [Warning] The LINQ expression '"orderby [SubSubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 15:07:35.706 +08:00 [Information] Executed DbCommand ("98"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_ALERTGetNavigation_sel @p0"
+2018-11-20 15:07:35.819 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)" in 2759.9492ms
+2018-11-20 15:07:35.833 +08:00 [Information] Request finished in 2943.4836ms 200 application/json; charset=utf-8
+2018-11-20 15:09:15.231 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-20 15:09:16.536 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobs/nav  
+2018-11-20 15:09:16.536 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-20 15:09:16.536 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-20 15:09:16.771 +08:00 [Information] Request finished in 231.7524ms 200 
+2018-11-20 15:09:17.212 +08:00 [Information] Successfully validated the token.
+2018-11-20 15:09:17.703 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-20 15:09:17.703 +08:00 [Information] Route matched with "{action = \"GetAlertsNavigation\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)"
+2018-11-20 15:09:17.758 +08:00 [Information] Authorization was successful.
+2018-11-20 15:09:17.765 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-20 15:09:17.779 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.0178ms.
+2018-11-20 15:09:17.851 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-20 15:09:17.981 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 268.2613ms
+2018-11-20 15:09:18.006 +08:00 [Information] Request finished in 1489.1429ms 200 application/json; charset=utf-8
+2018-11-20 15:09:18.221 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)" - Validation state: Valid
+2018-11-20 15:09:19.471 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-20 15:09:19.486 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 1264.6986ms.
+2018-11-20 15:09:19.513 +08:00 [Information] Executing JsonResult, writing value of type '"Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType6`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-20 15:09:20.006 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new AlertJobsNav() {AlertJobsID = [navdata].AlertJobsID, CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, JobName = [navdata].JobName})"' could not be translated and will be evaluated locally.
+2018-11-20 15:09:20.021 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new AlertJobsNav() {AlertJobsID = [navdata].AlertJobsID, CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, JobName = [navdata].JobName})"' could not be translated and will be evaluated locally.
+2018-11-20 15:09:20.026 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 15:09:20.033 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType3`2(CountryName = [bycountry].CountryName, CountryID = [bycountry].CountryID), [bycountry])"' could not be translated and will be evaluated locally.
+2018-11-20 15:09:20.034 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType3`2(CountryName = [bycountry].CountryName, CountryID = [bycountry].CountryID), [bycountry])"' could not be translated and will be evaluated locally.
+2018-11-20 15:09:20.034 +08:00 [Warning] The LINQ expression '"orderby [SubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 15:09:20.035 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType5`2(JobName = [subg].JobName, AlertJobsID = [subg].AlertJobsID), [subg])"' could not be translated and will be evaluated locally.
+2018-11-20 15:09:20.035 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType5`2(JobName = [subg].JobName, AlertJobsID = [subg].AlertJobsID), [subg])"' could not be translated and will be evaluated locally.
+2018-11-20 15:09:20.036 +08:00 [Warning] The LINQ expression '"orderby [SubSubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-20 15:09:20.570 +08:00 [Information] Executed DbCommand ("105"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_ALERTGetNavigation_sel @p0"
+2018-11-20 15:09:20.679 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigation (LNWCOE)" in 2971.6685ms
+2018-11-20 15:09:20.691 +08:00 [Information] Request finished in 4174.233ms 200 application/json; charset=utf-8
+2018-11-20 15:10:13.141 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-20 15:10:14.285 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/AlertJobs/filter application/json 95
+2018-11-20 15:10:14.737 +08:00 [Information] Successfully validated the token.
+2018-11-20 15:10:15.607 +08:00 [Information] Route matched with "{action = \"GetAlertsNavigationFilter\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)"
+2018-11-20 15:10:15.672 +08:00 [Information] Authorization was successful.
+2018-11-20 15:10:16.398 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)" with arguments (["LNWCOE.Models.ALERTS.AlertJobFilter"]) - Validation state: Valid
+2018-11-20 15:10:17.748 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-20 15:10:18.753 +08:00 [Information] Executed DbCommand ("196"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetJobAlertsForQueue_By_Recipient_Job @RecipientID=@p0, @JobID=@p1, @CountryID=@p2, @NameID=@p3, @EmailKey=@p4"
+2018-11-20 15:10:18.921 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 2505.0939ms.
+2018-11-20 15:10:18.969 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.ALERTS.AlertJobData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-20 15:10:19.118 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.GetAlertsNavigationFilter (LNWCOE)" in 3499.9964ms
+2018-11-20 15:10:19.181 +08:00 [Information] Request finished in 4915.4792ms 200 application/json; charset=utf-8
+2018-11-20 17:33:38.944 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-20 17:33:40.202 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/usermap  
+2018-11-20 17:33:40.591 +08:00 [Information] Successfully validated the token.
+2018-11-20 17:33:41.179 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"HrUserMap\"}". Executing action "LNWCOE.Helpers.Admin.HrUserMapController.Get (LNWCOE)"
+2018-11-20 17:33:41.228 +08:00 [Information] Authorization was successful.
+2018-11-20 17:33:41.535 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.HrUserMapController.Get (LNWCOE)" - Validation state: Valid
+2018-11-20 17:33:42.997 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-20 17:33:43.635 +08:00 [Information] Executed DbCommand ("52"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [h].[HREditorialUserMapID], [h].[AppUserID], [h].[CreatedBy], [h].[DateCreatedUTC], [h].[HumanReviewUserID], [h].[LastUpdatedUTC], [h].[UpdatedBy]
+FROM [HREditorialUserMap] AS [h]"
+2018-11-20 17:33:43.835 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.HrUserMapController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2292.8543ms.
+2018-11-20 17:33:43.880 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.Admin.HREditorialUserMap, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-20 17:33:44.050 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.HrUserMapController.Get (LNWCOE)" in 2862.9608ms
+2018-11-20 17:33:44.095 +08:00 [Information] Request finished in 3894.2727ms 200 application/json; charset=utf-8
+2018-11-20 19:00:28.994 +08:00 [Information] Request starting HTTP/1.1 POST http://127.0.0.1:12012/iisintegration  0
+2018-11-20 19:00:29.007 +08:00 [Information] Request finished in 14.7709ms 202 

@@ -1,0 +1,17 @@
+C:\Users\AManda.SPI-GLOBAL\Documents\Repository\Repository\bin\Debug\netcoreapp2.1\Repository.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\Repository\Repository\bin\Debug\netcoreapp2.1\Repository.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\Repository\Repository\obj\Debug\netcoreapp2.1\Repository.csprojAssemblyReference.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\Repository\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\Repository\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\Repository\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\Repository\Repository\bin\Debug\netcoreapp2.1\Repository.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\Repository\Repository\obj\Debug\netcoreapp2.1\Repository.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\Repository\Repository\obj\Debug\netcoreapp2.1\Repository.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\bin\Debug\netcoreapp2.1\Repository.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\bin\Debug\netcoreapp2.1\Repository.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\bin\Debug\netcoreapp2.1\Repository.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.1\Repository.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.1\Repository.pdb

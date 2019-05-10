@@ -1,0 +1,500 @@
+2018-12-13 15:22:04.050 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-13 15:22:08.420 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-13 15:22:08.420 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/SSO  
+2018-12-13 15:22:08.420 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-13 15:22:10.942 +08:00 [Information] Request finished in 2533.082ms 200 
+2018-12-13 15:22:12.409 +08:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '12/12/2018 15:11:29', Current time: '12/13/2018 07:22:12'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2018-12-13 15:22:13.680 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-13 15:22:14.300 +08:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '12/12/2018 15:11:29', Current time: '12/13/2018 07:22:12'."
+2018-12-13 15:22:14.307 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"SSO\"}". Executing action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)"
+2018-12-13 15:22:27.364 +08:00 [Information] Executing action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:22:27.364 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:22:40.130 +08:00 [Information] Executed action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 12130.0294ms.
+2018-12-13 15:22:40.174 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4006.8551ms.
+2018-12-13 15:22:40.240 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-13 15:22:40.244 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Helpers.Common+SSOData"'.
+2018-12-13 15:22:40.572 +08:00 [Information] Executed action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" in 26242.8306ms
+2018-12-13 15:22:40.572 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 26268.382ms
+2018-12-13 15:22:41.730 +08:00 [Information] Request finished in 33332.9833ms 200 application/json; charset=utf-8
+2018-12-13 15:22:41.730 +08:00 [Information] Request finished in 33333.5968ms 200 application/json; charset=utf-8
+2018-12-13 15:22:42.880 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/favicon.ico  
+2018-12-13 15:22:42.891 +08:00 [Information] Request finished in 10.3158ms 404 
+2018-12-13 15:26:22.135 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-13 15:26:26.584 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-13 15:26:26.584 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-13 15:26:27.987 +08:00 [Information] Request finished in 1413.4048ms 404 
+2018-12-13 15:26:28.050 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-13 15:26:28.115 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:26:28.136 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 8.7067ms.
+2018-12-13 15:26:28.181 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-13 15:26:28.404 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 348.0189ms
+2018-12-13 15:26:28.409 +08:00 [Information] Request finished in 1845.1002ms 200 application/json; charset=utf-8
+2018-12-13 15:27:49.952 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-13 15:27:52.818 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-13 15:27:52.818 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-13 15:27:53.194 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/SSO  
+2018-12-13 15:27:53.654 +08:00 [Information] Request finished in 824.809ms 200 
+2018-12-13 15:27:54.885 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-13 15:27:55.281 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:27:55.303 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 7.4876ms.
+2018-12-13 15:27:55.375 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-13 15:27:55.632 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 434.8203ms
+2018-12-13 15:27:55.666 +08:00 [Information] Request finished in 2880.9125ms 200 application/json; charset=utf-8
+2018-12-13 15:27:56.352 +08:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '12/12/2018 15:11:29', Current time: '12/13/2018 07:27:56'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2018-12-13 15:27:57.390 +08:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '12/12/2018 15:11:29', Current time: '12/13/2018 07:27:56'."
+2018-12-13 15:27:57.396 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"SSO\"}". Executing action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)"
+2018-12-13 15:27:57.500 +08:00 [Information] Authorization failed.
+2018-12-13 15:27:57.507 +08:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-12-13 15:27:57.523 +08:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-12-13 15:27:57.597 +08:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-12-13 15:27:57.598 +08:00 [Information] Executed action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" in 201.6541ms
+2018-12-13 15:27:57.601 +08:00 [Information] Request finished in 4407.1328ms 401 
+2018-12-13 15:27:59.838 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-12-13 15:28:00.000 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-12-13 15:28:01.062 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-12-13 15:28:05.092 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 15:28:07.412 +08:00 [Information] Executed DbCommand ("160"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-12-13 15:28:08.045 +08:00 [Information] Executed DbCommand ("9"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-13 15:28:14.339 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-13 15:28:14.920 +08:00 [Information] Executed DbCommand ("61"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-12-13 15:28:14.964 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 11457.901ms.
+2018-12-13 15:28:14.967 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType11`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 15:28:14.986 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 14985.2681ms
+2018-12-13 15:28:14.991 +08:00 [Information] Request finished in 15152.1311ms 200 application/json; charset=utf-8
+2018-12-13 15:28:21.464 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/SSO  
+2018-12-13 15:28:21.494 +08:00 [Information] Successfully validated the token.
+2018-12-13 15:28:21.507 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"SSO\"}". Executing action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)"
+2018-12-13 15:28:21.510 +08:00 [Information] Authorization was successful.
+2018-12-13 15:28:21.510 +08:00 [Information] Executing action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:31:13.825 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-13 15:31:17.106 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-13 15:31:17.106 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-13 15:31:17.106 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/SSO  
+2018-12-13 15:31:17.438 +08:00 [Information] Request finished in 348.4321ms 200 
+2018-12-13 15:31:18.112 +08:00 [Information] Successfully validated the token.
+2018-12-13 15:31:19.502 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-13 15:31:19.502 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"SSO\"}". Executing action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)"
+2018-12-13 15:31:19.569 +08:00 [Information] Authorization was successful.
+2018-12-13 15:31:19.587 +08:00 [Information] Executing action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:31:19.586 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:31:32.444 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 7237.4115ms.
+2018-12-13 15:34:53.202 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-13 15:34:54.717 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-13 15:34:54.717 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-13 15:34:54.954 +08:00 [Information] Request finished in 246.2589ms 200 
+2018-12-13 15:34:55.930 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-13 15:34:55.988 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:34:56.000 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.5508ms.
+2018-12-13 15:34:56.047 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-13 15:34:56.284 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 339.501ms
+2018-12-13 15:34:56.303 +08:00 [Information] Request finished in 1610.9392ms 200 application/json; charset=utf-8
+2018-12-13 15:35:58.968 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/SSO  
+2018-12-13 15:35:59.191 +08:00 [Information] Successfully validated the token.
+2018-12-13 15:35:59.204 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"SSO\"}". Executing action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)"
+2018-12-13 15:35:59.241 +08:00 [Information] Authorization was successful.
+2018-12-13 15:35:59.243 +08:00 [Information] Executing action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:36:45.193 +08:00 [Information] Executed action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 45949.4862ms.
+2018-12-13 15:36:45.211 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Helpers.Common+SSOData"'.
+2018-12-13 15:36:45.259 +08:00 [Information] Executed action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" in 46054.6484ms
+2018-12-13 15:36:45.260 +08:00 [Information] Request finished in 46291.2624ms 200 application/json; charset=utf-8
+2018-12-13 15:36:50.117 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/SSO  
+2018-12-13 15:36:50.119 +08:00 [Information] Successfully validated the token.
+2018-12-13 15:36:50.123 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"SSO\"}". Executing action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)"
+2018-12-13 15:36:50.124 +08:00 [Information] Authorization was successful.
+2018-12-13 15:36:50.124 +08:00 [Information] Executing action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:44:26.093 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-13 15:44:27.431 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-12-13 15:44:27.431 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-13 15:44:27.431 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-13 15:44:27.739 +08:00 [Information] Request finished in 306.3905ms 200 
+2018-12-13 15:44:28.776 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-13 15:44:28.776 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-12-13 15:44:28.857 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:44:28.896 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 9.2069ms.
+2018-12-13 15:44:28.956 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-13 15:44:29.255 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 466.0215ms
+2018-12-13 15:44:29.276 +08:00 [Information] Request finished in 1869.9279ms 200 application/json; charset=utf-8
+2018-12-13 15:44:29.690 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-12-13 15:44:31.244 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 15:44:32.304 +08:00 [Information] Executed DbCommand ("105"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-12-13 15:44:32.444 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-13 15:44:32.783 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-13 15:44:33.051 +08:00 [Information] Executed DbCommand ("70"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName], [users].[Email]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-12-13 15:44:33.105 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3408.5688ms.
+2018-12-13 15:44:33.109 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType11`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 15:44:33.128 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 4345.7896ms
+2018-12-13 15:44:33.139 +08:00 [Information] Request finished in 5733.6023ms 200 application/json; charset=utf-8
+2018-12-13 15:51:13.134 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-13 15:51:14.638 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-13 15:51:14.638 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-13 15:51:15.253 +08:00 [Information] Request finished in 435.599ms 200 
+2018-12-13 15:51:16.616 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-13 15:51:16.676 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:51:16.685 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.2162ms.
+2018-12-13 15:51:16.737 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-13 15:51:16.960 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 328.6893ms
+2018-12-13 15:51:16.974 +08:00 [Information] Request finished in 2356.3745ms 200 application/json; charset=utf-8
+2018-12-13 15:51:43.175 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/SSO  
+2018-12-13 15:51:43.339 +08:00 [Information] Successfully validated the token.
+2018-12-13 15:51:43.357 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"SSO\"}". Executing action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)"
+2018-12-13 15:51:43.394 +08:00 [Information] Authorization was successful.
+2018-12-13 15:51:43.395 +08:00 [Information] Executing action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:52:06.146 +08:00 [Information] Executed action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" in 22788.5463ms
+2018-12-13 15:52:06.147 +08:00 [Error] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at LNWCOE.Modules.Admin.SSO.SSOController.Get() in C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\Modules\Admin\SSO\SSOController.cs:line 28
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__23.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__16.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2018-12-13 15:52:06.533 +08:00 [Information] Request finished in 23357.8745ms 404 
+2018-12-13 15:52:11.538 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/SSO  
+2018-12-13 15:52:11.539 +08:00 [Information] Successfully validated the token.
+2018-12-13 15:52:11.542 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"SSO\"}". Executing action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)"
+2018-12-13 15:52:11.543 +08:00 [Information] Authorization was successful.
+2018-12-13 15:52:11.543 +08:00 [Information] Executing action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:53:29.132 +08:00 [Information] Executed action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" in 77588.8877ms
+2018-12-13 15:53:29.143 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-12-13 15:53:29.181 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-12-13 15:53:29.141 +08:00 [Error] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at LNWCOE.Modules.Admin.SSO.SSOController.Get() in C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\Modules\Admin\SSO\SSOController.cs:line 28
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__23.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__16.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2018-12-13 15:53:29.272 +08:00 [Information] Request finished in 77732.3919ms 404 
+2018-12-13 15:53:29.841 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-12-13 15:53:31.295 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 15:53:32.204 +08:00 [Information] Executed DbCommand ("121"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-12-13 15:53:32.315 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-13 15:53:32.549 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-13 15:53:32.751 +08:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName], [users].[Email]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-12-13 15:53:32.777 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2929.5182ms.
+2018-12-13 15:53:32.781 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType11`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 15:53:32.804 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 3622.2265ms
+2018-12-13 15:53:32.833 +08:00 [Information] Request finished in 3689.3637ms 200 application/json; charset=utf-8
+2018-12-13 15:53:36.504 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/SSO  
+2018-12-13 15:53:36.505 +08:00 [Information] Successfully validated the token.
+2018-12-13 15:53:36.505 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"SSO\"}". Executing action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)"
+2018-12-13 15:53:36.505 +08:00 [Information] Authorization was successful.
+2018-12-13 15:53:36.506 +08:00 [Information] Executing action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:56:48.790 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-13 15:56:50.423 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-13 15:56:50.448 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-13 15:56:50.889 +08:00 [Information] Request finished in 424.5443ms 200 
+2018-12-13 15:56:51.855 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-13 15:56:51.925 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:56:51.942 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.7364ms.
+2018-12-13 15:56:52.033 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-13 15:56:52.377 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 507.6436ms
+2018-12-13 15:56:52.396 +08:00 [Information] Request finished in 1990.7717ms 200 application/json; charset=utf-8
+2018-12-13 15:57:39.898 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/SSO  
+2018-12-13 15:57:40.084 +08:00 [Information] Successfully validated the token.
+2018-12-13 15:57:40.100 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"SSO\"}". Executing action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)"
+2018-12-13 15:57:40.138 +08:00 [Information] Authorization was successful.
+2018-12-13 15:57:40.143 +08:00 [Information] Executing action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:57:43.934 +08:00 [Information] Executed action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" in 3833.3503ms
+2018-12-13 15:57:43.950 +08:00 [Error] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at LNWCOE.Modules.Admin.SSO.SSOController.Get() in C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\Modules\Admin\SSO\SSOController.cs:line 28
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__23.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__16.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2018-12-13 15:57:44.228 +08:00 [Information] Request finished in 4330.5959ms 404 
+2018-12-13 15:57:47.791 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/SSO  
+2018-12-13 15:57:47.792 +08:00 [Information] Successfully validated the token.
+2018-12-13 15:57:47.794 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"SSO\"}". Executing action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)"
+2018-12-13 15:57:47.795 +08:00 [Information] Authorization was successful.
+2018-12-13 15:57:48.734 +08:00 [Information] Executing action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:58:44.274 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-13 15:58:45.653 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-13 15:58:45.653 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-13 15:58:45.875 +08:00 [Information] Request finished in 218.7922ms 200 
+2018-12-13 15:58:46.909 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-13 15:58:46.995 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:58:47.009 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.317ms.
+2018-12-13 15:58:47.065 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-13 15:58:47.369 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 447.7645ms
+2018-12-13 15:58:47.389 +08:00 [Information] Request finished in 1757.9602ms 200 application/json; charset=utf-8
+2018-12-13 15:59:14.312 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/SSO  
+2018-12-13 15:59:14.488 +08:00 [Information] Successfully validated the token.
+2018-12-13 15:59:14.501 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"SSO\"}". Executing action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)"
+2018-12-13 15:59:14.554 +08:00 [Information] Authorization was successful.
+2018-12-13 15:59:14.556 +08:00 [Information] Executing action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 15:59:40.706 +08:00 [Information] Executed action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" in 26204.1761ms
+2018-12-13 15:59:40.709 +08:00 [Error] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at LNWCOE.Modules.Admin.SSO.SSOController.Get() in C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\Modules\Admin\SSO\SSOController.cs:line 28
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__23.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__16.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2018-12-13 15:59:40.981 +08:00 [Information] Request finished in 26669.536ms 404 
+2018-12-13 15:59:43.172 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-12-13 15:59:43.201 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-12-13 15:59:43.863 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-12-13 15:59:45.260 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 15:59:46.275 +08:00 [Information] Executed DbCommand ("130"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-12-13 15:59:46.384 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-13 15:59:46.711 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-13 15:59:46.929 +08:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName], [users].[Email]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-12-13 15:59:46.949 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3074.6117ms.
+2018-12-13 15:59:46.953 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType11`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 15:59:46.972 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 3740.1177ms
+2018-12-13 15:59:46.982 +08:00 [Information] Request finished in 3809.803ms 200 application/json; charset=utf-8
+2018-12-13 16:00:03.807 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/SSO  
+2018-12-13 16:00:03.808 +08:00 [Information] Successfully validated the token.
+2018-12-13 16:00:03.811 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"SSO\"}". Executing action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)"
+2018-12-13 16:00:03.812 +08:00 [Information] Authorization was successful.
+2018-12-13 16:00:03.812 +08:00 [Information] Executing action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 16:00:34.060 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-13 16:00:35.611 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-13 16:00:35.611 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-13 16:00:35.919 +08:00 [Information] Request finished in 297.3104ms 200 
+2018-12-13 16:00:36.810 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-13 16:00:36.867 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 16:00:36.877 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.4063ms.
+2018-12-13 16:00:36.916 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-13 16:00:37.138 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 315.9822ms
+2018-12-13 16:00:37.159 +08:00 [Information] Request finished in 1567.6021ms 200 application/json; charset=utf-8
+2018-12-13 16:01:03.013 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/SSO  
+2018-12-13 16:01:03.247 +08:00 [Information] Successfully validated the token.
+2018-12-13 16:01:03.267 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"SSO\"}". Executing action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)"
+2018-12-13 16:01:03.312 +08:00 [Information] Authorization was successful.
+2018-12-13 16:01:03.314 +08:00 [Information] Executing action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" - Validation state: Valid
+2018-12-13 16:01:06.033 +08:00 [Information] Executed action method "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2718.7567ms.
+2018-12-13 16:01:06.043 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Helpers.Common+SSOData"'.
+2018-12-13 16:01:06.077 +08:00 [Information] Executed action "LNWCOE.Modules.Admin.SSO.SSOController.Get (LNWCOE)" in 2810.366ms
+2018-12-13 16:01:06.078 +08:00 [Information] Request finished in 3064.1793ms 200 application/json; charset=utf-8

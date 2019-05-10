@@ -1,0 +1,113 @@
+2018-12-06 20:37:56.690 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-06 20:37:59.694 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-12-06 20:37:59.694 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-06 20:37:59.694 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-06 20:37:59.929 +08:00 [Information] Request finished in 239.4498ms 200 
+2018-12-06 20:38:01.809 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-12-06 20:38:01.809 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-06 20:38:01.864 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-06 20:38:01.873 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1.6817ms.
+2018-12-06 20:38:01.911 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-06 20:38:02.590 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 774.3168ms
+2018-12-06 20:38:02.607 +08:00 [Information] Request finished in 2935.9636ms 200 application/json; charset=utf-8
+2018-12-06 20:38:04.140 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-12-06 20:38:05.488 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 20:38:06.606 +08:00 [Information] Executed DbCommand ("101"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-12-06 20:38:06.937 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-06 20:38:07.140 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-12-06 20:38:07.195 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3046.353ms.
+2018-12-06 20:38:07.199 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType11`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 20:38:07.216 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 5403.4365ms
+2018-12-06 20:38:07.225 +08:00 [Information] Request finished in 7554.6228ms 200 application/json; charset=utf-8
+2018-12-06 20:38:28.991 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobsQueueEntity/guid/e3fe68e0-b1f7-e811-a85f-d89ef325c63d  
+2018-12-06 20:38:29.079 +08:00 [Information] Successfully validated the token.
+2018-12-06 20:38:29.102 +08:00 [Information] Route matched with "{action = \"GetByGuid\", controller = \"AlertJobsQueueEntity\"}". Executing action "LNWCOE.Modules.ALERTS.AlertJobsQueueEntityController.GetByGuid (LNWCOE)"
+2018-12-06 20:38:29.144 +08:00 [Information] Authorization was successful.
+2018-12-06 20:38:29.155 +08:00 [Information] Executing action method "LNWCOE.Modules.ALERTS.AlertJobsQueueEntityController.GetByGuid (LNWCOE)" with arguments (["e3fe68e0-b1f7-e811-a85f-d89ef325c63d"]) - Validation state: Valid
+2018-12-06 20:38:29.160 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 20:38:29.193 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__guid_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AlertJobsQueueEntityID], [x].[AlertJobsQueueID], [x].[AlertNameID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[LastUpdatedUTC], [x].[StatusID], [x].[UpdatedBy], [x].[WorkItemID]
+FROM [AlertJobsQueueEntity] AS [x]
+WHERE [x].[WorkItemID] = @__guid_0"
+2018-12-06 20:38:29.291 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__alertJobEntity_AlertNameID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AlertNameID], [x].[AlertJobsID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[DeletedDateUTC], [x].[EntryDateUTC], [x].[LastUpdatedUTC], [x].[NameEntry], [x].[SubDidivision], [x].[UpdatedBy], [x].[id_mdb]
+FROM [AlertNames] AS [x]
+WHERE [x].[AlertNameID] = @__alertJobEntity_AlertNameID_0"
+2018-12-06 20:38:29.347 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__alertName_AlertJobsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AlertJobsID], [x].[AlertSourceTypeID], [x].[CountryID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Encoding], [x].[IsActive], [x].[IsCriticalJob], [x].[IsPreventDeletions], [x].[IsSendNoUpdate], [x].[IsShowOnDynamicDisplay], [x].[IsUseProxy], [x].[IsUserTermsFilter], [x].[IsWithLookUpID], [x].[JobAbbrev], [x].[JobComments], [x].[JobDescription], [x].[JobName], [x].[JobScrapperAssemble], [x].[JobScrapperClassName], [x].[JobSpecialInstructions], [x].[JobURL], [x].[LastUpdatedUTC], [x].[PriorityCode], [x].[Regex], [x].[RegexForPages], [x].[ResultType], [x].[TableNameSource], [x].[TeamID], [x].[UpdatedBy]
+FROM [AlertJobs] AS [x]
+WHERE [x].[AlertJobsID] = @__alertName_AlertJobsID_0"
+2018-12-06 20:38:29.398 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__alertJobEntity_AlertJobsQueueEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[RecordLockID], [x].[AppUserID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[DateTimeItemWasLockedUTC], [x].[IDFromWorkUnitsDBTable], [x].[LastUpdatedUTC], [x].[UpdatedBy], [x].[WorkUnitTypeID]
+FROM [RecordLocks] AS [x]
+WHERE [x].[IDFromWorkUnitsDBTable] = @__alertJobEntity_AlertJobsQueueEntityID_0"
+2018-12-06 20:38:29.402 +08:00 [Information] Executed action method "LNWCOE.Modules.ALERTS.AlertJobsQueueEntityController.GetByGuid (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 246.8355ms.
+2018-12-06 20:38:29.416 +08:00 [Information] Executing JsonResult, writing value of type '"LNWCOE.Models.ALERTS.AlertJobsQueueEntityData"'.
+2018-12-06 20:38:29.450 +08:00 [Information] Executed action "LNWCOE.Modules.ALERTS.AlertJobsQueueEntityController.GetByGuid (LNWCOE)" in 347.0592ms
+2018-12-06 20:38:29.450 +08:00 [Information] Request finished in 459.3046ms 200 application/json; charset=utf-8
+2018-12-06 20:39:40.084 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/RecordLocks application/json 83
+2018-12-06 20:39:40.085 +08:00 [Information] Successfully validated the token.
+2018-12-06 20:39:40.089 +08:00 [Information] Route matched with "{action = \"Lock\", controller = \"RecordLocks\"}". Executing action "LNWCOE.Modules.Admin.RecordLocksController.Lock (LNWCOE)"
+2018-12-06 20:39:40.089 +08:00 [Information] Authorization was successful.
+2018-12-06 20:39:40.106 +08:00 [Information] Executing action method "LNWCOE.Modules.Admin.RecordLocksController.Lock (LNWCOE)" with arguments (["LNWCOE.Models.Admin.LockEntry"]) - Validation state: Valid
+2018-12-06 20:39:40.110 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 20:39:40.127 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__newmodel_IDFromWorkUnitsDBTable_0='?' (DbType = Int32), @__newmodel_WorkUnitTypeID_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[RecordLockID], [x].[AppUserID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[DateTimeItemWasLockedUTC], [x].[IDFromWorkUnitsDBTable], [x].[LastUpdatedUTC], [x].[UpdatedBy], [x].[WorkUnitTypeID]
+FROM [RecordLocks] AS [x]
+WHERE ([x].[IDFromWorkUnitsDBTable] = @__newmodel_IDFromWorkUnitsDBTable_0) AND ([x].[WorkUnitTypeID] = @__newmodel_WorkUnitTypeID_1)"
+2018-12-06 20:39:40.372 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [RecordLocks] ([AppUserID], [CreatedBy], [DateCreatedUTC], [DateTimeItemWasLockedUTC], [IDFromWorkUnitsDBTable], [LastUpdatedUTC], [UpdatedBy], [WorkUnitTypeID])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [RecordLockID]
+FROM [RecordLocks]
+WHERE @@ROWCOUNT = 1 AND [RecordLockID] = scope_identity();"
+2018-12-06 20:39:40.416 +08:00 [Information] Executed action method "LNWCOE.Modules.Admin.RecordLocksController.Lock (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 309.5947ms.
+2018-12-06 20:39:40.420 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-12-06 20:39:40.420 +08:00 [Information] Executed action "LNWCOE.Modules.Admin.RecordLocksController.Lock (LNWCOE)" in 331.5732ms
+2018-12-06 20:39:40.421 +08:00 [Information] Request finished in 336.2645ms 200 
+2018-12-06 20:39:49.868 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobsQueueEntity/guid/e3fe68e0-b1f7-e811-a85f-d89ef325c63d  
+2018-12-06 20:39:49.869 +08:00 [Information] Successfully validated the token.
+2018-12-06 20:39:49.871 +08:00 [Information] Route matched with "{action = \"GetByGuid\", controller = \"AlertJobsQueueEntity\"}". Executing action "LNWCOE.Modules.ALERTS.AlertJobsQueueEntityController.GetByGuid (LNWCOE)"
+2018-12-06 20:39:49.871 +08:00 [Information] Authorization was successful.
+2018-12-06 20:39:49.873 +08:00 [Information] Executing action method "LNWCOE.Modules.ALERTS.AlertJobsQueueEntityController.GetByGuid (LNWCOE)" with arguments (["e3fe68e0-b1f7-e811-a85f-d89ef325c63d"]) - Validation state: Valid
+2018-12-06 20:39:49.874 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 20:39:49.882 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__guid_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AlertJobsQueueEntityID], [x].[AlertJobsQueueID], [x].[AlertNameID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[LastUpdatedUTC], [x].[StatusID], [x].[UpdatedBy], [x].[WorkItemID]
+FROM [AlertJobsQueueEntity] AS [x]
+WHERE [x].[WorkItemID] = @__guid_0"
+2018-12-06 20:39:49.885 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__alertJobEntity_AlertNameID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AlertNameID], [x].[AlertJobsID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[DeletedDateUTC], [x].[EntryDateUTC], [x].[LastUpdatedUTC], [x].[NameEntry], [x].[SubDidivision], [x].[UpdatedBy], [x].[id_mdb]
+FROM [AlertNames] AS [x]
+WHERE [x].[AlertNameID] = @__alertJobEntity_AlertNameID_0"
+2018-12-06 20:39:49.887 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__alertName_AlertJobsID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AlertJobsID], [x].[AlertSourceTypeID], [x].[CountryID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Encoding], [x].[IsActive], [x].[IsCriticalJob], [x].[IsPreventDeletions], [x].[IsSendNoUpdate], [x].[IsShowOnDynamicDisplay], [x].[IsUseProxy], [x].[IsUserTermsFilter], [x].[IsWithLookUpID], [x].[JobAbbrev], [x].[JobComments], [x].[JobDescription], [x].[JobName], [x].[JobScrapperAssemble], [x].[JobScrapperClassName], [x].[JobSpecialInstructions], [x].[JobURL], [x].[LastUpdatedUTC], [x].[PriorityCode], [x].[Regex], [x].[RegexForPages], [x].[ResultType], [x].[TableNameSource], [x].[TeamID], [x].[UpdatedBy]
+FROM [AlertJobs] AS [x]
+WHERE [x].[AlertJobsID] = @__alertName_AlertJobsID_0"
+2018-12-06 20:39:49.889 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__alertJobEntity_AlertJobsQueueEntityID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[RecordLockID], [x].[AppUserID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[DateTimeItemWasLockedUTC], [x].[IDFromWorkUnitsDBTable], [x].[LastUpdatedUTC], [x].[UpdatedBy], [x].[WorkUnitTypeID]
+FROM [RecordLocks] AS [x]
+WHERE [x].[IDFromWorkUnitsDBTable] = @__alertJobEntity_AlertJobsQueueEntityID_0"
+2018-12-06 20:39:49.907 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__locks_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AppUserID], [x].[AppUserName], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Email], [x].[GenderTypeID], [x].[IsActive], [x].[IsInternal], [x].[LastUpdatedUTC], [x].[OfficeID], [x].[OperationalRoleTypeID], [x].[PhotoImage], [x].[SupervisorAppUserID], [x].[UTCOffset], [x].[UpdatedBy]
+FROM [AppUser] AS [x]
+WHERE [x].[AppUserID] = @__locks_AppUserID_0"
+2018-12-06 20:39:49.931 +08:00 [Information] Executed action method "LNWCOE.Modules.ALERTS.AlertJobsQueueEntityController.GetByGuid (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 56.9963ms.
+2018-12-06 20:39:49.931 +08:00 [Information] Executing JsonResult, writing value of type '"LNWCOE.Models.ALERTS.AlertJobsQueueEntityData"'.
+2018-12-06 20:39:49.947 +08:00 [Information] Executed action "LNWCOE.Modules.ALERTS.AlertJobsQueueEntityController.GetByGuid (LNWCOE)" in 75.0534ms
+2018-12-06 20:39:49.947 +08:00 [Information] Request finished in 78.6979ms 200 application/json; charset=utf-8

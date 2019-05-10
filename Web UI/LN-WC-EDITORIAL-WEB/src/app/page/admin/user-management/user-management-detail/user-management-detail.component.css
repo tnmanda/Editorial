@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  background-color: #f4f4f4;
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+  color: #333333;
+}
+
+.td-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

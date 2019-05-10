@@ -1,0 +1,102 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+
+  <div class="row">
+    <div class="col-lg-3">
+        <p-panel >
+            <p-header>
+                <div class="ui-helper-clearfix">
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:3px">Workflow</span>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-right">
+                            <button class="btn-space" (click)="expandAll()"><i class="fas fa-expand"></i></button>
+                          <button  (click)="collapseAll()"><i class="fas fa-compress"></i></button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </p-header>
+            <p-tree [value]="bwqEntityTree" [style]="{'width': '100%', 'border':'0', 'padding': '0','height': '650px','max-height': '650px', 'overflow': 'auto'}"
+            selectionMode="single" [(selection)]="selectedNode" [loading]="isTreeLoading" (onNodeSelect)="nodeSelect($event)" ></p-tree>
+        </p-panel>
+    </div>
+    <div class="col-lg-9">
+        <p-panel>
+            <p-header>
+                <div class="ui-helper-clearfix">
+                    <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Entity List ({{ bwqEntities?.length }})</span>
+                </div>
+            </p-header>
+                <br>
+
+
+                    <div class="row">
+                    <div class="col-lg-6">
+                        <div class="ui-inputgroup">
+                            <input type="text" pInputText placeholder="Global Search..." (input)="dtbwq.filterGlobal($event.target.value, 'contains')">
+                            <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+                        </div>
+
+                    </div>
+                  <div class="col-lg-6">
+
+                  </div>
+                </div>
+
+                <br>
+                <p-table #dtbwq [value]="bwqEntities" [globalFilterFields]="['batchName', 'entityName', 'countryName', 'categoryName', 'priority']" [paginator]="true" [rows]="10" [loading]="isLoading">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th width="5%"></th>
+                            <th width="10%" [pSortableColumn]="'batchName'">Entity ID <p-sortIcon [field]="'batchName'"></p-sortIcon></th>
+                            <th [pSortableColumn]="'entityName'"> Name <p-sortIcon [field]="'entityName'"></p-sortIcon></th>
+                            <th width="8%" [pSortableColumn]="'batchCount'">Batch Count <p-sortIcon [field]="'batchCount'"></p-sortIcon></th>
+                            <th width="10%" [pSortableColumn]="'priority'">Priority <p-sortIcon [field]="'priority'"></p-sortIcon></th>
+
+                            <th width="10%">Option</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-bwqEntity>
+                        <tr>
+                            <td class="td-cell">
+                                <div class="text-center">
+                                <div *ngIf="bwqEntity.lockedBy !== null; else isUnlocked">
+                                    <i class="fas fa-lock" style="color: red" pTooltip="Locked By: {{bwqEntity.lockedBy}}"></i>
+                                </div>
+                                <ng-template #isUnlocked>
+                                    <i class="fas fa-unlock"></i>
+                                </ng-template>
+                              </div>
+                            </td>
+                            <td class="td-cell">{{bwqEntity.mmmEntityId}}</td>
+                            <td class="td-cell">{{bwqEntity.entityName}}</td>
+                            <td class="td-cell">{{bwqEntity.batchCount}}</td>
+                            <td class="td-cell">{{bwqEntity.priority}}</td>
+                            <td >
+                                <div *ngIf="bwqEntity.lockedBy !== null && bwqEntity.lockedBy !== globalHelperSrv.getCurrentUserName(); else isUnlockedCurrentUser">
+                                    <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-dark btn-space" [disabled]="true"></button>
+                                </div>
+                                <ng-template #isUnlockedCurrentUser>
+                                  <div *ngIf="bwqEntity.lockedBy === globalHelperSrv.getCurrentUserName(); else isUnlocked2">
+                                    <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="onEdit(bwqEntity)"></button>
+                                  </div>
+                                </ng-template>
+                                <ng-template #isUnlocked2>
+                                    <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="onEdit(bwqEntity)"></button>
+                                </ng-template>
+
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+
+
+          </p-panel>
+    </div>
+  </div>
+
+<p-toast></p-toast>

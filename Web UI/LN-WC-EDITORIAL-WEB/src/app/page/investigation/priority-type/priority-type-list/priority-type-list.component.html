@@ -1,0 +1,59 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Priority Type List</span>
+      </div>
+  </p-header>
+      <br>
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtPriorityType.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtPriorityType [value]="priorityTypes" [globalFilterFields]="['priorityName','priorityDescription']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th [pSortableColumn]="'priorityName'">Name <p-sortIcon [field]="'priorityName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'priorityDescription'">Description <p-sortIcon [field]="'priorityDescription'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'priorityWeight'">Weight <p-sortIcon [field]="'priorityWeight'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-priorityType>
+              <tr>
+                  <td class="td-cell">{{priorityType.priorityName}}</td>
+                  <td class="td-cell">{{priorityType.priorityDescription}}</td>
+                  <td class="td-cell">{{priorityType.priorityWeight}}</td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-edit" class="ui-button-primary btn-space" (click)="showEditDialog(priorityType.priorityTypeID)"></button>
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-danger" (click)="showDeleteDialog(priorityType.priorityTypeID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+</p-panel>
+
+<!-- Add Priority Type Dialog -->
+<app-priority-type-add-dialog [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-priority-type-add-dialog>
+<!-- Edit Priority Type Dialog -->
+<div *ngIf="selectedPriorityType">
+  <app-priority-type-edit-dialog [display]="displayEditDialog" [selectedPriorityType]="selectedPriorityType" (displayChange)="onEditDialogClose($event)"></app-priority-type-edit-dialog>
+</div>
+<!-- Delete Priority Type Dialog -->
+<div *ngIf="selectedPriorityType">
+  <app-priority-type-delete-dialog [display]="displayDeleteDialog" [selectedPriorityType]="selectedPriorityType" (displayChange)="onDeleteDialogClose($event)"></app-priority-type-delete-dialog>
+</div>
+
+<p-toast></p-toast>

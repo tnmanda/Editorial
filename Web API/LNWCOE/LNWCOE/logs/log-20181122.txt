@@ -1,0 +1,878 @@
+2018-11-22 15:01:54.744 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-22 15:01:59.150 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-22 15:01:59.150 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-22 15:01:59.149 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/filter application/json 76
+2018-11-22 15:01:59.448 +08:00 [Information] Request finished in 299.2622ms 200 
+2018-11-22 15:02:00.222 +08:00 [Information] Successfully validated the token.
+2018-11-22 15:02:01.009 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-22 15:02:01.009 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationFilter\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationFilter (LNWCOE)"
+2018-11-22 15:02:01.086 +08:00 [Information] Authorization was successful.
+2018-11-22 15:02:01.119 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-22 15:02:01.137 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.561ms.
+2018-11-22 15:02:01.231 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-22 15:02:01.392 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 370.3358ms
+2018-11-22 15:02:01.412 +08:00 [Information] Request finished in 2285.4232ms 200 application/json; charset=utf-8
+2018-11-22 15:02:01.753 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/favicon.ico  
+2018-11-22 15:02:01.774 +08:00 [Information] Request finished in 20.3713ms 404 
+2018-11-22 15:02:02.384 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationFilter (LNWCOE)" with arguments (["LNWCOE.Models.News.NewsFilter"]) - Validation state: Valid
+2018-11-22 15:02:04.156 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 15:02:05.538 +08:00 [Information] Executed DbCommand ("100"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetNewsEntries_sel @watchID=@p0, @dateperiod=@p1, @countryID=@p2, @state=@p3, @articleID=0"
+2018-11-22 15:02:05.694 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationFilter (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 3300.925ms.
+2018-11-22 15:02:05.711 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.News.NewsData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-22 15:02:05.743 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationFilter (LNWCOE)" in 4726.952ms
+2018-11-22 15:02:05.749 +08:00 [Information] Request finished in 6622.1464ms 200 application/json; charset=utf-8
+2018-11-22 15:02:20.483 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/search/157555130  
+2018-11-22 15:02:20.483 +08:00 [Information] Successfully validated the token.
+2018-11-22 15:02:20.507 +08:00 [Information] Route matched with "{action = \"SearchNewsQueueEntryById\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.SearchNewsQueueEntryById (LNWCOE)"
+2018-11-22 15:02:20.507 +08:00 [Information] Authorization was successful.
+2018-11-22 15:02:20.531 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.SearchNewsQueueEntryById (LNWCOE)" with arguments (["157555130"]) - Validation state: Valid
+2018-11-22 15:02:26.370 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 15:02:26.420 +08:00 [Information] Executed DbCommand ("24"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetNewsEntries_sel @watchID=0, @dateperiod=@p0, @countryID=0, @state=0, @articleID=@p1"
+2018-11-22 15:02:26.424 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.SearchNewsQueueEntryById (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 5893.3522ms.
+2018-11-22 15:02:26.425 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.News.NewsData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-22 15:02:26.425 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.SearchNewsQueueEntryById (LNWCOE)" in 5917.8381ms
+2018-11-22 15:02:26.425 +08:00 [Information] Request finished in 5942.5346ms 200 application/json; charset=utf-8
+2018-11-22 15:02:37.994 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/guid/c6c846bd-90ed-e811-a85d-d89ef325c63d  
+2018-11-22 15:02:37.995 +08:00 [Information] Successfully validated the token.
+2018-11-22 15:02:37.998 +08:00 [Information] Route matched with "{action = \"GetByGuid\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetByGuid (LNWCOE)"
+2018-11-22 15:02:37.998 +08:00 [Information] Authorization was successful.
+2018-11-22 15:02:37.999 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetByGuid (LNWCOE)" with arguments (["c6c846bd-90ed-e811-a85d-d89ef325c63d"]) - Validation state: Valid
+2018-11-22 15:02:38.004 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 15:02:38.164 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__guid_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[HRWorkItemDataMapID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[LastUpdatedUTC], [t].[ModuleTableEntryID], [t].[UpdatedBy], [t].[WorkItemID], [t].[WorkUnitTypeID]
+FROM [HRWorkItemDataMap] AS [t]
+WHERE [t].[WorkItemID] = @__guid_0"
+2018-11-22 15:02:38.313 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 15:02:38.366 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__MappingEntry_ModuleTableEntryID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[id], [t].[dateAdded], [t].[fkCountryID], [t].[fkItemID], [t].[fkWatchID], [t].[itemType], [t].[state], [t].[stateChanged], [t].[stateChangedRecipient]
+FROM [FeedItemQueue] AS [t]
+WHERE [t].[id] = @__MappingEntry_ModuleTableEntryID_0"
+2018-11-22 15:02:38.419 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__FeedItemQueueEntry_fkWatchID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[pkWatchID], [t].[Caption], [t].[Comments], [t].[Description], [t].[InArtikleDescription], [t].[InArtikleTitle], [t].[LastFilterDate], [t].[MAtchAllKeywords], [t].[WholeWords], [t].[fkLanguageID]
+FROM [Feeder_Watches] AS [t]
+WHERE [t].[pkWatchID] = @__FeedItemQueueEntry_fkWatchID_0"
+2018-11-22 15:02:38.462 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__FeedItemQueueEntry_fkItemID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[pkArtikleID], [t].[ArtikleDescription], [t].[DateAdded], [t].[Title], [t].[URL], [t].[UniqContent], [t].[UniqKey], [t].[UniqTitle], [t].[fkFeedID]
+FROM [Feeder_FeedArtikles] AS [t]
+WHERE [t].[pkArtikleID] = @__FeedItemQueueEntry_fkItemID_0"
+2018-11-22 15:02:38.518 +08:00 [Information] Executed DbCommand ("27"ms) [Parameters=["@__Feeder_FeedArtiklesEntry_fkFeedID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[pkFeedID], [t].[Active], [t].[City], [t].[CurrentState], [t].[DateAdded], [t].[DateUpdated], [t].[FeedName], [t].[FeedURL], [t].[NextRunTime], [t].[fkAddedBy], [t].[fkCountryID], [t].[fkLanguageID], [t].[fkUpdatedBy], [t].[fkWorkerID]
+FROM [Feeder_Feeds] AS [t]
+WHERE [t].[pkFeedID] = @__Feeder_FeedArtiklesEntry_fkFeedID_0"
+2018-11-22 15:02:38.533 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetByGuid (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 533.8196ms.
+2018-11-22 15:02:38.533 +08:00 [Information] Executing JsonResult, writing value of type '"<>f__AnonymousType35`4[[LNWCOE.Models.News.FeedItemQueue, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.News.Feeder_Watches, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.News.Feeder_FeedArtikles, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.News.Feeder_Feeds, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-22 15:02:38.575 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetByGuid (LNWCOE)" in 576.1762ms
+2018-11-22 15:02:38.575 +08:00 [Information] Request finished in 581.0054ms 200 application/json; charset=utf-8
+2018-11-22 15:32:29.379 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-22 15:32:31.745 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-22 15:32:31.745 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-22 15:32:32.033 +08:00 [Information] Request finished in 288.2356ms 200 
+2018-11-22 15:32:33.370 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-22 15:32:33.484 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-22 15:32:33.497 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.1195ms.
+2018-11-22 15:32:33.589 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-22 15:32:33.922 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 534.7828ms
+2018-11-22 15:32:33.952 +08:00 [Information] Request finished in 2230.088ms 200 application/json; charset=utf-8
+2018-11-22 15:34:09.690 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-22 15:34:11.600 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-22 15:34:11.600 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-22 15:34:11.880 +08:00 [Information] Request finished in 288.795ms 200 
+2018-11-22 15:34:13.181 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-22 15:34:13.282 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-22 15:34:13.302 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 6.7911ms.
+2018-11-22 15:34:13.383 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-22 15:34:13.603 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 411.2587ms
+2018-11-22 15:34:13.629 +08:00 [Information] Request finished in 2049.583ms 200 application/json; charset=utf-8
+2018-11-22 15:34:32.536 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/FeedItemQueue  
+2018-11-22 15:34:32.545 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"FeedItemQueue\"}". Executing action "LNWCOE.Modules.NEWS.FeedItemQueueController.Get (LNWCOE)"
+2018-11-22 15:34:32.616 +08:00 [Information] Authorization failed.
+2018-11-22 15:34:32.622 +08:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-22 15:34:32.634 +08:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-22 15:34:32.665 +08:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-22 15:34:32.666 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.FeedItemQueueController.Get (LNWCOE)" in 120.7222ms
+2018-11-22 15:34:32.668 +08:00 [Information] Request finished in 132.1494ms 401 
+2018-11-22 15:34:35.894 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/FeedItemQueue  
+2018-11-22 15:34:36.066 +08:00 [Information] Successfully validated the token.
+2018-11-22 15:34:36.076 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"FeedItemQueue\"}". Executing action "LNWCOE.Modules.NEWS.FeedItemQueueController.Get (LNWCOE)"
+2018-11-22 15:34:36.077 +08:00 [Information] Authorization was successful.
+2018-11-22 15:34:36.685 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.FeedItemQueueController.Get (LNWCOE)" - Validation state: Valid
+2018-11-22 15:34:37.617 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 15:34:38.639 +08:00 [Information] Executed DbCommand ("117"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [f].[id], [f].[dateAdded], [f].[fkCountryID], [f].[fkItemID], [f].[fkWatchID], [f].[itemType], [f].[state], [f].[stateChanged], [f].[stateChangedRecipient]
+FROM [FeedItemQueue] AS [f]"
+2018-11-22 15:34:38.873 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.FeedItemQueueController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2188.1317ms.
+2018-11-22 15:34:38.881 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.News.FeedItemQueue, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-22 15:34:38.940 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.FeedItemQueueController.Get (LNWCOE)" in 2863.6652ms
+2018-11-22 15:34:38.948 +08:00 [Information] Request finished in 3053.8931ms 200 application/json; charset=utf-8
+2018-11-22 15:34:47.426 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/FeedItemQueue/7925089  
+2018-11-22 15:34:47.428 +08:00 [Information] Successfully validated the token.
+2018-11-22 15:34:47.476 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"FeedItemQueue\"}". Executing action "LNWCOE.Modules.NEWS.FeedItemQueueController.Get (LNWCOE)"
+2018-11-22 15:34:47.477 +08:00 [Information] Authorization was successful.
+2018-11-22 15:34:47.610 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.FeedItemQueueController.Get (LNWCOE)" with arguments (["7925089"]) - Validation state: Valid
+2018-11-22 15:34:47.632 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 15:34:48.073 +08:00 [Information] Executed DbCommand ("110"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[id], [x].[dateAdded], [x].[fkCountryID], [x].[fkItemID], [x].[fkWatchID], [x].[itemType], [x].[state], [x].[stateChanged], [x].[stateChangedRecipient]
+FROM [FeedItemQueue] AS [x]
+WHERE [x].[id] = @__id_0"
+2018-11-22 15:34:48.081 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.FeedItemQueueController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 463.6602ms.
+2018-11-22 15:34:48.081 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.News.FeedItemQueue"'.
+2018-11-22 15:34:48.082 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.FeedItemQueueController.Get (LNWCOE)" in 605.0868ms
+2018-11-22 15:34:48.082 +08:00 [Information] Request finished in 655.8393ms 200 application/json; charset=utf-8
+2018-11-22 16:32:25.059 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-22 16:32:32.047 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-22 16:32:32.047 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-22 16:32:32.284 +08:00 [Information] Request finished in 245.1486ms 200 
+2018-11-22 16:32:34.234 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-22 16:32:34.314 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-22 16:32:34.325 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.2909ms.
+2018-11-22 16:32:34.379 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-22 16:32:34.850 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 598.8943ms
+2018-11-22 16:32:34.897 +08:00 [Information] Request finished in 2870.7969ms 200 application/json; charset=utf-8
+2018-11-22 16:33:59.542 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/News/FeedItemQueue application/json 905
+2018-11-22 16:33:59.895 +08:00 [Information] Successfully validated the token.
+2018-11-22 16:33:59.957 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"FeedItemQueue\"}". Executing action "LNWCOE.Modules.NEWS.FeedItemQueueController.UpdateEntry (LNWCOE)"
+2018-11-22 16:33:59.995 +08:00 [Information] Authorization was successful.
+2018-11-22 16:34:01.773 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.FeedItemQueueController.UpdateEntry (LNWCOE)" with arguments (["LNWCOE.Models.News.NewsDataSave"]) - Validation state: Valid
+2018-11-22 16:34:05.541 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 16:34:08.432 +08:00 [Information] Executed DbCommand ("1,442"ms) [Parameters=["@__WorkItemGuid_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[HRWorkItemDataMapID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[LastUpdatedUTC], [t].[ModuleTableEntryID], [t].[UpdatedBy], [t].[WorkItemID], [t].[WorkUnitTypeID]
+FROM [HRWorkItemDataMap] AS [t]
+WHERE ([t].[WorkItemID] = @__WorkItemGuid_0) AND ([t].[WorkUnitTypeID] = 5)"
+2018-11-22 16:34:09.023 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 16:34:09.636 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__FeedItemQueueObject_id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[id], [t].[dateAdded], [t].[fkCountryID], [t].[fkItemID], [t].[fkWatchID], [t].[itemType], [t].[state], [t].[stateChanged], [t].[stateChangedRecipient]
+FROM [FeedItemQueue] AS [t]
+WHERE [t].[id] = @__FeedItemQueueObject_id_0"
+2018-11-22 16:35:35.685 +08:00 [Information] Executed DbCommand ("72"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'News Queue'"
+2018-11-22 16:36:17.163 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.FeedItemQueueController.UpdateEntry (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 135379.4649ms.
+2018-11-22 16:36:17.170 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-22 16:36:17.173 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.FeedItemQueueController.UpdateEntry (LNWCOE)" in 137214.9876ms
+2018-11-22 16:36:17.180 +08:00 [Information] Request finished in 137637.361ms 200 
+2018-11-22 16:41:23.138 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-22 16:41:24.843 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-22 16:41:24.843 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-22 16:41:26.223 +08:00 [Information] Request finished in 1378.6124ms 200 
+2018-11-22 16:41:27.130 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-22 16:41:27.226 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-22 16:41:27.243 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.8713ms.
+2018-11-22 16:41:27.298 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-22 16:41:27.517 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 373.7452ms
+2018-11-22 16:41:27.534 +08:00 [Information] Request finished in 2715.5577ms 200 application/json; charset=utf-8
+2018-11-22 16:41:32.790 +08:00 [Information] Request starting HTTP/1.1 PUT http://localhost:57308/api/News/FeedItemQueue application/json 905
+2018-11-22 16:41:32.982 +08:00 [Information] Successfully validated the token.
+2018-11-22 16:41:33.031 +08:00 [Information] Route matched with "{action = \"UpdateEntry\", controller = \"FeedItemQueue\"}". Executing action "LNWCOE.Modules.NEWS.FeedItemQueueController.UpdateEntry (LNWCOE)"
+2018-11-22 16:41:33.073 +08:00 [Information] Authorization was successful.
+2018-11-22 16:41:33.864 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.FeedItemQueueController.UpdateEntry (LNWCOE)" with arguments (["LNWCOE.Models.News.NewsDataSave"]) - Validation state: Valid
+2018-11-22 16:41:35.828 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 16:41:36.839 +08:00 [Information] Executed DbCommand ("96"ms) [Parameters=["@__WorkItemGuid_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[HRWorkItemDataMapID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[LastUpdatedUTC], [t].[ModuleTableEntryID], [t].[UpdatedBy], [t].[WorkItemID], [t].[WorkUnitTypeID]
+FROM [HRWorkItemDataMap] AS [t]
+WHERE ([t].[WorkItemID] = @__WorkItemGuid_0) AND ([t].[WorkUnitTypeID] = 5)"
+2018-11-22 16:41:37.050 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 16:41:37.123 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__FeedItemQueueObject_id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[id], [t].[dateAdded], [t].[fkCountryID], [t].[fkItemID], [t].[fkWatchID], [t].[itemType], [t].[state], [t].[stateChanged], [t].[stateChangedRecipient]
+FROM [FeedItemQueue] AS [t]
+WHERE [t].[id] = @__FeedItemQueueObject_id_0"
+2018-11-22 16:41:43.964 +08:00 [Information] Executed DbCommand ("57"ms) [Parameters=["@p3='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [FeedItemQueue] SET [state] = @p0, [stateChanged] = @p1, [stateChangedRecipient] = @p2
+WHERE [id] = @p3;
+SELECT @@ROWCOUNT;"
+2018-11-22 16:41:54.891 +08:00 [Information] Executed DbCommand ("216"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'News Queue'"
+2018-11-22 16:42:06.148 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.FeedItemQueueController.UpdateEntry (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 32273.9565ms.
+2018-11-22 16:42:06.155 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-22 16:42:06.158 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.FeedItemQueueController.UpdateEntry (LNWCOE)" in 33127.0274ms
+2018-11-22 16:42:06.165 +08:00 [Information] Request finished in 33374.5891ms 200 
+2018-11-22 17:05:34.776 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-22 17:05:36.371 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav  
+2018-11-22 17:05:37.054 +08:00 [Information] Successfully validated the token.
+2018-11-22 17:05:37.817 +08:00 [Error] Request matched multiple actions resulting in ambiguity. Matching actions: "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigation (LNWCOE)
+LNWCOE.Modules.NEWS.NewsController.CheckWorkItemID (LNWCOE)"
+2018-11-22 17:05:37.839 +08:00 [Error] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Mvc.Internal.AmbiguousActionException: Multiple actions matched. The following actions matched route data and had all constraints satisfied:
+
+LNWCOE.Modules.NEWS.NewsController.GetNewsNavigation (LNWCOE)
+LNWCOE.Modules.NEWS.NewsController.CheckWorkItemID (LNWCOE)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)
+   at Microsoft.AspNetCore.Mvc.Internal.MvcAttributeRouteHandler.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.Tree.TreeRouter.<RouteAsync>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Routing.RouteCollection.<RouteAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2018-11-22 17:05:38.204 +08:00 [Information] Request finished in 1855.4531ms 404 
+2018-11-22 17:06:32.724 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-22 17:06:34.454 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-22 17:06:34.454 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav  
+2018-11-22 17:06:34.455 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-22 17:06:34.710 +08:00 [Information] Request finished in 254.1615ms 200 
+2018-11-22 17:06:35.317 +08:00 [Information] Successfully validated the token.
+2018-11-22 17:06:35.778 +08:00 [Error] Request matched multiple actions resulting in ambiguity. Matching actions: "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigation (LNWCOE)
+LNWCOE.Modules.NEWS.NewsController.CheckWorkItemID (LNWCOE)"
+2018-11-22 17:06:36.338 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-22 17:06:36.227 +08:00 [Error] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Mvc.Internal.AmbiguousActionException: Multiple actions matched. The following actions matched route data and had all constraints satisfied:
+
+LNWCOE.Modules.NEWS.NewsController.GetNewsNavigation (LNWCOE)
+LNWCOE.Modules.NEWS.NewsController.CheckWorkItemID (LNWCOE)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)
+   at Microsoft.AspNetCore.Mvc.Internal.MvcAttributeRouteHandler.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.Tree.TreeRouter.<RouteAsync>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Routing.RouteCollection.<RouteAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2018-11-22 17:06:36.446 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-22 17:06:36.463 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.4129ms.
+2018-11-22 17:06:36.485 +08:00 [Information] Request finished in 2054.7445ms 404 
+2018-11-22 17:06:36.532 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-22 17:06:36.662 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 311.378ms
+2018-11-22 17:06:36.676 +08:00 [Information] Request finished in 2245.8735ms 200 application/json; charset=utf-8
+2018-11-22 17:06:40.271 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav  
+2018-11-22 17:06:40.271 +08:00 [Information] Successfully validated the token.
+2018-11-22 17:06:40.274 +08:00 [Error] Request matched multiple actions resulting in ambiguity. Matching actions: "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigation (LNWCOE)
+LNWCOE.Modules.NEWS.NewsController.CheckWorkItemID (LNWCOE)"
+2018-11-22 17:06:40.275 +08:00 [Error] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Mvc.Internal.AmbiguousActionException: Multiple actions matched. The following actions matched route data and had all constraints satisfied:
+
+LNWCOE.Modules.NEWS.NewsController.GetNewsNavigation (LNWCOE)
+LNWCOE.Modules.NEWS.NewsController.CheckWorkItemID (LNWCOE)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)
+   at Microsoft.AspNetCore.Mvc.Internal.MvcAttributeRouteHandler.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.Tree.TreeRouter.<RouteAsync>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Routing.RouteCollection.<RouteAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2018-11-22 17:06:40.322 +08:00 [Information] Request finished in 50.7875ms 404 
+2018-11-22 17:07:10.446 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav  
+2018-11-22 17:07:10.447 +08:00 [Information] Successfully validated the token.
+2018-11-22 17:07:10.448 +08:00 [Error] Request matched multiple actions resulting in ambiguity. Matching actions: "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigation (LNWCOE)
+LNWCOE.Modules.NEWS.NewsController.CheckWorkItemID (LNWCOE)"
+2018-11-22 17:07:10.450 +08:00 [Error] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Mvc.Internal.AmbiguousActionException: Multiple actions matched. The following actions matched route data and had all constraints satisfied:
+
+LNWCOE.Modules.NEWS.NewsController.GetNewsNavigation (LNWCOE)
+LNWCOE.Modules.NEWS.NewsController.CheckWorkItemID (LNWCOE)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)
+   at Microsoft.AspNetCore.Mvc.Internal.MvcAttributeRouteHandler.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.Tree.TreeRouter.<RouteAsync>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Routing.RouteCollection.<RouteAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2018-11-22 17:07:10.505 +08:00 [Information] Request finished in 36.971ms 404 
+2018-11-22 17:07:42.657 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-22 17:07:44.062 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav  
+2018-11-22 17:07:44.063 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-22 17:07:44.062 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-22 17:07:44.314 +08:00 [Information] Request finished in 250.5925ms 200 
+2018-11-22 17:07:44.822 +08:00 [Information] Successfully validated the token.
+2018-11-22 17:07:45.424 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-22 17:07:45.424 +08:00 [Information] Route matched with "{action = \"GetNewsNavigation\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigation (LNWCOE)"
+2018-11-22 17:07:45.517 +08:00 [Information] Authorization was successful.
+2018-11-22 17:07:45.528 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-22 17:07:45.549 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 6.1361ms.
+2018-11-22 17:07:45.631 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-22 17:07:45.833 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 376.0678ms
+2018-11-22 17:07:45.848 +08:00 [Information] Request finished in 1808.0709ms 200 application/json; charset=utf-8
+2018-11-22 17:07:46.355 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigation (LNWCOE)" - Validation state: Valid
+2018-11-22 17:07:51.637 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 17:07:51.661 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigation (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 5305.7969ms.
+2018-11-22 17:07:51.683 +08:00 [Information] Executing JsonResult, writing value of type '"Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType34`4[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-22 17:07:52.382 +08:00 [Warning] The LINQ expression '"GroupBy(IIF(IsMatch([navdata].CountryName.Substring(0, 1), \"[A-Ma-m]\"), \"A-M\", \"N-Z\"), new NewsJobsNav() {WatchID = [navdata].WatchID, Caption = [navdata].Caption, CountryName = [navdata].CountryName, CountryID = [navdata].CountryID})"' could not be translated and will be evaluated locally.
+2018-11-22 17:07:52.399 +08:00 [Warning] The LINQ expression '"GroupBy(IIF(IsMatch([navdata].CountryName.Substring(0, 1), \"[A-Ma-m]\"), \"A-M\", \"N-Z\"), new NewsJobsNav() {WatchID = [navdata].WatchID, Caption = [navdata].Caption, CountryName = [navdata].CountryName, CountryID = [navdata].CountryID})"' could not be translated and will be evaluated locally.
+2018-11-22 17:07:52.403 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-22 17:07:52.407 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType3`2(CountryName = [bycountry].CountryName, CountryID = [bycountry].CountryID), [bycountry])"' could not be translated and will be evaluated locally.
+2018-11-22 17:07:52.410 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType3`2(CountryName = [bycountry].CountryName, CountryID = [bycountry].CountryID), [bycountry])"' could not be translated and will be evaluated locally.
+2018-11-22 17:07:52.416 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType33`2(Caption = [subg].Caption, WatchID = [subg].WatchID), [subg])"' could not be translated and will be evaluated locally.
+2018-11-22 17:07:52.416 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType33`2(Caption = [subg].Caption, WatchID = [subg].WatchID), [subg])"' could not be translated and will be evaluated locally.
+2018-11-22 17:07:53.214 +08:00 [Information] Executed DbCommand ("261"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-11-22 17:07:53.336 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigation (LNWCOE)" in 7905.0322ms
+2018-11-22 17:07:53.341 +08:00 [Information] Request finished in 9300.5936ms 200 application/json; charset=utf-8
+2018-11-22 18:56:32.004 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-22 18:56:40.173 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Investigation/guid/48920F0A-49E3-E811-A85D-D89EF325C63D  
+2018-11-22 18:56:40.173 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-22 18:56:40.173 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-22 18:56:40.569 +08:00 [Information] Request finished in 418.0139ms 200 
+2018-11-22 18:56:41.518 +08:00 [Information] Successfully validated the token.
+2018-11-22 18:56:42.542 +08:00 [Information] Route matched with "{action = \"GetByGuid\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.GetByGuid (LNWCOE)"
+2018-11-22 18:56:42.542 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-22 18:56:42.614 +08:00 [Information] Authorization was successful.
+2018-11-22 18:56:42.623 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-22 18:56:42.640 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.54ms.
+2018-11-22 18:56:42.704 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-22 18:56:42.820 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 262.9212ms
+2018-11-22 18:56:42.855 +08:00 [Information] Request finished in 2716.8388ms 200 application/json; charset=utf-8
+2018-11-22 18:56:43.399 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.GetByGuid (LNWCOE)" with arguments (["48920f0a-49e3-e811-a85d-d89ef325c63d"]) - Validation state: Valid
+2018-11-22 18:56:45.381 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 18:56:47.383 +08:00 [Information] Executed DbCommand ("199"ms) [Parameters=["@__guid_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID], [x.InvestigationStatus].[InvestigationStatusID], [x.InvestigationStatus].[CreatedBy], [x.InvestigationStatus].[DateCreatedUTC], [x.InvestigationStatus].[InvestigationStatusDescription], [x.InvestigationStatus].[InvestigationStatusName], [x.InvestigationStatus].[IsDefault], [x.InvestigationStatus].[LastUpdatedUTC], [x.InvestigationStatus].[UpdatedBy], [x.InvestigationDispositions].[InvestigationDispositionsID], [x.InvestigationDispositions].[CreatedBy], [x.InvestigationDispositions].[DateCreatedUTC], [x.InvestigationDispositions].[DispositionDescription], [x.InvestigationDispositions].[DispositionType], [x.InvestigationDispositions].[LastUpdatedUTC], [x.InvestigationDispositions].[UpdatedBy], [x.FunctionType].[FunctionTypeID], [x.FunctionType].[CreatedBy], [x.FunctionType].[DateCreatedUTC], [x.FunctionType].[FunctionTypeDesc], [x.FunctionType].[FunctionTypeName], [x.FunctionType].[IsActive], [x.FunctionType].[IsInList], [x.FunctionType].[LastUpdatedUTC], [x.FunctionType].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy], [x.PriorityType].[PriorityTypeID], [x.PriorityType].[CreatedBy], [x.PriorityType].[DateCreatedUTC], [x.PriorityType].[LastUpdatedUTC], [x.PriorityType].[PriorityDescription], [x.PriorityType].[PriorityName], [x.PriorityType].[PriorityWeight], [x.PriorityType].[UpdatedBy]
+FROM [Investigation] AS [x]
+LEFT JOIN [InvestigationStatus] AS [x.InvestigationStatus] ON [x].[InvestigationStatusID] = [x.InvestigationStatus].[InvestigationStatusID]
+LEFT JOIN [InvestigationDispositions] AS [x.InvestigationDispositions] ON [x].[InvestigationDispositionsID] = [x.InvestigationDispositions].[InvestigationDispositionsID]
+LEFT JOIN [FunctionType] AS [x.FunctionType] ON [x].[FunctionTypeID] = [x.FunctionType].[FunctionTypeID]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+LEFT JOIN [PriorityType] AS [x.PriorityType] ON [x].[PriorityTypeID] = [x.PriorityType].[PriorityTypeID]
+WHERE [x].[WorkItemID] = @__guid_0"
+2018-11-22 18:56:48.159 +08:00 [Warning] No type was specified for the decimal column '"CriminalAmount"' on entity type '"Entities"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-11-22 18:56:48.162 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"MMMDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 18:56:48.337 +08:00 [Information] Executed DbCommand ("57"ms) [Parameters=["@__ToUpper_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Ent_ID], [x].[AID], [x].[Aka], [x].[Approved], [x].[ApprovedBy], [x].[ApprovedDate], [x].[BatchName], [x].[CiBit], [x].[CiElements], [x].[CiIndex], [x].[Country], [x].[CountryId], [x].[CriminalAmount], [x].[DOB], [x].[DOB2], [x].[DateEntered], [x].[DateUpdated], [x].[DobOriginal], [x].[EffectiveDate], [x].[EntLevel], [x].[EnteredBy], [x].[EntitiesLevelsId], [x].[EntitiesSourceID], [x].[EntryCategory], [x].[EntryCategoryID], [x].[EntrySubCategory], [x].[EntrySubCategoryID], [x].[EntryType], [x].[EntryTypeID], [x].[ExpirationDate], [x].[FirstName], [x].[Gender], [x].[GovDesignation], [x].[ImageSourceURL], [x].[JurisdictionID], [x].[LastInvestigatedBy], [x].[LastInvestigationDate], [x].[LastName], [x].[LastReviewedBy], [x].[LastReviewedDate], [x].[LinkedTo], [x].[LookUpId], [x].[MasterID], [x].[Name], [x].[NameClean], [x].[NameClean2], [x].[NameSource], [x].[NationalID], [x].[OldEntryCategory], [x].[OldEntrySubCategory], [x].[OldNameSource], [x].[Organization], [x].[OriginalLanguage], [x].[OriginalName], [x].[OriginalName2], [x].[OriginalName2NoChange], [x].[OriginalName3], [x].[OtherID], [x].[POB], [x].[ParentID], [x].[PassportID], [x].[PepCode], [x].[PictureFile], [x].[PictureFileOnly], [x].[Positions], [x].[Prefix], [x].[ProfileExists], [x].[QA_Approved], [x].[Rank1], [x].[Rank2], [x].[Rank3], [x].[Rank4], [x].[Rank5], [x].[RecViews], [x].[Rejected], [x].[RejectedBy], [x].[RejectedDate], [x].[Related_ID], [x].[Relationships], [x].[Remarks], [x].[SourceWebLink], [x].[SourceWebLink2], [x].[SpecialCollections], [x].[StatusEndDate], [x].[Suffix], [x].[TermEndDate], [x].[TermStartDate], [x].[TouchDate], [x].[UpdatedBy], [x].[WCGroupLevel], [x].[Watch]
+FROM [Entities] AS [x]
+WHERE UPPER(LTRIM(RTRIM([x].[Name]))) = @__ToUpper_0"
+2018-11-22 18:56:48.490 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.GetByGuid (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 5082.6216ms.
+2018-11-22 18:56:48.507 +08:00 [Information] Executing JsonResult, writing value of type '"<>f__AnonymousType32`5[[LNWCOE.Models.INV.Investigation, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[<>f__AnonymousType26`7[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Entity.Entities, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Linq.IQueryable`1[[<>f__AnonymousType28`3[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Linq.Expressions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a],[System.Linq.IQueryable`1[[<>f__AnonymousType31`3[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Linq.Expressions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a]]"'.
+2018-11-22 18:56:48.914 +08:00 [Information] Executed DbCommand ("35"ms) [Parameters=["@__invData_InvestigationID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [inote].[DateCreatedUTC] AS [DateCreated], [user].[AppUserName] AS [CreatedBy], [inote].[NoteText] AS [Note]
+FROM [InvestigationNote] AS [inote]
+INNER JOIN [AppUser] AS [user] ON [inote].[CreatedBy] = CONVERT(VARCHAR(11), [user].[AppUserID])
+WHERE [inote].[InvestigationID] = @__invData_InvestigationID_0
+ORDER BY [DateCreated] DESC"
+2018-11-22 18:56:49.003 +08:00 [Information] Executed DbCommand ("14"ms) [Parameters=["@__invData_InvestigationID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [act].[DateCreatedUTC], CASE
+    WHEN [acttype].[ActivityTypeName] = N'View'
+    THEN N' Record Viewed By ' ELSE CASE
+        WHEN [acttype].[ActivityTypeName] = N'Email'
+        THEN N' Sent Email ' ELSE CASE
+            WHEN [acttype].[ActivityTypeName] = N'Document'
+            THEN N' attached on ' ELSE ((N' changed from ' + [act].[FromValue]) + N' to ') + [act].[ToValue]
+        END
+    END
+END AS [ActivityTypeName], [user].[AppUserName]
+FROM [InvestigationActivity] AS [act]
+INNER JOIN [ActivityType] AS [acttype] ON [act].[ActivityTypeID] = [acttype].[ActivityTypeID]
+INNER JOIN [AppUser] AS [user] ON [act].[AppUserID] = [user].[AppUserID]
+WHERE [act].[InvestigationID] = @__invData_InvestigationID_0
+ORDER BY [act].[DateCreatedUTC] DESC"
+2018-11-22 18:56:49.023 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.GetByGuid (LNWCOE)" in 6475.2347ms
+2018-11-22 18:56:49.037 +08:00 [Information] Request finished in 8899.5009ms 200 application/json; charset=utf-8
+2018-11-22 18:57:12.265 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/guid/c6c846bd-90ed-e811-a85d-d89ef325c63d  
+2018-11-22 18:57:12.266 +08:00 [Information] Successfully validated the token.
+2018-11-22 18:57:12.270 +08:00 [Information] Route matched with "{action = \"GetByGuid\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetByGuid (LNWCOE)"
+2018-11-22 18:57:12.270 +08:00 [Information] Authorization was successful.
+2018-11-22 18:57:12.285 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetByGuid (LNWCOE)" with arguments (["c6c846bd-90ed-e811-a85d-d89ef325c63d"]) - Validation state: Valid
+2018-11-22 18:57:12.294 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 18:57:12.327 +08:00 [Information] Executed DbCommand ("16"ms) [Parameters=["@__guid_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[HRWorkItemDataMapID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[LastUpdatedUTC], [t].[ModuleTableEntryID], [t].[UpdatedBy], [t].[WorkItemID], [t].[WorkUnitTypeID]
+FROM [HRWorkItemDataMap] AS [t]
+WHERE [t].[WorkItemID] = @__guid_0"
+2018-11-22 18:57:12.356 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 18:57:12.380 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__MappingEntry_ModuleTableEntryID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[id], [t].[dateAdded], [t].[fkCountryID], [t].[fkItemID], [t].[fkWatchID], [t].[itemType], [t].[state], [t].[stateChanged], [t].[stateChangedRecipient]
+FROM [FeedItemQueue] AS [t]
+WHERE [t].[id] = @__MappingEntry_ModuleTableEntryID_0"
+2018-11-22 18:57:13.836 +08:00 [Information] Executed DbCommand ("15"ms) [Parameters=["@__FeedItemQueueEntry_fkWatchID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[pkWatchID], [t].[Caption], [t].[Comments], [t].[Description], [t].[InArtikleDescription], [t].[InArtikleTitle], [t].[LastFilterDate], [t].[MAtchAllKeywords], [t].[WholeWords], [t].[fkLanguageID]
+FROM [Feeder_Watches] AS [t]
+WHERE [t].[pkWatchID] = @__FeedItemQueueEntry_fkWatchID_0"
+2018-11-22 18:57:13.863 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__FeedItemQueueEntry_fkItemID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[pkArtikleID], [t].[ArtikleDescription], [t].[DateAdded], [t].[Title], [t].[URL], [t].[UniqContent], [t].[UniqKey], [t].[UniqTitle], [t].[fkFeedID]
+FROM [Feeder_FeedArtikles] AS [t]
+WHERE [t].[pkArtikleID] = @__FeedItemQueueEntry_fkItemID_0"
+2018-11-22 18:57:13.992 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__Feeder_FeedArtiklesEntry_fkFeedID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[pkFeedID], [t].[Active], [t].[City], [t].[CurrentState], [t].[DateAdded], [t].[DateUpdated], [t].[FeedName], [t].[FeedURL], [t].[NextRunTime], [t].[fkAddedBy], [t].[fkCountryID], [t].[fkLanguageID], [t].[fkUpdatedBy], [t].[fkWorkerID]
+FROM [Feeder_Feeds] AS [t]
+WHERE [t].[pkFeedID] = @__Feeder_FeedArtiklesEntry_fkFeedID_0"
+2018-11-22 18:57:14.036 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__FeedItemQueueEntry_id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[ID], [t].[DateTimeItemWasLocked], [t].[LockedByRecipientID], [t].[fkItemID]
+FROM [FeedItemQueueLocks] AS [t]
+WHERE [t].[fkItemID] = @__FeedItemQueueEntry_id_0"
+2018-11-22 18:57:46.248 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__NewsLockEntry_LockedByRecipientID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[AppUserID], [t].[AppUserName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Email], [t].[GenderTypeID], [t].[IsActive], [t].[IsInternal], [t].[LastUpdatedUTC], [t].[OfficeID], [t].[OperationalRoleTypeID], [t].[PhotoImage], [t].[SupervisorAppUserID], [t].[UTCOffset], [t].[UpdatedBy]
+FROM [AppUser] AS [t]
+WHERE [t].[AppUserID] = @__NewsLockEntry_LockedByRecipientID_0"
+2018-11-22 18:57:52.135 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetByGuid (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 39849.603ms.
+2018-11-22 18:57:52.136 +08:00 [Information] Executing JsonResult, writing value of type '"<>f__AnonymousType35`5[[LNWCOE.Models.News.FeedItemQueue, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.News.Feeder_Watches, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.News.Feeder_FeedArtikles, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.News.Feeder_Feeds, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Admin.AppUser, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-22 18:57:52.177 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetByGuid (LNWCOE)" in 39906.4813ms
+2018-11-22 18:57:52.177 +08:00 [Information] Request finished in 39912.0643ms 200 application/json; charset=utf-8
+2018-11-22 20:01:51.365 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-22 20:01:54.139 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-22 20:01:54.139 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-22 20:01:54.632 +08:00 [Information] Request finished in 484.6399ms 200 
+2018-11-22 20:01:56.587 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-22 20:01:56.652 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-22 20:01:56.675 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.5074ms.
+2018-11-22 20:01:56.720 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-22 20:01:57.009 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 408.0303ms
+2018-11-22 20:01:57.067 +08:00 [Information] Request finished in 2949.9424ms 200 application/json; charset=utf-8
+2018-11-22 20:02:12.591 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/lock text/plain 88
+2018-11-22 20:02:13.062 +08:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{"alg":"HS256","typ":"JWT"}.{"sub":"hrevuser2","sid":"892829272822828287102","jti":"c4941dfa-c370-4fac-adfd-73f2492e1f02","rol":[{"isadm":true,"rname":"hr-admin","grp":[{"gname":"HRWCOJOB"}]}],"dmn_adm":[{"dname":"adf4818b-c41c-4f6a-8560-3e46415d2c93"}],"ips":["127.0.0.1/127.0.0.1"],"exp":1542961560,"iss":"http://humanreview.api.risk.lexisnexis.com","aud":"http://humanreview.risk.lexisnexis.com"}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2018-11-22 20:02:14.208 +08:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{\"alg\":\"HS256\",\"typ\":\"JWT\"}.{\"sub\":\"hrevuser2\",\"sid\":\"892829272822828287102\",\"jti\":\"c4941dfa-c370-4fac-adfd-73f2492e1f02\",\"rol\":[{\"isadm\":true,\"rname\":\"hr-admin\",\"grp\":[{\"gname\":\"HRWCOJOB\"}]}],\"dmn_adm\":[{\"dname\":\"adf4818b-c41c-4f6a-8560-3e46415d2c93\"}],\"ips\":[\"127.0.0.1/127.0.0.1\"],\"exp\":1542961560,\"iss\":\"http://humanreview.api.risk.lexisnexis.com\",\"aud\":\"http://humanreview.risk.lexisnexis.com\"}'."
+2018-11-22 20:02:14.267 +08:00 [Information] Route matched with "{action = \"LockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)"
+2018-11-22 20:02:14.352 +08:00 [Information] Authorization failed.
+2018-11-22 20:02:14.357 +08:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-22 20:02:14.370 +08:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-22 20:02:14.403 +08:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-22 20:02:14.403 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" in 136.3102ms
+2018-11-22 20:02:14.411 +08:00 [Information] Request finished in 1819.8422ms 401 
+2018-11-22 20:02:14.523 +08:00 [Information] Connection id ""0HLIGE95ICOBS"", Request id ""0HLIGE95ICOBS:00000002"": the application completed without reading the entire request body.
+2018-11-22 20:02:18.665 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-11-22 20:02:18.718 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-11-22 20:02:19.803 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-11-22 20:02:24.171 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:02:26.651 +08:00 [Information] Executed DbCommand ("113"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-11-22 20:02:35.513 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-11-22 20:02:35.739 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-11-22 20:02:35.774 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 15965.8539ms.
+2018-11-22 20:02:35.778 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType10`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-22 20:02:35.803 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 17084.6321ms
+2018-11-22 20:02:35.819 +08:00 [Information] Request finished in 17153.8569ms 200 application/json; charset=utf-8
+2018-11-22 20:02:38.904 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/lock text/plain 88
+2018-11-22 20:02:38.905 +08:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{"alg":"HS256","typ":"JWT"}.{"sub":"hrevuser2","sid":"892829272822828287102","jti":"c4941dfa-c370-4fac-adfd-73f2492e1f02","rol":[{"isadm":true,"rname":"hr-admin","grp":[{"gname":"HRWCOJOB"}]}],"dmn_adm":[{"dname":"adf4818b-c41c-4f6a-8560-3e46415d2c93"}],"ips":["127.0.0.1/127.0.0.1"],"exp":1542961560,"iss":"http://humanreview.api.risk.lexisnexis.com","aud":"http://humanreview.risk.lexisnexis.com"}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2018-11-22 20:02:38.911 +08:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{\"alg\":\"HS256\",\"typ\":\"JWT\"}.{\"sub\":\"hrevuser2\",\"sid\":\"892829272822828287102\",\"jti\":\"c4941dfa-c370-4fac-adfd-73f2492e1f02\",\"rol\":[{\"isadm\":true,\"rname\":\"hr-admin\",\"grp\":[{\"gname\":\"HRWCOJOB\"}]}],\"dmn_adm\":[{\"dname\":\"adf4818b-c41c-4f6a-8560-3e46415d2c93\"}],\"ips\":[\"127.0.0.1/127.0.0.1\"],\"exp\":1542961560,\"iss\":\"http://humanreview.api.risk.lexisnexis.com\",\"aud\":\"http://humanreview.risk.lexisnexis.com\"}'."
+2018-11-22 20:02:38.914 +08:00 [Information] Route matched with "{action = \"LockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)"
+2018-11-22 20:02:38.915 +08:00 [Information] Authorization failed.
+2018-11-22 20:02:38.915 +08:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-22 20:02:38.915 +08:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-22 20:02:38.915 +08:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-22 20:02:38.915 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" in 0.8612ms
+2018-11-22 20:02:38.915 +08:00 [Information] Request finished in 11.4733ms 401 
+2018-11-22 20:02:38.947 +08:00 [Information] Connection id ""0HLIGE95ICOBS"", Request id ""0HLIGE95ICOBS:00000003"": the application completed without reading the entire request body.
+2018-11-22 20:03:03.731 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/lock text/plain 88
+2018-11-22 20:03:03.762 +08:00 [Information] Successfully validated the token.
+2018-11-22 20:03:03.783 +08:00 [Information] Route matched with "{action = \"LockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)"
+2018-11-22 20:03:03.785 +08:00 [Information] Authorization was successful.
+2018-11-22 20:03:03.817 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 415
+2018-11-22 20:03:03.818 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" in 34.1171ms
+2018-11-22 20:03:03.833 +08:00 [Information] Request finished in 101.892ms 415 
+2018-11-22 20:03:03.838 +08:00 [Information] Connection id ""0HLIGE95ICOBR"", Request id ""0HLIGE95ICOBR:00000003"": the application completed without reading the entire request body.
+2018-11-22 20:03:24.499 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/lock text/plain 88
+2018-11-22 20:03:24.500 +08:00 [Information] Successfully validated the token.
+2018-11-22 20:03:24.500 +08:00 [Information] Route matched with "{action = \"LockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)"
+2018-11-22 20:03:24.501 +08:00 [Information] Authorization was successful.
+2018-11-22 20:03:24.501 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 415
+2018-11-22 20:03:24.501 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" in 0.9675ms
+2018-11-22 20:03:24.502 +08:00 [Information] Request finished in 2.3553ms 415 
+2018-11-22 20:03:24.530 +08:00 [Information] Connection id ""0HLIGE95ICOBS"", Request id ""0HLIGE95ICOBS:00000004"": the application completed without reading the entire request body.
+2018-11-22 20:03:30.320 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/lock application/json 88
+2018-11-22 20:03:30.320 +08:00 [Information] Successfully validated the token.
+2018-11-22 20:03:30.321 +08:00 [Information] Route matched with "{action = \"LockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)"
+2018-11-22 20:03:30.321 +08:00 [Information] Authorization was successful.
+2018-11-22 20:03:30.446 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" with arguments (["LNWCOE.Models.Admin.LockEntry"]) - Validation state: Valid
+2018-11-22 20:03:36.193 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:03:36.265 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__lockentry_IDFromWorkUnitsDBTable_0='?' (DbType = Int32), @__lockentry_AppUserID_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[ID], [t].[DateTimeItemWasLocked], [t].[LockedByRecipientID], [t].[fkItemID]
+FROM [FeedItemQueueLocks] AS [t]
+WHERE ([t].[fkItemID] = @__lockentry_IDFromWorkUnitsDBTable_0) AND ([t].[LockedByRecipientID] = @__lockentry_AppUserID_1)"
+2018-11-22 20:03:43.131 +08:00 [Error] Failed executing DbCommand ("44"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [FeedItemQueueLocks] ([DateTimeItemWasLocked], [LockedByRecipientID], [fkItemID])
+VALUES (@p0, @p1, @p2);
+SELECT [ID]
+FROM [FeedItemQueueLocks]
+WHERE @@ROWCOUNT = 1 AND [ID] = scope_identity();"
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'ID', table 'NewsFeed.dbo.FeedItemQueueLocks'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:1580e967-2211-4dd2-ab88-bc5222ed4002
+Error Number:515,State:2,Class:16
+2018-11-22 20:03:43.221 +08:00 [Error] An exception occurred in the database while saving changes for context type '"LNWCOE.Data.NEWSDBContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'ID', table 'NewsFeed.dbo.FeedItemQueueLocks'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'ID', table 'NewsFeed.dbo.FeedItemQueueLocks'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2018-11-22 20:11:33.014 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-22 20:11:35.334 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-22 20:11:35.334 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-22 20:11:35.334 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/lock application/json 88
+2018-11-22 20:11:35.737 +08:00 [Information] Request finished in 381.5667ms 200 
+2018-11-22 20:11:36.297 +08:00 [Information] Successfully validated the token.
+2018-11-22 20:11:37.332 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-22 20:11:37.332 +08:00 [Information] Route matched with "{action = \"LockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)"
+2018-11-22 20:11:37.397 +08:00 [Information] Authorization was successful.
+2018-11-22 20:11:37.414 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-22 20:11:37.427 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.2019ms.
+2018-11-22 20:11:37.757 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-22 20:11:37.924 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 580.4875ms
+2018-11-22 20:11:37.956 +08:00 [Information] Request finished in 2652.3434ms 200 application/json; charset=utf-8
+2018-11-22 20:11:38.720 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" with arguments (["LNWCOE.Models.Admin.LockEntry"]) - Validation state: Valid
+2018-11-22 20:11:44.446 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:11:46.610 +08:00 [Information] Executed DbCommand ("101"ms) [Parameters=["@__lockentry_IDFromWorkUnitsDBTable_0='?' (DbType = Int32), @__lockentry_AppUserID_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[ID], [t].[DateTimeItemWasLocked], [t].[LockedByRecipientID], [t].[fkItemID]
+FROM [FeedItemQueueLocks] AS [t]
+WHERE ([t].[fkItemID] = @__lockentry_IDFromWorkUnitsDBTable_0) AND ([t].[LockedByRecipientID] = @__lockentry_AppUserID_1)"
+2018-11-22 20:11:52.974 +08:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT MAX([x].[ID])
+FROM [FeedItemQueueLocks] AS [x]"
+2018-11-22 20:12:47.198 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-22 20:12:48.924 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-22 20:12:48.924 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-22 20:12:48.924 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/lock application/json 88
+2018-11-22 20:12:49.276 +08:00 [Information] Request finished in 364.8686ms 200 
+2018-11-22 20:12:49.729 +08:00 [Information] Successfully validated the token.
+2018-11-22 20:12:50.652 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-22 20:12:50.652 +08:00 [Information] Route matched with "{action = \"LockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)"
+2018-11-22 20:12:50.744 +08:00 [Information] Authorization was successful.
+2018-11-22 20:12:50.750 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-22 20:12:50.774 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.7163ms.
+2018-11-22 20:12:50.929 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-22 20:12:51.249 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 585.1062ms
+2018-11-22 20:12:51.277 +08:00 [Information] Request finished in 2381.9487ms 200 application/json; charset=utf-8
+2018-11-22 20:12:51.930 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" with arguments (["LNWCOE.Models.Admin.LockEntry"]) - Validation state: Valid
+2018-11-22 20:13:07.275 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:13:08.430 +08:00 [Information] Executed DbCommand ("148"ms) [Parameters=["@__lockentry_IDFromWorkUnitsDBTable_0='?' (DbType = Int32), @__lockentry_AppUserID_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[ID], [t].[DateTimeItemWasLocked], [t].[LockedByRecipientID], [t].[fkItemID]
+FROM [FeedItemQueueLocks] AS [t]
+WHERE ([t].[fkItemID] = @__lockentry_IDFromWorkUnitsDBTable_0) AND ([t].[LockedByRecipientID] = @__lockentry_AppUserID_1)"
+2018-11-22 20:13:11.626 +08:00 [Information] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT MAX([x].[ID])
+FROM [FeedItemQueueLocks] AS [x]"
+2018-11-22 20:13:20.248 +08:00 [Information] Executed DbCommand ("38"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [FeedItemQueueLocks] ([ID], [DateTimeItemWasLocked], [LockedByRecipientID], [fkItemID])
+VALUES (@p0, @p1, @p2, @p3);"
+2018-11-22 20:13:22.621 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 30682.1844ms.
+2018-11-22 20:13:22.626 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-22 20:13:22.628 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" in 31968.766ms
+2018-11-22 20:13:22.635 +08:00 [Information] Request finished in 33739.8662ms 200 
+2018-11-22 20:14:29.136 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-22 20:14:30.875 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-22 20:14:30.875 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-22 20:14:31.136 +08:00 [Information] Request finished in 255.4751ms 200 
+2018-11-22 20:14:32.510 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-22 20:14:32.588 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-22 20:14:32.599 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.7014ms.
+2018-11-22 20:14:32.657 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-22 20:14:32.876 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 351.2587ms
+2018-11-22 20:14:32.896 +08:00 [Information] Request finished in 2043.8562ms 200 application/json; charset=utf-8
+2018-11-22 20:15:06.958 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/lock application/json 88
+2018-11-22 20:15:07.223 +08:00 [Information] Successfully validated the token.
+2018-11-22 20:15:07.269 +08:00 [Information] Route matched with "{action = \"LockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)"
+2018-11-22 20:15:07.307 +08:00 [Information] Authorization was successful.
+2018-11-22 20:15:07.946 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" with arguments (["LNWCOE.Models.Admin.LockEntry"]) - Validation state: Valid
+2018-11-22 20:15:11.382 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:15:12.523 +08:00 [Information] Executed DbCommand ("152"ms) [Parameters=["@__lockentry_IDFromWorkUnitsDBTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[ID], [t].[DateTimeItemWasLocked], [t].[LockedByRecipientID], [t].[fkItemID]
+FROM [FeedItemQueueLocks] AS [t]
+WHERE [t].[fkItemID] = @__lockentry_IDFromWorkUnitsDBTable_0"
+2018-11-22 20:15:18.930 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:15:19.036 +08:00 [Information] Executed DbCommand ("51"ms) [Parameters=["@__lockentry_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[AppUserID], [t].[AppUserName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Email], [t].[GenderTypeID], [t].[IsActive], [t].[IsInternal], [t].[LastUpdatedUTC], [t].[OfficeID], [t].[OperationalRoleTypeID], [t].[PhotoImage], [t].[SupervisorAppUserID], [t].[UTCOffset], [t].[UpdatedBy]
+FROM [AppUser] AS [t]
+WHERE [t].[AppUserID] = @__lockentry_AppUserID_0"
+2018-11-22 20:15:22.599 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.NotFoundObjectResult" in 14644.9202ms.
+2018-11-22 20:15:22.604 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-11-22 20:15:22.606 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" in 15336.4293ms
+2018-11-22 20:15:22.615 +08:00 [Information] Request finished in 15656.482ms 404 application/json; charset=utf-8
+2018-11-22 20:15:39.032 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/lock application/json 88
+2018-11-22 20:15:39.035 +08:00 [Information] Successfully validated the token.
+2018-11-22 20:15:39.037 +08:00 [Information] Route matched with "{action = \"LockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)"
+2018-11-22 20:15:39.038 +08:00 [Information] Authorization was successful.
+2018-11-22 20:15:39.041 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" with arguments (["LNWCOE.Models.Admin.LockEntry"]) - Validation state: Valid
+2018-11-22 20:15:44.606 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:15:44.647 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__lockentry_IDFromWorkUnitsDBTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[ID], [t].[DateTimeItemWasLocked], [t].[LockedByRecipientID], [t].[fkItemID]
+FROM [FeedItemQueueLocks] AS [t]
+WHERE [t].[fkItemID] = @__lockentry_IDFromWorkUnitsDBTable_0"
+2018-11-22 20:15:48.352 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT MAX([x].[ID])
+FROM [FeedItemQueueLocks] AS [x]"
+2018-11-22 20:15:56.298 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [FeedItemQueueLocks] ([ID], [DateTimeItemWasLocked], [LockedByRecipientID], [fkItemID])
+VALUES (@p0, @p1, @p2, @p3);"
+2018-11-22 20:16:01.588 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 22545.8623ms.
+2018-11-22 20:16:01.595 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-22 20:16:01.597 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" in 22559.1482ms
+2018-11-22 20:16:01.598 +08:00 [Information] Request finished in 22565.6648ms 200 
+2018-11-22 20:16:52.871 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-22 20:16:54.769 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-22 20:16:54.769 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-22 20:16:55.028 +08:00 [Information] Request finished in 267.9879ms 200 
+2018-11-22 20:16:56.094 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-22 20:16:56.186 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-22 20:16:56.199 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.7555ms.
+2018-11-22 20:16:56.252 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-22 20:16:56.491 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 380.0903ms
+2018-11-22 20:16:56.517 +08:00 [Information] Request finished in 1770.6854ms 200 application/json; charset=utf-8
+2018-11-22 20:17:01.765 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/unlock text/plain 88
+2018-11-22 20:17:01.992 +08:00 [Information] Successfully validated the token.
+2018-11-22 20:17:02.050 +08:00 [Information] Route matched with "{action = \"UnLockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.UnLockNewsItem (LNWCOE)"
+2018-11-22 20:17:02.112 +08:00 [Information] Authorization was successful.
+2018-11-22 20:17:02.816 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 415
+2018-11-22 20:17:02.818 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.UnLockNewsItem (LNWCOE)" in 767.4795ms
+2018-11-22 20:17:02.819 +08:00 [Information] Request finished in 1054.1017ms 415 
+2018-11-22 20:17:02.941 +08:00 [Information] Connection id ""0HLIGEHHVKBOC"", Request id ""0HLIGEHHVKBOC:00000002"": the application completed without reading the entire request body.
+2018-11-22 20:17:13.984 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/unlock application/json 88
+2018-11-22 20:17:13.985 +08:00 [Information] Successfully validated the token.
+2018-11-22 20:17:13.991 +08:00 [Information] Route matched with "{action = \"UnLockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.UnLockNewsItem (LNWCOE)"
+2018-11-22 20:17:13.993 +08:00 [Information] Authorization was successful.
+2018-11-22 20:17:14.249 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.UnLockNewsItem (LNWCOE)" with arguments (["LNWCOE.Models.Admin.LockEntry"]) - Validation state: Valid
+2018-11-22 20:17:15.206 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:17:16.329 +08:00 [Information] Executed DbCommand ("107"ms) [Parameters=["@__lockentry_IDFromWorkUnitsDBTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[ID], [t].[DateTimeItemWasLocked], [t].[LockedByRecipientID], [t].[fkItemID]
+FROM [FeedItemQueueLocks] AS [t]
+WHERE [t].[fkItemID] = @__lockentry_IDFromWorkUnitsDBTable_0"
+2018-11-22 20:17:16.760 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [FeedItemQueueLocks]
+WHERE [ID] = @p0;
+SELECT @@ROWCOUNT;"
+2018-11-22 20:17:16.786 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.UnLockNewsItem (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2523.2715ms.
+2018-11-22 20:17:16.789 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-11-22 20:17:16.790 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.UnLockNewsItem (LNWCOE)" in 2798.9612ms
+2018-11-22 20:17:16.796 +08:00 [Information] Request finished in 2811.9682ms 200 application/json; charset=utf-8
+2018-11-22 20:17:40.930 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/unlock application/json 88
+2018-11-22 20:17:40.930 +08:00 [Information] Successfully validated the token.
+2018-11-22 20:17:40.931 +08:00 [Information] Route matched with "{action = \"UnLockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.UnLockNewsItem (LNWCOE)"
+2018-11-22 20:17:40.931 +08:00 [Information] Authorization was successful.
+2018-11-22 20:17:40.934 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.UnLockNewsItem (LNWCOE)" with arguments (["LNWCOE.Models.Admin.LockEntry"]) - Validation state: Valid
+2018-11-22 20:17:40.937 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:17:40.954 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__lockentry_IDFromWorkUnitsDBTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[ID], [t].[DateTimeItemWasLocked], [t].[LockedByRecipientID], [t].[fkItemID]
+FROM [FeedItemQueueLocks] AS [t]
+WHERE [t].[fkItemID] = @__lockentry_IDFromWorkUnitsDBTable_0"
+2018-11-22 20:17:58.450 +08:00 [Information] Executed DbCommand ("21"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [FeedItemQueueLocks]
+WHERE [ID] = @p0;
+SELECT @@ROWCOUNT;"
+2018-11-22 20:17:59.892 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.UnLockNewsItem (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 18957.0144ms.
+2018-11-22 20:17:59.892 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-11-22 20:17:59.893 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.UnLockNewsItem (LNWCOE)" in 18961.805ms
+2018-11-22 20:17:59.893 +08:00 [Information] Request finished in 18963.0316ms 200 application/json; charset=utf-8
+2018-11-22 20:18:16.983 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/lock application/json 88
+2018-11-22 20:18:16.984 +08:00 [Information] Successfully validated the token.
+2018-11-22 20:18:16.987 +08:00 [Information] Route matched with "{action = \"LockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)"
+2018-11-22 20:18:16.987 +08:00 [Information] Authorization was successful.
+2018-11-22 20:18:22.232 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" with arguments (["LNWCOE.Models.Admin.LockEntry"]) - Validation state: Valid
+2018-11-22 20:18:26.266 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:18:26.290 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__lockentry_IDFromWorkUnitsDBTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[ID], [t].[DateTimeItemWasLocked], [t].[LockedByRecipientID], [t].[fkItemID]
+FROM [FeedItemQueueLocks] AS [t]
+WHERE [t].[fkItemID] = @__lockentry_IDFromWorkUnitsDBTable_0"
+2018-11-22 20:18:31.393 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:18:31.507 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__lockentry_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[AppUserID], [t].[AppUserName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Email], [t].[GenderTypeID], [t].[IsActive], [t].[IsInternal], [t].[LastUpdatedUTC], [t].[OfficeID], [t].[OperationalRoleTypeID], [t].[PhotoImage], [t].[SupervisorAppUserID], [t].[UTCOffset], [t].[UpdatedBy]
+FROM [AppUser] AS [t]
+WHERE [t].[AppUserID] = @__lockentry_AppUserID_0"
+2018-11-22 20:18:43.148 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.NotFoundObjectResult" in 20915.0577ms.
+2018-11-22 20:18:43.148 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-11-22 20:18:43.148 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" in 26160.8226ms
+2018-11-22 20:18:43.149 +08:00 [Information] Request finished in 26165.034ms 404 application/json; charset=utf-8
+2018-11-22 20:19:05.085 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/lock application/json 88
+2018-11-22 20:19:05.086 +08:00 [Information] Successfully validated the token.
+2018-11-22 20:19:05.086 +08:00 [Information] Route matched with "{action = \"LockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)"
+2018-11-22 20:19:05.086 +08:00 [Information] Authorization was successful.
+2018-11-22 20:19:12.191 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" with arguments (["LNWCOE.Models.Admin.LockEntry"]) - Validation state: Valid
+2018-11-22 20:19:15.451 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:19:15.476 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__lockentry_IDFromWorkUnitsDBTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[ID], [t].[DateTimeItemWasLocked], [t].[LockedByRecipientID], [t].[fkItemID]
+FROM [FeedItemQueueLocks] AS [t]
+WHERE [t].[fkItemID] = @__lockentry_IDFromWorkUnitsDBTable_0"
+2018-11-22 20:19:22.856 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:19:22.886 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__lockentry_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[AppUserID], [t].[AppUserName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Email], [t].[GenderTypeID], [t].[IsActive], [t].[IsInternal], [t].[LastUpdatedUTC], [t].[OfficeID], [t].[OperationalRoleTypeID], [t].[PhotoImage], [t].[SupervisorAppUserID], [t].[UTCOffset], [t].[UpdatedBy]
+FROM [AppUser] AS [t]
+WHERE [t].[AppUserID] = @__lockentry_AppUserID_0"
+2018-11-22 20:19:30.214 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.NotFoundObjectResult" in 18022.6599ms.
+2018-11-22 20:19:30.215 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-11-22 20:19:30.223 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" in 25136.1755ms
+2018-11-22 20:19:30.223 +08:00 [Information] Request finished in 25137.3204ms 404 application/json; charset=utf-8
+2018-11-22 20:19:36.869 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/lock application/json 88
+2018-11-22 20:19:36.870 +08:00 [Information] Successfully validated the token.
+2018-11-22 20:19:36.870 +08:00 [Information] Route matched with "{action = \"LockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)"
+2018-11-22 20:19:36.870 +08:00 [Information] Authorization was successful.
+2018-11-22 20:19:36.873 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" with arguments (["LNWCOE.Models.Admin.LockEntry"]) - Validation state: Valid
+2018-11-22 20:19:40.057 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:19:40.083 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__lockentry_IDFromWorkUnitsDBTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[ID], [t].[DateTimeItemWasLocked], [t].[LockedByRecipientID], [t].[fkItemID]
+FROM [FeedItemQueueLocks] AS [t]
+WHERE [t].[fkItemID] = @__lockentry_IDFromWorkUnitsDBTable_0"
+2018-11-22 20:19:42.164 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:19:42.196 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__lockentry_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[AppUserID], [t].[AppUserName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Email], [t].[GenderTypeID], [t].[IsActive], [t].[IsInternal], [t].[LastUpdatedUTC], [t].[OfficeID], [t].[OperationalRoleTypeID], [t].[PhotoImage], [t].[SupervisorAppUserID], [t].[UTCOffset], [t].[UpdatedBy]
+FROM [AppUser] AS [t]
+WHERE [t].[AppUserID] = @__lockentry_AppUserID_0"
+2018-11-22 20:19:48.260 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.NotFoundObjectResult" in 11387.0454ms.
+2018-11-22 20:19:48.261 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-11-22 20:19:48.261 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" in 11390.578ms
+2018-11-22 20:19:48.261 +08:00 [Information] Request finished in 11391.9667ms 404 application/json; charset=utf-8
+2018-11-22 20:20:53.970 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-22 20:20:55.735 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-22 20:20:55.735 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-22 20:20:55.978 +08:00 [Information] Request finished in 249.5792ms 200 
+2018-11-22 20:20:57.044 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-22 20:20:57.112 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-22 20:20:57.130 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.4729ms.
+2018-11-22 20:20:57.197 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-22 20:20:57.456 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 399.1485ms
+2018-11-22 20:20:57.481 +08:00 [Information] Request finished in 1766.0225ms 200 application/json; charset=utf-8
+2018-11-22 20:21:13.452 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/lock application/json 88
+2018-11-22 20:21:13.680 +08:00 [Information] Successfully validated the token.
+2018-11-22 20:21:13.715 +08:00 [Information] Route matched with "{action = \"LockNewsItem\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)"
+2018-11-22 20:21:13.759 +08:00 [Information] Authorization was successful.
+2018-11-22 20:21:14.509 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" with arguments (["LNWCOE.Models.Admin.LockEntry"]) - Validation state: Valid
+2018-11-22 20:21:23.659 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"NEWSDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:21:24.675 +08:00 [Information] Executed DbCommand ("123"ms) [Parameters=["@__lockentry_IDFromWorkUnitsDBTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[ID], [t].[DateTimeItemWasLocked], [t].[LockedByRecipientID], [t].[fkItemID]
+FROM [FeedItemQueueLocks] AS [t]
+WHERE [t].[fkItemID] = @__lockentry_IDFromWorkUnitsDBTable_0"
+2018-11-22 20:21:30.274 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-22 20:21:30.343 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__lockentry_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[AppUserID], [t].[AppUserName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Email], [t].[GenderTypeID], [t].[IsActive], [t].[IsInternal], [t].[LastUpdatedUTC], [t].[OfficeID], [t].[OperationalRoleTypeID], [t].[PhotoImage], [t].[SupervisorAppUserID], [t].[UTCOffset], [t].[UpdatedBy]
+FROM [AppUser] AS [t]
+WHERE [t].[AppUserID] = @__lockentry_AppUserID_0"
+2018-11-22 20:21:35.510 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.NotFoundObjectResult" in 20990.9337ms.
+2018-11-22 20:21:35.514 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-11-22 20:21:35.516 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.LockNewsItem (LNWCOE)" in 21800.7895ms
+2018-11-22 20:21:35.522 +08:00 [Information] Request finished in 22069.8054ms 404 application/json; charset=utf-8

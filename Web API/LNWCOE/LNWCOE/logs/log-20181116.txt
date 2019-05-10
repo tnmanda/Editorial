@@ -1,0 +1,1125 @@
+2018-11-16 14:38:24.945 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 14:38:28.165 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 14:38:28.165 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 14:38:28.165 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/sendmail application/json 168
+2018-11-16 14:38:28.458 +08:00 [Information] Request finished in 301.7171ms 200 
+2018-11-16 14:38:29.215 +08:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/15/2018 18:41:41', Current time: '11/16/2018 06:38:29'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2018-11-16 14:38:29.480 +08:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/15/2018 18:41:41', Current time: '11/16/2018 06:38:29'."
+2018-11-16 14:38:30.240 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 14:38:30.240 +08:00 [Information] Route matched with "{action = \"SendInvestigationEmail\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)"
+2018-11-16 14:38:30.296 +08:00 [Information] Authorization failed.
+2018-11-16 14:38:30.303 +08:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-16 14:38:30.305 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 14:38:30.317 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.8664ms.
+2018-11-16 14:38:30.322 +08:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-16 14:38:30.362 +08:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-16 14:38:30.363 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 14:38:30.370 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" in 121.5649ms
+2018-11-16 14:38:30.381 +08:00 [Information] Request finished in 2242.2089ms 401 
+2018-11-16 14:38:30.437 +08:00 [Information] Connection id ""0HLIBHOEQ34MP"", Request id ""0HLIBHOEQ34MP:00000001"": the application completed without reading the entire request body.
+2018-11-16 14:38:30.539 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 294.587ms
+2018-11-16 14:38:30.548 +08:00 [Information] Request finished in 2409.2194ms 200 application/json; charset=utf-8
+2018-11-16 14:38:30.683 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/favicon.ico  
+2018-11-16 14:38:30.686 +08:00 [Information] Request finished in 2.8444ms 404 
+2018-11-16 14:38:34.178 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-11-16 14:38:34.182 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-11-16 14:38:35.686 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-11-16 14:38:37.071 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 14:38:38.768 +08:00 [Information] Executed DbCommand ("147"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-11-16 14:38:40.311 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-11-16 14:38:40.569 +08:00 [Information] Executed DbCommand ("29"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-11-16 14:38:40.610 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 4915.7696ms.
+2018-11-16 14:38:40.616 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType5`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-16 14:38:40.643 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 6460.3136ms
+2018-11-16 14:38:40.658 +08:00 [Information] Request finished in 6479.5045ms 200 application/json; charset=utf-8
+2018-11-16 14:38:50.821 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/sendmail application/json 168
+2018-11-16 14:38:50.849 +08:00 [Information] Successfully validated the token.
+2018-11-16 14:38:50.861 +08:00 [Information] Route matched with "{action = \"SendInvestigationEmail\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)"
+2018-11-16 14:38:50.863 +08:00 [Information] Authorization was successful.
+2018-11-16 14:38:50.915 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestiationEmailRequest"]) - Validation state: Valid
+2018-11-16 14:38:50.923 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 14:38:50.947 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__emailreq_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AppUserID], [x].[AppUserName], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Email], [x].[GenderTypeID], [x].[IsActive], [x].[IsInternal], [x].[LastUpdatedUTC], [x].[OfficeID], [x].[OperationalRoleTypeID], [x].[PhotoImage], [x].[SupervisorAppUserID], [x].[UTCOffset], [x].[UpdatedBy]
+FROM [AppUser] AS [x]
+WHERE [x].[AppUserID] = @__emailreq_AppUserID_0"
+2018-11-16 14:38:50.993 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__emailreq_IndexFromWorkTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID]
+FROM [Investigation] AS [x]
+WHERE [x].[InvestigationID] = @__emailreq_IndexFromWorkTable_0"
+2018-11-16 14:38:51.314 +08:00 [Information] Executed DbCommand ("34"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationEmails] ([AppUserID], [CreatedBy], [DateCreatedUTC], [EmailBody], [InvestigationID], [LastUpdatedUTC], [SentDateUTC], [SentFrom], [SentTo], [StatusOrErrorMessage], [Subject], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [InvestigationEmailID]
+FROM [InvestigationEmails]
+WHERE @@ROWCOUNT = 1 AND [InvestigationEmailID] = scope_identity();"
+2018-11-16 14:45:45.674 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 14:45:47.235 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 14:45:47.235 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 14:45:47.442 +08:00 [Information] Request finished in 215.5956ms 200 
+2018-11-16 14:45:48.314 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 14:45:48.406 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 14:45:48.422 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.9324ms.
+2018-11-16 14:45:48.487 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 14:45:48.731 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 404.8382ms
+2018-11-16 14:45:48.750 +08:00 [Information] Request finished in 1533.694ms 200 application/json; charset=utf-8
+2018-11-16 14:45:58.681 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/sendmail application/json 168
+2018-11-16 14:45:58.820 +08:00 [Information] Successfully validated the token.
+2018-11-16 14:45:58.866 +08:00 [Information] Route matched with "{action = \"SendInvestigationEmail\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)"
+2018-11-16 14:45:58.914 +08:00 [Information] Authorization was successful.
+2018-11-16 14:45:59.525 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestiationEmailRequest"]) - Validation state: Valid
+2018-11-16 14:46:01.089 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 14:46:02.159 +08:00 [Information] Executed DbCommand ("130"ms) [Parameters=["@__emailreq_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AppUserID], [x].[AppUserName], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Email], [x].[GenderTypeID], [x].[IsActive], [x].[IsInternal], [x].[LastUpdatedUTC], [x].[OfficeID], [x].[OperationalRoleTypeID], [x].[PhotoImage], [x].[SupervisorAppUserID], [x].[UTCOffset], [x].[UpdatedBy]
+FROM [AppUser] AS [x]
+WHERE [x].[AppUserID] = @__emailreq_AppUserID_0"
+2018-11-16 14:46:02.374 +08:00 [Information] Executed DbCommand ("9"ms) [Parameters=["@__emailreq_IndexFromWorkTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID]
+FROM [Investigation] AS [x]
+WHERE [x].[InvestigationID] = @__emailreq_IndexFromWorkTable_0"
+2018-11-16 14:46:02.718 +08:00 [Information] Executed DbCommand ("13"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationEmails] ([AppUserID], [CreatedBy], [DateCreatedUTC], [EmailBody], [InvestigationID], [LastUpdatedUTC], [SentDateUTC], [SentFrom], [SentTo], [StatusOrErrorMessage], [Subject], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [InvestigationEmailID]
+FROM [InvestigationEmails]
+WHERE @@ROWCOUNT = 1 AND [InvestigationEmailID] = scope_identity();"
+2018-11-16 14:46:19.605 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 20070.3234ms.
+2018-11-16 14:46:19.611 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-16 14:46:19.613 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" in 20746.6147ms
+2018-11-16 14:46:19.619 +08:00 [Information] Request finished in 20937.9827ms 200 
+2018-11-16 15:01:47.629 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 15:01:49.995 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/sendmail application/json 168
+2018-11-16 15:01:51.278 +08:00 [Information] Successfully validated the token.
+2018-11-16 15:01:53.204 +08:00 [Information] Route matched with "{action = \"SendInvestigationEmail\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)"
+2018-11-16 15:01:53.265 +08:00 [Information] Authorization was successful.
+2018-11-16 15:01:54.599 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestiationEmailRequest"]) - Validation state: Valid
+2018-11-16 15:01:56.055 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 15:01:57.458 +08:00 [Information] Executed DbCommand ("93"ms) [Parameters=["@__emailreq_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AppUserID], [x].[AppUserName], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Email], [x].[GenderTypeID], [x].[IsActive], [x].[IsInternal], [x].[LastUpdatedUTC], [x].[OfficeID], [x].[OperationalRoleTypeID], [x].[PhotoImage], [x].[SupervisorAppUserID], [x].[UTCOffset], [x].[UpdatedBy]
+FROM [AppUser] AS [x]
+WHERE [x].[AppUserID] = @__emailreq_AppUserID_0"
+2018-11-16 15:01:57.846 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__emailreq_IndexFromWorkTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID]
+FROM [Investigation] AS [x]
+WHERE [x].[InvestigationID] = @__emailreq_IndexFromWorkTable_0"
+2018-11-16 15:01:58.229 +08:00 [Information] Executed DbCommand ("9"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationEmails] ([AppUserID], [CreatedBy], [DateCreatedUTC], [EmailBody], [InvestigationID], [LastUpdatedUTC], [SentDateUTC], [SentFrom], [SentTo], [StatusOrErrorMessage], [Subject], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [InvestigationEmailID]
+FROM [InvestigationEmails]
+WHERE @@ROWCOUNT = 1 AND [InvestigationEmailID] = scope_identity();"
+2018-11-16 15:01:58.998 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 4385.2613ms.
+2018-11-16 15:01:59.017 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-16 15:01:59.032 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" in 5817.6002ms
+2018-11-16 15:01:59.225 +08:00 [Information] Request finished in 9257.0317ms 200 
+2018-11-16 15:17:38.052 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/sendmail application/json 168
+2018-11-16 15:17:38.091 +08:00 [Information] Successfully validated the token.
+2018-11-16 15:17:38.184 +08:00 [Information] Route matched with "{action = \"SendInvestigationEmail\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)"
+2018-11-16 15:17:38.185 +08:00 [Information] Authorization was successful.
+2018-11-16 15:17:38.188 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestiationEmailRequest"]) - Validation state: Valid
+2018-11-16 15:17:38.190 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 15:17:38.256 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__emailreq_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AppUserID], [x].[AppUserName], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Email], [x].[GenderTypeID], [x].[IsActive], [x].[IsInternal], [x].[LastUpdatedUTC], [x].[OfficeID], [x].[OperationalRoleTypeID], [x].[PhotoImage], [x].[SupervisorAppUserID], [x].[UTCOffset], [x].[UpdatedBy]
+FROM [AppUser] AS [x]
+WHERE [x].[AppUserID] = @__emailreq_AppUserID_0"
+2018-11-16 15:17:38.260 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__emailreq_IndexFromWorkTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID]
+FROM [Investigation] AS [x]
+WHERE [x].[InvestigationID] = @__emailreq_IndexFromWorkTable_0"
+2018-11-16 15:17:38.269 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationEmails] ([AppUserID], [CreatedBy], [DateCreatedUTC], [EmailBody], [InvestigationID], [LastUpdatedUTC], [SentDateUTC], [SentFrom], [SentTo], [StatusOrErrorMessage], [Subject], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [InvestigationEmailID]
+FROM [InvestigationEmails]
+WHERE @@ROWCOUNT = 1 AND [InvestigationEmailID] = scope_identity();"
+2018-11-16 15:17:38.452 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 263.5158ms.
+2018-11-16 15:17:38.452 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-16 15:17:38.452 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" in 267.9381ms
+2018-11-16 15:17:38.453 +08:00 [Information] Request finished in 400.7888ms 200 
+2018-11-16 15:18:39.251 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 15:18:44.592 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 15:18:44.592 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 15:18:44.994 +08:00 [Information] Request finished in 396.8018ms 200 
+2018-11-16 15:18:46.800 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 15:18:46.884 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 15:18:46.899 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.2774ms.
+2018-11-16 15:18:46.963 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 15:18:47.311 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 501.4688ms
+2018-11-16 15:18:47.327 +08:00 [Information] Request finished in 2764.6283ms 200 application/json; charset=utf-8
+2018-11-16 15:21:08.780 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 15:21:10.316 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 15:21:10.316 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 15:21:10.556 +08:00 [Information] Request finished in 237.6092ms 200 
+2018-11-16 15:21:11.688 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 15:21:11.761 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 15:21:11.784 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 6.031ms.
+2018-11-16 15:21:11.841 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 15:21:12.109 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 411.3164ms
+2018-11-16 15:21:12.139 +08:00 [Information] Request finished in 1843.6056ms 200 application/json; charset=utf-8
+2018-11-16 15:22:29.743 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/sendmail application/json 168
+2018-11-16 15:22:29.922 +08:00 [Information] Successfully validated the token.
+2018-11-16 15:22:29.959 +08:00 [Information] Route matched with "{action = \"SendInvestigationEmail\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)"
+2018-11-16 15:22:30.026 +08:00 [Information] Authorization was successful.
+2018-11-16 15:22:30.869 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestiationEmailRequest"]) - Validation state: Valid
+2018-11-16 15:22:32.108 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 15:22:33.205 +08:00 [Information] Executed DbCommand ("99"ms) [Parameters=["@__emailreq_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AppUserID], [x].[AppUserName], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Email], [x].[GenderTypeID], [x].[IsActive], [x].[IsInternal], [x].[LastUpdatedUTC], [x].[OfficeID], [x].[OperationalRoleTypeID], [x].[PhotoImage], [x].[SupervisorAppUserID], [x].[UTCOffset], [x].[UpdatedBy]
+FROM [AppUser] AS [x]
+WHERE [x].[AppUserID] = @__emailreq_AppUserID_0"
+2018-11-16 15:22:33.425 +08:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@__emailreq_IndexFromWorkTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID]
+FROM [Investigation] AS [x]
+WHERE [x].[InvestigationID] = @__emailreq_IndexFromWorkTable_0"
+2018-11-16 15:22:33.752 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationEmails] ([AppUserID], [CreatedBy], [DateCreatedUTC], [EmailBody], [InvestigationID], [LastUpdatedUTC], [SentDateUTC], [SentFrom], [SentTo], [StatusOrErrorMessage], [Subject], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [InvestigationEmailID]
+FROM [InvestigationEmails]
+WHERE @@ROWCOUNT = 1 AND [InvestigationEmailID] = scope_identity();"
+2018-11-16 15:22:43.334 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 12457.6722ms.
+2018-11-16 15:22:43.338 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-11-16 15:22:43.341 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" in 13381.0385ms
+2018-11-16 15:22:43.346 +08:00 [Information] Request finished in 13602.995ms 400 application/json; charset=utf-8
+2018-11-16 15:24:09.523 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 15:24:11.732 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 15:24:11.732 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 15:24:11.957 +08:00 [Information] Request finished in 221.1474ms 200 
+2018-11-16 15:24:12.680 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 15:24:12.736 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 15:24:12.746 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.4667ms.
+2018-11-16 15:24:12.782 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 15:24:13.007 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 316.24ms
+2018-11-16 15:24:13.020 +08:00 [Information] Request finished in 1305.5263ms 200 application/json; charset=utf-8
+2018-11-16 15:24:52.793 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/sendmail application/json 168
+2018-11-16 15:24:53.004 +08:00 [Information] Successfully validated the token.
+2018-11-16 15:24:53.037 +08:00 [Information] Route matched with "{action = \"SendInvestigationEmail\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)"
+2018-11-16 15:24:53.076 +08:00 [Information] Authorization was successful.
+2018-11-16 15:24:53.656 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestiationEmailRequest"]) - Validation state: Valid
+2018-11-16 15:24:55.804 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 15:24:56.997 +08:00 [Information] Executed DbCommand ("132"ms) [Parameters=["@__emailreq_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AppUserID], [x].[AppUserName], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Email], [x].[GenderTypeID], [x].[IsActive], [x].[IsInternal], [x].[LastUpdatedUTC], [x].[OfficeID], [x].[OperationalRoleTypeID], [x].[PhotoImage], [x].[SupervisorAppUserID], [x].[UTCOffset], [x].[UpdatedBy]
+FROM [AppUser] AS [x]
+WHERE [x].[AppUserID] = @__emailreq_AppUserID_0"
+2018-11-16 15:24:57.236 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__emailreq_IndexFromWorkTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID]
+FROM [Investigation] AS [x]
+WHERE [x].[InvestigationID] = @__emailreq_IndexFromWorkTable_0"
+2018-11-16 15:24:57.612 +08:00 [Information] Executed DbCommand ("12"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationEmails] ([AppUserID], [CreatedBy], [DateCreatedUTC], [EmailBody], [InvestigationID], [LastUpdatedUTC], [SentDateUTC], [SentFrom], [SentTo], [StatusOrErrorMessage], [Subject], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [InvestigationEmailID]
+FROM [InvestigationEmails]
+WHERE @@ROWCOUNT = 1 AND [InvestigationEmailID] = scope_identity();"
+2018-11-16 15:25:04.923 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 11259.3846ms.
+2018-11-16 15:25:04.928 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-11-16 15:25:04.929 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" in 11892.2116ms
+2018-11-16 15:25:04.946 +08:00 [Information] Request finished in 12152.9202ms 400 application/json; charset=utf-8
+2018-11-16 15:43:54.528 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 15:43:56.004 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 15:43:56.004 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 15:43:56.273 +08:00 [Information] Request finished in 261.8696ms 200 
+2018-11-16 15:43:57.201 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 15:43:57.260 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 15:43:57.270 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.9155ms.
+2018-11-16 15:43:57.321 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 15:43:57.542 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 329.1036ms
+2018-11-16 15:43:57.573 +08:00 [Information] Request finished in 1588.3943ms 200 application/json; charset=utf-8
+2018-11-16 15:44:02.669 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/sendmail application/json 168
+2018-11-16 15:44:02.822 +08:00 [Information] Successfully validated the token.
+2018-11-16 15:44:02.852 +08:00 [Information] Route matched with "{action = \"SendInvestigationEmail\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)"
+2018-11-16 15:44:02.884 +08:00 [Information] Authorization was successful.
+2018-11-16 15:44:03.462 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestiationEmailRequest"]) - Validation state: Valid
+2018-11-16 15:44:04.730 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 15:44:05.632 +08:00 [Information] Executed DbCommand ("99"ms) [Parameters=["@__emailreq_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AppUserID], [x].[AppUserName], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Email], [x].[GenderTypeID], [x].[IsActive], [x].[IsInternal], [x].[LastUpdatedUTC], [x].[OfficeID], [x].[OperationalRoleTypeID], [x].[PhotoImage], [x].[SupervisorAppUserID], [x].[UTCOffset], [x].[UpdatedBy]
+FROM [AppUser] AS [x]
+WHERE [x].[AppUserID] = @__emailreq_AppUserID_0"
+2018-11-16 15:44:05.841 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__emailreq_IndexFromWorkTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID]
+FROM [Investigation] AS [x]
+WHERE [x].[InvestigationID] = @__emailreq_IndexFromWorkTable_0"
+2018-11-16 15:44:06.189 +08:00 [Information] Executed DbCommand ("29"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationEmails] ([AppUserID], [CreatedBy], [DateCreatedUTC], [EmailBody], [InvestigationID], [LastUpdatedUTC], [SentDateUTC], [SentFrom], [SentTo], [StatusOrErrorMessage], [Subject], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [InvestigationEmailID]
+FROM [InvestigationEmails]
+WHERE @@ROWCOUNT = 1 AND [InvestigationEmailID] = scope_identity();"
+2018-11-16 15:44:11.984 +08:00 [Error] 00000000-0000-0000-0000-000000000000 - System.Net.Mail.SmtpException: Failure sending mail. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+   at System.Net.Mail.SmtpConnection.GetConnection(String host, Int32 port)
+   at System.Net.Mail.SmtpTransport.GetConnection(String host, Int32 port)
+   at System.Net.Mail.SmtpClient.GetConnection()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at LNWCOE.Helpers.Common.SendMail(String SmtpServer, String From, String To, String CC, String BCC, String Subject, String Body, ILogger logger) in C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\Helpers\General.cs:line 124
+2018-11-16 15:44:25.056 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 21586.1685ms.
+2018-11-16 15:44:25.060 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-11-16 15:44:25.061 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" in 22209.5029ms
+2018-11-16 15:44:25.067 +08:00 [Information] Request finished in 22397.5481ms 400 application/json; charset=utf-8
+2018-11-16 15:46:58.872 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 15:47:00.507 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 15:47:00.507 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 15:47:00.785 +08:00 [Information] Request finished in 273.8957ms 200 
+2018-11-16 15:47:01.786 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 15:47:01.852 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 15:47:01.863 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.567ms.
+2018-11-16 15:47:01.904 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 15:47:02.118 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 318.7348ms
+2018-11-16 15:47:02.137 +08:00 [Information] Request finished in 1658.3716ms 200 application/json; charset=utf-8
+2018-11-16 15:47:16.033 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/sendmail application/json 168
+2018-11-16 15:47:16.182 +08:00 [Information] Successfully validated the token.
+2018-11-16 15:47:16.213 +08:00 [Information] Route matched with "{action = \"SendInvestigationEmail\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)"
+2018-11-16 15:47:16.248 +08:00 [Information] Authorization was successful.
+2018-11-16 15:47:16.985 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestiationEmailRequest"]) - Validation state: Valid
+2018-11-16 15:47:18.338 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 15:47:19.274 +08:00 [Information] Executed DbCommand ("101"ms) [Parameters=["@__emailreq_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AppUserID], [x].[AppUserName], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Email], [x].[GenderTypeID], [x].[IsActive], [x].[IsInternal], [x].[LastUpdatedUTC], [x].[OfficeID], [x].[OperationalRoleTypeID], [x].[PhotoImage], [x].[SupervisorAppUserID], [x].[UTCOffset], [x].[UpdatedBy]
+FROM [AppUser] AS [x]
+WHERE [x].[AppUserID] = @__emailreq_AppUserID_0"
+2018-11-16 15:47:19.578 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__emailreq_IndexFromWorkTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID]
+FROM [Investigation] AS [x]
+WHERE [x].[InvestigationID] = @__emailreq_IndexFromWorkTable_0"
+2018-11-16 15:47:19.912 +08:00 [Information] Executed DbCommand ("30"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationEmails] ([AppUserID], [CreatedBy], [DateCreatedUTC], [EmailBody], [InvestigationID], [LastUpdatedUTC], [SentDateUTC], [SentFrom], [SentTo], [StatusOrErrorMessage], [Subject], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [InvestigationEmailID]
+FROM [InvestigationEmails]
+WHERE @@ROWCOUNT = 1 AND [InvestigationEmailID] = scope_identity();"
+2018-11-16 15:47:23.071 +08:00 [Error] 50f957d8-4351-49c0-a291-20ddfaf2a19a - System.Net.Mail.SmtpException: Failure sending mail. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+   at System.Net.Mail.SmtpConnection.GetConnection(String host, Int32 port)
+   at System.Net.Mail.SmtpTransport.GetConnection(String host, Int32 port)
+   at System.Net.Mail.SmtpClient.GetConnection()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at LNWCOE.Helpers.Common.SendMail(String SmtpServer, String From, String To, String CC, String BCC, String Subject, String Body, ILogger logger) in C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\Helpers\General.cs:line 124
+2018-11-16 15:47:31.382 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 14386.5824ms.
+2018-11-16 15:47:31.387 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-11-16 15:47:31.389 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" in 15176.311ms
+2018-11-16 15:47:31.406 +08:00 [Information] Request finished in 15373.4126ms 400 application/json; charset=utf-8
+2018-11-16 16:48:18.918 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 16:48:20.059 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Investigation/180  
+2018-11-16 16:48:20.443 +08:00 [Information] Successfully validated the token.
+2018-11-16 16:48:21.091 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)"
+2018-11-16 16:48:21.148 +08:00 [Information] Authorization was successful.
+2018-11-16 16:48:21.551 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" with arguments (["180"]) - Validation state: Valid
+2018-11-16 16:48:22.665 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 16:48:23.945 +08:00 [Information] Executed DbCommand ("313"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID], [x.InvestigationStatus].[InvestigationStatusID], [x.InvestigationStatus].[CreatedBy], [x.InvestigationStatus].[DateCreatedUTC], [x.InvestigationStatus].[InvestigationStatusDescription], [x.InvestigationStatus].[InvestigationStatusName], [x.InvestigationStatus].[IsDefault], [x.InvestigationStatus].[LastUpdatedUTC], [x.InvestigationStatus].[UpdatedBy], [x.InvestigationDispositions].[InvestigationDispositionsID], [x.InvestigationDispositions].[CreatedBy], [x.InvestigationDispositions].[DateCreatedUTC], [x.InvestigationDispositions].[DispositionDescription], [x.InvestigationDispositions].[DispositionType], [x.InvestigationDispositions].[LastUpdatedUTC], [x.InvestigationDispositions].[UpdatedBy], [x.FunctionType].[FunctionTypeID], [x.FunctionType].[CreatedBy], [x.FunctionType].[DateCreatedUTC], [x.FunctionType].[FunctionTypeDesc], [x.FunctionType].[FunctionTypeName], [x.FunctionType].[IsActive], [x.FunctionType].[IsInList], [x.FunctionType].[LastUpdatedUTC], [x.FunctionType].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy], [x.PriorityType].[PriorityTypeID], [x.PriorityType].[CreatedBy], [x.PriorityType].[DateCreatedUTC], [x.PriorityType].[LastUpdatedUTC], [x.PriorityType].[PriorityDescription], [x.PriorityType].[PriorityName], [x.PriorityType].[PriorityWeight], [x.PriorityType].[UpdatedBy]
+FROM [Investigation] AS [x]
+LEFT JOIN [InvestigationStatus] AS [x.InvestigationStatus] ON [x].[InvestigationStatusID] = [x.InvestigationStatus].[InvestigationStatusID]
+LEFT JOIN [InvestigationDispositions] AS [x.InvestigationDispositions] ON [x].[InvestigationDispositionsID] = [x.InvestigationDispositions].[InvestigationDispositionsID]
+LEFT JOIN [FunctionType] AS [x.FunctionType] ON [x].[FunctionTypeID] = [x.FunctionType].[FunctionTypeID]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+LEFT JOIN [PriorityType] AS [x.PriorityType] ON [x].[PriorityTypeID] = [x.PriorityType].[PriorityTypeID]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 16:48:24.412 +08:00 [Information] Executed DbCommand ("78"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationEntityID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Ent_ID], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[UpdatedBy]
+FROM [InvestigationEntity] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 16:48:24.472 +08:00 [Warning] No type was specified for the decimal column '"CriminalAmount"' on entity type '"Entities"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-11-16 16:48:24.473 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"MMMDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 16:48:24.653 +08:00 [Information] Executed DbCommand ("23"ms) [Parameters=["@__thisEntityID_Ent_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Ent_ID], [x].[AID], [x].[Aka], [x].[Approved], [x].[ApprovedBy], [x].[ApprovedDate], [x].[BatchName], [x].[CiBit], [x].[CiElements], [x].[CiIndex], [x].[Country], [x].[CountryId], [x].[CriminalAmount], [x].[DOB], [x].[DOB2], [x].[DateEntered], [x].[DateUpdated], [x].[DobOriginal], [x].[EffectiveDate], [x].[EntLevel], [x].[EnteredBy], [x].[EntitiesLevelsId], [x].[EntitiesSourceID], [x].[EntryCategory], [x].[EntryCategoryID], [x].[EntrySubCategory], [x].[EntrySubCategoryID], [x].[EntryType], [x].[EntryTypeID], [x].[ExpirationDate], [x].[FirstName], [x].[Gender], [x].[GovDesignation], [x].[ImageSourceURL], [x].[JurisdictionID], [x].[LastInvestigatedBy], [x].[LastInvestigationDate], [x].[LastName], [x].[LastReviewedBy], [x].[LastReviewedDate], [x].[LinkedTo], [x].[LookUpId], [x].[MasterID], [x].[Name], [x].[NameClean], [x].[NameClean2], [x].[NameSource], [x].[NationalID], [x].[OldEntryCategory], [x].[OldEntrySubCategory], [x].[OldNameSource], [x].[Organization], [x].[OriginalLanguage], [x].[OriginalName], [x].[OriginalName2], [x].[OriginalName2NoChange], [x].[OriginalName3], [x].[OtherID], [x].[POB], [x].[ParentID], [x].[PassportID], [x].[PepCode], [x].[PictureFile], [x].[PictureFileOnly], [x].[Positions], [x].[Prefix], [x].[ProfileExists], [x].[QA_Approved], [x].[Rank1], [x].[Rank2], [x].[Rank3], [x].[Rank4], [x].[Rank5], [x].[RecViews], [x].[Rejected], [x].[RejectedBy], [x].[RejectedDate], [x].[Related_ID], [x].[Relationships], [x].[Remarks], [x].[SourceWebLink], [x].[SourceWebLink2], [x].[SpecialCollections], [x].[StatusEndDate], [x].[Suffix], [x].[TermEndDate], [x].[TermStartDate], [x].[TouchDate], [x].[UpdatedBy], [x].[WCGroupLevel], [x].[Watch]
+FROM [Entities] AS [x]
+WHERE [x].[Ent_ID] = @__thisEntityID_Ent_ID_0"
+2018-11-16 16:48:24.726 +08:00 [Information] Executed DbCommand ("16"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[InvestigationNoteID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[NoteText], [x].[UpdatedBy]
+FROM [InvestigationNote] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 16:48:24.734 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 3165.6637ms.
+2018-11-16 16:48:24.769 +08:00 [Information] Executing JsonResult, writing value of type '"Newtonsoft.Json.Linq.JObject"'.
+2018-11-16 16:48:25.100 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" in 3999.4978ms
+2018-11-16 16:48:25.126 +08:00 [Information] Request finished in 5078.769ms 200 application/json; charset=utf-8
+2018-11-16 18:07:25.324 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 18:07:27.937 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 18:07:27.937 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 18:07:28.190 +08:00 [Information] Request finished in 264.3391ms 200 
+2018-11-16 18:07:29.466 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 18:07:29.539 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 18:07:29.549 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.2099ms.
+2018-11-16 18:07:29.586 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 18:07:29.792 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 316.321ms
+2018-11-16 18:07:29.809 +08:00 [Information] Request finished in 1896.1551ms 200 application/json; charset=utf-8
+2018-11-16 18:07:35.656 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Investigation/199  
+2018-11-16 18:07:35.811 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:07:35.846 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)"
+2018-11-16 18:07:35.881 +08:00 [Information] Authorization was successful.
+2018-11-16 18:07:36.487 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" with arguments (["199"]) - Validation state: Valid
+2018-11-16 18:07:37.817 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:07:39.373 +08:00 [Information] Executed DbCommand ("227"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID], [x.InvestigationStatus].[InvestigationStatusID], [x.InvestigationStatus].[CreatedBy], [x.InvestigationStatus].[DateCreatedUTC], [x.InvestigationStatus].[InvestigationStatusDescription], [x.InvestigationStatus].[InvestigationStatusName], [x.InvestigationStatus].[IsDefault], [x.InvestigationStatus].[LastUpdatedUTC], [x.InvestigationStatus].[UpdatedBy], [x.InvestigationDispositions].[InvestigationDispositionsID], [x.InvestigationDispositions].[CreatedBy], [x.InvestigationDispositions].[DateCreatedUTC], [x.InvestigationDispositions].[DispositionDescription], [x.InvestigationDispositions].[DispositionType], [x.InvestigationDispositions].[LastUpdatedUTC], [x.InvestigationDispositions].[UpdatedBy], [x.FunctionType].[FunctionTypeID], [x.FunctionType].[CreatedBy], [x.FunctionType].[DateCreatedUTC], [x.FunctionType].[FunctionTypeDesc], [x.FunctionType].[FunctionTypeName], [x.FunctionType].[IsActive], [x.FunctionType].[IsInList], [x.FunctionType].[LastUpdatedUTC], [x.FunctionType].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy], [x.PriorityType].[PriorityTypeID], [x.PriorityType].[CreatedBy], [x.PriorityType].[DateCreatedUTC], [x.PriorityType].[LastUpdatedUTC], [x.PriorityType].[PriorityDescription], [x.PriorityType].[PriorityName], [x.PriorityType].[PriorityWeight], [x.PriorityType].[UpdatedBy]
+FROM [Investigation] AS [x]
+LEFT JOIN [InvestigationStatus] AS [x.InvestigationStatus] ON [x].[InvestigationStatusID] = [x.InvestigationStatus].[InvestigationStatusID]
+LEFT JOIN [InvestigationDispositions] AS [x.InvestigationDispositions] ON [x].[InvestigationDispositionsID] = [x.InvestigationDispositions].[InvestigationDispositionsID]
+LEFT JOIN [FunctionType] AS [x.FunctionType] ON [x].[FunctionTypeID] = [x.FunctionType].[FunctionTypeID]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+LEFT JOIN [PriorityType] AS [x.PriorityType] ON [x].[PriorityTypeID] = [x.PriorityType].[PriorityTypeID]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:07:39.753 +08:00 [Information] Executed DbCommand ("16"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationEntityID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Ent_ID], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[UpdatedBy]
+FROM [InvestigationEntity] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:07:39.819 +08:00 [Warning] No type was specified for the decimal column '"CriminalAmount"' on entity type '"Entities"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-11-16 18:07:39.820 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"MMMDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:07:40.041 +08:00 [Information] Executed DbCommand ("60"ms) [Parameters=["@__thisEntityID_Ent_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Ent_ID], [x].[AID], [x].[Aka], [x].[Approved], [x].[ApprovedBy], [x].[ApprovedDate], [x].[BatchName], [x].[CiBit], [x].[CiElements], [x].[CiIndex], [x].[Country], [x].[CountryId], [x].[CriminalAmount], [x].[DOB], [x].[DOB2], [x].[DateEntered], [x].[DateUpdated], [x].[DobOriginal], [x].[EffectiveDate], [x].[EntLevel], [x].[EnteredBy], [x].[EntitiesLevelsId], [x].[EntitiesSourceID], [x].[EntryCategory], [x].[EntryCategoryID], [x].[EntrySubCategory], [x].[EntrySubCategoryID], [x].[EntryType], [x].[EntryTypeID], [x].[ExpirationDate], [x].[FirstName], [x].[Gender], [x].[GovDesignation], [x].[ImageSourceURL], [x].[JurisdictionID], [x].[LastInvestigatedBy], [x].[LastInvestigationDate], [x].[LastName], [x].[LastReviewedBy], [x].[LastReviewedDate], [x].[LinkedTo], [x].[LookUpId], [x].[MasterID], [x].[Name], [x].[NameClean], [x].[NameClean2], [x].[NameSource], [x].[NationalID], [x].[OldEntryCategory], [x].[OldEntrySubCategory], [x].[OldNameSource], [x].[Organization], [x].[OriginalLanguage], [x].[OriginalName], [x].[OriginalName2], [x].[OriginalName2NoChange], [x].[OriginalName3], [x].[OtherID], [x].[POB], [x].[ParentID], [x].[PassportID], [x].[PepCode], [x].[PictureFile], [x].[PictureFileOnly], [x].[Positions], [x].[Prefix], [x].[ProfileExists], [x].[QA_Approved], [x].[Rank1], [x].[Rank2], [x].[Rank3], [x].[Rank4], [x].[Rank5], [x].[RecViews], [x].[Rejected], [x].[RejectedBy], [x].[RejectedDate], [x].[Related_ID], [x].[Relationships], [x].[Remarks], [x].[SourceWebLink], [x].[SourceWebLink2], [x].[SpecialCollections], [x].[StatusEndDate], [x].[Suffix], [x].[TermEndDate], [x].[TermStartDate], [x].[TouchDate], [x].[UpdatedBy], [x].[WCGroupLevel], [x].[Watch]
+FROM [Entities] AS [x]
+WHERE [x].[Ent_ID] = @__thisEntityID_Ent_ID_0"
+2018-11-16 18:07:40.225 +08:00 [Information] Executed DbCommand ("29"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[InvestigationNoteID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[NoteText], [x].[UpdatedBy]
+FROM [InvestigationNote] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:07:40.344 +08:00 [Information] Executed DbCommand ("49"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[InvestigationCategoryID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[FunctionTypeID], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[UpdatedBy]
+FROM [InvestigationCategory] AS [x]
+WHERE [x].[InvestigationID] = @__id_0
+ORDER BY [x].[DateCreatedUTC]"
+2018-11-16 18:07:40.348 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 3854.0968ms.
+2018-11-16 18:07:40.361 +08:00 [Information] Executing JsonResult, writing value of type '"Newtonsoft.Json.Linq.JObject"'.
+2018-11-16 18:07:40.379 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" in 4532.0442ms
+2018-11-16 18:07:40.383 +08:00 [Information] Request finished in 4727.1768ms 200 application/json; charset=utf-8
+2018-11-16 18:08:37.888 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 18:08:39.256 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 18:08:39.256 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 18:08:39.499 +08:00 [Information] Request finished in 246.6862ms 200 
+2018-11-16 18:08:40.419 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 18:08:40.482 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 18:08:40.492 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.27ms.
+2018-11-16 18:08:40.532 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 18:08:40.774 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 340.9559ms
+2018-11-16 18:08:40.801 +08:00 [Information] Request finished in 1563.3667ms 200 application/json; charset=utf-8
+2018-11-16 18:08:43.319 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Investigation/199  
+2018-11-16 18:08:43.475 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:08:43.526 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)"
+2018-11-16 18:08:43.568 +08:00 [Information] Authorization was successful.
+2018-11-16 18:08:43.978 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" with arguments (["199"]) - Validation state: Valid
+2018-11-16 18:08:45.322 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:08:46.782 +08:00 [Information] Executed DbCommand ("181"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID], [x.InvestigationStatus].[InvestigationStatusID], [x.InvestigationStatus].[CreatedBy], [x.InvestigationStatus].[DateCreatedUTC], [x.InvestigationStatus].[InvestigationStatusDescription], [x.InvestigationStatus].[InvestigationStatusName], [x.InvestigationStatus].[IsDefault], [x.InvestigationStatus].[LastUpdatedUTC], [x.InvestigationStatus].[UpdatedBy], [x.InvestigationDispositions].[InvestigationDispositionsID], [x.InvestigationDispositions].[CreatedBy], [x.InvestigationDispositions].[DateCreatedUTC], [x.InvestigationDispositions].[DispositionDescription], [x.InvestigationDispositions].[DispositionType], [x.InvestigationDispositions].[LastUpdatedUTC], [x.InvestigationDispositions].[UpdatedBy], [x.FunctionType].[FunctionTypeID], [x.FunctionType].[CreatedBy], [x.FunctionType].[DateCreatedUTC], [x.FunctionType].[FunctionTypeDesc], [x.FunctionType].[FunctionTypeName], [x.FunctionType].[IsActive], [x.FunctionType].[IsInList], [x.FunctionType].[LastUpdatedUTC], [x.FunctionType].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy], [x.PriorityType].[PriorityTypeID], [x.PriorityType].[CreatedBy], [x.PriorityType].[DateCreatedUTC], [x.PriorityType].[LastUpdatedUTC], [x.PriorityType].[PriorityDescription], [x.PriorityType].[PriorityName], [x.PriorityType].[PriorityWeight], [x.PriorityType].[UpdatedBy]
+FROM [Investigation] AS [x]
+LEFT JOIN [InvestigationStatus] AS [x.InvestigationStatus] ON [x].[InvestigationStatusID] = [x.InvestigationStatus].[InvestigationStatusID]
+LEFT JOIN [InvestigationDispositions] AS [x.InvestigationDispositions] ON [x].[InvestigationDispositionsID] = [x.InvestigationDispositions].[InvestigationDispositionsID]
+LEFT JOIN [FunctionType] AS [x.FunctionType] ON [x].[FunctionTypeID] = [x.FunctionType].[FunctionTypeID]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+LEFT JOIN [PriorityType] AS [x.PriorityType] ON [x].[PriorityTypeID] = [x.PriorityType].[PriorityTypeID]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:08:47.152 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationEntityID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Ent_ID], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[UpdatedBy]
+FROM [InvestigationEntity] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:08:47.201 +08:00 [Warning] No type was specified for the decimal column '"CriminalAmount"' on entity type '"Entities"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-11-16 18:08:47.203 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"MMMDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:08:47.348 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__thisEntityID_Ent_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Ent_ID], [x].[AID], [x].[Aka], [x].[Approved], [x].[ApprovedBy], [x].[ApprovedDate], [x].[BatchName], [x].[CiBit], [x].[CiElements], [x].[CiIndex], [x].[Country], [x].[CountryId], [x].[CriminalAmount], [x].[DOB], [x].[DOB2], [x].[DateEntered], [x].[DateUpdated], [x].[DobOriginal], [x].[EffectiveDate], [x].[EntLevel], [x].[EnteredBy], [x].[EntitiesLevelsId], [x].[EntitiesSourceID], [x].[EntryCategory], [x].[EntryCategoryID], [x].[EntrySubCategory], [x].[EntrySubCategoryID], [x].[EntryType], [x].[EntryTypeID], [x].[ExpirationDate], [x].[FirstName], [x].[Gender], [x].[GovDesignation], [x].[ImageSourceURL], [x].[JurisdictionID], [x].[LastInvestigatedBy], [x].[LastInvestigationDate], [x].[LastName], [x].[LastReviewedBy], [x].[LastReviewedDate], [x].[LinkedTo], [x].[LookUpId], [x].[MasterID], [x].[Name], [x].[NameClean], [x].[NameClean2], [x].[NameSource], [x].[NationalID], [x].[OldEntryCategory], [x].[OldEntrySubCategory], [x].[OldNameSource], [x].[Organization], [x].[OriginalLanguage], [x].[OriginalName], [x].[OriginalName2], [x].[OriginalName2NoChange], [x].[OriginalName3], [x].[OtherID], [x].[POB], [x].[ParentID], [x].[PassportID], [x].[PepCode], [x].[PictureFile], [x].[PictureFileOnly], [x].[Positions], [x].[Prefix], [x].[ProfileExists], [x].[QA_Approved], [x].[Rank1], [x].[Rank2], [x].[Rank3], [x].[Rank4], [x].[Rank5], [x].[RecViews], [x].[Rejected], [x].[RejectedBy], [x].[RejectedDate], [x].[Related_ID], [x].[Relationships], [x].[Remarks], [x].[SourceWebLink], [x].[SourceWebLink2], [x].[SpecialCollections], [x].[StatusEndDate], [x].[Suffix], [x].[TermEndDate], [x].[TermStartDate], [x].[TouchDate], [x].[UpdatedBy], [x].[WCGroupLevel], [x].[Watch]
+FROM [Entities] AS [x]
+WHERE [x].[Ent_ID] = @__thisEntityID_Ent_ID_0"
+2018-11-16 18:08:47.478 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[InvestigationNoteID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[NoteText], [x].[UpdatedBy]
+FROM [InvestigationNote] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:08:47.531 +08:00 [Information] Executed DbCommand ("16"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[InvestigationActivityID], [x].[ActivityTypeID], [x].[AppUserID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[FromValue], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[ToValue], [x].[UpdatedBy]
+FROM [InvestigationActivity] AS [x]
+WHERE [x].[InvestigationID] = @__id_0
+ORDER BY [x].[DateCreatedUTC]"
+2018-11-16 18:08:47.548 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 3563.0135ms.
+2018-11-16 18:08:47.563 +08:00 [Information] Executing JsonResult, writing value of type '"Newtonsoft.Json.Linq.JObject"'.
+2018-11-16 18:08:47.582 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" in 4056.1039ms
+2018-11-16 18:08:47.587 +08:00 [Information] Request finished in 4267.7505ms 200 application/json; charset=utf-8
+2018-11-16 18:17:16.069 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 18:17:17.497 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 18:17:17.497 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Investigation/199  
+2018-11-16 18:17:17.497 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 18:17:17.781 +08:00 [Information] Request finished in 286.7786ms 200 
+2018-11-16 18:17:18.185 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:17:18.763 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 18:17:18.763 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)"
+2018-11-16 18:17:18.832 +08:00 [Information] Authorization was successful.
+2018-11-16 18:17:18.848 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 18:17:18.862 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.4868ms.
+2018-11-16 18:17:18.939 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 18:17:19.084 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 306.3868ms
+2018-11-16 18:17:19.101 +08:00 [Information] Request finished in 1635.0736ms 200 application/json; charset=utf-8
+2018-11-16 18:17:19.404 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" with arguments (["199"]) - Validation state: Valid
+2018-11-16 18:17:20.732 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:17:21.962 +08:00 [Information] Executed DbCommand ("173"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID], [x.InvestigationStatus].[InvestigationStatusID], [x.InvestigationStatus].[CreatedBy], [x.InvestigationStatus].[DateCreatedUTC], [x.InvestigationStatus].[InvestigationStatusDescription], [x.InvestigationStatus].[InvestigationStatusName], [x.InvestigationStatus].[IsDefault], [x.InvestigationStatus].[LastUpdatedUTC], [x.InvestigationStatus].[UpdatedBy], [x.InvestigationDispositions].[InvestigationDispositionsID], [x.InvestigationDispositions].[CreatedBy], [x.InvestigationDispositions].[DateCreatedUTC], [x.InvestigationDispositions].[DispositionDescription], [x.InvestigationDispositions].[DispositionType], [x.InvestigationDispositions].[LastUpdatedUTC], [x.InvestigationDispositions].[UpdatedBy], [x.FunctionType].[FunctionTypeID], [x.FunctionType].[CreatedBy], [x.FunctionType].[DateCreatedUTC], [x.FunctionType].[FunctionTypeDesc], [x.FunctionType].[FunctionTypeName], [x.FunctionType].[IsActive], [x.FunctionType].[IsInList], [x.FunctionType].[LastUpdatedUTC], [x.FunctionType].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy], [x.PriorityType].[PriorityTypeID], [x.PriorityType].[CreatedBy], [x.PriorityType].[DateCreatedUTC], [x.PriorityType].[LastUpdatedUTC], [x.PriorityType].[PriorityDescription], [x.PriorityType].[PriorityName], [x.PriorityType].[PriorityWeight], [x.PriorityType].[UpdatedBy]
+FROM [Investigation] AS [x]
+LEFT JOIN [InvestigationStatus] AS [x.InvestigationStatus] ON [x].[InvestigationStatusID] = [x.InvestigationStatus].[InvestigationStatusID]
+LEFT JOIN [InvestigationDispositions] AS [x.InvestigationDispositions] ON [x].[InvestigationDispositionsID] = [x.InvestigationDispositions].[InvestigationDispositionsID]
+LEFT JOIN [FunctionType] AS [x.FunctionType] ON [x].[FunctionTypeID] = [x.FunctionType].[FunctionTypeID]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+LEFT JOIN [PriorityType] AS [x.PriorityType] ON [x].[PriorityTypeID] = [x.PriorityType].[PriorityTypeID]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:17:22.317 +08:00 [Information] Executed DbCommand ("9"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationEntityID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Ent_ID], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[UpdatedBy]
+FROM [InvestigationEntity] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:17:22.366 +08:00 [Warning] No type was specified for the decimal column '"CriminalAmount"' on entity type '"Entities"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-11-16 18:17:22.367 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"MMMDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:17:22.583 +08:00 [Information] Executed DbCommand ("19"ms) [Parameters=["@__thisEntityID_Ent_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Ent_ID], [x].[AID], [x].[Aka], [x].[Approved], [x].[ApprovedBy], [x].[ApprovedDate], [x].[BatchName], [x].[CiBit], [x].[CiElements], [x].[CiIndex], [x].[Country], [x].[CountryId], [x].[CriminalAmount], [x].[DOB], [x].[DOB2], [x].[DateEntered], [x].[DateUpdated], [x].[DobOriginal], [x].[EffectiveDate], [x].[EntLevel], [x].[EnteredBy], [x].[EntitiesLevelsId], [x].[EntitiesSourceID], [x].[EntryCategory], [x].[EntryCategoryID], [x].[EntrySubCategory], [x].[EntrySubCategoryID], [x].[EntryType], [x].[EntryTypeID], [x].[ExpirationDate], [x].[FirstName], [x].[Gender], [x].[GovDesignation], [x].[ImageSourceURL], [x].[JurisdictionID], [x].[LastInvestigatedBy], [x].[LastInvestigationDate], [x].[LastName], [x].[LastReviewedBy], [x].[LastReviewedDate], [x].[LinkedTo], [x].[LookUpId], [x].[MasterID], [x].[Name], [x].[NameClean], [x].[NameClean2], [x].[NameSource], [x].[NationalID], [x].[OldEntryCategory], [x].[OldEntrySubCategory], [x].[OldNameSource], [x].[Organization], [x].[OriginalLanguage], [x].[OriginalName], [x].[OriginalName2], [x].[OriginalName2NoChange], [x].[OriginalName3], [x].[OtherID], [x].[POB], [x].[ParentID], [x].[PassportID], [x].[PepCode], [x].[PictureFile], [x].[PictureFileOnly], [x].[Positions], [x].[Prefix], [x].[ProfileExists], [x].[QA_Approved], [x].[Rank1], [x].[Rank2], [x].[Rank3], [x].[Rank4], [x].[Rank5], [x].[RecViews], [x].[Rejected], [x].[RejectedBy], [x].[RejectedDate], [x].[Related_ID], [x].[Relationships], [x].[Remarks], [x].[SourceWebLink], [x].[SourceWebLink2], [x].[SpecialCollections], [x].[StatusEndDate], [x].[Suffix], [x].[TermEndDate], [x].[TermStartDate], [x].[TouchDate], [x].[UpdatedBy], [x].[WCGroupLevel], [x].[Watch]
+FROM [Entities] AS [x]
+WHERE [x].[Ent_ID] = @__thisEntityID_Ent_ID_0"
+2018-11-16 18:17:22.719 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[InvestigationNoteID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[NoteText], [x].[UpdatedBy]
+FROM [InvestigationNote] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:17:22.829 +08:00 [Information] Executed DbCommand ("40"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [act].[DateCreatedUTC], [acttype].[ActivityTypeName], [user].[AppUserName]
+FROM [InvestigationActivity] AS [act]
+INNER JOIN [ActivityType] AS [acttype] ON [act].[ActivityTypeID] = [acttype].[ActivityTypeID]
+INNER JOIN [AppUser] AS [user] ON [act].[AppUserID] = [user].[AppUserID]"
+2018-11-16 18:17:22.836 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 3421.5671ms.
+2018-11-16 18:17:22.851 +08:00 [Information] Executing JsonResult, writing value of type '"Newtonsoft.Json.Linq.JObject"'.
+2018-11-16 18:17:22.874 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" in 4106.1101ms
+2018-11-16 18:17:22.879 +08:00 [Information] Request finished in 5412.6292ms 200 application/json; charset=utf-8
+2018-11-16 18:17:55.995 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Investigation/180  
+2018-11-16 18:17:55.995 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:17:55.999 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)"
+2018-11-16 18:17:56.000 +08:00 [Information] Authorization was successful.
+2018-11-16 18:17:56.002 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" with arguments (["180"]) - Validation state: Valid
+2018-11-16 18:17:56.003 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:17:56.048 +08:00 [Information] Executed DbCommand ("31"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID], [x.InvestigationStatus].[InvestigationStatusID], [x.InvestigationStatus].[CreatedBy], [x.InvestigationStatus].[DateCreatedUTC], [x.InvestigationStatus].[InvestigationStatusDescription], [x.InvestigationStatus].[InvestigationStatusName], [x.InvestigationStatus].[IsDefault], [x.InvestigationStatus].[LastUpdatedUTC], [x.InvestigationStatus].[UpdatedBy], [x.InvestigationDispositions].[InvestigationDispositionsID], [x.InvestigationDispositions].[CreatedBy], [x.InvestigationDispositions].[DateCreatedUTC], [x.InvestigationDispositions].[DispositionDescription], [x.InvestigationDispositions].[DispositionType], [x.InvestigationDispositions].[LastUpdatedUTC], [x.InvestigationDispositions].[UpdatedBy], [x.FunctionType].[FunctionTypeID], [x.FunctionType].[CreatedBy], [x.FunctionType].[DateCreatedUTC], [x.FunctionType].[FunctionTypeDesc], [x.FunctionType].[FunctionTypeName], [x.FunctionType].[IsActive], [x.FunctionType].[IsInList], [x.FunctionType].[LastUpdatedUTC], [x.FunctionType].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy], [x.PriorityType].[PriorityTypeID], [x.PriorityType].[CreatedBy], [x.PriorityType].[DateCreatedUTC], [x.PriorityType].[LastUpdatedUTC], [x.PriorityType].[PriorityDescription], [x.PriorityType].[PriorityName], [x.PriorityType].[PriorityWeight], [x.PriorityType].[UpdatedBy]
+FROM [Investigation] AS [x]
+LEFT JOIN [InvestigationStatus] AS [x.InvestigationStatus] ON [x].[InvestigationStatusID] = [x.InvestigationStatus].[InvestigationStatusID]
+LEFT JOIN [InvestigationDispositions] AS [x.InvestigationDispositions] ON [x].[InvestigationDispositionsID] = [x.InvestigationDispositions].[InvestigationDispositionsID]
+LEFT JOIN [FunctionType] AS [x.FunctionType] ON [x].[FunctionTypeID] = [x.FunctionType].[FunctionTypeID]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+LEFT JOIN [PriorityType] AS [x.PriorityType] ON [x].[PriorityTypeID] = [x.PriorityType].[PriorityTypeID]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:17:56.052 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationEntityID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Ent_ID], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[UpdatedBy]
+FROM [InvestigationEntity] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:17:56.054 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"MMMDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:17:56.084 +08:00 [Information] Executed DbCommand ("29"ms) [Parameters=["@__thisEntityID_Ent_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Ent_ID], [x].[AID], [x].[Aka], [x].[Approved], [x].[ApprovedBy], [x].[ApprovedDate], [x].[BatchName], [x].[CiBit], [x].[CiElements], [x].[CiIndex], [x].[Country], [x].[CountryId], [x].[CriminalAmount], [x].[DOB], [x].[DOB2], [x].[DateEntered], [x].[DateUpdated], [x].[DobOriginal], [x].[EffectiveDate], [x].[EntLevel], [x].[EnteredBy], [x].[EntitiesLevelsId], [x].[EntitiesSourceID], [x].[EntryCategory], [x].[EntryCategoryID], [x].[EntrySubCategory], [x].[EntrySubCategoryID], [x].[EntryType], [x].[EntryTypeID], [x].[ExpirationDate], [x].[FirstName], [x].[Gender], [x].[GovDesignation], [x].[ImageSourceURL], [x].[JurisdictionID], [x].[LastInvestigatedBy], [x].[LastInvestigationDate], [x].[LastName], [x].[LastReviewedBy], [x].[LastReviewedDate], [x].[LinkedTo], [x].[LookUpId], [x].[MasterID], [x].[Name], [x].[NameClean], [x].[NameClean2], [x].[NameSource], [x].[NationalID], [x].[OldEntryCategory], [x].[OldEntrySubCategory], [x].[OldNameSource], [x].[Organization], [x].[OriginalLanguage], [x].[OriginalName], [x].[OriginalName2], [x].[OriginalName2NoChange], [x].[OriginalName3], [x].[OtherID], [x].[POB], [x].[ParentID], [x].[PassportID], [x].[PepCode], [x].[PictureFile], [x].[PictureFileOnly], [x].[Positions], [x].[Prefix], [x].[ProfileExists], [x].[QA_Approved], [x].[Rank1], [x].[Rank2], [x].[Rank3], [x].[Rank4], [x].[Rank5], [x].[RecViews], [x].[Rejected], [x].[RejectedBy], [x].[RejectedDate], [x].[Related_ID], [x].[Relationships], [x].[Remarks], [x].[SourceWebLink], [x].[SourceWebLink2], [x].[SpecialCollections], [x].[StatusEndDate], [x].[Suffix], [x].[TermEndDate], [x].[TermStartDate], [x].[TouchDate], [x].[UpdatedBy], [x].[WCGroupLevel], [x].[Watch]
+FROM [Entities] AS [x]
+WHERE [x].[Ent_ID] = @__thisEntityID_Ent_ID_0"
+2018-11-16 18:17:56.086 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[InvestigationNoteID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[NoteText], [x].[UpdatedBy]
+FROM [InvestigationNote] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:17:56.092 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [act].[DateCreatedUTC], [acttype].[ActivityTypeName], [user].[AppUserName]
+FROM [InvestigationActivity] AS [act]
+INNER JOIN [ActivityType] AS [acttype] ON [act].[ActivityTypeID] = [acttype].[ActivityTypeID]
+INNER JOIN [AppUser] AS [user] ON [act].[AppUserID] = [user].[AppUserID]"
+2018-11-16 18:17:56.093 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 90.5055ms.
+2018-11-16 18:17:56.093 +08:00 [Information] Executing JsonResult, writing value of type '"Newtonsoft.Json.Linq.JObject"'.
+2018-11-16 18:17:56.094 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" in 94.0986ms
+2018-11-16 18:17:56.094 +08:00 [Information] Request finished in 99.4055ms 200 application/json; charset=utf-8
+2018-11-16 18:19:18.024 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 18:19:20.368 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Investigation/180  
+2018-11-16 18:19:20.368 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 18:19:20.368 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 18:19:20.705 +08:00 [Information] Request finished in 336.2053ms 200 
+2018-11-16 18:19:21.275 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:19:21.953 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)"
+2018-11-16 18:19:21.953 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 18:19:22.031 +08:00 [Information] Authorization was successful.
+2018-11-16 18:19:22.043 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 18:19:22.057 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.8862ms.
+2018-11-16 18:19:22.151 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 18:19:22.343 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 366.7669ms
+2018-11-16 18:19:22.357 +08:00 [Information] Request finished in 2013.9587ms 200 application/json; charset=utf-8
+2018-11-16 18:19:22.780 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" with arguments (["180"]) - Validation state: Valid
+2018-11-16 18:19:24.892 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:19:26.747 +08:00 [Information] Executed DbCommand ("148"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID], [x.InvestigationStatus].[InvestigationStatusID], [x.InvestigationStatus].[CreatedBy], [x.InvestigationStatus].[DateCreatedUTC], [x.InvestigationStatus].[InvestigationStatusDescription], [x.InvestigationStatus].[InvestigationStatusName], [x.InvestigationStatus].[IsDefault], [x.InvestigationStatus].[LastUpdatedUTC], [x.InvestigationStatus].[UpdatedBy], [x.InvestigationDispositions].[InvestigationDispositionsID], [x.InvestigationDispositions].[CreatedBy], [x.InvestigationDispositions].[DateCreatedUTC], [x.InvestigationDispositions].[DispositionDescription], [x.InvestigationDispositions].[DispositionType], [x.InvestigationDispositions].[LastUpdatedUTC], [x.InvestigationDispositions].[UpdatedBy], [x.FunctionType].[FunctionTypeID], [x.FunctionType].[CreatedBy], [x.FunctionType].[DateCreatedUTC], [x.FunctionType].[FunctionTypeDesc], [x.FunctionType].[FunctionTypeName], [x.FunctionType].[IsActive], [x.FunctionType].[IsInList], [x.FunctionType].[LastUpdatedUTC], [x.FunctionType].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy], [x.PriorityType].[PriorityTypeID], [x.PriorityType].[CreatedBy], [x.PriorityType].[DateCreatedUTC], [x.PriorityType].[LastUpdatedUTC], [x.PriorityType].[PriorityDescription], [x.PriorityType].[PriorityName], [x.PriorityType].[PriorityWeight], [x.PriorityType].[UpdatedBy]
+FROM [Investigation] AS [x]
+LEFT JOIN [InvestigationStatus] AS [x.InvestigationStatus] ON [x].[InvestigationStatusID] = [x.InvestigationStatus].[InvestigationStatusID]
+LEFT JOIN [InvestigationDispositions] AS [x.InvestigationDispositions] ON [x].[InvestigationDispositionsID] = [x.InvestigationDispositions].[InvestigationDispositionsID]
+LEFT JOIN [FunctionType] AS [x.FunctionType] ON [x].[FunctionTypeID] = [x.FunctionType].[FunctionTypeID]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+LEFT JOIN [PriorityType] AS [x.PriorityType] ON [x].[PriorityTypeID] = [x.PriorityType].[PriorityTypeID]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:19:27.283 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationEntityID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Ent_ID], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[UpdatedBy]
+FROM [InvestigationEntity] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:19:27.384 +08:00 [Warning] No type was specified for the decimal column '"CriminalAmount"' on entity type '"Entities"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-11-16 18:19:27.385 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"MMMDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:19:27.601 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__thisEntityID_Ent_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Ent_ID], [x].[AID], [x].[Aka], [x].[Approved], [x].[ApprovedBy], [x].[ApprovedDate], [x].[BatchName], [x].[CiBit], [x].[CiElements], [x].[CiIndex], [x].[Country], [x].[CountryId], [x].[CriminalAmount], [x].[DOB], [x].[DOB2], [x].[DateEntered], [x].[DateUpdated], [x].[DobOriginal], [x].[EffectiveDate], [x].[EntLevel], [x].[EnteredBy], [x].[EntitiesLevelsId], [x].[EntitiesSourceID], [x].[EntryCategory], [x].[EntryCategoryID], [x].[EntrySubCategory], [x].[EntrySubCategoryID], [x].[EntryType], [x].[EntryTypeID], [x].[ExpirationDate], [x].[FirstName], [x].[Gender], [x].[GovDesignation], [x].[ImageSourceURL], [x].[JurisdictionID], [x].[LastInvestigatedBy], [x].[LastInvestigationDate], [x].[LastName], [x].[LastReviewedBy], [x].[LastReviewedDate], [x].[LinkedTo], [x].[LookUpId], [x].[MasterID], [x].[Name], [x].[NameClean], [x].[NameClean2], [x].[NameSource], [x].[NationalID], [x].[OldEntryCategory], [x].[OldEntrySubCategory], [x].[OldNameSource], [x].[Organization], [x].[OriginalLanguage], [x].[OriginalName], [x].[OriginalName2], [x].[OriginalName2NoChange], [x].[OriginalName3], [x].[OtherID], [x].[POB], [x].[ParentID], [x].[PassportID], [x].[PepCode], [x].[PictureFile], [x].[PictureFileOnly], [x].[Positions], [x].[Prefix], [x].[ProfileExists], [x].[QA_Approved], [x].[Rank1], [x].[Rank2], [x].[Rank3], [x].[Rank4], [x].[Rank5], [x].[RecViews], [x].[Rejected], [x].[RejectedBy], [x].[RejectedDate], [x].[Related_ID], [x].[Relationships], [x].[Remarks], [x].[SourceWebLink], [x].[SourceWebLink2], [x].[SpecialCollections], [x].[StatusEndDate], [x].[Suffix], [x].[TermEndDate], [x].[TermStartDate], [x].[TouchDate], [x].[UpdatedBy], [x].[WCGroupLevel], [x].[Watch]
+FROM [Entities] AS [x]
+WHERE [x].[Ent_ID] = @__thisEntityID_Ent_ID_0"
+2018-11-16 18:19:27.691 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[InvestigationNoteID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[NoteText], [x].[UpdatedBy]
+FROM [InvestigationNote] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:19:27.830 +08:00 [Information] Executed DbCommand ("13"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [act].[DateCreatedUTC], [acttype].[ActivityTypeName], [user].[AppUserName]
+FROM [InvestigationActivity] AS [act]
+INNER JOIN [ActivityType] AS [acttype] ON [act].[ActivityTypeID] = [acttype].[ActivityTypeID]
+INNER JOIN [AppUser] AS [user] ON [act].[AppUserID] = [user].[AppUserID]
+WHERE [act].[InvestigationID] = @__id_0"
+2018-11-16 18:19:27.833 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 5042.3771ms.
+2018-11-16 18:19:27.856 +08:00 [Information] Executing JsonResult, writing value of type '"Newtonsoft.Json.Linq.JObject"'.
+2018-11-16 18:19:27.880 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" in 5921.4257ms
+2018-11-16 18:19:27.900 +08:00 [Information] Request finished in 7557.2168ms 200 application/json; charset=utf-8
+2018-11-16 18:19:43.720 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Investigation/199  
+2018-11-16 18:19:43.721 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:19:43.742 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)"
+2018-11-16 18:19:43.743 +08:00 [Information] Authorization was successful.
+2018-11-16 18:19:43.750 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" with arguments (["199"]) - Validation state: Valid
+2018-11-16 18:19:43.751 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:19:43.775 +08:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID], [x.InvestigationStatus].[InvestigationStatusID], [x.InvestigationStatus].[CreatedBy], [x.InvestigationStatus].[DateCreatedUTC], [x.InvestigationStatus].[InvestigationStatusDescription], [x.InvestigationStatus].[InvestigationStatusName], [x.InvestigationStatus].[IsDefault], [x.InvestigationStatus].[LastUpdatedUTC], [x.InvestigationStatus].[UpdatedBy], [x.InvestigationDispositions].[InvestigationDispositionsID], [x.InvestigationDispositions].[CreatedBy], [x.InvestigationDispositions].[DateCreatedUTC], [x.InvestigationDispositions].[DispositionDescription], [x.InvestigationDispositions].[DispositionType], [x.InvestigationDispositions].[LastUpdatedUTC], [x.InvestigationDispositions].[UpdatedBy], [x.FunctionType].[FunctionTypeID], [x.FunctionType].[CreatedBy], [x.FunctionType].[DateCreatedUTC], [x.FunctionType].[FunctionTypeDesc], [x.FunctionType].[FunctionTypeName], [x.FunctionType].[IsActive], [x.FunctionType].[IsInList], [x.FunctionType].[LastUpdatedUTC], [x.FunctionType].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy], [x.PriorityType].[PriorityTypeID], [x.PriorityType].[CreatedBy], [x.PriorityType].[DateCreatedUTC], [x.PriorityType].[LastUpdatedUTC], [x.PriorityType].[PriorityDescription], [x.PriorityType].[PriorityName], [x.PriorityType].[PriorityWeight], [x.PriorityType].[UpdatedBy]
+FROM [Investigation] AS [x]
+LEFT JOIN [InvestigationStatus] AS [x.InvestigationStatus] ON [x].[InvestigationStatusID] = [x.InvestigationStatus].[InvestigationStatusID]
+LEFT JOIN [InvestigationDispositions] AS [x.InvestigationDispositions] ON [x].[InvestigationDispositionsID] = [x.InvestigationDispositions].[InvestigationDispositionsID]
+LEFT JOIN [FunctionType] AS [x.FunctionType] ON [x].[FunctionTypeID] = [x.FunctionType].[FunctionTypeID]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+LEFT JOIN [PriorityType] AS [x.PriorityType] ON [x].[PriorityTypeID] = [x.PriorityType].[PriorityTypeID]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:19:43.780 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationEntityID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Ent_ID], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[UpdatedBy]
+FROM [InvestigationEntity] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:19:43.781 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"MMMDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:19:43.789 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__thisEntityID_Ent_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Ent_ID], [x].[AID], [x].[Aka], [x].[Approved], [x].[ApprovedBy], [x].[ApprovedDate], [x].[BatchName], [x].[CiBit], [x].[CiElements], [x].[CiIndex], [x].[Country], [x].[CountryId], [x].[CriminalAmount], [x].[DOB], [x].[DOB2], [x].[DateEntered], [x].[DateUpdated], [x].[DobOriginal], [x].[EffectiveDate], [x].[EntLevel], [x].[EnteredBy], [x].[EntitiesLevelsId], [x].[EntitiesSourceID], [x].[EntryCategory], [x].[EntryCategoryID], [x].[EntrySubCategory], [x].[EntrySubCategoryID], [x].[EntryType], [x].[EntryTypeID], [x].[ExpirationDate], [x].[FirstName], [x].[Gender], [x].[GovDesignation], [x].[ImageSourceURL], [x].[JurisdictionID], [x].[LastInvestigatedBy], [x].[LastInvestigationDate], [x].[LastName], [x].[LastReviewedBy], [x].[LastReviewedDate], [x].[LinkedTo], [x].[LookUpId], [x].[MasterID], [x].[Name], [x].[NameClean], [x].[NameClean2], [x].[NameSource], [x].[NationalID], [x].[OldEntryCategory], [x].[OldEntrySubCategory], [x].[OldNameSource], [x].[Organization], [x].[OriginalLanguage], [x].[OriginalName], [x].[OriginalName2], [x].[OriginalName2NoChange], [x].[OriginalName3], [x].[OtherID], [x].[POB], [x].[ParentID], [x].[PassportID], [x].[PepCode], [x].[PictureFile], [x].[PictureFileOnly], [x].[Positions], [x].[Prefix], [x].[ProfileExists], [x].[QA_Approved], [x].[Rank1], [x].[Rank2], [x].[Rank3], [x].[Rank4], [x].[Rank5], [x].[RecViews], [x].[Rejected], [x].[RejectedBy], [x].[RejectedDate], [x].[Related_ID], [x].[Relationships], [x].[Remarks], [x].[SourceWebLink], [x].[SourceWebLink2], [x].[SpecialCollections], [x].[StatusEndDate], [x].[Suffix], [x].[TermEndDate], [x].[TermStartDate], [x].[TouchDate], [x].[UpdatedBy], [x].[WCGroupLevel], [x].[Watch]
+FROM [Entities] AS [x]
+WHERE [x].[Ent_ID] = @__thisEntityID_Ent_ID_0"
+2018-11-16 18:19:43.911 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[InvestigationNoteID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[NoteText], [x].[UpdatedBy]
+FROM [InvestigationNote] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:19:43.928 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [act].[DateCreatedUTC], [acttype].[ActivityTypeName], [user].[AppUserName]
+FROM [InvestigationActivity] AS [act]
+INNER JOIN [ActivityType] AS [acttype] ON [act].[ActivityTypeID] = [acttype].[ActivityTypeID]
+INNER JOIN [AppUser] AS [user] ON [act].[AppUserID] = [user].[AppUserID]
+WHERE [act].[InvestigationID] = @__id_0"
+2018-11-16 18:19:43.935 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 184.6093ms.
+2018-11-16 18:19:43.935 +08:00 [Information] Executing JsonResult, writing value of type '"Newtonsoft.Json.Linq.JObject"'.
+2018-11-16 18:19:43.941 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" in 198.0805ms
+2018-11-16 18:19:43.942 +08:00 [Information] Request finished in 223.4158ms 200 application/json; charset=utf-8
+2018-11-16 18:20:37.259 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 18:20:39.424 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 18:20:39.424 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 18:20:39.424 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Investigation/199  
+2018-11-16 18:20:39.815 +08:00 [Information] Request finished in 378.5741ms 200 
+2018-11-16 18:20:40.335 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:20:41.138 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 18:20:41.138 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)"
+2018-11-16 18:20:41.214 +08:00 [Information] Authorization was successful.
+2018-11-16 18:20:41.235 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 18:20:41.269 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 9.5174ms.
+2018-11-16 18:20:41.374 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 18:20:41.515 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 362.4322ms
+2018-11-16 18:20:41.531 +08:00 [Information] Request finished in 2127.4865ms 200 application/json; charset=utf-8
+2018-11-16 18:20:42.057 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" with arguments (["199"]) - Validation state: Valid
+2018-11-16 18:20:44.045 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:20:45.415 +08:00 [Information] Executed DbCommand ("107"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID], [x.InvestigationStatus].[InvestigationStatusID], [x.InvestigationStatus].[CreatedBy], [x.InvestigationStatus].[DateCreatedUTC], [x.InvestigationStatus].[InvestigationStatusDescription], [x.InvestigationStatus].[InvestigationStatusName], [x.InvestigationStatus].[IsDefault], [x.InvestigationStatus].[LastUpdatedUTC], [x.InvestigationStatus].[UpdatedBy], [x.InvestigationDispositions].[InvestigationDispositionsID], [x.InvestigationDispositions].[CreatedBy], [x.InvestigationDispositions].[DateCreatedUTC], [x.InvestigationDispositions].[DispositionDescription], [x.InvestigationDispositions].[DispositionType], [x.InvestigationDispositions].[LastUpdatedUTC], [x.InvestigationDispositions].[UpdatedBy], [x.FunctionType].[FunctionTypeID], [x.FunctionType].[CreatedBy], [x.FunctionType].[DateCreatedUTC], [x.FunctionType].[FunctionTypeDesc], [x.FunctionType].[FunctionTypeName], [x.FunctionType].[IsActive], [x.FunctionType].[IsInList], [x.FunctionType].[LastUpdatedUTC], [x.FunctionType].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy], [x.PriorityType].[PriorityTypeID], [x.PriorityType].[CreatedBy], [x.PriorityType].[DateCreatedUTC], [x.PriorityType].[LastUpdatedUTC], [x.PriorityType].[PriorityDescription], [x.PriorityType].[PriorityName], [x.PriorityType].[PriorityWeight], [x.PriorityType].[UpdatedBy]
+FROM [Investigation] AS [x]
+LEFT JOIN [InvestigationStatus] AS [x.InvestigationStatus] ON [x].[InvestigationStatusID] = [x.InvestigationStatus].[InvestigationStatusID]
+LEFT JOIN [InvestigationDispositions] AS [x.InvestigationDispositions] ON [x].[InvestigationDispositionsID] = [x.InvestigationDispositions].[InvestigationDispositionsID]
+LEFT JOIN [FunctionType] AS [x.FunctionType] ON [x].[FunctionTypeID] = [x.FunctionType].[FunctionTypeID]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+LEFT JOIN [PriorityType] AS [x.PriorityType] ON [x].[PriorityTypeID] = [x.PriorityType].[PriorityTypeID]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:20:45.975 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationEntityID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Ent_ID], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[UpdatedBy]
+FROM [InvestigationEntity] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:20:46.042 +08:00 [Warning] No type was specified for the decimal column '"CriminalAmount"' on entity type '"Entities"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-11-16 18:20:46.047 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"MMMDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:20:46.258 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__thisEntityID_Ent_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Ent_ID], [x].[AID], [x].[Aka], [x].[Approved], [x].[ApprovedBy], [x].[ApprovedDate], [x].[BatchName], [x].[CiBit], [x].[CiElements], [x].[CiIndex], [x].[Country], [x].[CountryId], [x].[CriminalAmount], [x].[DOB], [x].[DOB2], [x].[DateEntered], [x].[DateUpdated], [x].[DobOriginal], [x].[EffectiveDate], [x].[EntLevel], [x].[EnteredBy], [x].[EntitiesLevelsId], [x].[EntitiesSourceID], [x].[EntryCategory], [x].[EntryCategoryID], [x].[EntrySubCategory], [x].[EntrySubCategoryID], [x].[EntryType], [x].[EntryTypeID], [x].[ExpirationDate], [x].[FirstName], [x].[Gender], [x].[GovDesignation], [x].[ImageSourceURL], [x].[JurisdictionID], [x].[LastInvestigatedBy], [x].[LastInvestigationDate], [x].[LastName], [x].[LastReviewedBy], [x].[LastReviewedDate], [x].[LinkedTo], [x].[LookUpId], [x].[MasterID], [x].[Name], [x].[NameClean], [x].[NameClean2], [x].[NameSource], [x].[NationalID], [x].[OldEntryCategory], [x].[OldEntrySubCategory], [x].[OldNameSource], [x].[Organization], [x].[OriginalLanguage], [x].[OriginalName], [x].[OriginalName2], [x].[OriginalName2NoChange], [x].[OriginalName3], [x].[OtherID], [x].[POB], [x].[ParentID], [x].[PassportID], [x].[PepCode], [x].[PictureFile], [x].[PictureFileOnly], [x].[Positions], [x].[Prefix], [x].[ProfileExists], [x].[QA_Approved], [x].[Rank1], [x].[Rank2], [x].[Rank3], [x].[Rank4], [x].[Rank5], [x].[RecViews], [x].[Rejected], [x].[RejectedBy], [x].[RejectedDate], [x].[Related_ID], [x].[Relationships], [x].[Remarks], [x].[SourceWebLink], [x].[SourceWebLink2], [x].[SpecialCollections], [x].[StatusEndDate], [x].[Suffix], [x].[TermEndDate], [x].[TermStartDate], [x].[TouchDate], [x].[UpdatedBy], [x].[WCGroupLevel], [x].[Watch]
+FROM [Entities] AS [x]
+WHERE [x].[Ent_ID] = @__thisEntityID_Ent_ID_0"
+2018-11-16 18:20:46.408 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[InvestigationNoteID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[NoteText], [x].[UpdatedBy]
+FROM [InvestigationNote] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:20:46.519 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [act].[DateCreatedUTC], [acttype].[ActivityTypeName], [user].[AppUserName]
+FROM [InvestigationActivity] AS [act]
+INNER JOIN [ActivityType] AS [acttype] ON [act].[ActivityTypeID] = [acttype].[ActivityTypeID]
+INNER JOIN [AppUser] AS [user] ON [act].[AppUserID] = [user].[AppUserID]
+WHERE [act].[InvestigationID] = @__id_0
+ORDER BY [act].[DateCreatedUTC] DESC"
+2018-11-16 18:20:46.527 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 4449.5134ms.
+2018-11-16 18:20:46.545 +08:00 [Information] Executing JsonResult, writing value of type '"Newtonsoft.Json.Linq.JObject"'.
+2018-11-16 18:20:46.568 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" in 5424.4009ms
+2018-11-16 18:20:46.574 +08:00 [Information] Request finished in 7171.2906ms 200 application/json; charset=utf-8
+2018-11-16 18:38:23.916 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 18:38:29.017 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 18:38:29.017 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Investigation/199  
+2018-11-16 18:38:29.017 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 18:38:29.672 +08:00 [Information] Request finished in 647.3063ms 200 
+2018-11-16 18:38:30.360 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:38:31.292 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)"
+2018-11-16 18:38:31.292 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 18:38:31.374 +08:00 [Information] Authorization was successful.
+2018-11-16 18:38:31.387 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 18:38:31.413 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 9.3361ms.
+2018-11-16 18:38:31.554 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 18:38:31.770 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 434.5066ms
+2018-11-16 18:38:31.795 +08:00 [Information] Request finished in 2804.4956ms 200 application/json; charset=utf-8
+2018-11-16 18:38:32.462 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" with arguments (["199"]) - Validation state: Valid
+2018-11-16 18:38:35.143 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:38:37.824 +08:00 [Information] Executed DbCommand ("222"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID], [x.InvestigationStatus].[InvestigationStatusID], [x.InvestigationStatus].[CreatedBy], [x.InvestigationStatus].[DateCreatedUTC], [x.InvestigationStatus].[InvestigationStatusDescription], [x.InvestigationStatus].[InvestigationStatusName], [x.InvestigationStatus].[IsDefault], [x.InvestigationStatus].[LastUpdatedUTC], [x.InvestigationStatus].[UpdatedBy], [x.InvestigationDispositions].[InvestigationDispositionsID], [x.InvestigationDispositions].[CreatedBy], [x.InvestigationDispositions].[DateCreatedUTC], [x.InvestigationDispositions].[DispositionDescription], [x.InvestigationDispositions].[DispositionType], [x.InvestigationDispositions].[LastUpdatedUTC], [x.InvestigationDispositions].[UpdatedBy], [x.FunctionType].[FunctionTypeID], [x.FunctionType].[CreatedBy], [x.FunctionType].[DateCreatedUTC], [x.FunctionType].[FunctionTypeDesc], [x.FunctionType].[FunctionTypeName], [x.FunctionType].[IsActive], [x.FunctionType].[IsInList], [x.FunctionType].[LastUpdatedUTC], [x.FunctionType].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy], [x.PriorityType].[PriorityTypeID], [x.PriorityType].[CreatedBy], [x.PriorityType].[DateCreatedUTC], [x.PriorityType].[LastUpdatedUTC], [x.PriorityType].[PriorityDescription], [x.PriorityType].[PriorityName], [x.PriorityType].[PriorityWeight], [x.PriorityType].[UpdatedBy]
+FROM [Investigation] AS [x]
+LEFT JOIN [InvestigationStatus] AS [x.InvestigationStatus] ON [x].[InvestigationStatusID] = [x.InvestigationStatus].[InvestigationStatusID]
+LEFT JOIN [InvestigationDispositions] AS [x.InvestigationDispositions] ON [x].[InvestigationDispositionsID] = [x.InvestigationDispositions].[InvestigationDispositionsID]
+LEFT JOIN [FunctionType] AS [x.FunctionType] ON [x].[FunctionTypeID] = [x.FunctionType].[FunctionTypeID]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+LEFT JOIN [PriorityType] AS [x.PriorityType] ON [x].[PriorityTypeID] = [x.PriorityType].[PriorityTypeID]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:38:38.291 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationEntityID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Ent_ID], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[UpdatedBy]
+FROM [InvestigationEntity] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:38:38.373 +08:00 [Warning] No type was specified for the decimal column '"CriminalAmount"' on entity type '"Entities"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-11-16 18:38:38.375 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"MMMDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:38:38.575 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__thisEntityID_Ent_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Ent_ID], [x].[AID], [x].[Aka], [x].[Approved], [x].[ApprovedBy], [x].[ApprovedDate], [x].[BatchName], [x].[CiBit], [x].[CiElements], [x].[CiIndex], [x].[Country], [x].[CountryId], [x].[CriminalAmount], [x].[DOB], [x].[DOB2], [x].[DateEntered], [x].[DateUpdated], [x].[DobOriginal], [x].[EffectiveDate], [x].[EntLevel], [x].[EnteredBy], [x].[EntitiesLevelsId], [x].[EntitiesSourceID], [x].[EntryCategory], [x].[EntryCategoryID], [x].[EntrySubCategory], [x].[EntrySubCategoryID], [x].[EntryType], [x].[EntryTypeID], [x].[ExpirationDate], [x].[FirstName], [x].[Gender], [x].[GovDesignation], [x].[ImageSourceURL], [x].[JurisdictionID], [x].[LastInvestigatedBy], [x].[LastInvestigationDate], [x].[LastName], [x].[LastReviewedBy], [x].[LastReviewedDate], [x].[LinkedTo], [x].[LookUpId], [x].[MasterID], [x].[Name], [x].[NameClean], [x].[NameClean2], [x].[NameSource], [x].[NationalID], [x].[OldEntryCategory], [x].[OldEntrySubCategory], [x].[OldNameSource], [x].[Organization], [x].[OriginalLanguage], [x].[OriginalName], [x].[OriginalName2], [x].[OriginalName2NoChange], [x].[OriginalName3], [x].[OtherID], [x].[POB], [x].[ParentID], [x].[PassportID], [x].[PepCode], [x].[PictureFile], [x].[PictureFileOnly], [x].[Positions], [x].[Prefix], [x].[ProfileExists], [x].[QA_Approved], [x].[Rank1], [x].[Rank2], [x].[Rank3], [x].[Rank4], [x].[Rank5], [x].[RecViews], [x].[Rejected], [x].[RejectedBy], [x].[RejectedDate], [x].[Related_ID], [x].[Relationships], [x].[Remarks], [x].[SourceWebLink], [x].[SourceWebLink2], [x].[SpecialCollections], [x].[StatusEndDate], [x].[Suffix], [x].[TermEndDate], [x].[TermStartDate], [x].[TouchDate], [x].[UpdatedBy], [x].[WCGroupLevel], [x].[Watch]
+FROM [Entities] AS [x]
+WHERE [x].[Ent_ID] = @__thisEntityID_Ent_ID_0"
+2018-11-16 18:38:38.757 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[InvestigationNoteID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[NoteText], [x].[UpdatedBy]
+FROM [InvestigationNote] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:38:38.901 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [act].[DateCreatedUTC], CASE
+    WHEN [acttype].[ActivityTypeName] = N'View'
+    THEN N' Record Viewed By ' ELSE CASE
+        WHEN [acttype].[ActivityTypeName] = N'Email'
+        THEN N' sent on ' ELSE CASE
+            WHEN [acttype].[ActivityTypeName] = N'Document'
+            THEN N' attached on ' ELSE ((N' changed from ' + [act].[FromValue]) + N' to ') + [act].[ToValue]
+        END
+    END
+END AS [ActivityTypeName], [user].[AppUserName]
+FROM [InvestigationActivity] AS [act]
+INNER JOIN [ActivityType] AS [acttype] ON [act].[ActivityTypeID] = [acttype].[ActivityTypeID]
+INNER JOIN [AppUser] AS [user] ON [act].[AppUserID] = [user].[AppUserID]
+WHERE [act].[InvestigationID] = @__id_0
+ORDER BY [act].[DateCreatedUTC] DESC"
+2018-11-16 18:38:38.908 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 6436.4617ms.
+2018-11-16 18:38:38.928 +08:00 [Information] Executing JsonResult, writing value of type '"Newtonsoft.Json.Linq.JObject"'.
+2018-11-16 18:38:38.953 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" in 7653.6408ms
+2018-11-16 18:38:38.958 +08:00 [Information] Request finished in 9966.6283ms 200 application/json; charset=utf-8
+2018-11-16 18:40:37.141 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 18:40:38.904 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 18:40:38.904 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 18:40:38.904 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/sendmail application/json 168
+2018-11-16 18:40:39.173 +08:00 [Information] Request finished in 271.2365ms 200 
+2018-11-16 18:40:39.670 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:40:40.278 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 18:40:40.278 +08:00 [Information] Route matched with "{action = \"SendInvestigationEmail\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)"
+2018-11-16 18:40:40.346 +08:00 [Information] Authorization was successful.
+2018-11-16 18:40:40.355 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 18:40:40.372 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.5959ms.
+2018-11-16 18:40:40.454 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 18:40:40.593 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 305.4552ms
+2018-11-16 18:40:40.612 +08:00 [Information] Request finished in 1730.8035ms 200 application/json; charset=utf-8
+2018-11-16 18:40:41.148 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestiationEmailRequest"]) - Validation state: Valid
+2018-11-16 18:40:42.841 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:40:44.011 +08:00 [Information] Executed DbCommand ("132"ms) [Parameters=["@__emailreq_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AppUserID], [x].[AppUserName], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Email], [x].[GenderTypeID], [x].[IsActive], [x].[IsInternal], [x].[LastUpdatedUTC], [x].[OfficeID], [x].[OperationalRoleTypeID], [x].[PhotoImage], [x].[SupervisorAppUserID], [x].[UTCOffset], [x].[UpdatedBy]
+FROM [AppUser] AS [x]
+WHERE [x].[AppUserID] = @__emailreq_AppUserID_0"
+2018-11-16 18:40:44.395 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__emailreq_IndexFromWorkTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID]
+FROM [Investigation] AS [x]
+WHERE [x].[InvestigationID] = @__emailreq_IndexFromWorkTable_0"
+2018-11-16 18:42:13.049 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 18:42:14.571 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/sendmail application/json 168
+2018-11-16 18:42:14.571 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 18:42:14.571 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 18:42:14.805 +08:00 [Information] Request finished in 236.4556ms 200 
+2018-11-16 18:42:15.289 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:42:15.805 +08:00 [Information] Route matched with "{action = \"SendInvestigationEmail\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)"
+2018-11-16 18:42:15.805 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 18:42:15.863 +08:00 [Information] Authorization was successful.
+2018-11-16 18:42:15.870 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 18:42:15.884 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.8373ms.
+2018-11-16 18:42:15.966 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 18:42:16.089 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 270.8529ms
+2018-11-16 18:42:16.118 +08:00 [Information] Request finished in 1570.4439ms 200 application/json; charset=utf-8
+2018-11-16 18:42:16.540 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestiationEmailRequest"]) - Validation state: Valid
+2018-11-16 18:42:17.978 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:42:19.026 +08:00 [Information] Executed DbCommand ("128"ms) [Parameters=["@__emailreq_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AppUserID], [x].[AppUserName], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Email], [x].[GenderTypeID], [x].[IsActive], [x].[IsInternal], [x].[LastUpdatedUTC], [x].[OfficeID], [x].[OperationalRoleTypeID], [x].[PhotoImage], [x].[SupervisorAppUserID], [x].[UTCOffset], [x].[UpdatedBy]
+FROM [AppUser] AS [x]
+WHERE [x].[AppUserID] = @__emailreq_AppUserID_0"
+2018-11-16 18:42:19.249 +08:00 [Information] Executed DbCommand ("10"ms) [Parameters=["@__emailreq_IndexFromWorkTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID]
+FROM [Investigation] AS [x]
+WHERE [x].[InvestigationID] = @__emailreq_IndexFromWorkTable_0"
+2018-11-16 18:42:31.835 +08:00 [Information] Executed DbCommand ("40"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationEmails] ([AppUserID], [CreatedBy], [DateCreatedUTC], [EmailBody], [InvestigationID], [LastUpdatedUTC], [SentDateUTC], [SentFrom], [SentTo], [StatusOrErrorMessage], [Subject], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [InvestigationEmailID]
+FROM [InvestigationEmails]
+WHERE @@ROWCOUNT = 1 AND [InvestigationEmailID] = scope_identity();"
+2018-11-16 18:42:33.191 +08:00 [Error] 4ac1e672-edd0-4b3f-90f4-00be40f0722f - System.Net.Mail.SmtpException: Mailbox unavailable. The server response was: 5.7.1 Client does not have permissions to send as this sender
+   at System.Net.Mail.DataStopCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataStopCommand.Send(SmtpConnection conn)
+   at System.Net.Mail.SmtpConnection.OnClose(Object sender, EventArgs args)
+   at System.Net.ClosableStream.Close()
+   at System.Net.Mail.MailWriter.Close()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at LNWCOE.Helpers.Common.SendMail(String SmtpServer, String From, String To, String CC, String BCC, String Subject, String Body, ILogger logger) in C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\Helpers\General.cs:line 124
+2018-11-16 18:42:33.194 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 16646.7868ms.
+2018-11-16 18:42:33.220 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-11-16 18:42:33.230 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" in 17419.5167ms
+2018-11-16 18:42:33.240 +08:00 [Information] Request finished in 18691.9985ms 400 application/json; charset=utf-8
+2018-11-16 18:43:17.635 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/sendmail application/json 168
+2018-11-16 18:43:17.636 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:43:17.652 +08:00 [Information] Route matched with "{action = \"SendInvestigationEmail\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)"
+2018-11-16 18:43:17.652 +08:00 [Information] Authorization was successful.
+2018-11-16 18:43:17.657 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestiationEmailRequest"]) - Validation state: Valid
+2018-11-16 18:43:17.660 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:43:17.678 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__emailreq_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AppUserID], [x].[AppUserName], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Email], [x].[GenderTypeID], [x].[IsActive], [x].[IsInternal], [x].[LastUpdatedUTC], [x].[OfficeID], [x].[OperationalRoleTypeID], [x].[PhotoImage], [x].[SupervisorAppUserID], [x].[UTCOffset], [x].[UpdatedBy]
+FROM [AppUser] AS [x]
+WHERE [x].[AppUserID] = @__emailreq_AppUserID_0"
+2018-11-16 18:43:17.682 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__emailreq_IndexFromWorkTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID]
+FROM [Investigation] AS [x]
+WHERE [x].[InvestigationID] = @__emailreq_IndexFromWorkTable_0"
+2018-11-16 18:44:00.224 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 18:44:02.005 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 18:44:02.005 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 18:44:02.218 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/sendmail application/json 168
+2018-11-16 18:44:02.637 +08:00 [Information] Request finished in 642.8244ms 200 
+2018-11-16 18:44:03.226 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:44:03.920 +08:00 [Information] Route matched with "{action = \"SendInvestigationEmail\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)"
+2018-11-16 18:44:03.920 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 18:44:03.987 +08:00 [Information] Authorization was successful.
+2018-11-16 18:44:04.004 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 18:44:04.022 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.5124ms.
+2018-11-16 18:44:04.119 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 18:44:04.345 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 413.3202ms
+2018-11-16 18:44:04.390 +08:00 [Information] Request finished in 2412.0469ms 200 application/json; charset=utf-8
+2018-11-16 18:44:04.827 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestiationEmailRequest"]) - Validation state: Valid
+2018-11-16 18:44:06.186 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:44:07.080 +08:00 [Information] Executed DbCommand ("95"ms) [Parameters=["@__emailreq_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AppUserID], [x].[AppUserName], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Email], [x].[GenderTypeID], [x].[IsActive], [x].[IsInternal], [x].[LastUpdatedUTC], [x].[OfficeID], [x].[OperationalRoleTypeID], [x].[PhotoImage], [x].[SupervisorAppUserID], [x].[UTCOffset], [x].[UpdatedBy]
+FROM [AppUser] AS [x]
+WHERE [x].[AppUserID] = @__emailreq_AppUserID_0"
+2018-11-16 18:44:07.301 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__emailreq_IndexFromWorkTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID]
+FROM [Investigation] AS [x]
+WHERE [x].[InvestigationID] = @__emailreq_IndexFromWorkTable_0"
+2018-11-16 18:44:16.591 +08:00 [Information] Executed DbCommand ("9"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationActivity] ([ActivityTypeID], [AppUserID], [CreatedBy], [DateCreatedUTC], [FromValue], [InvestigationID], [LastUpdatedUTC], [ToValue], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [InvestigationActivityID]
+FROM [InvestigationActivity]
+WHERE @@ROWCOUNT = 1 AND [InvestigationActivityID] = scope_identity();"
+2018-11-16 18:44:16.619 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationEmails] ([AppUserID], [CreatedBy], [DateCreatedUTC], [EmailBody], [InvestigationID], [LastUpdatedUTC], [SentDateUTC], [SentFrom], [SentTo], [StatusOrErrorMessage], [Subject], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [InvestigationEmailID]
+FROM [InvestigationEmails]
+WHERE @@ROWCOUNT = 1 AND [InvestigationEmailID] = scope_identity();"
+2018-11-16 18:44:22.075 +08:00 [Error] 13d1872d-4a6f-44bc-af98-2dd44ebd90dc - System.Net.Mail.SmtpException: Mailbox unavailable. The server response was: 5.7.1 Client does not have permissions to send as this sender
+   at System.Net.Mail.DataStopCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataStopCommand.Send(SmtpConnection conn)
+   at System.Net.Mail.SmtpConnection.OnClose(Object sender, EventArgs args)
+   at System.Net.ClosableStream.Close()
+   at System.Net.Mail.MailWriter.Close()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at LNWCOE.Helpers.Common.SendMail(String SmtpServer, String From, String To, String CC, String BCC, String Subject, String Body, ILogger logger) in C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\Helpers\General.cs:line 124
+2018-11-16 18:44:45.341 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 40505.4166ms.
+2018-11-16 18:44:45.346 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-11-16 18:44:45.348 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" in 41422.4098ms
+2018-11-16 18:44:45.354 +08:00 [Information] Request finished in 43135.573ms 400 application/json; charset=utf-8
+2018-11-16 18:46:08.056 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 18:46:09.735 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 18:46:09.735 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 18:46:09.977 +08:00 [Information] Request finished in 231.1211ms 200 
+2018-11-16 18:46:11.016 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 18:46:11.136 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 18:46:11.150 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.1537ms.
+2018-11-16 18:46:11.212 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 18:46:11.431 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 403.9422ms
+2018-11-16 18:46:11.449 +08:00 [Information] Request finished in 1732.4651ms 200 application/json; charset=utf-8
+2018-11-16 18:46:11.697 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/sendmail application/json 168
+2018-11-16 18:46:11.884 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:46:11.916 +08:00 [Information] Route matched with "{action = \"SendInvestigationEmail\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)"
+2018-11-16 18:46:11.951 +08:00 [Information] Authorization was successful.
+2018-11-16 18:46:12.633 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestiationEmailRequest"]) - Validation state: Valid
+2018-11-16 18:46:13.987 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:46:15.000 +08:00 [Information] Executed DbCommand ("96"ms) [Parameters=["@__emailreq_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AppUserID], [x].[AppUserName], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Email], [x].[GenderTypeID], [x].[IsActive], [x].[IsInternal], [x].[LastUpdatedUTC], [x].[OfficeID], [x].[OperationalRoleTypeID], [x].[PhotoImage], [x].[SupervisorAppUserID], [x].[UTCOffset], [x].[UpdatedBy]
+FROM [AppUser] AS [x]
+WHERE [x].[AppUserID] = @__emailreq_AppUserID_0"
+2018-11-16 18:46:15.210 +08:00 [Information] Executed DbCommand ("10"ms) [Parameters=["@__emailreq_IndexFromWorkTable_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID]
+FROM [Investigation] AS [x]
+WHERE [x].[InvestigationID] = @__emailreq_IndexFromWorkTable_0"
+2018-11-16 18:46:26.246 +08:00 [Information] Executed DbCommand ("16"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationActivity] ([ActivityTypeID], [AppUserID], [CreatedBy], [DateCreatedUTC], [FromValue], [InvestigationID], [LastUpdatedUTC], [ToValue], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [InvestigationActivityID]
+FROM [InvestigationActivity]
+WHERE @@ROWCOUNT = 1 AND [InvestigationActivityID] = scope_identity();"
+2018-11-16 18:46:26.300 +08:00 [Information] Executed DbCommand ("34"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationEmails] ([AppUserID], [CreatedBy], [DateCreatedUTC], [EmailBody], [InvestigationID], [LastUpdatedUTC], [SentDateUTC], [SentFrom], [SentTo], [StatusOrErrorMessage], [Subject], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [InvestigationEmailID]
+FROM [InvestigationEmails]
+WHERE @@ROWCOUNT = 1 AND [InvestigationEmailID] = scope_identity();"
+2018-11-16 18:46:44.427 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 31783.4886ms.
+2018-11-16 18:46:44.434 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-16 18:46:44.436 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.SendInvestigationEmail (LNWCOE)" in 32519.4208ms
+2018-11-16 18:46:44.442 +08:00 [Information] Request finished in 32745.337ms 200 
+2018-11-16 18:47:35.154 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Investigation/199  
+2018-11-16 18:47:35.158 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:47:35.192 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)"
+2018-11-16 18:47:35.192 +08:00 [Information] Authorization was successful.
+2018-11-16 18:47:35.208 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" with arguments (["199"]) - Validation state: Valid
+2018-11-16 18:47:35.235 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:47:35.572 +08:00 [Information] Executed DbCommand ("16"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID], [x.InvestigationStatus].[InvestigationStatusID], [x.InvestigationStatus].[CreatedBy], [x.InvestigationStatus].[DateCreatedUTC], [x.InvestigationStatus].[InvestigationStatusDescription], [x.InvestigationStatus].[InvestigationStatusName], [x.InvestigationStatus].[IsDefault], [x.InvestigationStatus].[LastUpdatedUTC], [x.InvestigationStatus].[UpdatedBy], [x.InvestigationDispositions].[InvestigationDispositionsID], [x.InvestigationDispositions].[CreatedBy], [x.InvestigationDispositions].[DateCreatedUTC], [x.InvestigationDispositions].[DispositionDescription], [x.InvestigationDispositions].[DispositionType], [x.InvestigationDispositions].[LastUpdatedUTC], [x.InvestigationDispositions].[UpdatedBy], [x.FunctionType].[FunctionTypeID], [x.FunctionType].[CreatedBy], [x.FunctionType].[DateCreatedUTC], [x.FunctionType].[FunctionTypeDesc], [x.FunctionType].[FunctionTypeName], [x.FunctionType].[IsActive], [x.FunctionType].[IsInList], [x.FunctionType].[LastUpdatedUTC], [x.FunctionType].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy], [x.PriorityType].[PriorityTypeID], [x.PriorityType].[CreatedBy], [x.PriorityType].[DateCreatedUTC], [x.PriorityType].[LastUpdatedUTC], [x.PriorityType].[PriorityDescription], [x.PriorityType].[PriorityName], [x.PriorityType].[PriorityWeight], [x.PriorityType].[UpdatedBy]
+FROM [Investigation] AS [x]
+LEFT JOIN [InvestigationStatus] AS [x.InvestigationStatus] ON [x].[InvestigationStatusID] = [x.InvestigationStatus].[InvestigationStatusID]
+LEFT JOIN [InvestigationDispositions] AS [x.InvestigationDispositions] ON [x].[InvestigationDispositionsID] = [x.InvestigationDispositions].[InvestigationDispositionsID]
+LEFT JOIN [FunctionType] AS [x.FunctionType] ON [x].[FunctionTypeID] = [x.FunctionType].[FunctionTypeID]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+LEFT JOIN [PriorityType] AS [x.PriorityType] ON [x].[PriorityTypeID] = [x.PriorityType].[PriorityTypeID]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:47:35.722 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationEntityID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Ent_ID], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[UpdatedBy]
+FROM [InvestigationEntity] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:47:35.820 +08:00 [Warning] No type was specified for the decimal column '"CriminalAmount"' on entity type '"Entities"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-11-16 18:47:35.821 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"MMMDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:47:35.943 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__thisEntityID_Ent_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Ent_ID], [x].[AID], [x].[Aka], [x].[Approved], [x].[ApprovedBy], [x].[ApprovedDate], [x].[BatchName], [x].[CiBit], [x].[CiElements], [x].[CiIndex], [x].[Country], [x].[CountryId], [x].[CriminalAmount], [x].[DOB], [x].[DOB2], [x].[DateEntered], [x].[DateUpdated], [x].[DobOriginal], [x].[EffectiveDate], [x].[EntLevel], [x].[EnteredBy], [x].[EntitiesLevelsId], [x].[EntitiesSourceID], [x].[EntryCategory], [x].[EntryCategoryID], [x].[EntrySubCategory], [x].[EntrySubCategoryID], [x].[EntryType], [x].[EntryTypeID], [x].[ExpirationDate], [x].[FirstName], [x].[Gender], [x].[GovDesignation], [x].[ImageSourceURL], [x].[JurisdictionID], [x].[LastInvestigatedBy], [x].[LastInvestigationDate], [x].[LastName], [x].[LastReviewedBy], [x].[LastReviewedDate], [x].[LinkedTo], [x].[LookUpId], [x].[MasterID], [x].[Name], [x].[NameClean], [x].[NameClean2], [x].[NameSource], [x].[NationalID], [x].[OldEntryCategory], [x].[OldEntrySubCategory], [x].[OldNameSource], [x].[Organization], [x].[OriginalLanguage], [x].[OriginalName], [x].[OriginalName2], [x].[OriginalName2NoChange], [x].[OriginalName3], [x].[OtherID], [x].[POB], [x].[ParentID], [x].[PassportID], [x].[PepCode], [x].[PictureFile], [x].[PictureFileOnly], [x].[Positions], [x].[Prefix], [x].[ProfileExists], [x].[QA_Approved], [x].[Rank1], [x].[Rank2], [x].[Rank3], [x].[Rank4], [x].[Rank5], [x].[RecViews], [x].[Rejected], [x].[RejectedBy], [x].[RejectedDate], [x].[Related_ID], [x].[Relationships], [x].[Remarks], [x].[SourceWebLink], [x].[SourceWebLink2], [x].[SpecialCollections], [x].[StatusEndDate], [x].[Suffix], [x].[TermEndDate], [x].[TermStartDate], [x].[TouchDate], [x].[UpdatedBy], [x].[WCGroupLevel], [x].[Watch]
+FROM [Entities] AS [x]
+WHERE [x].[Ent_ID] = @__thisEntityID_Ent_ID_0"
+2018-11-16 18:47:36.097 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[InvestigationNoteID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[NoteText], [x].[UpdatedBy]
+FROM [InvestigationNote] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:47:36.229 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [act].[DateCreatedUTC], CASE
+    WHEN [acttype].[ActivityTypeName] = N'View'
+    THEN N' Record Viewed By ' ELSE CASE
+        WHEN [acttype].[ActivityTypeName] = N'Email'
+        THEN N' sent on ' ELSE CASE
+            WHEN [acttype].[ActivityTypeName] = N'Document'
+            THEN N' attached on ' ELSE ((N' changed from ' + [act].[FromValue]) + N' to ') + [act].[ToValue]
+        END
+    END
+END AS [ActivityTypeName], [user].[AppUserName]
+FROM [InvestigationActivity] AS [act]
+INNER JOIN [ActivityType] AS [acttype] ON [act].[ActivityTypeID] = [acttype].[ActivityTypeID]
+INNER JOIN [AppUser] AS [user] ON [act].[AppUserID] = [user].[AppUserID]
+WHERE [act].[InvestigationID] = @__id_0
+ORDER BY [act].[DateCreatedUTC] DESC"
+2018-11-16 18:47:36.239 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 1030.7575ms.
+2018-11-16 18:47:36.266 +08:00 [Information] Executing JsonResult, writing value of type '"Newtonsoft.Json.Linq.JObject"'.
+2018-11-16 18:47:36.292 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" in 1099.921ms
+2018-11-16 18:47:36.292 +08:00 [Information] Request finished in 1138.4107ms 200 application/json; charset=utf-8
+2018-11-16 18:56:23.128 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 18:56:24.626 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-16 18:56:24.626 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-16 18:56:24.875 +08:00 [Information] Request finished in 258.5171ms 200 
+2018-11-16 18:56:26.085 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-16 18:56:26.148 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-16 18:56:26.157 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.4165ms.
+2018-11-16 18:56:26.198 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-16 18:56:26.476 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 377.0993ms
+2018-11-16 18:56:26.516 +08:00 [Information] Request finished in 1910.2616ms 200 application/json; charset=utf-8
+2018-11-16 18:56:27.347 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Investigation/199  
+2018-11-16 18:56:27.527 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:56:27.565 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)"
+2018-11-16 18:56:27.610 +08:00 [Information] Authorization was successful.
+2018-11-16 18:56:28.043 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" with arguments (["199"]) - Validation state: Valid
+2018-11-16 18:56:29.381 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:56:30.599 +08:00 [Information] Executed DbCommand ("105"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID], [x.InvestigationStatus].[InvestigationStatusID], [x.InvestigationStatus].[CreatedBy], [x.InvestigationStatus].[DateCreatedUTC], [x.InvestigationStatus].[InvestigationStatusDescription], [x.InvestigationStatus].[InvestigationStatusName], [x.InvestigationStatus].[IsDefault], [x.InvestigationStatus].[LastUpdatedUTC], [x.InvestigationStatus].[UpdatedBy], [x.InvestigationDispositions].[InvestigationDispositionsID], [x.InvestigationDispositions].[CreatedBy], [x.InvestigationDispositions].[DateCreatedUTC], [x.InvestigationDispositions].[DispositionDescription], [x.InvestigationDispositions].[DispositionType], [x.InvestigationDispositions].[LastUpdatedUTC], [x.InvestigationDispositions].[UpdatedBy], [x.FunctionType].[FunctionTypeID], [x.FunctionType].[CreatedBy], [x.FunctionType].[DateCreatedUTC], [x.FunctionType].[FunctionTypeDesc], [x.FunctionType].[FunctionTypeName], [x.FunctionType].[IsActive], [x.FunctionType].[IsInList], [x.FunctionType].[LastUpdatedUTC], [x.FunctionType].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy], [x.PriorityType].[PriorityTypeID], [x.PriorityType].[CreatedBy], [x.PriorityType].[DateCreatedUTC], [x.PriorityType].[LastUpdatedUTC], [x.PriorityType].[PriorityDescription], [x.PriorityType].[PriorityName], [x.PriorityType].[PriorityWeight], [x.PriorityType].[UpdatedBy]
+FROM [Investigation] AS [x]
+LEFT JOIN [InvestigationStatus] AS [x.InvestigationStatus] ON [x].[InvestigationStatusID] = [x.InvestigationStatus].[InvestigationStatusID]
+LEFT JOIN [InvestigationDispositions] AS [x.InvestigationDispositions] ON [x].[InvestigationDispositionsID] = [x.InvestigationDispositions].[InvestigationDispositionsID]
+LEFT JOIN [FunctionType] AS [x.FunctionType] ON [x].[FunctionTypeID] = [x.FunctionType].[FunctionTypeID]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+LEFT JOIN [PriorityType] AS [x.PriorityType] ON [x].[PriorityTypeID] = [x.PriorityType].[PriorityTypeID]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:56:30.960 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationEntityID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Ent_ID], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[UpdatedBy]
+FROM [InvestigationEntity] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:56:31.014 +08:00 [Warning] No type was specified for the decimal column '"CriminalAmount"' on entity type '"Entities"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-11-16 18:56:31.015 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"MMMDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:56:31.184 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__thisEntityID_Ent_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Ent_ID], [x].[AID], [x].[Aka], [x].[Approved], [x].[ApprovedBy], [x].[ApprovedDate], [x].[BatchName], [x].[CiBit], [x].[CiElements], [x].[CiIndex], [x].[Country], [x].[CountryId], [x].[CriminalAmount], [x].[DOB], [x].[DOB2], [x].[DateEntered], [x].[DateUpdated], [x].[DobOriginal], [x].[EffectiveDate], [x].[EntLevel], [x].[EnteredBy], [x].[EntitiesLevelsId], [x].[EntitiesSourceID], [x].[EntryCategory], [x].[EntryCategoryID], [x].[EntrySubCategory], [x].[EntrySubCategoryID], [x].[EntryType], [x].[EntryTypeID], [x].[ExpirationDate], [x].[FirstName], [x].[Gender], [x].[GovDesignation], [x].[ImageSourceURL], [x].[JurisdictionID], [x].[LastInvestigatedBy], [x].[LastInvestigationDate], [x].[LastName], [x].[LastReviewedBy], [x].[LastReviewedDate], [x].[LinkedTo], [x].[LookUpId], [x].[MasterID], [x].[Name], [x].[NameClean], [x].[NameClean2], [x].[NameSource], [x].[NationalID], [x].[OldEntryCategory], [x].[OldEntrySubCategory], [x].[OldNameSource], [x].[Organization], [x].[OriginalLanguage], [x].[OriginalName], [x].[OriginalName2], [x].[OriginalName2NoChange], [x].[OriginalName3], [x].[OtherID], [x].[POB], [x].[ParentID], [x].[PassportID], [x].[PepCode], [x].[PictureFile], [x].[PictureFileOnly], [x].[Positions], [x].[Prefix], [x].[ProfileExists], [x].[QA_Approved], [x].[Rank1], [x].[Rank2], [x].[Rank3], [x].[Rank4], [x].[Rank5], [x].[RecViews], [x].[Rejected], [x].[RejectedBy], [x].[RejectedDate], [x].[Related_ID], [x].[Relationships], [x].[Remarks], [x].[SourceWebLink], [x].[SourceWebLink2], [x].[SpecialCollections], [x].[StatusEndDate], [x].[Suffix], [x].[TermEndDate], [x].[TermStartDate], [x].[TouchDate], [x].[UpdatedBy], [x].[WCGroupLevel], [x].[Watch]
+FROM [Entities] AS [x]
+WHERE [x].[Ent_ID] = @__thisEntityID_Ent_ID_0"
+2018-11-16 18:56:31.510 +08:00 [Information] Executed DbCommand ("103"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [inote].[DateCreatedUTC] AS [DateCreated], [user].[AppUserName] AS [CreatedBy], [inote].[NoteText] AS [Note]
+FROM [InvestigationNote] AS [inote]
+INNER JOIN [AppUser] AS [user] ON [inote].[CreatedBy] = CONVERT(VARCHAR(11), [user].[AppUserID])
+WHERE [inote].[InvestigationID] = @__id_0"
+2018-11-16 18:56:31.589 +08:00 [Information] Executed DbCommand ("9"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [act].[DateCreatedUTC], CASE
+    WHEN [acttype].[ActivityTypeName] = N'View'
+    THEN N' Record Viewed By ' ELSE CASE
+        WHEN [acttype].[ActivityTypeName] = N'Email'
+        THEN N' Sent Email ' ELSE CASE
+            WHEN [acttype].[ActivityTypeName] = N'Document'
+            THEN N' attached on ' ELSE ((N' changed from ' + [act].[FromValue]) + N' to ') + [act].[ToValue]
+        END
+    END
+END AS [ActivityTypeName], [user].[AppUserName]
+FROM [InvestigationActivity] AS [act]
+INNER JOIN [ActivityType] AS [acttype] ON [act].[ActivityTypeID] = [acttype].[ActivityTypeID]
+INNER JOIN [AppUser] AS [user] ON [act].[AppUserID] = [user].[AppUserID]
+WHERE [act].[InvestigationID] = @__id_0
+ORDER BY [act].[DateCreatedUTC] DESC"
+2018-11-16 18:56:31.597 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 3546.7077ms.
+2018-11-16 18:56:31.616 +08:00 [Information] Executing JsonResult, writing value of type '"Newtonsoft.Json.Linq.JObject"'.
+2018-11-16 18:56:31.636 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" in 4070.9349ms
+2018-11-16 18:56:31.641 +08:00 [Information] Request finished in 4293.6666ms 200 application/json; charset=utf-8
+2018-11-16 18:56:40.589 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Investigation/199  
+2018-11-16 18:56:40.589 +08:00 [Information] Successfully validated the token.
+2018-11-16 18:56:40.594 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)"
+2018-11-16 18:56:40.595 +08:00 [Information] Authorization was successful.
+2018-11-16 18:56:40.598 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" with arguments (["199"]) - Validation state: Valid
+2018-11-16 18:56:40.599 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:56:40.621 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID], [x.InvestigationStatus].[InvestigationStatusID], [x.InvestigationStatus].[CreatedBy], [x.InvestigationStatus].[DateCreatedUTC], [x.InvestigationStatus].[InvestigationStatusDescription], [x.InvestigationStatus].[InvestigationStatusName], [x.InvestigationStatus].[IsDefault], [x.InvestigationStatus].[LastUpdatedUTC], [x.InvestigationStatus].[UpdatedBy], [x.InvestigationDispositions].[InvestigationDispositionsID], [x.InvestigationDispositions].[CreatedBy], [x.InvestigationDispositions].[DateCreatedUTC], [x.InvestigationDispositions].[DispositionDescription], [x.InvestigationDispositions].[DispositionType], [x.InvestigationDispositions].[LastUpdatedUTC], [x.InvestigationDispositions].[UpdatedBy], [x.FunctionType].[FunctionTypeID], [x.FunctionType].[CreatedBy], [x.FunctionType].[DateCreatedUTC], [x.FunctionType].[FunctionTypeDesc], [x.FunctionType].[FunctionTypeName], [x.FunctionType].[IsActive], [x.FunctionType].[IsInList], [x.FunctionType].[LastUpdatedUTC], [x.FunctionType].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy], [x.PriorityType].[PriorityTypeID], [x.PriorityType].[CreatedBy], [x.PriorityType].[DateCreatedUTC], [x.PriorityType].[LastUpdatedUTC], [x.PriorityType].[PriorityDescription], [x.PriorityType].[PriorityName], [x.PriorityType].[PriorityWeight], [x.PriorityType].[UpdatedBy]
+FROM [Investigation] AS [x]
+LEFT JOIN [InvestigationStatus] AS [x.InvestigationStatus] ON [x].[InvestigationStatusID] = [x.InvestigationStatus].[InvestigationStatusID]
+LEFT JOIN [InvestigationDispositions] AS [x.InvestigationDispositions] ON [x].[InvestigationDispositionsID] = [x.InvestigationDispositions].[InvestigationDispositionsID]
+LEFT JOIN [FunctionType] AS [x.FunctionType] ON [x].[FunctionTypeID] = [x.FunctionType].[FunctionTypeID]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+LEFT JOIN [PriorityType] AS [x.PriorityType] ON [x].[PriorityTypeID] = [x.PriorityType].[PriorityTypeID]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:56:40.625 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationEntityID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Ent_ID], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[UpdatedBy]
+FROM [InvestigationEntity] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-16 18:56:40.626 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"MMMDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 18:56:40.630 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__thisEntityID_Ent_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Ent_ID], [x].[AID], [x].[Aka], [x].[Approved], [x].[ApprovedBy], [x].[ApprovedDate], [x].[BatchName], [x].[CiBit], [x].[CiElements], [x].[CiIndex], [x].[Country], [x].[CountryId], [x].[CriminalAmount], [x].[DOB], [x].[DOB2], [x].[DateEntered], [x].[DateUpdated], [x].[DobOriginal], [x].[EffectiveDate], [x].[EntLevel], [x].[EnteredBy], [x].[EntitiesLevelsId], [x].[EntitiesSourceID], [x].[EntryCategory], [x].[EntryCategoryID], [x].[EntrySubCategory], [x].[EntrySubCategoryID], [x].[EntryType], [x].[EntryTypeID], [x].[ExpirationDate], [x].[FirstName], [x].[Gender], [x].[GovDesignation], [x].[ImageSourceURL], [x].[JurisdictionID], [x].[LastInvestigatedBy], [x].[LastInvestigationDate], [x].[LastName], [x].[LastReviewedBy], [x].[LastReviewedDate], [x].[LinkedTo], [x].[LookUpId], [x].[MasterID], [x].[Name], [x].[NameClean], [x].[NameClean2], [x].[NameSource], [x].[NationalID], [x].[OldEntryCategory], [x].[OldEntrySubCategory], [x].[OldNameSource], [x].[Organization], [x].[OriginalLanguage], [x].[OriginalName], [x].[OriginalName2], [x].[OriginalName2NoChange], [x].[OriginalName3], [x].[OtherID], [x].[POB], [x].[ParentID], [x].[PassportID], [x].[PepCode], [x].[PictureFile], [x].[PictureFileOnly], [x].[Positions], [x].[Prefix], [x].[ProfileExists], [x].[QA_Approved], [x].[Rank1], [x].[Rank2], [x].[Rank3], [x].[Rank4], [x].[Rank5], [x].[RecViews], [x].[Rejected], [x].[RejectedBy], [x].[RejectedDate], [x].[Related_ID], [x].[Relationships], [x].[Remarks], [x].[SourceWebLink], [x].[SourceWebLink2], [x].[SpecialCollections], [x].[StatusEndDate], [x].[Suffix], [x].[TermEndDate], [x].[TermStartDate], [x].[TouchDate], [x].[UpdatedBy], [x].[WCGroupLevel], [x].[Watch]
+FROM [Entities] AS [x]
+WHERE [x].[Ent_ID] = @__thisEntityID_Ent_ID_0"
+2018-11-16 18:56:40.635 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [inote].[DateCreatedUTC] AS [DateCreated], [user].[AppUserName] AS [CreatedBy], [inote].[NoteText] AS [Note]
+FROM [InvestigationNote] AS [inote]
+INNER JOIN [AppUser] AS [user] ON [inote].[CreatedBy] = CONVERT(VARCHAR(11), [user].[AppUserID])
+WHERE [inote].[InvestigationID] = @__id_0"
+2018-11-16 18:56:40.638 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [act].[DateCreatedUTC], CASE
+    WHEN [acttype].[ActivityTypeName] = N'View'
+    THEN N' Record Viewed By ' ELSE CASE
+        WHEN [acttype].[ActivityTypeName] = N'Email'
+        THEN N' Sent Email ' ELSE CASE
+            WHEN [acttype].[ActivityTypeName] = N'Document'
+            THEN N' attached on ' ELSE ((N' changed from ' + [act].[FromValue]) + N' to ') + [act].[ToValue]
+        END
+    END
+END AS [ActivityTypeName], [user].[AppUserName]
+FROM [InvestigationActivity] AS [act]
+INNER JOIN [ActivityType] AS [acttype] ON [act].[ActivityTypeID] = [acttype].[ActivityTypeID]
+INNER JOIN [AppUser] AS [user] ON [act].[AppUserID] = [user].[AppUserID]
+WHERE [act].[InvestigationID] = @__id_0
+ORDER BY [act].[DateCreatedUTC] DESC"
+2018-11-16 18:56:40.638 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 39.7124ms.
+2018-11-16 18:56:40.638 +08:00 [Information] Executing JsonResult, writing value of type '"Newtonsoft.Json.Linq.JObject"'.
+2018-11-16 18:56:40.638 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" in 44.3034ms
+2018-11-16 18:56:40.639 +08:00 [Information] Request finished in 50.0614ms 200 application/json; charset=utf-8
+2018-11-16 19:08:03.169 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-16 19:08:04.229 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Investigation/guid/48920F0A-49E3-E811-A85D-D89EF325C63D  
+2018-11-16 19:08:04.605 +08:00 [Information] Successfully validated the token.
+2018-11-16 19:08:05.231 +08:00 [Information] Route matched with "{action = \"GetByGuid\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.GetByGuid (LNWCOE)"
+2018-11-16 19:08:05.284 +08:00 [Information] Authorization was successful.
+2018-11-16 19:08:05.673 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.GetByGuid (LNWCOE)" with arguments (["48920f0a-49e3-e811-a85d-d89ef325c63d"]) - Validation state: Valid
+2018-11-16 19:08:06.859 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 19:08:08.009 +08:00 [Information] Executed DbCommand ("93"ms) [Parameters=["@__guid_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID], [x.InvestigationStatus].[InvestigationStatusID], [x.InvestigationStatus].[CreatedBy], [x.InvestigationStatus].[DateCreatedUTC], [x.InvestigationStatus].[InvestigationStatusDescription], [x.InvestigationStatus].[InvestigationStatusName], [x.InvestigationStatus].[IsDefault], [x.InvestigationStatus].[LastUpdatedUTC], [x.InvestigationStatus].[UpdatedBy], [x.InvestigationDispositions].[InvestigationDispositionsID], [x.InvestigationDispositions].[CreatedBy], [x.InvestigationDispositions].[DateCreatedUTC], [x.InvestigationDispositions].[DispositionDescription], [x.InvestigationDispositions].[DispositionType], [x.InvestigationDispositions].[LastUpdatedUTC], [x.InvestigationDispositions].[UpdatedBy], [x.FunctionType].[FunctionTypeID], [x.FunctionType].[CreatedBy], [x.FunctionType].[DateCreatedUTC], [x.FunctionType].[FunctionTypeDesc], [x.FunctionType].[FunctionTypeName], [x.FunctionType].[IsActive], [x.FunctionType].[IsInList], [x.FunctionType].[LastUpdatedUTC], [x.FunctionType].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy], [x.PriorityType].[PriorityTypeID], [x.PriorityType].[CreatedBy], [x.PriorityType].[DateCreatedUTC], [x.PriorityType].[LastUpdatedUTC], [x.PriorityType].[PriorityDescription], [x.PriorityType].[PriorityName], [x.PriorityType].[PriorityWeight], [x.PriorityType].[UpdatedBy]
+FROM [Investigation] AS [x]
+LEFT JOIN [InvestigationStatus] AS [x.InvestigationStatus] ON [x].[InvestigationStatusID] = [x.InvestigationStatus].[InvestigationStatusID]
+LEFT JOIN [InvestigationDispositions] AS [x.InvestigationDispositions] ON [x].[InvestigationDispositionsID] = [x.InvestigationDispositions].[InvestigationDispositionsID]
+LEFT JOIN [FunctionType] AS [x.FunctionType] ON [x].[FunctionTypeID] = [x.FunctionType].[FunctionTypeID]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+LEFT JOIN [PriorityType] AS [x.PriorityType] ON [x].[PriorityTypeID] = [x.PriorityType].[PriorityTypeID]
+WHERE [x].[WorkItemID] = @__guid_0"
+2018-11-16 19:08:08.398 +08:00 [Warning] No type was specified for the decimal column '"CriminalAmount"' on entity type '"Entities"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-11-16 19:08:08.400 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"MMMDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-16 19:08:08.516 +08:00 [Information] Executed DbCommand ("12"ms) [Parameters=["@__ToUpper_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Ent_ID], [x].[AID], [x].[Aka], [x].[Approved], [x].[ApprovedBy], [x].[ApprovedDate], [x].[BatchName], [x].[CiBit], [x].[CiElements], [x].[CiIndex], [x].[Country], [x].[CountryId], [x].[CriminalAmount], [x].[DOB], [x].[DOB2], [x].[DateEntered], [x].[DateUpdated], [x].[DobOriginal], [x].[EffectiveDate], [x].[EntLevel], [x].[EnteredBy], [x].[EntitiesLevelsId], [x].[EntitiesSourceID], [x].[EntryCategory], [x].[EntryCategoryID], [x].[EntrySubCategory], [x].[EntrySubCategoryID], [x].[EntryType], [x].[EntryTypeID], [x].[ExpirationDate], [x].[FirstName], [x].[Gender], [x].[GovDesignation], [x].[ImageSourceURL], [x].[JurisdictionID], [x].[LastInvestigatedBy], [x].[LastInvestigationDate], [x].[LastName], [x].[LastReviewedBy], [x].[LastReviewedDate], [x].[LinkedTo], [x].[LookUpId], [x].[MasterID], [x].[Name], [x].[NameClean], [x].[NameClean2], [x].[NameSource], [x].[NationalID], [x].[OldEntryCategory], [x].[OldEntrySubCategory], [x].[OldNameSource], [x].[Organization], [x].[OriginalLanguage], [x].[OriginalName], [x].[OriginalName2], [x].[OriginalName2NoChange], [x].[OriginalName3], [x].[OtherID], [x].[POB], [x].[ParentID], [x].[PassportID], [x].[PepCode], [x].[PictureFile], [x].[PictureFileOnly], [x].[Positions], [x].[Prefix], [x].[ProfileExists], [x].[QA_Approved], [x].[Rank1], [x].[Rank2], [x].[Rank3], [x].[Rank4], [x].[Rank5], [x].[RecViews], [x].[Rejected], [x].[RejectedBy], [x].[RejectedDate], [x].[Related_ID], [x].[Relationships], [x].[Remarks], [x].[SourceWebLink], [x].[SourceWebLink2], [x].[SpecialCollections], [x].[StatusEndDate], [x].[Suffix], [x].[TermEndDate], [x].[TermStartDate], [x].[TouchDate], [x].[UpdatedBy], [x].[WCGroupLevel], [x].[Watch]
+FROM [Entities] AS [x]
+WHERE UPPER(LTRIM(RTRIM([x].[Name]))) = @__ToUpper_0"
+2018-11-16 19:08:08.636 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.GetByGuid (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 2945.707ms.
+2018-11-16 19:08:08.673 +08:00 [Information] Executing JsonResult, writing value of type '"<>f__AnonymousType29`5[[LNWCOE.Models.INV.Investigation, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[<>f__AnonymousType23`7[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Entity.Entities, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Linq.IQueryable`1[[<>f__AnonymousType25`3[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Linq.Expressions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a],[System.Linq.IQueryable`1[[<>f__AnonymousType28`3[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Linq.Expressions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a]]"'.
+2018-11-16 19:08:08.909 +08:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@__invData_InvestigationID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [inote].[DateCreatedUTC] AS [DateCreated], [user].[AppUserName] AS [CreatedBy], [inote].[NoteText] AS [Note]
+FROM [InvestigationNote] AS [inote]
+INNER JOIN [AppUser] AS [user] ON [inote].[CreatedBy] = CONVERT(VARCHAR(11), [user].[AppUserID])
+WHERE [inote].[InvestigationID] = @__invData_InvestigationID_0
+ORDER BY [DateCreated] DESC"
+2018-11-16 19:08:08.948 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__invData_InvestigationID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [act].[DateCreatedUTC], CASE
+    WHEN [acttype].[ActivityTypeName] = N'View'
+    THEN N' Record Viewed By ' ELSE CASE
+        WHEN [acttype].[ActivityTypeName] = N'Email'
+        THEN N' Sent Email ' ELSE CASE
+            WHEN [acttype].[ActivityTypeName] = N'Document'
+            THEN N' attached on ' ELSE ((N' changed from ' + [act].[FromValue]) + N' to ') + [act].[ToValue]
+        END
+    END
+END AS [ActivityTypeName], [user].[AppUserName]
+FROM [InvestigationActivity] AS [act]
+INNER JOIN [ActivityType] AS [acttype] ON [act].[ActivityTypeID] = [acttype].[ActivityTypeID]
+INNER JOIN [AppUser] AS [user] ON [act].[AppUserID] = [user].[AppUserID]
+WHERE [act].[InvestigationID] = @__invData_InvestigationID_0
+ORDER BY [act].[DateCreatedUTC] DESC"
+2018-11-16 19:08:09.046 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.GetByGuid (LNWCOE)" in 3804.6445ms
+2018-11-16 19:08:09.084 +08:00 [Information] Request finished in 4869.1297ms 200 application/json; charset=utf-8
+2018-11-16 19:08:11.637 +08:00 [Information] Request starting HTTP/1.1 POST http://127.0.0.1:29090/iisintegration  0
+2018-11-16 19:08:11.641 +08:00 [Information] Request finished in 4.6486ms 202 

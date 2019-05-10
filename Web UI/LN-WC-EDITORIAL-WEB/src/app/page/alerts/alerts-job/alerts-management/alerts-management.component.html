@@ -1,0 +1,100 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+
+  <div class="row">
+    <div class="col-lg-3">
+        <p-panel >
+            <p-header>
+                <div class="ui-helper-clearfix">
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:3px">Alerts </span>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-right">
+                            <button class="btn-space" (click)="expandAll()"><i class="fas fa-expand"></i></button>
+                          <button  (click)="collapseAll()"><i class="fas fa-compress"></i></button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </p-header>
+            <p-tree [value]="alertsJobTree" [style]="{'width': '100%', 'border':'0', 'padding': '0','height': '650px','max-height': '650px', 'overflow': 'auto'}"
+            selectionMode="single" [(selection)]="selectedNode" [loading]="isTreeLoading" (onNodeSelect)="nodeSelect($event)" ></p-tree>
+        </p-panel>
+    </div>
+    <div class="col-lg-9">
+        <p-panel>
+            <p-header>
+                <div class="ui-helper-clearfix">
+                    <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Alert List ({{alertJobsQueueEntity?.length}})</span>
+                </div>
+            </p-header>
+                <br>
+
+
+                    <div class="row">
+                    <div class="col-lg-6">
+                        <div class="ui-inputgroup">
+                            <input type="text" pInputText placeholder="Global Search..." (input)="dtbwq.filterGlobal($event.target.value, 'contains')">
+                            <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+                        </div>
+
+                    </div>
+                  <div class="col-lg-6">
+
+                  </div>
+                </div>
+
+                <br>
+                <p-table #dtbwq [value]="alertJobsQueueEntity" [globalFilterFields]="['alert', 'job', 'created', 'due', 'status']" [paginator]="true" [rows]="10" [loading]="isLoading">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th width="5%"></th>
+                            <th  [pSortableColumn]="'alert'">Alert <p-sortIcon [field]="'alert'"></p-sortIcon></th>
+                            <th  [pSortableColumn]="'job'"> Job <p-sortIcon [field]="'job'"></p-sortIcon></th>
+                            <th width="12%" [pSortableColumn]="'created'">Created Date <p-sortIcon [field]="'created'"></p-sortIcon></th>
+                            <th width="12%" [pSortableColumn]="'due'">Due Date <p-sortIcon [field]="'due'"></p-sortIcon></th>
+                            <th width="12%" [pSortableColumn]="'status'">Status <p-sortIcon [field]="'status'"></p-sortIcon></th>
+                            <th width="10%">Option</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-alertJobsQueueEntity>
+                        <tr>
+                            <td class="td-cell">
+                                <div class="text-center">
+                                <div *ngIf="alertJobsQueueEntity.locked !== null; else isUnlocked">
+                                    <i class="fas fa-lock" style="color: red" pTooltip="Locked By: {{alertJobsQueueEntity.locked}}"></i>
+                                </div>
+                                <ng-template #isUnlocked>
+                                    <i class="fas fa-unlock"></i>
+                                </ng-template>
+                              </div>
+                            </td>
+                            <td class="td-cell"><div  pTooltip="{{alertJobsQueueEntity.alertDescription}}" tooltipPosition="top">{{alertJobsQueueEntity.alert}}</div></td>
+                            <td class="td-cell">{{alertJobsQueueEntity.job}}</td>
+                            <td class="td-cell">{{alertJobsQueueEntity.created | date: 'MM/dd/yyyy'}}</td>
+                            <td class="td-cell">{{alertJobsQueueEntity.due | date: 'MM/dd/yyyy'}}</td>
+                            <td class="td-cell">{{alertJobsQueueEntity.status}}</td>
+                            <td >
+                                <div *ngIf="alertJobsQueueEntity.locked !== null && alertJobsQueueEntity.locked !== globalHelperSrv.getCurrentUserName(); else isUnlockedCurrentUser">
+                                    <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-dark btn-space" [disabled]="true"></button>
+                                </div>
+                                <ng-template #isUnlockedCurrentUser>
+                                  <div *ngIf="alertJobsQueueEntity.locked === globalHelperSrv.getCurrentUserName(); else isUnlocked2">
+                                    <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="onEdit(alertJobsQueueEntity)"></button>
+                                  </div>
+                                </ng-template>
+                                <ng-template #isUnlocked2>
+                                    <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="onEdit(alertJobsQueueEntity)"></button>
+                                </ng-template>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+          </p-panel>
+    </div>
+  </div>
+
+<p-toast></p-toast>

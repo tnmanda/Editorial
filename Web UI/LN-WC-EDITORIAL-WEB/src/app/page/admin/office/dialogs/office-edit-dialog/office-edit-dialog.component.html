@@ -1,0 +1,91 @@
+<p-dialog *ngIf="selectedOffice" [(visible)]="display" [modal]="true" [responsive]="true" [width]="550" [baseZIndex]="10000" [closable]="false">
+  <p-header>
+      <i class="fas fa-edit"></i>
+      Update Office
+  </p-header>
+  <form (ngSubmit)="onSave(formDirective)" [formGroup]="officeForm" #formDirective="ngForm">
+
+        <div class="ui-fluid">
+            <div class="container">
+                <br>
+                <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible" role="alert">
+                    {{ errorMessage }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onCloseMessage()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="form-group">
+                  <label for="appUserName">Name</label>
+                  <input  name="officeName" type="text" class="form-control" pInputText placeholder="Enter name"
+                  formControlName="officeName" [ngClass]="{ 'is-invalid': isSubmitted && f.officeName.errors }">
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Company</label>
+                  <input name="company" type="text" class="form-control" pInputText placeholder="Enter company"
+                  formControlName="company" [ngClass]="{ 'is-invalid': isSubmitted && f.company.errors }">
+                </div>
+
+                <div class="form-group">
+                  <label for="email">City</label>
+                  <input name="city" type="text" class="form-control" pInputText placeholder="Enter city"
+                  formControlName="city" [ngClass]="{ 'is-invalid': isSubmitted && f.city.errors }">
+                </div>
+
+                <div class="form-group">
+                  <label for="country">Country</label>
+                  <p-dropdown name="country" [autoWidth]="false" [options]="countries" placeholder="Select Country" optionLabel="countryName"
+                  formControlName="country" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.country.errors }"></p-dropdown>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="isSales">Is Sales?</label><br>
+                          <p-inputSwitch name="isSales" formControlName="isSales"></p-inputSwitch>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="isResearch">Is Research?</label><br>
+                          <p-inputSwitch name="isResearch" formControlName="isResearch"></p-inputSwitch>
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="isInternal">Is Support?</label><br>
+                          <p-inputSwitch name="isInternal" formControlName="isSupport"></p-inputSwitch>
+                      </div>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="isInternal">Is Marketing?</label><br>
+                          <p-inputSwitch name="isMarketing" formControlName="isMarketing"></p-inputSwitch>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="isActive">Is Active?</label><br>
+                          <p-inputSwitch name="isActive" formControlName="isActive"></p-inputSwitch>
+                      </div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+          <hr>
+
+          <div class="text-right">
+            <button type="submit" pButton label="Save Changes" class="btn-space"></button>
+            <button type="button" pButton (click)="onClose()"label="Cancel" class="ui-button-secondary"></button>
+          </div>
+
+    </form>
+</p-dialog>

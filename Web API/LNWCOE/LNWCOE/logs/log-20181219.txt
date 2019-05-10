@@ -1,0 +1,375 @@
+2018-12-19 22:24:27.058 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-19 22:24:31.659 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-19 22:24:31.659 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-19 22:24:31.659 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-12-19 22:24:31.984 +08:00 [Information] Request finished in 325.9136ms 200 
+2018-12-19 22:24:33.915 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-12-19 22:24:33.915 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-19 22:24:34.009 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:24:34.028 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.1838ms.
+2018-12-19 22:24:34.108 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-19 22:24:34.534 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 607.7143ms
+2018-12-19 22:24:34.549 +08:00 [Information] Request finished in 2915.119ms 200 application/json; charset=utf-8
+2018-12-19 22:24:35.118 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/favicon.ico  
+2018-12-19 22:24:35.123 +08:00 [Information] Request finished in 4.9754ms 404 
+2018-12-19 22:24:35.380 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-12-19 22:24:37.388 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:24:39.486 +08:00 [Information] Executed DbCommand ("97"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-12-19 22:24:39.637 +08:00 [Information] Executed DbCommand ("9"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-19 22:24:40.268 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-19 22:24:40.582 +08:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName], [users].[Email]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-12-19 22:24:40.679 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 5285.952ms.
+2018-12-19 22:24:40.683 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType11`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-19 22:24:40.735 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 6813.6679ms
+2018-12-19 22:24:40.743 +08:00 [Information] Request finished in 9109.5138ms 200 application/json; charset=utf-8
+2018-12-19 22:24:44.620 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobs  
+2018-12-19 22:24:44.691 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:24:44.715 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)"
+2018-12-19 22:24:44.770 +08:00 [Information] Authorization was successful.
+2018-12-19 22:24:44.773 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:24:44.780 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:24:44.868 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[AlertJobsID], [x].[AlertSourceTypeID], [x].[CountryID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Encoding], [x].[IsActive], [x].[IsCriticalJob], [x].[IsPreventDeletions], [x].[IsSendNoUpdate], [x].[IsShowOnDynamicDisplay], [x].[IsUseProxy], [x].[IsUserTermsFilter], [x].[IsWithLookUpID], [x].[JobAbbrev], [x].[JobComments], [x].[JobDescription], [x].[JobName], [x].[JobScrapperAssemble], [x].[JobScrapperClassName], [x].[JobSpecialInstructions], [x].[JobURL], [x].[LastUpdatedUTC], [x].[PriorityCode], [x].[Regex], [x].[RegexForPages], [x].[ResultType], [x].[TableNameSource], [x].[TeamID], [x].[UpdatedBy]
+FROM [AlertJobs] AS [x]
+ORDER BY [x].[JobName]"
+2018-12-19 22:24:45.891 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1116.288ms.
+2018-12-19 22:24:45.933 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.ALERTS.AlertJobs, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-19 22:24:46.001 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)" in 1285.5071ms
+2018-12-19 22:24:46.001 +08:00 [Information] Request finished in 1381.0583ms 200 application/json; charset=utf-8
+2018-12-19 22:26:32.402 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-19 22:26:34.870 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-19 22:26:34.870 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-19 22:26:34.870 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobs  
+2018-12-19 22:26:35.195 +08:00 [Information] Request finished in 317.6051ms 200 
+2018-12-19 22:26:35.753 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:26:36.593 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-19 22:26:36.593 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)"
+2018-12-19 22:26:36.652 +08:00 [Information] Authorization was successful.
+2018-12-19 22:26:36.667 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:26:36.685 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 5.5928ms.
+2018-12-19 22:26:36.770 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-19 22:26:37.583 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 975.0779ms
+2018-12-19 22:26:37.606 +08:00 [Information] Request finished in 2758.4217ms 200 application/json; charset=utf-8
+2018-12-19 22:26:37.923 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:26:39.714 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:26:40.954 +08:00 [Information] Executed DbCommand ("53"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[AlertJobsID], [x].[AlertSourceTypeID], [x].[CountryID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Encoding], [x].[IsActive], [x].[IsCriticalJob], [x].[IsPreventDeletions], [x].[IsSendNoUpdate], [x].[IsShowOnDynamicDisplay], [x].[IsUseProxy], [x].[IsUserTermsFilter], [x].[IsWithLookUpID], [x].[JobAbbrev], [x].[JobComments], [x].[JobDescription], [x].[JobName], [x].[JobScrapperAssemble], [x].[JobScrapperClassName], [x].[JobSpecialInstructions], [x].[JobURL], [x].[LastUpdatedUTC], [x].[PriorityCode], [x].[Regex], [x].[RegexForPages], [x].[ResultType], [x].[TableNameSource], [x].[TeamID], [x].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy]
+FROM [AlertJobs] AS [x]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+ORDER BY [x].[JobName]"
+2018-12-19 22:26:41.554 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3630.8084ms.
+2018-12-19 22:26:41.562 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.ALERTS.AlertJobs, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-19 22:26:41.662 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)" in 5062.2581ms
+2018-12-19 22:26:41.668 +08:00 [Information] Request finished in 6820.8481ms 200 application/json; charset=utf-8
+2018-12-19 22:27:00.035 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobs/15693  
+2018-12-19 22:27:00.036 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:27:00.674 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)"
+2018-12-19 22:27:00.674 +08:00 [Information] Authorization was successful.
+2018-12-19 22:27:00.825 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)" with arguments (["15693"]) - Validation state: Valid
+2018-12-19 22:27:00.842 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:27:01.023 +08:00 [Information] Executed DbCommand ("63"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AlertJobsID], [x].[AlertSourceTypeID], [x].[CountryID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Encoding], [x].[IsActive], [x].[IsCriticalJob], [x].[IsPreventDeletions], [x].[IsSendNoUpdate], [x].[IsShowOnDynamicDisplay], [x].[IsUseProxy], [x].[IsUserTermsFilter], [x].[IsWithLookUpID], [x].[JobAbbrev], [x].[JobComments], [x].[JobDescription], [x].[JobName], [x].[JobScrapperAssemble], [x].[JobScrapperClassName], [x].[JobSpecialInstructions], [x].[JobURL], [x].[LastUpdatedUTC], [x].[PriorityCode], [x].[Regex], [x].[RegexForPages], [x].[ResultType], [x].[TableNameSource], [x].[TeamID], [x].[UpdatedBy]
+FROM [AlertJobs] AS [x]
+WHERE [x].[AlertJobsID] = @__id_0"
+2018-12-19 22:27:01.041 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 208.1999ms.
+2018-12-19 22:27:01.041 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.ALERTS.AlertJobs"'.
+2018-12-19 22:27:01.041 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)" in 367.612ms
+2018-12-19 22:27:01.042 +08:00 [Information] Request finished in 1007.1802ms 200 application/json; charset=utf-8
+2018-12-19 22:27:40.752 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-19 22:27:42.503 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-19 22:27:42.503 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-19 22:27:42.759 +08:00 [Information] Request finished in 254.6682ms 200 
+2018-12-19 22:27:43.997 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-19 22:27:44.063 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:27:44.076 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.0016ms.
+2018-12-19 22:27:44.134 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-19 22:27:44.447 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 437.6248ms
+2018-12-19 22:27:44.466 +08:00 [Information] Request finished in 1988.5783ms 200 application/json; charset=utf-8
+2018-12-19 22:27:46.955 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobs/15693  
+2018-12-19 22:27:47.159 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:27:47.194 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)"
+2018-12-19 22:27:47.226 +08:00 [Information] Authorization was successful.
+2018-12-19 22:27:48.466 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)" with arguments (["15693"]) - Validation state: Valid
+2018-12-19 22:27:49.941 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:27:51.201 +08:00 [Information] Executed DbCommand ("115"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[AlertJobsID], [x].[AlertSourceTypeID], [x].[CountryID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Encoding], [x].[IsActive], [x].[IsCriticalJob], [x].[IsPreventDeletions], [x].[IsSendNoUpdate], [x].[IsShowOnDynamicDisplay], [x].[IsUseProxy], [x].[IsUserTermsFilter], [x].[IsWithLookUpID], [x].[JobAbbrev], [x].[JobComments], [x].[JobDescription], [x].[JobName], [x].[JobScrapperAssemble], [x].[JobScrapperClassName], [x].[JobSpecialInstructions], [x].[JobURL], [x].[LastUpdatedUTC], [x].[PriorityCode], [x].[Regex], [x].[RegexForPages], [x].[ResultType], [x].[TableNameSource], [x].[TeamID], [x].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy]
+FROM [AlertJobs] AS [x]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+WHERE [x].[AlertJobsID] = @__id_0"
+2018-12-19 22:27:51.468 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2991.8925ms.
+2018-12-19 22:27:51.476 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.ALERTS.AlertJobs"'.
+2018-12-19 22:27:51.553 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)" in 4359.5231ms
+2018-12-19 22:27:51.562 +08:00 [Information] Request finished in 4606.9084ms 200 application/json; charset=utf-8
+2018-12-19 22:27:58.329 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobs/  
+2018-12-19 22:27:58.330 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:27:58.334 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)"
+2018-12-19 22:27:58.334 +08:00 [Information] Authorization was successful.
+2018-12-19 22:27:58.335 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:27:58.338 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:27:58.433 +08:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[AlertJobsID], [x].[AlertSourceTypeID], [x].[CountryID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Encoding], [x].[IsActive], [x].[IsCriticalJob], [x].[IsPreventDeletions], [x].[IsSendNoUpdate], [x].[IsShowOnDynamicDisplay], [x].[IsUseProxy], [x].[IsUserTermsFilter], [x].[IsWithLookUpID], [x].[JobAbbrev], [x].[JobComments], [x].[JobDescription], [x].[JobName], [x].[JobScrapperAssemble], [x].[JobScrapperClassName], [x].[JobSpecialInstructions], [x].[JobURL], [x].[LastUpdatedUTC], [x].[PriorityCode], [x].[Regex], [x].[RegexForPages], [x].[ResultType], [x].[TableNameSource], [x].[TeamID], [x].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy]
+FROM [AlertJobs] AS [x]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+ORDER BY [x].[JobName]"
+2018-12-19 22:27:58.485 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 149.914ms.
+2018-12-19 22:27:58.485 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.ALERTS.AlertJobs, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-19 22:27:58.524 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.Get (LNWCOE)" in 190.1064ms
+2018-12-19 22:27:58.525 +08:00 [Information] Request finished in 194.9688ms 200 application/json; charset=utf-8
+2018-12-19 22:33:10.116 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-19 22:33:12.487 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-19 22:33:12.487 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-19 22:33:12.789 +08:00 [Information] Request finished in 309.7465ms 200 
+2018-12-19 22:33:14.399 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-19 22:33:14.506 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:33:14.535 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 9.9994ms.
+2018-12-19 22:33:14.619 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-19 22:33:15.043 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 623.5966ms
+2018-12-19 22:33:15.071 +08:00 [Information] Request finished in 2612.984ms 200 application/json; charset=utf-8
+2018-12-19 22:33:18.729 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Team/  
+2018-12-19 22:33:18.952 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:33:18.970 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Team\"}". Executing action "LNWCOE.Helpers.Admin.TeamController.Get (LNWCOE)"
+2018-12-19 22:33:19.021 +08:00 [Information] Authorization was successful.
+2018-12-19 22:33:19.503 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.TeamController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:33:21.070 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:33:22.921 +08:00 [Information] Executed DbCommand ("83"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[TeamID], [t].[Comments], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[IsActive], [t].[IsAlertsCoverage], [t].[IsNewsCoverage], [t].[LanguageTypeID], [t].[LastUpdatedUTC], [t].[LeadUserID], [t].[OfficeID], [t].[TeamName], [t].[UpdatedBy], [t.LeadUser].[AppUserID], [t.LeadUser].[AppUserName], [t.LeadUser].[CreatedBy], [t.LeadUser].[DateCreatedUTC], [t.LeadUser].[Email], [t.LeadUser].[GenderTypeID], [t.LeadUser].[IsActive], [t.LeadUser].[IsInternal], [t.LeadUser].[LastUpdatedUTC], [t.LeadUser].[OfficeID], [t.LeadUser].[OperationalRoleTypeID], [t.LeadUser].[PhotoImage], [t.LeadUser].[SupervisorAppUserID], [t.LeadUser].[UTCOffset], [t.LeadUser].[UpdatedBy], [t.LanguageType].[LanguageTypeID], [t.LanguageType].[CreatedBy], [t.LanguageType].[DateCreatedUTC], [t.LanguageType].[IsActive], [t.LanguageType].[IsInList], [t.LanguageType].[LanguageTypeDesc], [t.LanguageType].[LanguageTypeName], [t.LanguageType].[LastUpdatedUTC], [t.LanguageType].[UpdatedBy], [t.Office].[OfficeID], [t.Office].[City], [t.Office].[Company], [t.Office].[CountryID], [t.Office].[CreatedBy], [t.Office].[DateCreatedUTC], [t.Office].[IsActive], [t.Office].[IsMarketing], [t.Office].[IsResearch], [t.Office].[IsSales], [t.Office].[IsSupport], [t.Office].[LastUpdatedUTC], [t.Office].[OfficeName], [t.Office].[UpdatedBy]
+FROM [Team] AS [t]
+LEFT JOIN [AppUser] AS [t.LeadUser] ON [t].[LeadUserID] = [t.LeadUser].[AppUserID]
+LEFT JOIN [LanguageType] AS [t.LanguageType] ON [t].[LanguageTypeID] = [t.LanguageType].[LanguageTypeID]
+LEFT JOIN [Office] AS [t.Office] ON [t].[OfficeID] = [t.Office].[OfficeID]"
+2018-12-19 22:33:23.563 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.TeamController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4060.026ms.
+2018-12-19 22:33:23.572 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.Admin.Team, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-19 22:33:23.674 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.TeamController.Get (LNWCOE)" in 4704.0316ms
+2018-12-19 22:33:23.686 +08:00 [Information] Request finished in 4957.1156ms 200 application/json; charset=utf-8
+2018-12-19 22:34:38.084 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-19 22:34:39.865 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-19 22:34:39.864 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-19 22:34:39.864 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Team/12  
+2018-12-19 22:34:40.164 +08:00 [Information] Request finished in 301.6193ms 200 
+2018-12-19 22:34:40.671 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:34:41.344 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Team\"}". Executing action "LNWCOE.Helpers.Admin.TeamController.Get (LNWCOE)"
+2018-12-19 22:34:41.344 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-19 22:34:41.422 +08:00 [Information] Authorization was successful.
+2018-12-19 22:34:41.432 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:34:41.457 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.4397ms.
+2018-12-19 22:34:41.544 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-19 22:34:41.729 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 367.4386ms
+2018-12-19 22:34:41.744 +08:00 [Information] Request finished in 1904.653ms 200 application/json; charset=utf-8
+2018-12-19 22:34:42.101 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.TeamController.Get (LNWCOE)" with arguments (["12"]) - Validation state: Valid
+2018-12-19 22:34:43.906 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:34:45.354 +08:00 [Information] Executed DbCommand ("126"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[TeamID], [x].[Comments], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[IsActive], [x].[IsAlertsCoverage], [x].[IsNewsCoverage], [x].[LanguageTypeID], [x].[LastUpdatedUTC], [x].[LeadUserID], [x].[OfficeID], [x].[TeamName], [x].[UpdatedBy], [x.LeadUser].[AppUserID], [x.LeadUser].[AppUserName], [x.LeadUser].[CreatedBy], [x.LeadUser].[DateCreatedUTC], [x.LeadUser].[Email], [x.LeadUser].[GenderTypeID], [x.LeadUser].[IsActive], [x.LeadUser].[IsInternal], [x.LeadUser].[LastUpdatedUTC], [x.LeadUser].[OfficeID], [x.LeadUser].[OperationalRoleTypeID], [x.LeadUser].[PhotoImage], [x.LeadUser].[SupervisorAppUserID], [x.LeadUser].[UTCOffset], [x.LeadUser].[UpdatedBy], [x.LanguageType].[LanguageTypeID], [x.LanguageType].[CreatedBy], [x.LanguageType].[DateCreatedUTC], [x.LanguageType].[IsActive], [x.LanguageType].[IsInList], [x.LanguageType].[LanguageTypeDesc], [x.LanguageType].[LanguageTypeName], [x.LanguageType].[LastUpdatedUTC], [x.LanguageType].[UpdatedBy], [x.Office].[OfficeID], [x.Office].[City], [x.Office].[Company], [x.Office].[CountryID], [x.Office].[CreatedBy], [x.Office].[DateCreatedUTC], [x.Office].[IsActive], [x.Office].[IsMarketing], [x.Office].[IsResearch], [x.Office].[IsSales], [x.Office].[IsSupport], [x.Office].[LastUpdatedUTC], [x.Office].[OfficeName], [x.Office].[UpdatedBy]
+FROM [Team] AS [x]
+LEFT JOIN [AppUser] AS [x.LeadUser] ON [x].[LeadUserID] = [x.LeadUser].[AppUserID]
+LEFT JOIN [LanguageType] AS [x.LanguageType] ON [x].[LanguageTypeID] = [x.LanguageType].[LanguageTypeID]
+LEFT JOIN [Office] AS [x.Office] ON [x].[OfficeID] = [x.Office].[OfficeID]
+WHERE [x].[TeamID] = @__id_0"
+2018-12-19 22:34:45.686 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.TeamController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3572.1856ms.
+2018-12-19 22:34:45.693 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.Admin.Team"'.
+2018-12-19 22:34:45.758 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.TeamController.Get (LNWCOE)" in 4407.9853ms
+2018-12-19 22:34:45.773 +08:00 [Information] Request finished in 5932.9481ms 200 application/json; charset=utf-8
+2018-12-19 22:34:56.306 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Team/  
+2018-12-19 22:34:56.307 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:34:56.309 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Team\"}". Executing action "LNWCOE.Helpers.Admin.TeamController.Get (LNWCOE)"
+2018-12-19 22:34:56.310 +08:00 [Information] Authorization was successful.
+2018-12-19 22:34:56.311 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.TeamController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:34:56.313 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:34:56.376 +08:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[TeamID], [t].[Comments], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[IsActive], [t].[IsAlertsCoverage], [t].[IsNewsCoverage], [t].[LanguageTypeID], [t].[LastUpdatedUTC], [t].[LeadUserID], [t].[OfficeID], [t].[TeamName], [t].[UpdatedBy], [t.LeadUser].[AppUserID], [t.LeadUser].[AppUserName], [t.LeadUser].[CreatedBy], [t.LeadUser].[DateCreatedUTC], [t.LeadUser].[Email], [t.LeadUser].[GenderTypeID], [t.LeadUser].[IsActive], [t.LeadUser].[IsInternal], [t.LeadUser].[LastUpdatedUTC], [t.LeadUser].[OfficeID], [t.LeadUser].[OperationalRoleTypeID], [t.LeadUser].[PhotoImage], [t.LeadUser].[SupervisorAppUserID], [t.LeadUser].[UTCOffset], [t.LeadUser].[UpdatedBy], [t.LanguageType].[LanguageTypeID], [t.LanguageType].[CreatedBy], [t.LanguageType].[DateCreatedUTC], [t.LanguageType].[IsActive], [t.LanguageType].[IsInList], [t.LanguageType].[LanguageTypeDesc], [t.LanguageType].[LanguageTypeName], [t.LanguageType].[LastUpdatedUTC], [t.LanguageType].[UpdatedBy], [t.Office].[OfficeID], [t.Office].[City], [t.Office].[Company], [t.Office].[CountryID], [t.Office].[CreatedBy], [t.Office].[DateCreatedUTC], [t.Office].[IsActive], [t.Office].[IsMarketing], [t.Office].[IsResearch], [t.Office].[IsSales], [t.Office].[IsSupport], [t.Office].[LastUpdatedUTC], [t.Office].[OfficeName], [t.Office].[UpdatedBy]
+FROM [Team] AS [t]
+LEFT JOIN [AppUser] AS [t.LeadUser] ON [t].[LeadUserID] = [t.LeadUser].[AppUserID]
+LEFT JOIN [LanguageType] AS [t.LanguageType] ON [t].[LanguageTypeID] = [t.LanguageType].[LanguageTypeID]
+LEFT JOIN [Office] AS [t.Office] ON [t].[OfficeID] = [t.Office].[OfficeID]"
+2018-12-19 22:34:56.384 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.TeamController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 73.0097ms.
+2018-12-19 22:34:56.384 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.Admin.Team, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-19 22:34:56.390 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.TeamController.Get (LNWCOE)" in 80.4393ms
+2018-12-19 22:34:56.391 +08:00 [Information] Request finished in 84.8719ms 200 application/json; charset=utf-8
+2018-12-19 22:35:38.502 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/office  
+2018-12-19 22:35:38.502 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:35:38.506 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Office\"}". Executing action "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)"
+2018-12-19 22:35:38.507 +08:00 [Information] Authorization was successful.
+2018-12-19 22:35:38.508 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:35:38.509 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:35:38.532 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[OfficeID], [o].[City], [o].[Company], [o].[CountryID], [o].[CreatedBy], [o].[DateCreatedUTC], [o].[IsActive], [o].[IsMarketing], [o].[IsResearch], [o].[IsSales], [o].[IsSupport], [o].[LastUpdatedUTC], [o].[OfficeName], [o].[UpdatedBy]
+FROM [Office] AS [o]"
+2018-12-19 22:35:38.549 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 41.0852ms.
+2018-12-19 22:35:38.550 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.Admin.Office, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-19 22:35:38.552 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)" in 45.4083ms
+2018-12-19 22:35:38.552 +08:00 [Information] Request finished in 50.7875ms 200 application/json; charset=utf-8
+2018-12-19 22:36:36.413 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-19 22:36:37.469 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/office/2  
+2018-12-19 22:36:37.945 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:36:38.551 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Office\"}". Executing action "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)"
+2018-12-19 22:36:38.601 +08:00 [Information] Authorization was successful.
+2018-12-19 22:36:39.043 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)" with arguments (["2"]) - Validation state: Valid
+2018-12-19 22:36:40.372 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:36:41.652 +08:00 [Information] Executed DbCommand ("121"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[OfficeID], [x].[City], [x].[Company], [x].[CountryID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[IsActive], [x].[IsMarketing], [x].[IsResearch], [x].[IsSales], [x].[IsSupport], [x].[LastUpdatedUTC], [x].[OfficeName], [x].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy]
+FROM [Office] AS [x]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+WHERE [x].[OfficeID] = @__id_0"
+2018-12-19 22:36:41.878 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 2818.5947ms.
+2018-12-19 22:36:41.918 +08:00 [Information] Executing JsonResult, writing value of type '"LNWCOE.Models.Admin.Office"'.
+2018-12-19 22:36:42.057 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)" in 3497.7082ms
+2018-12-19 22:36:42.079 +08:00 [Information] Request finished in 4626.008ms 200 application/json; charset=utf-8
+2018-12-19 22:36:59.707 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-19 22:37:01.504 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-19 22:37:01.504 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-19 22:37:01.721 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/office/  
+2018-12-19 22:37:01.861 +08:00 [Information] Request finished in 376.9347ms 200 
+2018-12-19 22:37:02.366 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:37:02.950 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Office\"}". Executing action "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)"
+2018-12-19 22:37:02.950 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-19 22:37:03.019 +08:00 [Information] Authorization was successful.
+2018-12-19 22:37:03.025 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:37:03.038 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.6919ms.
+2018-12-19 22:37:03.116 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-19 22:37:03.288 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 328.6103ms
+2018-12-19 22:37:03.303 +08:00 [Information] Request finished in 1826.5848ms 200 application/json; charset=utf-8
+2018-12-19 22:37:03.491 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:37:05.399 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:37:06.782 +08:00 [Information] Executed DbCommand ("66"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[OfficeID], [o].[City], [o].[Company], [o].[CountryID], [o].[CreatedBy], [o].[DateCreatedUTC], [o].[IsActive], [o].[IsMarketing], [o].[IsResearch], [o].[IsSales], [o].[IsSupport], [o].[LastUpdatedUTC], [o].[OfficeName], [o].[UpdatedBy], [o.Country].[CountryID], [o.Country].[CountryAbbrev], [o.Country].[CountryName], [o.Country].[CreatedBy], [o.Country].[DateCreatedUTC], [o.Country].[FileFolder], [o.Country].[IsActive], [o.Country].[IsInList], [o.Country].[LastUpdatedUTC], [o.Country].[UpdatedBy]
+FROM [Office] AS [o]
+LEFT JOIN [Country] AS [o.Country] ON [o].[CountryID] = [o.Country].[CountryID]"
+2018-12-19 22:37:07.091 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3599.9707ms.
+2018-12-19 22:37:07.101 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.Admin.Office, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-19 22:37:07.172 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)" in 4216.3038ms
+2018-12-19 22:37:07.187 +08:00 [Information] Request finished in 5466.3581ms 200 application/json; charset=utf-8
+2018-12-19 22:38:33.405 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-19 22:38:34.755 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-19 22:38:34.755 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-19 22:38:34.960 +08:00 [Information] Request finished in 204.7826ms 200 
+2018-12-19 22:38:35.895 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-19 22:38:35.954 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:38:35.967 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.2734ms.
+2018-12-19 22:38:36.012 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-19 22:38:36.203 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 298.9688ms
+2018-12-19 22:38:36.218 +08:00 [Information] Request finished in 1481.8571ms 200 application/json; charset=utf-8
+2018-12-19 22:38:42.862 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/office/  
+2018-12-19 22:38:43.016 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:38:43.029 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Office\"}". Executing action "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)"
+2018-12-19 22:38:43.066 +08:00 [Information] Authorization was successful.
+2018-12-19 22:38:43.437 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:38:44.831 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:38:45.869 +08:00 [Information] Executed DbCommand ("55"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[OfficeID], [o].[City], [o].[Company], [o].[CountryID], [o].[CreatedBy], [o].[DateCreatedUTC], [o].[IsActive], [o].[IsMarketing], [o].[IsResearch], [o].[IsSales], [o].[IsSupport], [o].[LastUpdatedUTC], [o].[OfficeName], [o].[UpdatedBy], [o.Country].[CountryID], [o.Country].[CountryAbbrev], [o.Country].[CountryName], [o.Country].[CreatedBy], [o.Country].[DateCreatedUTC], [o.Country].[FileFolder], [o.Country].[IsActive], [o.Country].[IsInList], [o.Country].[LastUpdatedUTC], [o.Country].[UpdatedBy]
+FROM [Office] AS [o]
+LEFT JOIN [Country] AS [o.Country] ON [o].[CountryID] = [o.Country].[CountryID]"
+2018-12-19 22:38:46.100 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2661.9926ms.
+2018-12-19 22:38:46.106 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.Admin.Office, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-19 22:38:46.158 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)" in 3129.1373ms
+2018-12-19 22:38:46.167 +08:00 [Information] Request finished in 3304.8094ms 200 application/json; charset=utf-8
+2018-12-19 22:40:06.434 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/office/  
+2018-12-19 22:40:06.435 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:40:06.439 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Office\"}". Executing action "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)"
+2018-12-19 22:40:06.439 +08:00 [Information] Authorization was successful.
+2018-12-19 22:40:06.440 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:40:06.442 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:40:06.515 +08:00 [Information] Executed DbCommand ("26"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[OfficeID], [o].[City], [o].[Company], [o].[CountryID], [o].[CreatedBy], [o].[DateCreatedUTC], [o].[IsActive], [o].[IsMarketing], [o].[IsResearch], [o].[IsSales], [o].[IsSupport], [o].[LastUpdatedUTC], [o].[OfficeName], [o].[UpdatedBy], [o.Country].[CountryID], [o.Country].[CountryAbbrev], [o.Country].[CountryName], [o.Country].[CreatedBy], [o.Country].[DateCreatedUTC], [o.Country].[FileFolder], [o.Country].[IsActive], [o.Country].[IsInList], [o.Country].[LastUpdatedUTC], [o.Country].[UpdatedBy]
+FROM [Office] AS [o]
+LEFT JOIN [Country] AS [o.Country] ON [o].[CountryID] = [o.Country].[CountryID]"
+2018-12-19 22:40:06.567 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 126.6678ms.
+2018-12-19 22:40:06.567 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.Admin.Office, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-19 22:40:06.573 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)" in 134.176ms
+2018-12-19 22:40:06.574 +08:00 [Information] Request finished in 140.0209ms 200 application/json; charset=utf-8
+2018-12-19 22:40:14.902 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/office/2  
+2018-12-19 22:40:14.903 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:40:14.941 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Office\"}". Executing action "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)"
+2018-12-19 22:40:14.944 +08:00 [Information] Authorization was successful.
+2018-12-19 22:40:15.094 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)" with arguments (["2"]) - Validation state: Valid
+2018-12-19 22:40:15.109 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:40:15.344 +08:00 [Information] Executed DbCommand ("104"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[OfficeID], [x].[City], [x].[Company], [x].[CountryID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[IsActive], [x].[IsMarketing], [x].[IsResearch], [x].[IsSales], [x].[IsSupport], [x].[LastUpdatedUTC], [x].[OfficeName], [x].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy]
+FROM [Office] AS [x]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+WHERE [x].[OfficeID] = @__id_0"
+2018-12-19 22:40:15.355 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 250.014ms.
+2018-12-19 22:40:15.375 +08:00 [Information] Executing JsonResult, writing value of type '"LNWCOE.Models.Admin.Office"'.
+2018-12-19 22:40:15.377 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.OfficeController.Get (LNWCOE)" in 433.3463ms
+2018-12-19 22:40:15.378 +08:00 [Information] Request finished in 475.8897ms 200 application/json; charset=utf-8
+2018-12-19 22:42:32.233 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-19 22:42:34.031 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-19 22:42:34.031 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-19 22:42:34.281 +08:00 [Information] Request finished in 259.661ms 200 
+2018-12-19 22:42:35.393 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-19 22:42:35.482 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:42:35.492 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.2261ms.
+2018-12-19 22:42:35.538 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-19 22:42:35.778 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 371.166ms
+2018-12-19 22:42:35.815 +08:00 [Information] Request finished in 1806.0045ms 200 application/json; charset=utf-8
+2018-12-19 22:42:45.926 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/page/  
+2018-12-19 22:42:46.141 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:42:46.154 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Page\"}". Executing action "LNWCOE.Helpers.Admin.Pages.PageController.Get (LNWCOE)"
+2018-12-19 22:42:46.191 +08:00 [Information] Authorization was successful.
+2018-12-19 22:42:46.540 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.Pages.PageController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:42:47.892 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:42:48.921 +08:00 [Information] Executed DbCommand ("52"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[PagesID], [p].[CreatedBy], [p].[DateCreatedUTC], [p].[FullPath], [p].[IsActive], [p].[LastUpdatedUTC], [p].[PageName], [p].[PagesDescription], [p].[PagesGroupsID], [p].[UpdatedBy], [p.PagesGroups].[PagesGroupsID], [p.PagesGroups].[CreatedBy], [p.PagesGroups].[DateCreatedUTC], [p.PagesGroups].[LastUpdatedUTC], [p.PagesGroups].[PagesGroupsDescription], [p.PagesGroups].[PagesGroupsName], [p.PagesGroups].[ParentGroupID], [p.PagesGroups].[SortOrder], [p.PagesGroups].[UpdatedBy]
+FROM [Pages] AS [p]
+LEFT JOIN [PagesGroups] AS [p.PagesGroups] ON [p].[PagesGroupsID] = [p.PagesGroups].[PagesGroupsID]"
+2018-12-19 22:42:49.190 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.Pages.PageController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2649.7864ms.
+2018-12-19 22:42:49.197 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.Admin.Page.Pages, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-19 22:42:49.253 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.Pages.PageController.Get (LNWCOE)" in 3098.6666ms
+2018-12-19 22:42:49.259 +08:00 [Information] Request finished in 3332.9414ms 200 application/json; charset=utf-8
+2018-12-19 22:42:57.305 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/page/23  
+2018-12-19 22:42:57.307 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:42:57.342 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Page\"}". Executing action "LNWCOE.Helpers.Admin.Pages.PageController.Get (LNWCOE)"
+2018-12-19 22:42:57.342 +08:00 [Information] Authorization was successful.
+2018-12-19 22:42:57.453 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.Pages.PageController.Get (LNWCOE)" with arguments (["23"]) - Validation state: Valid
+2018-12-19 22:42:57.462 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:42:57.661 +08:00 [Information] Executed DbCommand ("75"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[PagesID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[FullPath], [x].[IsActive], [x].[LastUpdatedUTC], [x].[PageName], [x].[PagesDescription], [x].[PagesGroupsID], [x].[UpdatedBy], [x.PagesGroups].[PagesGroupsID], [x.PagesGroups].[CreatedBy], [x.PagesGroups].[DateCreatedUTC], [x.PagesGroups].[LastUpdatedUTC], [x.PagesGroups].[PagesGroupsDescription], [x.PagesGroups].[PagesGroupsName], [x.PagesGroups].[ParentGroupID], [x.PagesGroups].[SortOrder], [x.PagesGroups].[UpdatedBy]
+FROM [Pages] AS [x]
+LEFT JOIN [PagesGroups] AS [x.PagesGroups] ON [x].[PagesGroupsID] = [x.PagesGroups].[PagesGroupsID]
+WHERE [x].[PagesID] = @__id_0"
+2018-12-19 22:42:57.674 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.Pages.PageController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 214.8918ms.
+2018-12-19 22:42:57.675 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.Admin.Page.Pages"'.
+2018-12-19 22:42:57.675 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.Pages.PageController.Get (LNWCOE)" in 333.0287ms
+2018-12-19 22:42:57.678 +08:00 [Information] Request finished in 372.9374ms 200 application/json; charset=utf-8
+2018-12-19 22:44:46.045 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-19 22:44:47.859 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-19 22:44:47.859 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-19 22:44:48.155 +08:00 [Information] Request finished in 300.3579ms 200 
+2018-12-19 22:44:49.362 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-19 22:44:49.435 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-19 22:44:49.446 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.3271ms.
+2018-12-19 22:44:49.487 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-19 22:44:49.737 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 366.537ms
+2018-12-19 22:44:49.763 +08:00 [Information] Request finished in 1927.7242ms 200 application/json; charset=utf-8
+2018-12-19 22:44:56.038 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AlertJobs/inactive  
+2018-12-19 22:44:56.192 +08:00 [Information] Successfully validated the token.
+2018-12-19 22:44:56.210 +08:00 [Information] Route matched with "{action = \"InActiveAlerts\", controller = \"AlertJobs\"}". Executing action "LNWCOE.Helpers.ALERTS.AlertJobsController.InActiveAlerts (LNWCOE)"
+2018-12-19 22:44:56.254 +08:00 [Information] Authorization was successful.
+2018-12-19 22:44:56.635 +08:00 [Information] Executing action method "LNWCOE.Helpers.ALERTS.AlertJobsController.InActiveAlerts (LNWCOE)" - Validation state: Valid
+2018-12-19 22:44:58.586 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-19 22:44:59.795 +08:00 [Information] Executed DbCommand ("112"ms) [Parameters=["@__TwoWeeksAgo_0='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[AlertJobsID], [x].[AlertSourceTypeID], [x].[CountryID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Encoding], [x].[IsActive], [x].[IsCriticalJob], [x].[IsPreventDeletions], [x].[IsSendNoUpdate], [x].[IsShowOnDynamicDisplay], [x].[IsUseProxy], [x].[IsUserTermsFilter], [x].[IsWithLookUpID], [x].[JobAbbrev], [x].[JobComments], [x].[JobDescription], [x].[JobName], [x].[JobScrapperAssemble], [x].[JobScrapperClassName], [x].[JobSpecialInstructions], [x].[JobURL], [x].[LastUpdatedUTC], [x].[PriorityCode], [x].[Regex], [x].[RegexForPages], [x].[ResultType], [x].[TableNameSource], [x].[TeamID], [x].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy]
+FROM [AlertJobs] AS [x]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+WHERE ([x].[IsActive] = 1) AND ([x].[DateCreatedUTC] < @__TwoWeeksAgo_0)
+ORDER BY [x].[JobName]"
+2018-12-19 22:45:00.131 +08:00 [Information] Executed action method "LNWCOE.Helpers.ALERTS.AlertJobsController.InActiveAlerts (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3496.22ms.
+2018-12-19 22:45:00.138 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.ALERTS.AlertJobs, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-19 22:45:00.214 +08:00 [Information] Executed action "LNWCOE.Helpers.ALERTS.AlertJobsController.InActiveAlerts (LNWCOE)" in 4003.4761ms
+2018-12-19 22:45:00.220 +08:00 [Information] Request finished in 4181.2772ms 200 application/json; charset=utf-8

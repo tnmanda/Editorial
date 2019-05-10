@@ -1,0 +1,165 @@
+<p-dialog  *ngIf="selectedAlertJob" [(visible)]="display" [modal]="true" [responsive]="true" [width]="550" [baseZIndex]="10000" [closable]="false">
+    <p-header>
+        <i class="fas fa-edit"></i>
+        Update Job
+    </p-header>
+    <form (ngSubmit)="onSave(formDirective)" [formGroup]="alertJobForm" #formDirective="ngForm">
+
+          <div class="ui-fluid">
+              <div class="container">
+              <br>
+              <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible" role="alert">
+                  {{ errorMessage }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onCloseMessage()">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+
+              <div class="form-group">
+                  <label for="team">Team</label>
+                  <p-dropdown name="team" [autoWidth]="false" [filter]="true" [options]="teams" placeholder="Select team" optionLabel="teamName"
+                  formControlName="team" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.team.errors }"></p-dropdown>
+                </div>
+
+                <div class="form-group">
+                  <label for="jobName">Job Name</label>
+                  <input  name="jobName" type="text" class="form-control" pInputText placeholder="Enter name"
+                  formControlName="jobName" [ngClass]="{ 'is-invalid': isSubmitted && f.jobName.errors }">
+                </div>
+
+                <div class="form-group">
+                  <label for="jobAbbrev">Job Abbrev</label>
+                  <input name="jobAbbrev" type="text" class="form-control" pInputText placeholder="Enter abrrev"
+                  formControlName="jobAbbrev" [ngClass]="{ 'is-invalid': isSubmitted && f.jobAbbrev.errors }">
+                </div>
+
+                <div class="form-group">
+                  <label for="jobDescription">Job Description</label>
+                    <textarea pInputTextarea [rows]="3" name="jobDescription" class="form-control" placeholder="Enter description" formControlName="jobDescription"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="jobSpecialInstructions">Job Special Instruction</label>
+                    <textarea pInputTextarea [rows]="3" name="jobSpecialInstructions" class="form-control" placeholder="Enter special instruction" formControlName="jobSpecialInstructions"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="jobComments">Job Comment</label>
+                    <textarea pInputTextarea [rows]="3" name="jobComments" class="form-control" placeholder="Enter comment" formControlName="jobComments"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="alertSourceType">Source Type</label>
+                    <p-dropdown name="alertSourceType" [autoWidth]="false" [filter]="true" [options]="alertSourceTypes" placeholder="Select source type" optionLabel="alertTypeDescription"
+                    formControlName="alertSourceType" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.alertSourceType.errors }"></p-dropdown>
+                  </div>
+
+                <div class="form-group">
+                  <label for="country">Country</label>
+                  <p-dropdown name="country" [autoWidth]="false" [filter]="true" [options]="countries" placeholder="Select Country" optionLabel="countryName"
+                  formControlName="country" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.country.errors }"></p-dropdown>
+                </div>
+
+                <div class="form-group">
+                  <label for="jobScrapperClassName">Job Scrapper Class Name</label>
+                  <input name="jobScrapperClassName" type="text" class="form-control" pInputText placeholder="Enter scrapper class name"
+                  formControlName="jobScrapperClassName" [ngClass]="{ 'is-invalid': isSubmitted && f.jobScrapperClassName.errors }">
+                </div>
+
+                <div class="form-group">
+                  <label for="jobScrapperAssemble">Job Scrapper Assemble</label>
+                  <input name="jobScrapperAssemble" type="text" class="form-control" pInputText placeholder="Enter scrapper assemble"
+                  formControlName="jobScrapperAssemble" [ngClass]="{ 'is-invalid': isSubmitted && f.jobScrapperAssemble.errors }">
+                </div>
+
+                <div class="form-group">
+                  <label for="encoding">Encoding</label>
+                  <p-dropdown name="encoding" [autoWidth]="false" [filter]="true" [options]="encodings" placeholder="Select encoding" optionLabel="encodingName"
+                  formControlName="encoding" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.encoding.errors }"></p-dropdown>
+                </div>
+
+                <div class="form-group">
+                  <label for="regex">Regex</label>
+                    <textarea pInputTextarea [rows]="3" name="regex" class="form-control" placeholder="Enter regex" formControlName="regex"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="regexForPages">Regex For Pages</label>
+                    <textarea pInputTextarea [rows]="3" name="regexForPages" class="form-control" placeholder="Enter regex for pages" formControlName="regexForPages"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="jobURL">Job URL</label>
+                    <textarea pInputTextarea [rows]="3" name="jobURL" class="form-control" placeholder="Enter url" formControlName="jobURL"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="priorityCode">Priority Code</label>
+                  <input name="priorityCode" type="number" class="form-control" pInputText placeholder="Enter priority code"
+                  formControlName="priorityCode" [ngClass]="{ 'is-invalid': isSubmitted && f.priorityCode.errors }">
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="isShowOnDynamicDisplay">Is Show On Dynamic Display?</label><br>
+                          <p-inputSwitch name="isShowOnDynamicDisplay" formControlName="isShowOnDynamicDisplay"></p-inputSwitch>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="isWithLookUpID">Is With LookUpID?</label><br>
+                          <p-inputSwitch name="isWithLookUpID" formControlName="isWithLookUpID"></p-inputSwitch>
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="isPreventDeletions">Is Prevent Deletions?</label><br>
+                          <p-inputSwitch name="isPreventDeletions" formControlName="isPreventDeletions"></p-inputSwitch>
+                      </div>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="isUseProxy">Is Use Proxy?</label><br>
+                          <p-inputSwitch name="isUseProxy" formControlName="isUseProxy"></p-inputSwitch>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="isCriticalJob">Is Critical Job?</label><br>
+                            <p-inputSwitch name="isCriticalJob" formControlName="isCriticalJob"></p-inputSwitch>
+                        </div>
+                    </div>
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="isUserTermsFilter">Is User Terms Filter?</label><br>
+                          <p-inputSwitch name="isUserTermsFilter" formControlName="isUserTermsFilter"></p-inputSwitch>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="isActive">Is Active?</label><br>
+                          <p-inputSwitch name="isActive" formControlName="isActive"></p-inputSwitch>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+
+            <div class="text-right">
+              <button type="submit" pButton label="Save Changes" class="btn-space"></button>
+              <button type="button" pButton (click)="onClose()"label="Cancel" class="ui-button-secondary"></button>
+            </div>
+
+      </form>
+  </p-dialog>

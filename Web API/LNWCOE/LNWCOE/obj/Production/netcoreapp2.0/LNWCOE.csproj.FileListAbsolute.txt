@@ -1,0 +1,11 @@
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\bin\Production\netcoreapp2.0\LNWCOE.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\bin\Production\netcoreapp2.0\LNWCOE.runtimeconfig.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\bin\Production\netcoreapp2.0\LNWCOE.runtimeconfig.dev.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\bin\Production\netcoreapp2.0\LNWCOE.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\bin\Production\netcoreapp2.0\LNWCOE.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\obj\Production\netcoreapp2.0\LNWCOE.csprojResolveAssemblyReference.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\obj\Production\netcoreapp2.0\LNWCOE.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\obj\Production\netcoreapp2.0\LNWCOE.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\obj\Production\netcoreapp2.0\LNWCOE.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\obj\Production\netcoreapp2.0\LNWCOE.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\obj\Production\netcoreapp2.0\LNWCOE.pdb

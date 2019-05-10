@@ -1,0 +1,72 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Duration List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtOffice.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtOffice [value]="workUnitDurations" [globalFilterFields]="['workUnitType.workUnitTypeName', 'durationInMinutes']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'workUnitTypeName'">Work Unit Type <p-sortIcon [field]="'workUnitTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'durationInMinutes'">Duration In Minutes <p-sortIcon [field]="'durationInMinutes'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isActive'">Is Active <p-sortIcon [field]="'isActive'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-workUnitDuration>
+              <tr>
+
+                  <td class="td-cell">{{workUnitDuration.workUnitType.workUnitTypeName}}</td>
+                  <td class="td-cell">{{workUnitDuration.durationInMinutes}}</td>
+                  <td class="td-cell">
+                      <div *ngIf="workUnitDuration.isActive; else isDisabled">
+                          <div class="badge badge-pill badge-success">{{workUnitDuration.isActive}}</div>
+                      </div>
+                      <ng-template #isDisabled>
+                          <div class="badge badge-pill badge-secondary">{{workUnitDuration.isActive}}</div>
+                      </ng-template>
+                  </td>
+                  <td >
+                      <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="showEditDialog(workUnitDuration.workLockDurationInMinID)"></button>
+                      <button pButton pTooltip="Delete" tooltipPosition="bottom" type="button" icon="fa fa-trash" class="ui-button-danger" (click)="showDeleteDialog(workUnitDuration.workLockDurationInMinID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add Work Unit Duration Dialog -->
+<app-work-unit-duration-add-dialog [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-work-unit-duration-add-dialog>
+<!-- Edit Work Unit Duration Dialog -->
+<div *ngIf="selectedWorkUnitDuration">
+  <app-work-unit-duration-edit-dialog [display]="displayEditDialog" [selectedWorkUnitDuration]="selectedWorkUnitDuration" (displayChange)="onEditDialogClose($event)"></app-work-unit-duration-edit-dialog>
+</div>
+<!-- Delete Work Unit Duration Dialog -->
+<div *ngIf="selectedWorkUnitDuration">
+  <app-work-unit-duration-delete-dialog [display]="displayDeleteDialog" [selectedWorkUnitDuration]="selectedWorkUnitDuration" (displayChange)="onDeleteDialogClose($event)"></app-work-unit-duration-delete-dialog>
+</div>
+
+<p-toast></p-toast>

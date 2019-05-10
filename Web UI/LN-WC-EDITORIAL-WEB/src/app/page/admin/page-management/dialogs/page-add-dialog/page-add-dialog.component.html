@@ -1,0 +1,60 @@
+<p-dialog *ngIf="display" [(visible)]="display" [modal]="true" [responsive]="true" [width]="550" [baseZIndex]="10000" [closable]="false">
+    <p-header>
+        <i class="fas fa-plus"></i>
+        Add New Page
+    </p-header>
+    <form (ngSubmit)="onSave(pageForm)" [formGroup]="pageForm" #formDirective="ngForm">
+        <div class="ui-fluid">
+            <div class="container">
+                <br>
+                <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible" role="alert">
+                    {{ errorMessage }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onCloseMessage()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="form-group">
+                  <label for="pageName">Name</label>
+                  <input  name="pageName" type="text" class="form-control" pInputText placeholder="Enter name"
+                  formControlName="pageName" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.pageName.errors }">
+                </div>
+
+                <div class="form-group">
+                  <label for="pagesDescription">Description</label>
+                  <textarea pInputTextarea [rows]="3" name="pagesDescription" class="form-control" placeholder="Enter description"
+                  formControlName="pagesDescription" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.pagesDescription.errors }"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="fullPath">Full Path</label>
+                  <input  name="fullPath" type="text" class="form-control" pInputText placeholder="Enter full path"
+                  formControlName="fullPath" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.fullPath.errors }">
+                </div>
+
+                <div class="form-group">
+                    <label for="pagesGroups">Group</label>
+                    <p-dropdown name="pagesGroups" [autoWidth]="false" [options]="pageGroups" placeholder="Select Group" optionLabel="pagesGroupsName"
+                    formControlName="pagesGroups" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.pagesGroups.errors }"></p-dropdown>
+
+                  </div>
+
+                <div class="row">
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="isActive">Is Active?</label><br>
+                          <p-inputSwitch name="isActive" formControlName="isActive"></p-inputSwitch>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+          <hr>
+          <div class="text-right">
+            <button type="submit" pButton label="Submit" class="btn-space"></button>
+            <button type="button" pButton (click)="onClose()"label="Cancel" class="ui-button-secondary"></button>
+          </div>
+      </form>
+  </p-dialog>
+
+  <p-toast></p-toast>

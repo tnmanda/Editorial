@@ -1,0 +1,63 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> User Map List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtUserMap.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtUserMap [value]="userMaps" [globalFilterFields]="['appUser.appUserName', 'humanReviewUserID']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'appUser.appUserName'">App User<p-sortIcon [field]="'appUserID'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'humanReviewUserID'">Human Review User<p-sortIcon [field]="'humanReviewUserID'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-userMap>
+              <tr>
+
+                  <td class="td-cell">{{userMap.appUser?.appUserName}}</td>
+                  <td class="td-cell">{{userMap.humanReviewUserID}}</td>
+                  <td >
+                      <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="showEditDialog(userMap.hrEditorialUserMapID)"></button>
+                      <button pButton pTooltip="Delete" tooltipPosition="bottom" type="button" icon="fa fa-trash" class="ui-button-danger" (click)="showDeleteDialog(userMap.hrEditorialUserMapID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add User Map Dialog -->
+<app-usermap-add-dialog [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-usermap-add-dialog>
+<!-- Edit User Map Dialog -->
+<div *ngIf="selectedUserMap">
+  <app-usermap-edit-dialog [display]="displayEditDialog" [selectedUserMap]="selectedUserMap" (displayChange)="onEditDialogClose($event)"></app-usermap-edit-dialog>
+</div>
+<!-- Delete User Map Dialog -->
+<div *ngIf="selectedUserMap">
+  <app-usermap-delete-dialog [display]="displayDeleteDialog" [selectedUserMap]="selectedUserMap" (displayChange)="onDeleteDialogClose($event)"></app-usermap-delete-dialog>
+</div>
+
+<p-toast></p-toast>

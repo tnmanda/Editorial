@@ -1,0 +1,652 @@
+2018-12-05 15:20:23.629 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-05 15:20:25.061 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/News/filter application/json 76
+2018-12-05 15:20:25.461 +08:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '12/04/2018 19:01:59', Current time: '12/05/2018 07:20:25'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2018-12-05 15:20:26.120 +08:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '12/04/2018 19:01:59', Current time: '12/05/2018 07:20:25'."
+2018-12-05 15:20:26.716 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationFilter\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationFilter (LNWCOE)"
+2018-12-05 15:20:26.761 +08:00 [Information] Authorization failed.
+2018-12-05 15:20:26.766 +08:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-12-05 15:20:26.779 +08:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-12-05 15:20:26.811 +08:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-12-05 15:20:26.815 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationFilter (LNWCOE)" in 92.5077ms
+2018-12-05 15:20:26.892 +08:00 [Information] Request finished in 1841.8294ms 401 
+2018-12-05 21:34:45.171 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-05 21:34:48.051 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-05 21:34:48.051 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-05 21:34:48.051 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav/6  
+2018-12-05 21:34:48.339 +08:00 [Information] Request finished in 295.3302ms 200 
+2018-12-05 21:34:49.220 +08:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '12/05/2018 12:20:32', Current time: '12/05/2018 13:34:49'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2018-12-05 21:34:49.861 +08:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '12/05/2018 12:20:32', Current time: '12/05/2018 13:34:49'."
+2018-12-05 21:34:50.546 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-05 21:34:50.552 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationWithUser\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)"
+2018-12-05 21:34:50.603 +08:00 [Information] Authorization failed.
+2018-12-05 21:34:50.609 +08:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-12-05 21:34:50.609 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-05 21:34:50.621 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1.8157ms.
+2018-12-05 21:34:50.632 +08:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-12-05 21:34:50.668 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-05 21:34:50.680 +08:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-12-05 21:34:50.688 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" in 129.7822ms
+2018-12-05 21:34:50.702 +08:00 [Information] Request finished in 2668.7969ms 401 
+2018-12-05 21:34:50.823 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 273.356ms
+2018-12-05 21:34:50.828 +08:00 [Information] Request finished in 2794.4768ms 200 application/json; charset=utf-8
+2018-12-05 21:34:51.036 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/favicon.ico  
+2018-12-05 21:34:51.040 +08:00 [Information] Request finished in 4.0817ms 404 
+2018-12-05 21:34:52.846 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-12-05 21:34:52.851 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-12-05 21:34:54.094 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-12-05 21:34:55.674 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:34:57.305 +08:00 [Information] Executed DbCommand ("110"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-12-05 21:35:02.198 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-05 21:35:02.450 +08:00 [Information] Executed DbCommand ("15"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-12-05 21:35:02.489 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 8387.8687ms.
+2018-12-05 21:35:02.492 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType11`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-05 21:35:02.510 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 9658.7177ms
+2018-12-05 21:35:02.518 +08:00 [Information] Request finished in 9670.9101ms 200 application/json; charset=utf-8
+2018-12-05 21:35:06.766 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav/6  
+2018-12-05 21:35:06.783 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:35:06.790 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationWithUser\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)"
+2018-12-05 21:35:06.792 +08:00 [Information] Authorization was successful.
+2018-12-05 21:35:06.810 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-12-05 21:35:14.700 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:35:17.130 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[CountryID]
+FROM [AppUserCountry] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:35:18.984 +08:00 [Information] Executed DbCommand ("29"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[LanguageTypeID]
+FROM [AppUserLanguage] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:35:40.945 +08:00 [Warning] The LINQ expression '"where {__userCountries_1 => Contains([navdata].CountryID)}"' could not be translated and will be evaluated locally.
+2018-12-05 21:35:40.950 +08:00 [Warning] The LINQ expression '"Contains([navdata].CountryID)"' could not be translated and will be evaluated locally.
+2018-12-05 21:35:40.979 +08:00 [Information] Executed DbCommand ("13"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:35:59.179 +08:00 [Warning] The LINQ expression '"where {__userCountries_1 => Contains([navdata].CountryID)}"' could not be translated and will be evaluated locally.
+2018-12-05 21:35:59.180 +08:00 [Warning] The LINQ expression '"Contains([navdata].CountryID)"' could not be translated and will be evaluated locally.
+2018-12-05 21:35:59.181 +08:00 [Warning] The LINQ expression '"where {__userLanguages_2 => Contains(Convert([navdata].LanguageID, Nullable`1))}"' could not be translated and will be evaluated locally.
+2018-12-05 21:35:59.182 +08:00 [Warning] The LINQ expression '"Contains(Convert([navdata].LanguageID, Nullable`1))"' could not be translated and will be evaluated locally.
+2018-12-05 21:35:59.196 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:39:00.715 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-05 21:39:02.620 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-05 21:39:02.620 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-05 21:39:02.963 +08:00 [Information] Request finished in 350.6614ms 200 
+2018-12-05 21:39:04.153 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-05 21:39:04.231 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-05 21:39:04.242 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.3838ms.
+2018-12-05 21:39:04.363 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-05 21:39:04.634 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 469.1891ms
+2018-12-05 21:39:04.652 +08:00 [Information] Request finished in 2040.7696ms 200 application/json; charset=utf-8
+2018-12-05 21:39:40.647 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav/6  
+2018-12-05 21:39:40.852 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:39:40.903 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationWithUser\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)"
+2018-12-05 21:39:40.951 +08:00 [Information] Authorization was successful.
+2018-12-05 21:39:41.462 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-12-05 21:39:46.742 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:39:50.410 +08:00 [Information] Executed DbCommand ("114"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[CountryID]
+FROM [AppUserCountry] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:39:56.703 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[LanguageTypeID]
+FROM [AppUserLanguage] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:40:04.124 +08:00 [Warning] The LINQ expression '"where ({__userCountries_1 => Contains([navdata].CountryID)} AndAlso {__userLanguages_2 => Contains(Convert([navdata].LanguageID, Nullable`1))})"' could not be translated and will be evaluated locally.
+2018-12-05 21:40:04.135 +08:00 [Warning] The LINQ expression '"Contains([navdata].CountryID)"' could not be translated and will be evaluated locally.
+2018-12-05 21:40:04.137 +08:00 [Warning] The LINQ expression '"Contains(Convert([navdata].LanguageID, Nullable`1))"' could not be translated and will be evaluated locally.
+2018-12-05 21:40:04.187 +08:00 [Information] Executed DbCommand ("10"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:40:14.493 +08:00 [Information] Executed DbCommand ("12"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:40:17.008 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 35533.7086ms.
+2018-12-05 21:40:17.023 +08:00 [Information] Executing JsonResult, writing value of type '"Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[LNWCOE.Models.News.NewsJobsNav, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-05 21:40:17.073 +08:00 [Information] Executed DbCommand ("21"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:40:17.092 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" in 36188.5465ms
+2018-12-05 21:40:17.099 +08:00 [Information] Request finished in 36451.6641ms 200 application/json; charset=utf-8
+2018-12-05 21:40:33.739 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav/6  
+2018-12-05 21:40:33.753 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:40:33.795 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationWithUser\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)"
+2018-12-05 21:40:33.795 +08:00 [Information] Authorization was successful.
+2018-12-05 21:40:33.798 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-12-05 21:40:35.318 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:40:35.323 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[CountryID]
+FROM [AppUserCountry] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:40:35.326 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[LanguageTypeID]
+FROM [AppUserLanguage] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:40:35.327 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 1528.7297ms.
+2018-12-05 21:40:35.327 +08:00 [Information] Executing JsonResult, writing value of type '"Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[LNWCOE.Models.News.NewsJobsNav, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-05 21:40:35.339 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:40:35.339 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" in 1544.5784ms
+2018-12-05 21:40:35.340 +08:00 [Information] Request finished in 1600.6657ms 200 application/json; charset=utf-8
+2018-12-05 21:40:53.319 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav/6  
+2018-12-05 21:40:53.320 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:40:53.320 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationWithUser\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)"
+2018-12-05 21:40:53.320 +08:00 [Information] Authorization was successful.
+2018-12-05 21:40:53.321 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-12-05 21:40:57.784 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:40:59.462 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[CountryID]
+FROM [AppUserCountry] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:41:00.396 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[LanguageTypeID]
+FROM [AppUserLanguage] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:41:06.387 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:41:18.870 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 25549.0915ms.
+2018-12-05 21:41:18.871 +08:00 [Information] Executing JsonResult, writing value of type '"Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[LNWCOE.Models.News.NewsJobsNav, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-05 21:41:18.875 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:41:26.330 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" in 33009.6576ms
+2018-12-05 21:41:26.331 +08:00 [Information] Request finished in 33010.9337ms 200 application/json; charset=utf-8
+2018-12-05 21:42:12.042 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-05 21:42:13.652 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-05 21:42:13.652 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-05 21:42:13.958 +08:00 [Information] Request finished in 298.211ms 200 
+2018-12-05 21:42:15.159 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-05 21:42:15.240 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-05 21:42:15.251 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.266ms.
+2018-12-05 21:42:15.305 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-05 21:42:15.554 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 380.3526ms
+2018-12-05 21:42:15.568 +08:00 [Information] Request finished in 1940.8359ms 200 application/json; charset=utf-8
+2018-12-05 21:42:17.948 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav/6  
+2018-12-05 21:42:18.144 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:42:18.189 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationWithUser\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)"
+2018-12-05 21:42:18.238 +08:00 [Information] Authorization was successful.
+2018-12-05 21:42:18.794 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-12-05 21:42:22.929 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:42:25.542 +08:00 [Information] Executed DbCommand ("111"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[CountryID]
+FROM [AppUserCountry] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:42:26.604 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[LanguageTypeID]
+FROM [AppUserLanguage] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:42:32.138 +08:00 [Warning] The LINQ expression '"where ({__userCountries_1 => Contains([navdata].CountryID)} OrElse {__userLanguages_2 => Contains(Convert([navdata].LanguageID, Nullable`1))})"' could not be translated and will be evaluated locally.
+2018-12-05 21:42:32.150 +08:00 [Warning] The LINQ expression '"Contains([navdata].CountryID)"' could not be translated and will be evaluated locally.
+2018-12-05 21:42:32.152 +08:00 [Warning] The LINQ expression '"Contains(Convert([navdata].LanguageID, Nullable`1))"' could not be translated and will be evaluated locally.
+2018-12-05 21:42:32.198 +08:00 [Information] Executed DbCommand ("12"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:42:35.123 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 16319.1374ms.
+2018-12-05 21:42:35.140 +08:00 [Information] Executing JsonResult, writing value of type '"Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[LNWCOE.Models.News.NewsJobsNav, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-05 21:42:35.187 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:42:35.209 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" in 17019.2454ms
+2018-12-05 21:42:35.222 +08:00 [Information] Request finished in 17273.4263ms 200 application/json; charset=utf-8
+2018-12-05 21:44:45.007 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/AppUserCountry application/json 198
+2018-12-05 21:44:45.008 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:44:45.014 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"AppUserCountry\"}". Executing action "LNWCOE.Helpers.Admin.AppUserCountryController.Create (LNWCOE)"
+2018-12-05 21:44:45.015 +08:00 [Information] Authorization was successful.
+2018-12-05 21:44:45.238 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.AppUserCountryController.Create (LNWCOE)" with arguments (["LNWCOE.Models.Admin.AppUserCountry"]) - Validation state: Valid
+2018-12-05 21:44:45.242 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:44:45.642 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AppUserCountry] ([AppUserID], [CountryID], [CreatedBy], [DateCreatedUTC], [IsLocked], [LastUpdatedUTC], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [AppUserCountryID]
+FROM [AppUserCountry]
+WHERE @@ROWCOUNT = 1 AND [AppUserCountryID] = scope_identity();"
+2018-12-05 21:44:45.715 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.AppUserCountryController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtRouteResult" in 477.342ms.
+2018-12-05 21:44:45.718 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.Admin.AppUserCountry"'.
+2018-12-05 21:44:45.779 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.AppUserCountryController.Create (LNWCOE)" in 765.0913ms
+2018-12-05 21:44:45.780 +08:00 [Information] Request finished in 773.1881ms 201 application/json; charset=utf-8
+2018-12-05 21:45:00.088 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav/6  
+2018-12-05 21:45:00.089 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:45:00.092 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationWithUser\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)"
+2018-12-05 21:45:00.092 +08:00 [Information] Authorization was successful.
+2018-12-05 21:45:00.094 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-12-05 21:45:02.792 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:45:02.797 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[CountryID]
+FROM [AppUserCountry] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:45:02.800 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[LanguageTypeID]
+FROM [AppUserLanguage] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:45:02.801 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 2705.9691ms.
+2018-12-05 21:45:02.801 +08:00 [Information] Executing JsonResult, writing value of type '"Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[LNWCOE.Models.News.NewsJobsNav, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-05 21:45:02.815 +08:00 [Information] Executed DbCommand ("10"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:45:02.818 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" in 2726.3002ms
+2018-12-05 21:45:02.819 +08:00 [Information] Request finished in 2730.9915ms 200 application/json; charset=utf-8
+2018-12-05 21:48:18.229 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-05 21:48:19.560 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-05 21:48:19.560 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-05 21:48:19.778 +08:00 [Information] Request finished in 220.7602ms 200 
+2018-12-05 21:48:20.747 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-05 21:48:20.798 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-05 21:48:20.806 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1.6327ms.
+2018-12-05 21:48:20.840 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-05 21:48:21.018 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 257.1277ms
+2018-12-05 21:48:21.035 +08:00 [Information] Request finished in 1491.0198ms 200 application/json; charset=utf-8
+2018-12-05 21:48:28.026 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav/6  
+2018-12-05 21:48:28.203 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:48:28.241 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationWithUser\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)"
+2018-12-05 21:48:28.284 +08:00 [Information] Authorization was successful.
+2018-12-05 21:48:28.760 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-12-05 21:48:34.218 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:48:34.952 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType35`2(CountryName = [navdata].CountryName, CountryID = [navdata].CountryID), new NewsJobsNav() {WatchID = [navdata].WatchID, Caption = [navdata].Caption, CountryName = [navdata].CountryName, CountryID = [navdata].CountryID, LanguageID = [navdata].LanguageID, LanguageName = [navdata].LanguageName})"' could not be translated and will be evaluated locally.
+2018-12-05 21:48:34.972 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType35`2(CountryName = [navdata].CountryName, CountryID = [navdata].CountryID), new NewsJobsNav() {WatchID = [navdata].WatchID, Caption = [navdata].Caption, CountryName = [navdata].CountryName, CountryID = [navdata].CountryID, LanguageID = [navdata].LanguageID, LanguageName = [navdata].LanguageName})"' could not be translated and will be evaluated locally.
+2018-12-05 21:48:34.986 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 21:48:34.987 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType36`2(LanguageID = [bylanguage].LanguageID, LanguageName = [bylanguage].LanguageName), [bylanguage])"' could not be translated and will be evaluated locally.
+2018-12-05 21:48:34.988 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType36`2(LanguageID = [bylanguage].LanguageID, LanguageName = [bylanguage].LanguageName), [bylanguage])"' could not be translated and will be evaluated locally.
+2018-12-05 21:48:34.988 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 21:48:34.989 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType37`2(Caption = [byname].Caption, WatchID = [byname].WatchID), [byname])"' could not be translated and will be evaluated locally.
+2018-12-05 21:48:34.989 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType37`2(Caption = [byname].Caption, WatchID = [byname].WatchID), [byname])"' could not be translated and will be evaluated locally.
+2018-12-05 21:48:34.990 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 21:48:35.676 +08:00 [Information] Executed DbCommand ("152"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:48:35.971 +08:00 [Information] Executed DbCommand ("32"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[CountryID]
+FROM [AppUserCountry] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:48:36.015 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[LanguageTypeID]
+FROM [AppUserLanguage] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:48:36.037 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:48:36.039 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 7270.3148ms.
+2018-12-05 21:48:36.060 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType38`6[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-05 21:48:37.352 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" in 9110.4249ms
+2018-12-05 21:48:37.358 +08:00 [Information] Request finished in 9332.4522ms 200 application/json; charset=utf-8
+2018-12-05 21:49:40.805 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AppUserLanguage/  
+2018-12-05 21:49:40.808 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:49:40.817 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"AppUserLanguage\"}". Executing action "LNWCOE.Helpers.Admin.AppUserLanguageController.Get (LNWCOE)"
+2018-12-05 21:49:40.817 +08:00 [Information] Authorization was successful.
+2018-12-05 21:49:40.818 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.AppUserLanguageController.Get (LNWCOE)" - Validation state: Valid
+2018-12-05 21:49:40.846 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:49:40.893 +08:00 [Information] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[AppUserLanguageID], [a].[AppUserID], [a].[CreatedBy], [a].[DateCreatedUTC], [a].[IsMonitored], [a].[LanguageTypeID], [a].[LastUpdatedUTC], [a].[ProficiencyTypeID], [a].[UpdatedBy]
+FROM [AppUserLanguage] AS [a]"
+2018-12-05 21:49:41.118 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.AppUserLanguageController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 275.7493ms.
+2018-12-05 21:49:41.128 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.Admin.AppUserLanguage, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-05 21:49:41.156 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.AppUserLanguageController.Get (LNWCOE)" in 339.12ms
+2018-12-05 21:49:41.157 +08:00 [Information] Request finished in 354.2703ms 200 application/json; charset=utf-8
+2018-12-05 21:49:47.270 +08:00 [Information] Request starting HTTP/1.1 DELETE http://localhost:57308/api/AppUserLanguage/1  0
+2018-12-05 21:49:47.270 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:49:47.273 +08:00 [Information] Route matched with "{action = \"Delete\", controller = \"AppUserLanguage\"}". Executing action "LNWCOE.Helpers.Admin.AppUserLanguageController.Delete (LNWCOE)"
+2018-12-05 21:49:47.273 +08:00 [Information] Authorization was successful.
+2018-12-05 21:49:47.275 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.AppUserLanguageController.Delete (LNWCOE)" with arguments (["1"]) - Validation state: Valid
+2018-12-05 21:49:47.277 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:49:47.302 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[AppUserLanguageID], [t].[AppUserID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[IsMonitored], [t].[LanguageTypeID], [t].[LastUpdatedUTC], [t].[ProficiencyTypeID], [t].[UpdatedBy]
+FROM [AppUserLanguage] AS [t]
+WHERE [t].[AppUserLanguageID] = @__id_0"
+2018-12-05 21:49:47.652 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [AppUserLanguage]
+WHERE [AppUserLanguageID] = @p0;
+SELECT @@ROWCOUNT;"
+2018-12-05 21:49:47.680 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.AppUserLanguageController.Delete (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 404.7284ms.
+2018-12-05 21:49:47.685 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-12-05 21:49:47.686 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.AppUserLanguageController.Delete (LNWCOE)" in 413.0401ms
+2018-12-05 21:49:47.686 +08:00 [Information] Request finished in 416.7627ms 200 
+2018-12-05 21:50:01.967 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav/6  
+2018-12-05 21:50:01.967 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:50:01.970 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationWithUser\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)"
+2018-12-05 21:50:01.970 +08:00 [Information] Authorization was successful.
+2018-12-05 21:50:01.971 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-12-05 21:50:05.692 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:50:05.707 +08:00 [Information] Executed DbCommand ("10"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:50:05.710 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[CountryID]
+FROM [AppUserCountry] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:50:05.712 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[LanguageTypeID]
+FROM [AppUserLanguage] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:50:05.716 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:50:05.716 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 3744.7741ms.
+2018-12-05 21:50:05.717 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType38`6[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-05 21:50:05.717 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" in 3747.0006ms
+2018-12-05 21:50:05.717 +08:00 [Information] Request finished in 3750.7225ms 200 application/json; charset=utf-8
+2018-12-05 21:50:46.916 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav/6  
+2018-12-05 21:50:46.917 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:50:46.917 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationWithUser\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)"
+2018-12-05 21:50:46.917 +08:00 [Information] Authorization was successful.
+2018-12-05 21:50:46.918 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-12-05 21:50:50.849 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:50:56.373 +08:00 [Information] Executed DbCommand ("14"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:50:58.080 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[CountryID]
+FROM [AppUserCountry] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:51:02.268 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[LanguageTypeID]
+FROM [AppUserLanguage] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:51:17.712 +08:00 [Information] Executed DbCommand ("21"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:51:19.283 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 32364.7931ms.
+2018-12-05 21:51:19.283 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType38`6[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-05 21:51:19.285 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" in 32367.0201ms
+2018-12-05 21:51:19.285 +08:00 [Information] Request finished in 32368.5758ms 200 application/json; charset=utf-8
+2018-12-05 21:51:56.005 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/AppUserCountry  
+2018-12-05 21:51:56.005 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:51:56.008 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"AppUserCountry\"}". Executing action "LNWCOE.Helpers.Admin.AppUserCountryController.Get (LNWCOE)"
+2018-12-05 21:51:56.008 +08:00 [Information] Authorization was successful.
+2018-12-05 21:51:56.009 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.AppUserCountryController.Get (LNWCOE)" - Validation state: Valid
+2018-12-05 21:51:56.010 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:51:56.025 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[AppUserCountryID], [a].[AppUserID], [a].[CountryID], [a].[CreatedBy], [a].[DateCreatedUTC], [a].[IsLocked], [a].[LastUpdatedUTC], [a].[UpdatedBy]
+FROM [AppUserCountry] AS [a]"
+2018-12-05 21:51:56.038 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.AppUserCountryController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 28.7656ms.
+2018-12-05 21:51:56.038 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.Admin.AppUserCountry, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-05 21:51:56.054 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.AppUserCountryController.Get (LNWCOE)" in 46.3423ms
+2018-12-05 21:51:56.055 +08:00 [Information] Request finished in 49.8473ms 200 application/json; charset=utf-8
+2018-12-05 21:52:08.257 +08:00 [Information] Request starting HTTP/1.1 DELETE http://localhost:57308/api/AppUserCountry/6  0
+2018-12-05 21:52:08.258 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:52:08.260 +08:00 [Information] Route matched with "{action = \"Delete\", controller = \"AppUserCountry\"}". Executing action "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)"
+2018-12-05 21:52:08.260 +08:00 [Information] Authorization was successful.
+2018-12-05 21:52:08.260 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-12-05 21:52:08.262 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:52:08.277 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[AppUserCountryID], [t].[AppUserID], [t].[CountryID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[IsLocked], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [AppUserCountry] AS [t]
+WHERE [t].[AppUserCountryID] = @__id_0"
+2018-12-05 21:52:08.322 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [AppUserCountry]
+WHERE [AppUserCountryID] = @p0;
+SELECT @@ROWCOUNT;"
+2018-12-05 21:52:08.325 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 64.3184ms.
+2018-12-05 21:52:08.325 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-12-05 21:52:08.325 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)" in 65.6083ms
+2018-12-05 21:52:08.326 +08:00 [Information] Request finished in 68.211ms 200 
+2018-12-05 21:52:11.311 +08:00 [Information] Request starting HTTP/1.1 DELETE http://localhost:57308/api/AppUserCountry/12  0
+2018-12-05 21:52:11.311 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:52:11.311 +08:00 [Information] Route matched with "{action = \"Delete\", controller = \"AppUserCountry\"}". Executing action "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)"
+2018-12-05 21:52:11.311 +08:00 [Information] Authorization was successful.
+2018-12-05 21:52:11.312 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)" with arguments (["12"]) - Validation state: Valid
+2018-12-05 21:52:11.312 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:52:11.314 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[AppUserCountryID], [t].[AppUserID], [t].[CountryID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[IsLocked], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [AppUserCountry] AS [t]
+WHERE [t].[AppUserCountryID] = @__id_0"
+2018-12-05 21:52:11.316 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [AppUserCountry]
+WHERE [AppUserCountryID] = @p0;
+SELECT @@ROWCOUNT;"
+2018-12-05 21:52:11.318 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 6.0191ms.
+2018-12-05 21:52:11.318 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-12-05 21:52:11.318 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)" in 6.7685ms
+2018-12-05 21:52:11.318 +08:00 [Information] Request finished in 7.6412ms 200 
+2018-12-05 21:52:24.346 +08:00 [Information] Request starting HTTP/1.1 DELETE http://localhost:57308/api/AppUserCountry/15  0
+2018-12-05 21:52:24.346 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:52:24.347 +08:00 [Information] Route matched with "{action = \"Delete\", controller = \"AppUserCountry\"}". Executing action "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)"
+2018-12-05 21:52:24.347 +08:00 [Information] Authorization was successful.
+2018-12-05 21:52:24.347 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)" with arguments (["15"]) - Validation state: Valid
+2018-12-05 21:52:24.348 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:52:24.351 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[AppUserCountryID], [t].[AppUserID], [t].[CountryID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[IsLocked], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [AppUserCountry] AS [t]
+WHERE [t].[AppUserCountryID] = @__id_0"
+2018-12-05 21:52:24.355 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [AppUserCountry]
+WHERE [AppUserCountryID] = @p0;
+SELECT @@ROWCOUNT;"
+2018-12-05 21:52:24.357 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 9.9504ms.
+2018-12-05 21:52:24.358 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-12-05 21:52:24.358 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)" in 10.8444ms
+2018-12-05 21:52:24.358 +08:00 [Information] Request finished in 11.808ms 200 
+2018-12-05 21:52:33.201 +08:00 [Information] Request starting HTTP/1.1 DELETE http://localhost:57308/api/AppUserCountry/1012  0
+2018-12-05 21:52:33.201 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:52:33.202 +08:00 [Information] Route matched with "{action = \"Delete\", controller = \"AppUserCountry\"}". Executing action "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)"
+2018-12-05 21:52:33.202 +08:00 [Information] Authorization was successful.
+2018-12-05 21:52:33.202 +08:00 [Information] Executing action method "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)" with arguments (["1012"]) - Validation state: Valid
+2018-12-05 21:52:33.202 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:52:33.204 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[AppUserCountryID], [t].[AppUserID], [t].[CountryID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[IsLocked], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [AppUserCountry] AS [t]
+WHERE [t].[AppUserCountryID] = @__id_0"
+2018-12-05 21:52:33.206 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [AppUserCountry]
+WHERE [AppUserCountryID] = @p0;
+SELECT @@ROWCOUNT;"
+2018-12-05 21:52:33.208 +08:00 [Information] Executed action method "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 6.1906ms.
+2018-12-05 21:52:33.208 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-12-05 21:52:33.209 +08:00 [Information] Executed action "LNWCOE.Helpers.Admin.AppUserCountryController.Delete (LNWCOE)" in 6.9183ms
+2018-12-05 21:52:33.209 +08:00 [Information] Request finished in 7.6282ms 200 
+2018-12-05 21:52:41.864 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav/6  
+2018-12-05 21:52:41.864 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:52:41.865 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationWithUser\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)"
+2018-12-05 21:52:41.865 +08:00 [Information] Authorization was successful.
+2018-12-05 21:52:41.865 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-12-05 21:52:43.413 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:52:43.430 +08:00 [Information] Executed DbCommand ("15"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:52:43.434 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[CountryID]
+FROM [AppUserCountry] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:52:43.437 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[LanguageTypeID]
+FROM [AppUserLanguage] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:52:43.443 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:52:43.444 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 1578.5632ms.
+2018-12-05 21:52:43.444 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType38`6[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-05 21:53:05.998 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" in 24132.198ms
+2018-12-05 21:53:05.998 +08:00 [Information] Request finished in 24134.1962ms 200 application/json; charset=utf-8
+2018-12-05 21:53:08.765 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav/6  
+2018-12-05 21:53:08.765 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:53:08.765 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationWithUser\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)"
+2018-12-05 21:53:08.766 +08:00 [Information] Authorization was successful.
+2018-12-05 21:53:08.766 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-12-05 21:53:11.666 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:53:17.775 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:53:20.574 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[CountryID]
+FROM [AppUserCountry] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:53:24.350 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[LanguageTypeID]
+FROM [AppUserLanguage] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:53:28.644 +08:00 [Warning] The LINQ expression '"where ({__userCountries_1 => Contains([navdata].CountryID)} OrElse {__userLanguages_2 => Contains(Convert([navdata].LanguageID, Nullable`1))})"' could not be translated and will be evaluated locally.
+2018-12-05 21:53:28.646 +08:00 [Warning] The LINQ expression '"Contains([navdata].CountryID)"' could not be translated and will be evaluated locally.
+2018-12-05 21:53:28.647 +08:00 [Warning] The LINQ expression '"Contains(Convert([navdata].LanguageID, Nullable`1))"' could not be translated and will be evaluated locally.
+2018-12-05 21:53:28.664 +08:00 [Information] Executed DbCommand ("10"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:53:34.371 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:53:36.365 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 27597.8307ms.
+2018-12-05 21:53:36.365 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType38`6[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-05 21:53:43.997 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" in 35230.9848ms
+2018-12-05 21:53:43.998 +08:00 [Information] Request finished in 35232.1435ms 200 application/json; charset=utf-8
+2018-12-05 21:55:12.330 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-05 21:55:14.222 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-05 21:55:14.222 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-05 21:55:14.474 +08:00 [Information] Request finished in 251.4486ms 200 
+2018-12-05 21:55:15.671 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-05 21:55:15.731 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-05 21:55:15.742 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1.8741ms.
+2018-12-05 21:55:15.787 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-05 21:55:15.975 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 296.4928ms
+2018-12-05 21:55:15.989 +08:00 [Information] Request finished in 1787.7169ms 200 application/json; charset=utf-8
+2018-12-05 21:55:29.049 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav/6  
+2018-12-05 21:55:29.204 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:55:29.239 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationWithUser\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)"
+2018-12-05 21:55:29.275 +08:00 [Information] Authorization was successful.
+2018-12-05 21:55:29.779 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-12-05 21:55:35.827 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:55:36.305 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType35`2(CountryName = [navdata].CountryName, CountryID = [navdata].CountryID), new NewsJobsNav() {WatchID = [navdata].WatchID, Caption = [navdata].Caption, CountryName = [navdata].CountryName, CountryID = [navdata].CountryID, LanguageID = [navdata].LanguageID, LanguageName = [navdata].LanguageName})"' could not be translated and will be evaluated locally.
+2018-12-05 21:55:36.319 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType35`2(CountryName = [navdata].CountryName, CountryID = [navdata].CountryID), new NewsJobsNav() {WatchID = [navdata].WatchID, Caption = [navdata].Caption, CountryName = [navdata].CountryName, CountryID = [navdata].CountryID, LanguageID = [navdata].LanguageID, LanguageName = [navdata].LanguageName})"' could not be translated and will be evaluated locally.
+2018-12-05 21:55:36.327 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 21:55:36.327 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType36`2(LanguageID = [bylanguage].LanguageID, LanguageName = [bylanguage].LanguageName), [bylanguage])"' could not be translated and will be evaluated locally.
+2018-12-05 21:55:36.328 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType36`2(LanguageID = [bylanguage].LanguageID, LanguageName = [bylanguage].LanguageName), [bylanguage])"' could not be translated and will be evaluated locally.
+2018-12-05 21:55:36.328 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 21:55:36.328 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType37`2(Caption = [byname].Caption, WatchID = [byname].WatchID), [byname])"' could not be translated and will be evaluated locally.
+2018-12-05 21:55:36.329 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType37`2(Caption = [byname].Caption, WatchID = [byname].WatchID), [byname])"' could not be translated and will be evaluated locally.
+2018-12-05 21:55:36.329 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 21:55:36.827 +08:00 [Information] Executed DbCommand ("113"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:55:37.006 +08:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[CountryID]
+FROM [AppUserCountry] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:55:37.036 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[LanguageTypeID]
+FROM [AppUserLanguage] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:55:37.053 +08:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:55:37.054 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 7265.8459ms.
+2018-12-05 21:55:37.066 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType38`6[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-05 21:55:37.140 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" in 7901.076ms
+2018-12-05 21:55:37.147 +08:00 [Information] Request finished in 8098.229ms 200 application/json; charset=utf-8
+2018-12-05 21:56:37.559 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-05 21:56:39.401 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-05 21:56:39.401 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-05 21:56:39.666 +08:00 [Information] Request finished in 273.1842ms 200 
+2018-12-05 21:56:39.735 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav/6  
+2018-12-05 21:56:40.292 +08:00 [Information] Successfully validated the token.
+2018-12-05 21:56:40.837 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-05 21:56:40.837 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationWithUser\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)"
+2018-12-05 21:56:40.894 +08:00 [Information] Authorization was successful.
+2018-12-05 21:56:40.903 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-05 21:56:40.915 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.7117ms.
+2018-12-05 21:56:40.978 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-05 21:56:41.105 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 258.9797ms
+2018-12-05 21:56:41.125 +08:00 [Information] Request finished in 1745.1391ms 200 application/json; charset=utf-8
+2018-12-05 21:56:41.425 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-12-05 21:56:46.272 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 21:56:46.778 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType35`2(CountryName = [navdata].CountryName, CountryID = [navdata].CountryID), new NewsJobsNav() {WatchID = [navdata].WatchID, Caption = [navdata].Caption, CountryName = [navdata].CountryName, CountryID = [navdata].CountryID, LanguageID = [navdata].LanguageID, LanguageName = [navdata].LanguageName})"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:46.793 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType35`2(CountryName = [navdata].CountryName, CountryID = [navdata].CountryID), new NewsJobsNav() {WatchID = [navdata].WatchID, Caption = [navdata].Caption, CountryName = [navdata].CountryName, CountryID = [navdata].CountryID, LanguageID = [navdata].LanguageID, LanguageName = [navdata].LanguageName})"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:46.802 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:46.802 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType36`2(LanguageID = [bylanguage].LanguageID, LanguageName = [bylanguage].LanguageName), [bylanguage])"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:46.802 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType36`2(LanguageID = [bylanguage].LanguageID, LanguageName = [bylanguage].LanguageName), [bylanguage])"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:46.803 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:46.803 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType37`2(Caption = [byname].Caption, WatchID = [byname].WatchID), [byname])"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:46.803 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType37`2(Caption = [byname].Caption, WatchID = [byname].WatchID), [byname])"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:46.803 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:47.298 +08:00 [Information] Executed DbCommand ("121"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:56:47.489 +08:00 [Information] Executed DbCommand ("9"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[CountryID]
+FROM [AppUserCountry] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:56:47.531 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[LanguageTypeID]
+FROM [AppUserLanguage] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 21:56:47.570 +08:00 [Warning] The LINQ expression '"where ({__userCountries_1 => Contains([navdata].CountryID)} OrElse {__userLanguages_2 => Contains(Convert([navdata].LanguageID, Nullable`1))})"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:47.574 +08:00 [Warning] The LINQ expression '"Contains([navdata].CountryID)"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:47.575 +08:00 [Warning] The LINQ expression '"Contains(Convert([navdata].LanguageID, Nullable`1))"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:47.576 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType35`2(CountryName = [navdata].CountryName, CountryID = [navdata].CountryID), new NewsJobsNav() {WatchID = [navdata].WatchID, Caption = [navdata].Caption, CountryName = [navdata].CountryName, CountryID = [navdata].CountryID, LanguageID = [navdata].LanguageID, LanguageName = [navdata].LanguageName})"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:47.581 +08:00 [Warning] The LINQ expression '"where ({__userCountries_1 => Contains([navdata].CountryID)} OrElse {__userLanguages_2 => Contains(Convert([navdata].LanguageID, Nullable`1))})"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:47.582 +08:00 [Warning] The LINQ expression '"Contains([navdata].CountryID)"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:47.582 +08:00 [Warning] The LINQ expression '"Contains(Convert([navdata].LanguageID, Nullable`1))"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:56.674 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType35`2(CountryName = [navdata].CountryName, CountryID = [navdata].CountryID), new NewsJobsNav() {WatchID = [navdata].WatchID, Caption = [navdata].Caption, CountryName = [navdata].CountryName, CountryID = [navdata].CountryID, LanguageID = [navdata].LanguageID, LanguageName = [navdata].LanguageName})"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:56.675 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:56.676 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType36`2(LanguageID = [bylanguage].LanguageID, LanguageName = [bylanguage].LanguageName), [bylanguage])"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:56.676 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType36`2(LanguageID = [bylanguage].LanguageID, LanguageName = [bylanguage].LanguageName), [bylanguage])"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:56.677 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:56.678 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType37`2(Caption = [byname].Caption, WatchID = [byname].WatchID), [byname])"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:56.678 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType37`2(Caption = [byname].Caption, WatchID = [byname].WatchID), [byname])"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:56.679 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 21:56:56.689 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 21:56:56.696 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 15264.5971ms.
+2018-12-05 21:56:56.710 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType38`6[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-05 21:56:56.776 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" in 15934.0787ms
+2018-12-05 21:56:56.785 +08:00 [Information] Request finished in 17049.1844ms 200 application/json; charset=utf-8
+2018-12-05 22:00:52.391 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-05 22:00:54.574 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-05 22:00:54.574 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-05 22:00:54.865 +08:00 [Information] Request finished in 294.5452ms 200 
+2018-12-05 22:00:56.187 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-05 22:00:56.300 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-05 22:00:56.322 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.0264ms.
+2018-12-05 22:00:56.382 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-05 22:00:56.683 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 471.9438ms
+2018-12-05 22:00:56.705 +08:00 [Information] Request finished in 2152.791ms 200 application/json; charset=utf-8
+2018-12-05 22:01:01.110 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/News/nav/6  
+2018-12-05 22:01:01.275 +08:00 [Information] Successfully validated the token.
+2018-12-05 22:01:01.318 +08:00 [Information] Route matched with "{action = \"GetNewsNavigationWithUser\", controller = \"News\"}". Executing action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)"
+2018-12-05 22:01:01.368 +08:00 [Information] Authorization was successful.
+2018-12-05 22:01:01.862 +08:00 [Information] Executing action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-12-05 22:01:07.451 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-05 22:01:14.280 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType35`2(CountryName = [navdata].CountryName, CountryID = [navdata].CountryID), new NewsJobsNav() {WatchID = [navdata].WatchID, Caption = [navdata].Caption, CountryName = [navdata].CountryName, CountryID = [navdata].CountryID, LanguageID = [navdata].LanguageID, LanguageName = [navdata].LanguageName})"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:14.295 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType35`2(CountryName = [navdata].CountryName, CountryID = [navdata].CountryID), new NewsJobsNav() {WatchID = [navdata].WatchID, Caption = [navdata].Caption, CountryName = [navdata].CountryName, CountryID = [navdata].CountryID, LanguageID = [navdata].LanguageID, LanguageName = [navdata].LanguageName})"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:14.303 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:14.305 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType36`2(LanguageID = [bylanguage].LanguageID, LanguageName = [bylanguage].LanguageName), [bylanguage])"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:14.305 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType36`2(LanguageID = [bylanguage].LanguageID, LanguageName = [bylanguage].LanguageName), [bylanguage])"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:14.306 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:14.306 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType37`2(Caption = [byname].Caption, WatchID = [byname].WatchID), [byname])"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:14.306 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType37`2(Caption = [byname].Caption, WatchID = [byname].WatchID), [byname])"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:14.306 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:14.794 +08:00 [Information] Executed DbCommand ("118"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 22:01:16.268 +08:00 [Information] Executed DbCommand ("10"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[CountryID]
+FROM [AppUserCountry] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 22:01:17.315 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__appuserid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[LanguageTypeID]
+FROM [AppUserLanguage] AS [x]
+WHERE [x].[AppUserID] = @__appuserid_0"
+2018-12-05 22:01:23.098 +08:00 [Warning] The LINQ expression '"where ({__userCountries_1 => Contains([navdata].CountryID)} OrElse {__userLanguages_2 => Contains(Convert([navdata].LanguageID, Nullable`1))})"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:23.100 +08:00 [Warning] The LINQ expression '"Contains([navdata].CountryID)"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:23.101 +08:00 [Warning] The LINQ expression '"Contains(Convert([navdata].LanguageID, Nullable`1))"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:23.102 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType35`2(CountryName = [navdata].CountryName, CountryID = [navdata].CountryID), new NewsJobsNav() {WatchID = [navdata].WatchID, Caption = [navdata].Caption, CountryName = [navdata].CountryName, CountryID = [navdata].CountryID, LanguageID = [navdata].LanguageID, LanguageName = [navdata].LanguageName})"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:23.106 +08:00 [Warning] The LINQ expression '"where ({__userCountries_1 => Contains([navdata].CountryID)} OrElse {__userLanguages_2 => Contains(Convert([navdata].LanguageID, Nullable`1))})"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:23.106 +08:00 [Warning] The LINQ expression '"Contains([navdata].CountryID)"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:23.107 +08:00 [Warning] The LINQ expression '"Contains(Convert([navdata].LanguageID, Nullable`1))"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:23.107 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType35`2(CountryName = [navdata].CountryName, CountryID = [navdata].CountryID), new NewsJobsNav() {WatchID = [navdata].WatchID, Caption = [navdata].Caption, CountryName = [navdata].CountryName, CountryID = [navdata].CountryID, LanguageID = [navdata].LanguageID, LanguageName = [navdata].LanguageName})"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:23.108 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:23.108 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType36`2(LanguageID = [bylanguage].LanguageID, LanguageName = [bylanguage].LanguageName), [bylanguage])"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:23.108 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType36`2(LanguageID = [bylanguage].LanguageID, LanguageName = [bylanguage].LanguageName), [bylanguage])"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:23.108 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:23.108 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType37`2(Caption = [byname].Caption, WatchID = [byname].WatchID), [byname])"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:23.109 +08:00 [Warning] The LINQ expression '"GroupBy(new <>f__AnonymousType37`2(Caption = [byname].Caption, WatchID = [byname].WatchID), [byname])"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:23.109 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-12-05 22:01:23.119 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_NewsGetNavigation_sel @p0"
+2018-12-05 22:01:29.804 +08:00 [Information] Executed action method "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 27929.7575ms.
+2018-12-05 22:01:29.821 +08:00 [Information] Executing JsonResult, writing value of type '"Newtonsoft.Json.Linq.JArray"'.
+2018-12-05 22:01:29.837 +08:00 [Information] Executed action "LNWCOE.Modules.NEWS.NewsController.GetNewsNavigationWithUser (LNWCOE)" in 28518.3142ms
+2018-12-05 22:01:29.841 +08:00 [Information] Request finished in 28730.9797ms 200 application/json; charset=utf-8

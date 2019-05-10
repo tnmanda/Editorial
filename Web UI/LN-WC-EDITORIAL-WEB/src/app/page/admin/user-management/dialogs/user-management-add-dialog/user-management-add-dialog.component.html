@@ -1,0 +1,84 @@
+<p-dialog [(visible)]="display" [modal]="true" [responsive]="true" [width]="550" [baseZIndex]="10000" [closable]="false">
+    <p-header>
+        <i class="fas fa-user-plus"></i>
+        Add New User
+    </p-header>
+    <form (ngSubmit)="onSave(appUserForm)" [formGroup]="appUserForm" #formDirective="ngForm">
+        <div class="ui-fluid">
+            <div class="container">
+                <br>
+                <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible" role="alert">
+                    {{ errorMessage }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onCloseMessage()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="form-group">
+                  <label for="appUserName">Name</label>
+                  <input  id="appUserName" type="text" class="form-control" pInputText placeholder="Enter name"
+                  formControlName="appUserName" [ngClass]="{ 'is-invalid': isSubmitted && f.appUserName.errors }">
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" class="form-control" pInputText placeholder="Enter email"
+                  formControlName="email" [ngClass]="{ 'is-invalid': isSubmitted && f.email.errors }">
+                </div>
+
+                <div class="form-group">
+                    <label for="genderType">Gender</label>
+                    <p-dropdown id="genderType" [autoWidth]="false" [options]="genderTypes" formControlName="genderType" placeholder="Select Gender"
+                    optionLabel="genderTypeName" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.genderType.errors }"></p-dropdown>
+                </div>
+
+                <div class="form-group">
+                    <label for="operationalRoleType">Role</label>
+                    <p-dropdown id="operationalRoleType" filter="true" [autoWidth]="false" [options]="operationalRoleTypes" formControlName="operationalRoleType" placeholder="Select Role"
+                    optionLabel="operationalRoleName" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.operationalRoleType.errors }"></p-dropdown>
+                </div>
+
+                <div class="form-group">
+                    <label for="office">Office</label>
+                    <p-dropdown id="office" filter="true" [autoWidth]="false" [options]="offices" formControlName="office" placeholder="Select Office"
+                    optionLabel="officeName" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.office.errors }"></p-dropdown>
+                </div>
+
+                <div class="form-group">
+                    <label for="supervisorAppUser">Supervisor</label>
+                    <p-dropdown id="supervisorAppUser" filter="true" [autoWidth]="false" [options]="appUsers" formControlName="supervisorAppUser" placeholder="Select Supervisor"
+                    optionLabel="appUserName" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.supervisorAppUser.errors }"></p-dropdown>
+                </div>
+
+                <div class="form-group">
+                    <label for="appUserName">Offset</label>
+                    <input  id="utcOffset" type="number" class="form-control" pInputText placeholder="Enter offset"
+                    formControlName="utcOffset" [ngClass]="{ 'is-invalid': isSubmitted && f.utcOffset.errors }">
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="isInternal">Is Internal?</label><br>
+                          <p-inputSwitch id="isInternal" binary="true"  formControlName="isInternal"></p-inputSwitch>
+                      </div>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="isInternal">Is Active?</label><br>
+                          <p-inputSwitch id="isActive" binary="true"  formControlName="isActive"></p-inputSwitch>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+          <hr>
+          <div class="text-right">
+                  <button type="submit" pButton label="Submit" class="btn-space"></button>
+                  <button type="button" pButton (click)="onClose()"label="Cancel" class="ui-button-secondary"></button>
+          </div>
+
+
+      </form>
+</p-dialog>
+<p-toast></p-toast>

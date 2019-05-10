@@ -1,0 +1,9 @@
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Admin_\bin\Debug\netcoreapp2.0\LNWCOE.Module.Admin_.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Admin_\bin\Debug\netcoreapp2.0\LNWCOE.Module.Admin_.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Admin_\bin\Debug\netcoreapp2.0\LNWCOE.Module.Admin_.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Admin_\obj\Debug\netcoreapp2.0\LNWCOE.Module.Admin_.csprojAssemblyReference.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Admin_\obj\Debug\netcoreapp2.0\LNWCOE.Module.Admin_.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Admin_\obj\Debug\netcoreapp2.0\LNWCOE.Module.Admin_.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Admin_\obj\Debug\netcoreapp2.0\LNWCOE.Module.Admin_.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Admin_\obj\Debug\netcoreapp2.0\LNWCOE.Module.Admin_.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Admin_\obj\Debug\netcoreapp2.0\LNWCOE.Module.Admin_.pdb

@@ -1,0 +1,48 @@
+<p-dialog [(visible)]="display" [modal]="true" [responsive]="true" [width]="550" [baseZIndex]="10000" [closable]="false">
+  <p-header>
+      <i class="fas fa-plus"></i>
+      Add New Gender
+  </p-header>
+  <form (ngSubmit)="onSave()" >
+      <div class="ui-fluid">
+          <div class="container">
+            <br>
+            <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible" role="alert">
+                {{ errorMessage }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onCloseMessage()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="form-group">
+              <label for="genderTypeName">Name</label>
+              <input  name="genderTypeName" type="text" class="form-control" pInputText placeholder="Enter name" [(ngModel)]="genderType.genderTypeName">
+            </div>
+            <div class="form-group">
+              <label for="genderTypeAbbrev">Abbreviation</label>
+              <input  name="genderTypeAbbrev" type="text" class="form-control" pInputText placeholder="Enter abrreviation" [(ngModel)]="genderType.genderTypeAbbrev">
+            </div>
+              <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="isInternal">Is In List?</label><br>
+                        <p-inputSwitch name="isInternal" [(ngModel)]="genderType.isInList"></p-inputSwitch>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="isInternal">Is Active?</label><br>
+                        <p-inputSwitch name="isActive" [(ngModel)]="genderType.isActive"></p-inputSwitch>
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
+        <hr>
+        <div class="text-right">
+                <button type="submit" pButton label="Submit" class="btn-space"></button>
+                <button type="button" pButton (click)="onClose()"label="Cancel" class="ui-button-secondary"></button>
+        </div>
+    </form>
+</p-dialog>
+

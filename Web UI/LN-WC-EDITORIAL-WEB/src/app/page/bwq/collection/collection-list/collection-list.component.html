@@ -1,0 +1,66 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Collection List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtCollection.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New " class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtCollection [value]="collections" [globalFilterFields]="['collectionName', 'collectionDescription']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'collectionName'">Name <p-sortIcon [field]="'collectionName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'collectionDescription'">Description <p-sortIcon [field]="'collectionDescription'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'sortOrder'">Sort <p-sortIcon [field]="'sortOrder'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-collection>
+              <tr>
+
+                  <td class="td-cell">{{collection.collectionName}}</td>
+                  <td class="td-cell">{{collection.collectionDescription}}</td>
+                  <td class="td-cell">{{collection.sortOrder}}</td>
+                  <td >
+                      <button pButton pTooltip="View Details" tooltipPosition="bottom" type="button" icon="fa fa-eye" class="ui-button-success btn-space" [routerLink]="['./collection-detail', collection.collectionID]"></button>
+                      <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="showEditDialog(collection.collectionID)"></button>
+                      <button pButton pTooltip="Delete" tooltipPosition="bottom" type="button" icon="fa fa-trash" class="ui-button-danger" (click)="showDeleteDialog(collection.collectionID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+</p-panel>
+<p-toast></p-toast>
+
+<!-- Add Collection Dialog -->
+<app-collection-add-dialog [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-collection-add-dialog>
+<!-- Edit Collection Dialog -->
+<div *ngIf="selectedCollection">
+  <app-collection-edit-dialog [display]="displayEditDialog" [selectedCollection]="selectedCollection" (displayChange)="onEditDialogClose($event)"></app-collection-edit-dialog>
+</div>
+<!-- Delete Collection Dialog -->
+<div *ngIf="selectedCollection">
+  <app-collection-delete-dialog [display]="displayDeleteDialog" [selectedCollection]="selectedCollection" (displayChange)="onDeleteDialogClose($event)"></app-collection-delete-dialog>
+</div>
+
+
+

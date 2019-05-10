@@ -1,0 +1,66 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Watch List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtWatches.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtWatches [value]="watches" [globalFilterFields]="['caption', 'comments','language.languageTypeName']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'caption'">Caption<p-sortIcon [field]="'caption'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'comments'">Comments<p-sortIcon [field]="'comments'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'language'">Language<p-sortIcon [field]="'language'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-watch>
+              <tr>
+
+                  <td class="td-cell">{{watch.caption}}</td>
+                  <td class="td-cell">{{watch.comments}}</td>
+                  <td class="td-cell">{{watch.language.languageTypeName}}</td>
+                  <td >
+                      <button pButton pTooltip="Keywords" tooltipPosition="bottom" type="button" icon="fab fa-kickstarter-k" class="ui-button-success btn-space" [routerLink]="['./keyword-list', watch.pkWatchID]"></button>
+                      <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="showEditDialog(watch.pkWatchID)"></button>
+                      <button pButton pTooltip="Delete" tooltipPosition="bottom" type="button" icon="fa fa-trash" class="ui-button-danger" (click)="showDeleteDialog(watch.pkWatchID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add Watch Dialog -->
+<app-watch-add-dialog [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-watch-add-dialog>
+<!-- Edit User Map Dialog -->
+<div *ngIf="selectedWatch">
+  <app-watch-edit-dialog [display]="displayEditDialog" [selectedWatch]="selectedWatch" (displayChange)="onEditDialogClose($event)"></app-watch-edit-dialog>
+</div>
+<!-- Delete Watch Dialog -->
+<div *ngIf="selectedWatch">
+  <app-watch-delete-dialog [display]="displayDeleteDialog" [selectedWatch]="selectedWatch" (displayChange)="onDeleteDialogClose($event)"></app-watch-delete-dialog>
+</div>
+
+<p-toast></p-toast>

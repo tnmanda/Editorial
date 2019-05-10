@@ -1,0 +1,118 @@
+
+<!-- <h2> Investigation Entity Management</h2> -->
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+
+  <div class="row">
+    <div class="col-lg-3">
+        <p-panel >
+            <p-header>
+                <div class="ui-helper-clearfix">
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:3px">Workflow</span>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-right">
+                            <button class="btn-space" (click)="expandAll()"><i class="fas fa-expand"></i></button>
+                          <button (click)="collapseAll()"><i class="fas fa-compress"></i></button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </p-header>
+            <p-tree [value]="investigationEntityTree" [style]="{'width': '100%', 'border':'0', 'padding': '0','height': '610px','max-height': '610px', 'overflow': 'auto'}"
+            selectionMode="single" [(selection)]="selectedNode" [loading]="isTreeLoading" (onNodeSelect)="nodeSelect($event)" ></p-tree>
+        </p-panel>
+    </div>
+    <div class="col-lg-9">
+        <p-panel>
+            <p-header>
+                <div class="ui-helper-clearfix">
+                    <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Entity List ({{ investigationEntities?.length }})</span>
+                </div>
+            </p-header>
+                <br>
+
+
+                    <div class="row">
+                    <div class="col-lg-6">
+                        <div class="ui-inputgroup">
+                            <input type="text" pInputText placeholder="Global Search..." (input)="dtbwq.filterGlobal($event.target.value, 'contains')">
+                            <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+                        </div>
+
+                    </div>
+                  <div class="col-lg-6">
+
+                  </div>
+                </div>
+
+                <br>
+                <p-table #dtbwq [value]="investigationEntities" [globalFilterFields]="['investigationID', 'due', 'investigationStatusName', 'fullName', 'priority','dateCreatedUTC','lastActivityDate','lastActivityBy']" [paginator]="true" [rows]="10" [loading]="isLoading">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th width="5%"></th>
+                            <th width="8%" [pSortableColumn]="'investigationID'">ID <p-sortIcon [field]="'investigationID'"></p-sortIcon></th>
+                            <th width="8%" [pSortableColumn]="'due'"> Due <p-sortIcon [field]="'due'"></p-sortIcon></th>
+                            <th width="10%" [pSortableColumn]="'investigationStatusName'">Status <p-sortIcon [field]="'investigationStatusName'"></p-sortIcon></th>
+                            <th width="15%" [pSortableColumn]="'fullName'">Full Name <p-sortIcon [field]="'fullName'"></p-sortIcon></th>
+                            <th width="8%" [pSortableColumn]="'priority'">Priority <p-sortIcon [field]="'priority'"></p-sortIcon></th>
+                            <th width="15%" [pSortableColumn]="'dateCreatedUTC'">Created Date<p-sortIcon [field]="'dateCreatedUTC'"></p-sortIcon></th>
+                            <th width="15%" [pSortableColumn]="'lastActivityDate'">Last Activity Date <p-sortIcon [field]="'lastActivityDate'"></p-sortIcon></th>
+                            <th width="15%" [pSortableColumn]="'lastActivityBy'">Last Activity By <p-sortIcon [field]="'lastActivityBy'"></p-sortIcon></th>
+                            <th width="5%">Option</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-invEntity>
+                        <tr>
+                            <td class="td-cell">
+                                <div class="text-center">
+                                <div *ngIf="invEntity.lockedBy !== null; else isUnlocked">
+                                    <i class="fas fa-lock" style="color: red" pTooltip="Locked By: {{invEntity.lockedBy}}"></i>
+                                </div>
+                                <ng-template #isUnlocked>
+                                    <i class="fas fa-unlock"></i>
+                                </ng-template>
+                              </div>
+                            </td>
+                            <td class="td-cell">{{invEntity.investigationID}}</td>
+                            <td class="td-cell">
+                              <div *ngIf="invEntity.due < 24; else isDue">
+                                  {{invEntity.due}}
+                              </div>
+                              <ng-template #isDue>
+                                <div style="color: red">{{invEntity.due}}</div>
+                              </ng-template>
+
+                            </td>
+                            <td class="td-cell">{{invEntity.investigationStatusName}}</td>
+                            <td class="td-cell">{{invEntity.fullName}}</td>
+                            <td class="td-cell">{{invEntity.priority}}</td>
+                            <td class="td-cell">{{invEntity.dateCreatedUTC | date: 'MM/dd/yyyy HH:mm:ss a'}}</td>
+                            <td class="td-cell">{{invEntity.lastActivityDate | date: 'MM/dd/yyyy HH:mm:ss a'}}</td>
+                            <td class="td-cell">{{invEntity.lastActivityBy}}</td>
+                            <td >
+                                <div *ngIf="invEntity.lockedBy !== null && invEntity.lockedBy !== globalHelperSrv.getCurrentUserName(); else isUnlockedCurrentUser">
+                                    <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" [disabled]="true"></button>
+                                </div>
+                                <ng-template #isUnlockedCurrentUser>
+                                  <div *ngIf="invEntity.lockedBy === globalHelperSrv.getCurrentUserName(); else isUnlocked2">
+                                      <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="onEdit(invEntity)"></button>
+                                  </div>
+                                </ng-template>
+                                <ng-template #isUnlocked2>
+                                    <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="onEdit(invEntity)"></button>
+                                </ng-template>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+
+
+          </p-panel>
+    </div>
+  </div>
+
+<p-toast></p-toast>

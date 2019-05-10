@@ -1,0 +1,84 @@
+2018-12-11 16:34:25.582 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-11 16:34:28.133 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-12-11 16:34:28.136 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-12-11 16:34:28.138 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-12-11 16:34:28.473 +08:00 [Information] Request finished in 390.2016ms 200 
+2018-12-11 16:34:29.866 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-12-11 16:34:29.866 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-12-11 16:34:29.929 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-12-11 16:34:29.944 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.286ms.
+2018-12-11 16:34:30.047 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-12-11 16:34:30.297 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 420.8995ms
+2018-12-11 16:34:30.316 +08:00 [Information] Request finished in 2229.4866ms 200 application/json; charset=utf-8
+2018-12-11 16:34:30.358 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/favicon.ico  
+2018-12-11 16:34:30.362 +08:00 [Information] Request finished in 4.5613ms 404 
+2018-12-11 16:34:30.719 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-12-11 16:34:33.183 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-11 16:34:35.996 +08:00 [Information] Executed DbCommand ("189"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-12-11 16:34:36.181 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-11 16:34:36.586 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-12-11 16:34:36.841 +08:00 [Information] Executed DbCommand ("16"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-12-11 16:34:36.937 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 6210.8946ms.
+2018-12-11 16:34:36.941 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType11`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-11 16:34:36.961 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 7089.7951ms
+2018-12-11 16:34:36.969 +08:00 [Information] Request finished in 8905.9417ms 200 application/json; charset=utf-8
+2018-12-11 16:34:41.513 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/InvestigationNote  
+2018-12-11 16:34:41.586 +08:00 [Information] Successfully validated the token.
+2018-12-11 16:34:41.598 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"InvestigationNote\"}". Executing action "LNWCOE.Modules.INV.InvestigationNoteController.Get (LNWCOE)"
+2018-12-11 16:34:41.637 +08:00 [Information] Authorization was successful.
+2018-12-11 16:34:41.639 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationNoteController.Get (LNWCOE)" - Validation state: Valid
+2018-12-11 16:34:41.643 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-11 16:34:41.665 +08:00 [Information] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [i].[InvestigationNoteID], [i].[CreatedBy], [i].[DateCreatedUTC], [i].[InvestigationID], [i].[LastUpdatedUTC], [i].[NoteText], [i].[UpdatedBy]
+FROM [InvestigationNote] AS [i]"
+2018-12-11 16:34:41.677 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationNoteController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 37.7588ms.
+2018-12-11 16:34:41.678 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.INV.InvestigationNote, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-11 16:34:41.693 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationNoteController.Get (LNWCOE)" in 95.4382ms
+2018-12-11 16:34:41.694 +08:00 [Information] Request finished in 180.1769ms 200 application/json; charset=utf-8
+2018-12-11 16:41:34.570 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/InvestigationNote/316  
+2018-12-11 16:41:34.570 +08:00 [Information] Successfully validated the token.
+2018-12-11 16:41:35.171 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"InvestigationNote\"}". Executing action "LNWCOE.Modules.INV.InvestigationNoteController.Get (LNWCOE)"
+2018-12-11 16:41:35.172 +08:00 [Information] Authorization was successful.
+2018-12-11 16:41:35.186 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationNoteController.Get (LNWCOE)" with arguments (["316"]) - Validation state: Valid
+2018-12-11 16:41:35.189 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-11 16:41:35.219 +08:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationNoteID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[NoteText], [x].[UpdatedBy]
+FROM [InvestigationNote] AS [x]
+WHERE [x].[InvestigationNoteID] = @__id_0"
+2018-12-11 16:41:35.222 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationNoteController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 35.5326ms.
+2018-12-11 16:41:35.222 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Models.INV.InvestigationNote"'.
+2018-12-11 16:41:35.222 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationNoteController.Get (LNWCOE)" in 51.196ms
+2018-12-11 16:41:35.223 +08:00 [Information] Request finished in 652.9473ms 200 application/json; charset=utf-8
+2018-12-11 17:31:13.949 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-11 17:31:15.683 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/InvestigationStatus/80  
+2018-12-11 17:31:16.155 +08:00 [Information] Successfully validated the token.
+2018-12-11 17:31:16.863 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"InvestigationStatus\"}". Executing action "LNWCOE.Modules.INV.InvestigationStatusController.Get (LNWCOE)"
+2018-12-11 17:31:16.906 +08:00 [Information] Authorization was successful.
+2018-12-11 17:31:17.359 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationStatusController.Get (LNWCOE)" with arguments (["80"]) - Validation state: Valid
+2018-12-11 17:31:18.717 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-11 17:31:19.794 +08:00 [Information] Executed DbCommand ("91"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationStatusID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[InvestigationStatusDescription], [x].[InvestigationStatusName], [x].[IsDefault], [x].[LastUpdatedUTC], [x].[UpdatedBy]
+FROM [InvestigationStatus] AS [x]
+WHERE [x].[InvestigationStatusID] = @__id_0"
+2018-12-11 17:31:19.861 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationStatusController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2487.6286ms.
+2018-12-11 17:31:19.896 +08:00 [Information] Executing ObjectResult, writing value of type '"null"'.
+2018-12-11 17:31:19.910 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationStatusController.Get (LNWCOE)" in 3038.9159ms
+2018-12-11 17:31:19.995 +08:00 [Information] Request finished in 4322.6303ms 204 

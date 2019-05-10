@@ -1,0 +1,40 @@
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\LNWCOE.Module.BWQ.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\LNWCOE.Module.BWQ.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\LNWCOE.Module.BWQ.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\Helper.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\LNWCOE.Models.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\Repository.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\Helper.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\LNWCOE.Models.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\Repository.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\Microsoft.IdentityModel.Tokens.xml
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\obj\Release\netcoreapp2.0\LNWCOE.Module.BWQ.csprojAssemblyReference.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\obj\Release\netcoreapp2.0\LNWCOE.Module.BWQ.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\obj\Release\netcoreapp2.0\LNWCOE.Module.BWQ.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\obj\Release\netcoreapp2.0\LNWCOE.Module.BWQ.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\obj\Release\netcoreapp2.0\LNWCOE.Module.BWQ.csproj.CopyComplete
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\obj\Release\netcoreapp2.0\LNWCOE.Module.BWQ.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.BWQ\obj\Release\netcoreapp2.0\LNWCOE.Module.BWQ.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\LNWCOE.Module.BWQ.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\LNWCOE.Module.BWQ.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\LNWCOE.Module.BWQ.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\Helper.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\LNWCOE.Models.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\Repository.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\Helper.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\LNWCOE.Models.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\Repository.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\Microsoft.IdentityModel.Tokens.xml
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\bin\Release\netcoreapp2.0\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\obj\Release\netcoreapp2.0\LNWCOE.Module.BWQ.csprojAssemblyReference.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\obj\Release\netcoreapp2.0\LNWCOE.Module.BWQ.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\obj\Release\netcoreapp2.0\LNWCOE.Module.BWQ.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\obj\Release\netcoreapp2.0\LNWCOE.Module.BWQ.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\obj\Release\netcoreapp2.0\LNWCOE.Module.BWQ.csproj.CopyComplete
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\obj\Release\netcoreapp2.0\LNWCOE.Module.BWQ.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.BWQ\obj\Release\netcoreapp2.0\LNWCOE.Module.BWQ.pdb

@@ -1,0 +1,8 @@
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Auth\bin\Debug\netcoreapp2.1\LNWCOE.Module.Auth.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Auth\bin\Debug\netcoreapp2.1\LNWCOE.Module.Auth.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Auth\bin\Debug\netcoreapp2.1\LNWCOE.Module.Auth.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Auth\obj\Debug\netcoreapp2.1\LNWCOE.Module.Auth.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Auth\obj\Debug\netcoreapp2.1\LNWCOE.Module.Auth.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Auth\obj\Debug\netcoreapp2.1\LNWCOE.Module.Auth.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Auth\obj\Debug\netcoreapp2.1\LNWCOE.Module.Auth.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Auth\obj\Debug\netcoreapp2.1\LNWCOE.Module.Auth.pdb

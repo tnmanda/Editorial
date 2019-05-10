@@ -1,0 +1,153 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+
+<div class="nav-parent">
+
+<nav>
+    <div class="nav nav-tabs " id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-page-tab" data-toggle="tab" href="#nav-page" role="tab" aria-controls="nav-page" aria-selected="true"><i class="fas fa-file-alt"></i> Pages</a>
+      <a class="nav-item nav-link" id="nav-group-tab" data-toggle="tab" href="#nav-group" role="tab" aria-controls="nav-group" aria-selected="false"><i class="fas fa-copy"></i> Groups</a>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-page" role="tabpanel" aria-labelledby="nav-page-tab">
+      <br>
+      <p-panel>
+        <p-header>
+            <div class="ui-helper-clearfix">
+                <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Page List</span>
+            </div>
+        </p-header>
+            <br>
+            <div class="row">
+            <div class="col-lg-6">
+                <div class="ui-inputgroup">
+                    <input type="text" pInputText placeholder="Global Search..." (input)="dtPage.filterGlobal($event.target.value, 'contains')">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+                </div>
+
+                </div>
+              <div class="col-lg-6">
+                  <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+              </div>
+            </div>
+
+            <br>
+            <p-table #dtPage [value]="pages" [globalFilterFields]="['pageName', 'pagesDescription','fullPath','pagesGroupsName']" [paginator]="true" [rows]="10">
+                <ng-template pTemplate="header">
+                    <tr>
+
+                        <th [pSortableColumn]="'pageName'">Name <p-sortIcon [field]="'pageName'"></p-sortIcon></th>
+                        <th [pSortableColumn]="'pagesDescription'">Description <p-sortIcon [field]="'pagesDescription'"></p-sortIcon></th>
+                        <th [pSortableColumn]="'fullPath'">Full Path <p-sortIcon [field]="'fullPath'"></p-sortIcon></th>
+                        <th [pSortableColumn]="'pagesGroupsName'">Group <p-sortIcon [field]="'pagesGroupsName'"></p-sortIcon></th>
+                        <th width="8%" [pSortableColumn]="'isActive'">Active <p-sortIcon [field]="'isActive'"></p-sortIcon></th>
+                        <th width="10%">Option</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-page>
+                    <tr>
+
+                        <td class="td-cell">{{page.pageName}}</td>
+                        <td class="td-cell">{{page.pagesDescription}}</td>
+                        <td class="td-cell">{{page.fullPath}}</td>
+                        <td class="td-cell">{{page.pagesGroupsName}}</td>
+                        <td class="td-cell">
+                            <div *ngIf="page.isActive; else isDisabled">
+                                <div class="badge badge-pill badge-success">{{page.isActive}}</div>
+                            </div>
+                            <ng-template #isDisabled>
+                                <div class="badge badge-pill badge-secondary">{{page.isActive}}</div>
+                            </ng-template>
+                        </td>
+                        <td >
+                            <button pButton type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="showEditDialog(page.pagesID)"></button>
+                            <button pButton type="button" icon="fa fa-trash" class="ui-button-danger" (click)="showDeleteDialog(page.pagesID)"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+        </p-table>
+      </p-panel>
+    </div>
+    <div class="tab-pane fade" id="nav-group" role="tabpanel" aria-labelledby="nav-group-tab">
+        <br>
+        <p-panel>
+            <p-header>
+                <div class="ui-helper-clearfix">
+                    <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Group List</span>
+                </div>
+            </p-header>
+            <br>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="ui-inputgroup">
+                        <input type="text" pInputText placeholder="Global Search..." (input)="dtPageGroup.filterGlobal($event.target.value, 'contains')">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+                    </div>
+
+                </div>
+              <div class="col-lg-6">
+                  <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showGroupAddDialog()"></button>
+              </div>
+            </div>
+
+            <br>
+            <p-table #dtPageGroup [value]="pageGroups" [globalFilterFields]="['pagesGroupsName','pagesGroupsDescription']" [paginator]="true" [rows]="10">
+                <ng-template pTemplate="header">
+                    <tr>
+
+                        <th [pSortableColumn]="'pagesGroupsName'">Name <p-sortIcon [field]="'pagesGroupsName'"></p-sortIcon></th>
+                        <th [pSortableColumn]="'pagesGroupsDescription'">Description <p-sortIcon [field]="'pagesGroupsDescription'"></p-sortIcon></th>
+                        <th width="10%" [pSortableColumn]="'sortOrder'">Sort <p-sortIcon [field]="'sortOrder'"></p-sortIcon></th>
+                        <th width="10%">Option</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-pageGroup>
+                    <tr>
+                        <td class="td-cell">{{pageGroup.pagesGroupsName}}</td>
+                        <td class="td-cell">{{pageGroup.pagesGroupsDescription}}</td>
+                        <td class="td-cell">{{pageGroup.sortOrder}}</td>
+                        <td >
+                            <button pButton type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="showGroupEditDialog(pageGroup.pagesGroupsID)"></button>
+                            <button pButton type="button" icon="fa fa-trash" class="ui-button-danger" (click)="showGroupDeleteDialog(pageGroup.pagesGroupsID)"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+
+          </p-panel>
+    </div>
+</div>
+</div>
+
+<!-- Add Page Dialog -->
+<app-page-add-dialog [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-page-add-dialog>
+
+<!-- Edit Page Dialog -->
+<div *ngIf="selectedPage">
+  <app-page-edit-dialog [display]="displayEditDialog" [selectedPage]="selectedPage" (displayChange)="onEditDialogClose($event)"></app-page-edit-dialog>
+</div>
+
+<!-- Delete Page Dialog -->
+<div *ngIf="selectedPage">
+  <app-page-delete-dialog [display]="displayDeleteDialog" [selectedPage]="selectedPage" (displayChange)="onDeleteDialogClose($event)"></app-page-delete-dialog>
+</div>
+
+<!-- Add Page Group Dialog -->
+<app-page-group-add-dialog [display]="displayGroupAddDialog" (displayChange)="onGroupAddDialogClose($event)"></app-page-group-add-dialog>
+
+<!-- Edit Page Group Dialog -->
+<div *ngIf="selectedPageGroup">
+  <app-page-group-edit-dialog [display]="displayGroupEditDialog" [selectedPageGroup]="selectedPageGroup" (displayChange)="onGroupEditDialogClose($event)"></app-page-group-edit-dialog>
+</div>
+
+<!-- Delete Page Group Dialog -->
+<div *ngIf="selectedPageGroup">
+  <app-page-group-delete-dialog [display]="displayGroupDeleteDialog" [selectedPageGroup]="selectedPageGroup" (displayChange)="onGroupDeleteDialogClose($event)"></app-page-group-delete-dialog>
+</div>
+
+
+<p-toast></p-toast>
+
+

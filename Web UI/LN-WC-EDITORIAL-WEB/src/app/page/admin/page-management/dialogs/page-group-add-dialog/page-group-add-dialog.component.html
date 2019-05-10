@@ -1,0 +1,43 @@
+<p-dialog *ngIf="display" [(visible)]="display" [modal]="true" [responsive]="true" [width]="550" [baseZIndex]="10000" [closable]="false">
+    <p-header>
+        <i class="fas fa-plus"></i>
+        Add New Group
+    </p-header>
+    <form (ngSubmit)="onSave(pageGroupForm)" [formGroup]="pageGroupForm" #formDirective="ngForm">
+        <div class="ui-fluid">
+            <div class="container">
+                <br>
+                <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible" role="alert">
+                    {{ errorMessage }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onCloseMessage()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="form-group">
+                  <label for="pagesGroupsName">Name</label>
+                  <input  name="pagesGroupsName" type="text" class="form-control" pInputText placeholder="Enter name"
+                  formControlName="pagesGroupsName" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.pagesGroupsName.errors }">
+                </div>
+
+                <div class="form-group">
+                  <label for="pagesGroupsDescription">Description</label>
+                  <textarea pInputTextarea [rows]="3" name="pagesGroupsDescription" class="form-control" placeholder="Enter description"
+                  formControlName="pagesGroupsDescription" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.pagesGroupsDescription.errors }"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="sortOrder">Sort Order</label>
+                    <input  name="sortOrder" type="text" class="form-control" pInputText placeholder="Enter Order Number"
+                    formControlName="sortOrder" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.sortOrder.errors }">
+                  </div>
+            </div>
+        </div>
+          <hr>
+          <div class="text-right">
+            <button type="submit" pButton label="Submit" class="btn-space"></button>
+            <button type="button" pButton (click)="onClose()"label="Cancel" class="ui-button-secondary"></button>
+          </div>
+      </form>
+  </p-dialog>
+

@@ -1,0 +1,71 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Absence Type List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtAppUser.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtAppUser [value]="absenceTypes" [globalFilterFields]="['absenceTypeName', 'absenceTypeValue']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'absenceTypeName'">Name <p-sortIcon [field]="'absenceTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'absenceTypeValue'">Value <p-sortIcon [field]="'absenceTypeValue'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isInList'">InList <p-sortIcon [field]="'isInList'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isActive'">Active <p-sortIcon [field]="'isActive'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-absenceType>
+              <tr>
+
+                  <td class="td-cell">{{absenceType.absenceTypeName}}</td>
+                  <td class="td-cell">{{absenceType.absenceTypeValue}}</td>
+                  <td class="td-cell">
+                    <div class="badge badge-pill badge-secondary">{{absenceType.isInList}}</div>
+                  </td>
+                  <td class="td-cell"><div class="badge badge-pill badge-secondary">{{absenceType.isActive}}</div></td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-edit" class="ui-button-secondary btn-space" (click)="showEditDialog(absenceType.absenceTypeID)"></button>
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showDeleteDialog(absenceType.absenceTypeID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add Absence Type Dialog -->
+<app-absence-type-add-dialog [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-absence-type-add-dialog>
+<!-- Edit Absence Type Dialog -->
+<div *ngIf="selectedAbsenceType">
+  <app-absence-type-edit-dialog [display]="displayEditDialog" [selectedAbsenceType]="selectedAbsenceType" (displayChange)="onEditDialogClose($event)"></app-absence-type-edit-dialog>
+</div>
+<!-- Delete Absence Type Dialog -->
+<div *ngIf="selectedAbsenceType">
+  <app-absence-type-delete-dialog [display]="displayDeleteDialog" [selectedAbsenceType]="selectedAbsenceType" (displayChange)="onDeleteDialogClose($event)"></app-absence-type-delete-dialog>
+</div>
+
+
+
+<p-toast></p-toast>

@@ -1,0 +1,8 @@
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Alerts\bin\Debug\netcoreapp2.1\LNWCOE.Module.Alerts.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Alerts\bin\Debug\netcoreapp2.1\LNWCOE.Module.Alerts.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Alerts\bin\Debug\netcoreapp2.1\LNWCOE.Module.Alerts.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Alerts\obj\Debug\netcoreapp2.1\LNWCOE.Module.Alerts.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Alerts\obj\Debug\netcoreapp2.1\LNWCOE.Module.Alerts.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Alerts\obj\Debug\netcoreapp2.1\LNWCOE.Module.Alerts.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Alerts\obj\Debug\netcoreapp2.1\LNWCOE.Module.Alerts.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Alerts\obj\Debug\netcoreapp2.1\LNWCOE.Module.Alerts.pdb

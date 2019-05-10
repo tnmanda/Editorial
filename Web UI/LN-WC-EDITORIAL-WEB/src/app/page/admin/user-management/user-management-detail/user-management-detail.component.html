@@ -1,0 +1,791 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel header="Personal Information:" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+  <br>
+    <div class="row" *ngIf="selectedAppUser">
+        <!-- <div class="col-lg-12"> -->
+          <div class="col-lg-2">
+            <div class="text-center">
+                <img src="../../../assets/images/profile-placeholder.png" class="img-thumbnail" width="200" height="200" alt="">
+            </div>
+
+          </div>
+          <div class="col-lg-4">
+              <div class="form-group">
+                <label for="appUserName">Name</label>
+                <input  type="text" class="form-control" pInputText [(ngModel)]="selectedAppUser.appUserName" readonly>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input  name="email" type="text" class="form-control" pInputText [(ngModel)]="selectedAppUser.email" readonly>
+              </div>
+              <div class="form-group">
+                  <label for="genderTypeName">Gender</label>
+                  <input  name="genderTypeName" type="text" class="form-control" pInputText [(ngModel)]="selectedAppUser.genderName" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="isInternal">Is Active?</label><br>
+                    <p-inputSwitch id="isActive"  disabled="true" [(ngModel)]="selectedAppUser.isActive"></p-inputSwitch>
+                </div>
+          </div>
+
+          <div class="col-lg-4">
+              <div class="form-group">
+                  <label for="role">Role</label>
+                  <input  name="role" type="text" class="form-control" pInputText [(ngModel)]="selectedAppUser.operationalRoleName" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="office">Office</label>
+                  <input  name="office" type="text" class="form-control" pInputText [(ngModel)]="selectedAppUser.officeName" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="supervisor">Supervisor</label>
+                    <input  name="supervisor" type="text" class="form-control" pInputText [(ngModel)]="selectedAppUser.supervisorName" readonly>
+                  </div>
+                  <div class="form-group">
+                      <label for="isInternal">Is Internal?</label><br>
+                      <p-inputSwitch id="isInternal"  disabled="true" [(ngModel)]="selectedAppUser.isInternal"></p-inputSwitch>
+                  </div>
+                  <div class="text-right">
+                    <button pButton type="button" label="Back" class="ui-button-secondary" (click)="onBack()"></button>
+                </div>
+          </div>
+        <!-- </div> -->
+      </div>
+      <br>
+</p-panel>
+
+  <nav>
+    <div class="nav nav-tabs " id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-absence-tab" data-toggle="tab" href="#nav-absence" role="tab" aria-controls="nav-absence" aria-selected="true"><i class="fas fa-list-alt"></i> Absence</a>
+      <a class="nav-item nav-link" id="nav-address-tab" data-toggle="tab" href="#nav-address" role="tab" aria-controls="nav-address" aria-selected="false"><i class="fas fa-map-marked-alt"></i> Address</a>
+      <a class="nav-item nav-link" id="nav-certificate-tab" data-toggle="tab" href="#nav-certificate" role="tab" aria-controls="nav-certificate" aria-selected="false"><i class="fas fa-certificate"></i> Certificate</a>
+      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><i class="fas fa-phone"></i> Contact</a>
+      <a class="nav-item nav-link" id="nav-contract-tab" data-toggle="tab" href="#nav-contract" role="tab" aria-controls="nav-contract" aria-selected="false"><i class="fas fa-file-contract"></i> Contract</a>
+      <a class="nav-item nav-link" id="nav-country-tab" data-toggle="tab" href="#nav-country" role="tab" aria-controls="nav-country" aria-selected="false"><i class="fas fa-globe-asia"></i> Country</a>
+      <a class="nav-item nav-link" id="nav-education-tab" data-toggle="tab" href="#nav-education" role="tab" aria-controls="nav-education" aria-selected="false"><i class="fas fa-graduation-cap"></i> Education</a>
+      <a class="nav-item nav-link" id="nav-employmentrecord-tab" data-toggle="tab" href="#nav-employmentrecord" role="tab" aria-controls="nav-employmentrecord" aria-selected="false"><i class="fas fa-address-book"></i> Employment Record</a>
+      <a class="nav-item nav-link" id="nav-function-tab" data-toggle="tab" href="#nav-function" role="tab" aria-controls="nav-function" aria-selected="false"><i class="fas fa-wrench"></i> Function</a>
+      <a class="nav-item nav-link" id="nav-role-tab" data-toggle="tab" href="#nav-role" role="tab" aria-controls="nav-role" aria-selected="false"><i class="fas fa-user-cog"></i> Role</a>
+      <a class="nav-item nav-link" id="nav-language-tab" data-toggle="tab" href="#nav-language" role="tab" aria-controls="nav-language" aria-selected="false"><i class="fas fa-language"></i> Language</a>
+      <a class="nav-item nav-link" id="nav-note-tab" data-toggle="tab" href="#nav-note" role="tab" aria-controls="nav-note" aria-selected="false"><i class="fas fa-sticky-note"></i> Note</a>
+      <!-- <a class="nav-item nav-link" id="nav-researchteam-tab" data-toggle="tab" href="#nav-researchteam" role="tab" aria-controls="nav-researchteam" aria-selected="false"><i class="fas fa-user-friends"></i> Research Team</a> -->
+      <a class="nav-item nav-link" id="nav-team-tab" data-toggle="tab" href="#nav-team" role="tab" aria-controls="nav-team" aria-selected="false"><i class="fas fa-users"></i> Team</a>
+      <a class="nav-item nav-link" id="nav-teamassignment-tab" data-toggle="tab" href="#nav-teamassignment" role="tab" aria-controls="nav-teamassignment" aria-selected="false"><i class="fas fa-user-check"></i> Team Assignment</a>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-absence" role="tabpanel" aria-labelledby="nav-absence-tab">
+      <br>
+
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Search..." (input)="dtAppUserAbsence.filterGlobal($event.target.value, 'contains')">
+                <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+            </div>
+
+        </div>
+      <div class="col-lg-6">
+          <button pButton type="button" icon="pi pi-plus" label="Add Absence" class="ui-button-success" style="float:right" (click)="showAppUserAbsenceAddDialog()"></button>
+      </div>
+      </div>
+      <hr>
+      <p-table #dtAppUserAbsence [value]="appUserAbsences" [globalFilterFields]="['absenceType.absenceTypeName','notes']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'absenceTypeName'">Absence Type <p-sortIcon [field]="'absenceTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'notes'">Notes <p-sortIcon [field]="'notes'"></p-sortIcon></th>
+
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-appUserAbsence>
+              <tr>
+
+                  <td class="td-cell">{{appUserAbsence.absenceType.absenceTypeName}}</td>
+                  <td class="td-cell">{{appUserAbsence.notes}}</td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showAppUserAbsenceDeleteDialog(appUserAbsence.appUserAbsenceID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+      <br>
+    </div>
+    <div class="tab-pane fade" id="nav-address" role="tabpanel" aria-labelledby="nav-address-tab">
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Search..." (input)="dtAppUserAddress.filterGlobal($event.target.value, 'contains')">
+                <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+            </div>
+
+        </div>
+      <div class="col-lg-6">
+          <button pButton type="button" icon="pi pi-plus" label="Add Address" class="ui-button-success" style="float:right" (click)="showAppUserAddressAddDialog()"></button>
+      </div>
+      </div>
+      <hr>
+      <p-table #dtAppUserAddress [value]="appUserAddresses" [globalFilterFields]="['addressType.addressTypeName','address1','address2','address3','city','provinceStateRegion','postalCode','country.countryName']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'addressTypeName'">Address Type <p-sortIcon [field]="'addressTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'address1'">Address 1 <p-sortIcon [field]="'address1'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'address2'">Address 2 <p-sortIcon [field]="'address2'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'address3'">Address 3 <p-sortIcon [field]="'address3'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'city'">City <p-sortIcon [field]="'city'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'provinceStateRegion'">Province/State/Region <p-sortIcon [field]="'provinceStateRegion'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'postalCode'">Postal Code <p-sortIcon [field]="'postalCode'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'country'">Country <p-sortIcon [field]="'country'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-appUserAddress>
+              <tr>
+
+                  <td class="td-cell">{{appUserAddress.addressType.addressTypeName}}</td>
+                  <td class="td-cell">{{appUserAddress.address1}}</td>
+                  <td class="td-cell">{{appUserAddress.address2}}</td>
+                  <td class="td-cell">{{appUserAddress.address3}}</td>
+                  <td class="td-cell">{{appUserAddress.city}}</td>
+                  <td class="td-cell">{{appUserAddress.provinceStateRegion}}</td>
+                  <td class="td-cell">{{appUserAddress.postalCode}}</td>
+                  <td class="td-cell">{{appUserAddress.country.countryName}}</td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showAppUserAddressDeleteDialog(appUserAddress.appUserAddressID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+      <br>
+    </div>
+    <div class="tab-pane fade" id="nav-certificate" role="tabpanel" aria-labelledby="nav-certificate-tab">
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Search..." (input)="dtAppUserCertificate.filterGlobal($event.target.value, 'contains')">
+                <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+            </div>
+
+        </div>
+      <div class="col-lg-6">
+          <button pButton type="button" icon="pi pi-plus" label="Add Certificate" class="ui-button-success" style="float:right" (click)="showAppUserCertificateAddDialog()"></button>
+      </div>
+      </div>
+      <hr>
+      <p-table #dtAppUserCertificate [value]="appUserCertificates" [globalFilterFields]="['certificateType.certificateTypeName']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'certificateTypeName'">Certificate Type<p-sortIcon [field]="'certificateTypeName'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-appUserCertificate>
+              <tr>
+                  <td class="td-cell">{{appUserCertificate.certificateType.certificateTypeName}}</td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showAppUserCertificateDeleteDialog(appUserCertificate.appUserCertificateID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+      <br>
+    </div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Search..." (input)="dtAppUserContact.filterGlobal($event.target.value, 'contains')">
+                <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+            </div>
+
+        </div>
+      <div class="col-lg-6">
+          <button pButton type="button" icon="pi pi-plus" label="Add Contact" class="ui-button-success" style="float:right" (click)="showAppUserContactAddDialog()"></button>
+      </div>
+      </div>
+      <hr>
+      <p-table #dtAppUserContact [value]="appUserContacts" [globalFilterFields]="['contactType.contactTypeName','contactTypeValue']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'contactTypeName'">Contact Type <p-sortIcon [field]="'contactTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'contactTypeValue'">Value <p-sortIcon [field]="'contactTypeValue'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-appUserContact>
+              <tr>
+                  <td class="td-cell">{{appUserContact.contactType.contactTypeName}}</td>
+                  <td class="td-cell">{{appUserContact.contactTypeValue}}</td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showAppUserContactDeleteDialog(appUserContact.appUserContactID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+      <br>
+    </div>
+    <div class="tab-pane fade" id="nav-contract" role="tabpanel" aria-labelledby="nav-contract-tab">
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Search..." (input)="dtAppUserContract.filterGlobal($event.target.value, 'contains')">
+                <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+            </div>
+
+        </div>
+      <div class="col-lg-6">
+          <button pButton type="button" icon="pi pi-plus" label="Add Contract" class="ui-button-success" style="float:right" (click)="showAppUserContractAddDialog()"></button>
+      </div>
+      </div>
+      <hr>
+      <p-table #dtAppUserContract [value]="appUserContracts" [globalFilterFields]="['contractType.contractTypeName','startDateUTC','terminationDateUTC','movedToProductionUTC']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'contractTypeName'">Name <p-sortIcon [field]="'contractTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'startDateUTC'">Start Date <p-sortIcon [field]="'startDateUTC'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'terminationDateUTC'">Termination Date <p-sortIcon [field]="'terminationDateUTC'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'movedToProductionUTC'">Moved To Production Date <p-sortIcon [field]="'movedToProductionUTC'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-appUserContract>
+              <tr>
+                  <td class="td-cell">{{appUserContract.contractType.contractTypeName}}</td>
+                  <td class="td-cell">{{appUserContract.startDateUTC | date: 'MM/dd/yyyy'}}</td>
+                  <td class="td-cell">{{appUserContract.terminationDateUTC | date: 'MM/dd/yyyy'}}</td>
+                  <td class="td-cell">{{appUserContract.movedToProductionUTC | date: 'MM/dd/yyyy'}}</td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showAppUserContractDeleteDialog(appUserContract.appUserContractID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+      <br>
+    </div>
+    <div class="tab-pane fade" id="nav-country" role="tabpanel" aria-labelledby="nav-country-tab">
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Search..." (input)="dtAppUserCountry.filterGlobal($event.target.value, 'contains')">
+                <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+            </div>
+
+        </div>
+      <div class="col-lg-6">
+          <button pButton type="button" icon="pi pi-plus" label="Add Country" class="ui-button-success" style="float:right" (click)="showAppUserCountryAddDialog()"></button>
+      </div>
+      </div>
+      <hr>
+      <p-table #dtAppUserCountry [value]="appUserCountries" [globalFilterFields]="['country.countryName']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th [pSortableColumn]="'country.countryName'">Country<p-sortIcon [field]="'country.countryName'"></p-sortIcon></th>
+                  <th width="10%" [pSortableColumn]="'isLocked'">Is Locked<p-sortIcon [field]="'isLocked'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-appUserCountry>
+              <tr>
+                  <td class="td-cell">{{appUserCountry.country.countryName}}</td>
+                  <td class="td-cell">{{appUserCountry.isLocked}}</td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showAppUserCountryDeleteDialog(appUserCountry.appUserCountryID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+      <br>
+    </div>
+    <div class="tab-pane fade" id="nav-education" role="tabpanel" aria-labelledby="nav-education-tab">
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Search..." (input)="dtAppUserEducation.filterGlobal($event.target.value, 'contains')">
+                <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+            </div>
+
+        </div>
+      <div class="col-lg-6">
+          <button pButton type="button" icon="pi pi-plus" label="Add Education" class="ui-button-success" style="float:right" (click)="showAppUserEducationAddDialog()"></button>
+      </div>
+      </div>
+      <hr>
+      <p-table #dtAppUserEducation [value]="appUserEducations" [globalFilterFields]="['educationType.educationName']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'educationName'">Education Type <p-sortIcon [field]="'educationName'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-appUserEducation>
+              <tr>
+                  <td class="td-cell">{{appUserEducation.educationType.educationName}}</td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showAppUserEducationDeleteDialog(appUserEducation.appUserEducationID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+      <br>
+    </div>
+    <div class="tab-pane fade" id="nav-employmentrecord" role="tabpanel" aria-labelledby="nav-employmentrecord-tab">
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Search..." (input)="dtAppUserEmploymentRecord.filterGlobal($event.target.value, 'contains')">
+                <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+            </div>
+
+        </div>
+      <div class="col-lg-6">
+          <button pButton type="button" icon="pi pi-plus" label="Add Employment Record" class="ui-button-success" style="float:right" (click)="showAppUserEmploymentRecordAddDialog()"></button>
+      </div>
+      </div>
+      <hr>
+      <p-table #dtAppUserEmploymentRecord [value]="appUserEmploymentRecords" [globalFilterFields]="['contractType.contractTypeName','departureType.departureTypeName','departureDateUTC','movedToProductionUTC']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'contractTypeName'">Contract Type <p-sortIcon [field]="'contractTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'departureTypeName'">Departure Type <p-sortIcon [field]="'departureTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'departureDateUTC'">Departure Date <p-sortIcon [field]="'departureDateUTC'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'movedToProductionUTC'">Moved To Production Date <p-sortIcon [field]="'movedToProductionUTC'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'isReplaced'">Is Replaced <p-sortIcon [field]="'isReplaced'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'isEligibleRehire'"> Is Eligible Rehire <p-sortIcon [field]="'isEligibleRehire'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-appUserEmploymentRecord>
+              <tr>
+                  <td class="td-cell">{{appUserEmploymentRecord.contractType.contractTypeName}}</td>
+                  <td class="td-cell">{{appUserEmploymentRecord.departureType.departureTypeName}}</td>
+                  <td class="td-cell">{{appUserEmploymentRecord.departureDateUTC | date: 'MM/dd/yyyy'}}</td>
+                  <td class="td-cell">{{appUserEmploymentRecord.movedToProductionUTC | date: 'MM/dd/yyyy'}}</td>
+                  <td class="td-cell">{{appUserEmploymentRecord.isReplaced}}</td>
+                  <td class="td-cell">{{appUserEmploymentRecord.isEligibleRehire}}</td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showAppUserEmploymentRecordDeleteDialog(appUserEmploymentRecord.appUserEmploymentRecordID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+      <br>
+    </div>
+    <div class="tab-pane fade" id="nav-function" role="tabpanel" aria-labelledby="nav-function-tab">
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Search..." (input)="dtAppUserFunction.filterGlobal($event.target.value, 'contains')">
+                <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+            </div>
+
+        </div>
+      <div class="col-lg-6">
+          <button pButton type="button" icon="pi pi-plus" label="Add Function" class="ui-button-success" style="float:right" (click)="showAppUserFunctionAddDialog()"></button>
+      </div>
+      </div>
+      <hr>
+      <p-table #dtAppUserFunction [value]="appUserFunctions" [globalFilterFields]="['functionType.functionTypeName']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'functionTypeName'">Function Type <p-sortIcon [field]="'functionTypeName'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-appUserFunction>
+              <tr>
+                  <td class="td-cell">{{appUserFunction.functionType.functionTypeName}}</td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showAppUserFunctionDeleteDialog(appUserFunction.appUserFunctionID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+      <br>
+    </div>
+    <div class="tab-pane fade" id="nav-role" role="tabpanel" aria-labelledby="nav-role-tab">
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Search..." (input)="dtAppUserInRole.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6" *ngIf="appUserInRoles?.length === 0">
+            <button pButton type="button" icon="pi pi-plus" label="Add Role" class="ui-button-success" style="float:right" (click)="showAppUserInRoleAddDialog()"></button>
+        </div>
+        </div>
+        <hr>
+        <p-table #dtAppUserInRole [value]="appUserInRoles" [globalFilterFields]="['roleType.roleTypeName']" [paginator]="true" [rows]="10">
+            <ng-template pTemplate="header">
+                <tr>
+
+                    <th [pSortableColumn]="'roleType.roleTypeName'">Name <p-sortIcon [field]="'roleTypeName'"></p-sortIcon></th>
+                    <th width="10%">Option</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-appUserInRole>
+                <tr>
+                    <td class="td-cell">{{appUserInRole.roleType.roleTypeName}}</td>
+                    <td >
+                        <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showAppUserInRoleDeleteDialog(appUserInRole.appUserInRoleID)"></button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+        <br>
+    </div>
+    <div class="tab-pane fade" id="nav-language" role="tabpanel" aria-labelledby="nav-language-tab">
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Search..." (input)="dtAppUserLanguage.filterGlobal($event.target.value, 'contains')">
+                <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+            </div>
+
+        </div>
+      <div class="col-lg-6">
+          <button pButton type="button" icon="pi pi-plus" label="Add Language" class="ui-button-success" style="float:right" (click)="showAppUserLanguageAddDialog()"></button>
+      </div>
+      </div>
+      <hr>
+      <p-table #dtAppUserLanguage [value]="appUserLanguages" [globalFilterFields]="['languageType.languageTypeName','proficiencyType.proficiencyTypeName','isMonitored']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'languageTypeName'">Language Type <p-sortIcon [field]="'languageTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'proficiencyTypeName'">Proficiency Type <p-sortIcon [field]="'proficiencyTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'isMonitored'">Is Monitored <p-sortIcon [field]="'isMonitored'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-appUserLanguage>
+              <tr>
+                  <td class="td-cell">{{appUserLanguage.languageType.languageTypeName}}</td>
+                  <td class="td-cell">{{appUserLanguage.proficiencyType.proficiencyTypeName}}</td>
+                  <td class="td-cell">{{appUserLanguage.isMonitored}}</td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showAppUserLanguageDeleteDialog(appUserLanguage.appUserLanguageID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+      <br>
+    </div>
+    <div class="tab-pane fade" id="nav-note" role="tabpanel" aria-labelledby="nav-note-tab">
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Search..." (input)="dtAppUserNote.filterGlobal($event.target.value, 'contains')">
+                <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+            </div>
+
+        </div>
+      <div class="col-lg-6">
+          <button pButton type="button" icon="pi pi-plus" label="Add Note" class="ui-button-success" style="float:right" (click)="showAppUserNoteAddDialog()"></button>
+      </div>
+      </div>
+      <hr>
+      <p-table #dtAppUserNote [value]="appUserNotes" [globalFilterFields]="['notes']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th [pSortableColumn]="'notes'">Notes <p-sortIcon [field]="'notes'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-appUserNote>
+              <tr>
+                  <td class="td-cell">{{appUserNote.notes}}</td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showAppUserNoteDeleteDialog(appUserNote.appUserNoteID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+      <br>
+    </div>
+
+    <!-- (APP USER RESEARCH TEAM) Temporary Disable, Need clarification if still included.. -->
+
+    <!-- <div class="tab-pane fade" id="nav-researchteam" role="tabpanel" aria-labelledby="nav-researchteam-tab">
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Search..." (input)="dtAppUserResearchTeam.filterGlobal($event.target.value, 'contains')">
+                <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+            </div>
+
+        </div>
+      <div class="col-lg-6">
+          <button pButton type="button" icon="pi pi-plus" label="Add Research Team" class="ui-button-success" style="float:right" (click)="showAppUserResearchTeamAddDialog()"></button>
+      </div>
+      </div>
+      <hr>
+      <p-table #dtAppUserResearchTeam [value]="appUserResearchTeams" [globalFilterFields]="['team.teamName','assignmentType.assignmentTypeName','isDone']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+                <th [pSortableColumn]="'leadUser.appUserName'">User Lead <p-sortIcon [field]="'leadUser.appUserName'"></p-sortIcon></th>
+                <th [pSortableColumn]="'languageType.languageTypeName'">Language Type <p-sortIcon [field]="'languageType.languageTypeName'"></p-sortIcon></th>
+                <th [pSortableColumn]="'workUnitType.workUnitTypeName'">Work Unit Type <p-sortIcon [field]="'workUnitType.workUnitTypeName'"></p-sortIcon></th>
+                <th [pSortableColumn]="'team.teamName'">Team <p-sortIcon [field]="'team.teamName'"></p-sortIcon></th>
+                <th [pSortableColumn]="'office.officeName'">Office <p-sortIcon [field]="'office.officeName'"></p-sortIcon></th>
+                <th [pSortableColumn]="'country.countryName'">Country <p-sortIcon [field]="'country.countryName'"></p-sortIcon></th>
+                <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-appUserResearchTeam>
+              <tr>
+                  <td class="td-cell">{{appUserResearchTeam.leadUser.appUserName}}</td>
+                  <td class="td-cell">{{appUserResearchTeam.languageType.languageTypeName}}</td>
+                  <td class="td-cell">{{appUserResearchTeam.workUnitType.workUnitTypeName}}</td>
+                  <td class="td-cell">{{appUserResearchTeam.team.teamName}}</td>
+                  <td class="td-cell">{{appUserResearchTeam.office.officeName}}</td>
+                  <td class="td-cell">{{appUserResearchTeam.country.countryName}}</td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showAppUserResearchTeamDeleteDialog(appUserResearchTeam.appUserResearchTeamID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+      <br>
+    </div> -->
+    <div class="tab-pane fade" id="nav-team" role="tabpanel" aria-labelledby="nav-team-tab">
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Search..." (input)="dtAppUserTeam.filterGlobal($event.target.value, 'contains')">
+                <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+            </div>
+
+        </div>
+      <div class="col-lg-6">
+          <button pButton type="button" icon="pi pi-plus" label="Add Team" class="ui-button-success" style="float:right" (click)="showAppUserTeamAddDialog()"></button>
+      </div>
+      </div>
+      <hr>
+      <p-table #dtAppUserTeam [value]="appUserTeams" [globalFilterFields]="['team.teamName','comments']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'team.teamName'">Team <p-sortIcon [field]="'team.teamName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'comments'">Comments <p-sortIcon [field]="'comments'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-appUserTeam>
+              <tr>
+                  <td class="td-cell">{{appUserTeam.team.teamName}}</td>
+                  <td class="td-cell">{{appUserTeam.comments}}</td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showAppUserTeamDeleteDialog(appUserTeam.appUserTeamID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+      <br>
+    </div>
+    <div class="tab-pane fade" id="nav-teamassignment" role="tabpanel" aria-labelledby="nav-teamassignment-tab">
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Search..." (input)="dtAppUserTeamAssignment.filterGlobal($event.target.value, 'contains')">
+                <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+            </div>
+
+        </div>
+      <div class="col-lg-6">
+          <button pButton type="button" icon="pi pi-plus" label="Add Team Assignment" class="ui-button-success" style="float:right" (click)="showAppUserTeamAssignmentsAddDialog()"></button>
+      </div>
+      </div>
+      <hr>
+      <p-table #dtAppUserTeamAssignment [value]="appUserTeamAssignments" [globalFilterFields]="['team.teamName','assignmentType.assignmentTypeName','isDone']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'team.teamName'">Team <p-sortIcon [field]="'team.teamName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'assignmentType.assignmentTypeName'">Team <p-sortIcon [field]="'assignmentType.assignmentTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'isDone'">Comments <p-sortIcon [field]="'isDone'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-appUserTeamAssignment>
+              <tr>
+                  <td class="td-cell">{{appUserTeamAssignment.team.teamName}}</td>
+                  <td class="td-cell">{{appUserTeamAssignment.assignmentType.assignmentTypeName}}</td>
+                  <td class="td-cell">{{appUserTeamAssignment.isDone}}</td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showAppUserTeamAssignmentsDeleteDialog(appUserTeamAssignment.appUserTeamAssignmentID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+      <br>
+    </div>
+  </div>
+
+  <!-- Add App User Absence Dialog -->
+  <div *ngIf="selectedAppUser">
+    <app-app-user-absence-add-dialog [display]="displayAppUserAbsenceAddDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onAppUserAbsenceAddDialogClose($event)"></app-app-user-absence-add-dialog>
+  </div>
+
+    <!-- Delete App User Absence Dialog -->
+  <div *ngIf="selectedAppUserAbsence">
+    <app-app-user-absence-delete-dialog [display]="displayAppUserAbsenceDeleteDialog" [selectedAppUserAbsence]="selectedAppUserAbsence" (displayChange)="onAppUserAbsenceDeleteDialogClose($event)"></app-app-user-absence-delete-dialog>
+  </div>
+
+  <!-- Add App User Address Dialog -->
+  <div *ngIf="selectedAppUser">
+    <app-app-user-address-add-dialog [display]="displayAppUserAddressAddDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onAppUserAddressAddDialogClose($event)"></app-app-user-address-add-dialog>
+  </div>
+
+   <!-- Delete App User Address Dialog -->
+   <div *ngIf="selectedAppUserAddress">
+    <app-app-user-address-delete-dialog [display]="displayAppUserAddressDeleteDialog" [selectedAppUserAddress]="selectedAppUserAddress" (displayChange)="onAppUserAddressDeleteDialogClose($event)"></app-app-user-address-delete-dialog>
+  </div>
+
+  <!-- Add App User Certificate Dialog -->
+  <div *ngIf="selectedAppUser">
+    <app-app-user-certificate-add-dialog [display]="displayAppUserCertificateAddDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onAppUserCertificateAddDialogClose($event)"></app-app-user-certificate-add-dialog>
+  </div>
+
+   <!-- Delete App User Certificate Dialog -->
+   <div *ngIf="selectedAppUserCertificate">
+    <app-app-user-certificate-delete-dialog [display]="displayAppUserCertificateDeleteDialog" [selectedAppUserCertificate]="selectedAppUserCertificate" (displayChange)="onAppUserCertificateDeleteDialogClose($event)"></app-app-user-certificate-delete-dialog>
+  </div>
+
+  <!-- Add App User Contact Dialog -->
+  <div *ngIf="selectedAppUser">
+    <app-app-user-contact-add-dialog [display]="displayAppUserContactAddDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onAppUserContactAddDialogClose($event)"></app-app-user-contact-add-dialog>
+  </div>
+
+  <!-- Delete App User Contact Dialog -->
+  <div *ngIf="selectedAppUserContact">
+    <app-app-user-contact-delete-dialog [display]="displayAppUserContactDeleteDialog" [selectedAppUserContact]="selectedAppUserContact" (displayChange)="onAppUserContactDeleteDialogClose($event)"></app-app-user-contact-delete-dialog>
+  </div>
+
+    <!-- Add App User Contract Dialog -->
+    <div *ngIf="selectedAppUser">
+      <app-app-user-contract-add-dialog [display]="displayAppUserContractAddDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onAppUserContractAddDialogClose($event)"></app-app-user-contract-add-dialog>
+    </div>
+
+    <!-- Delete App User Contact Dialog -->
+    <div *ngIf="selectedAppUserContract">
+      <app-app-user-contract-delete-dialog [display]="displayAppUserContractDeleteDialog" [selectedAppUserContract]="selectedAppUserContract" (displayChange)="onAppUserContractDeleteDialogClose($event)"></app-app-user-contract-delete-dialog>
+    </div>
+
+    <!-- Add App User Country Dialog -->
+    <div *ngIf="selectedAppUser">
+      <app-app-user-country-add-dialog [display]="displayAppUserCountryAddDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onAppUserCountryAddDialogClose($event)"></app-app-user-country-add-dialog>
+    </div>
+
+    <!-- Delete App User Country Dialog -->
+    <div *ngIf="selectedAppUserCountry">
+      <app-app-user-country-delete-dialog [display]="displayAppUserCountryDeleteDialog" [selectedAppUserCountry]="selectedAppUserCountry" (displayChange)="onAppUserCountryDeleteDialogClose($event)"></app-app-user-country-delete-dialog>
+    </div>
+
+    <!-- Add App User Education Dialog -->
+    <div *ngIf="selectedAppUser">
+        <app-app-user-education-add-dialog [display]="displayAppUserEducationAddDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onAppUserEducationAddDialogClose($event)"></app-app-user-education-add-dialog>
+      </div>
+
+    <!-- Delete App User Education Dialog -->
+    <div *ngIf="selectedAppUserEducation">
+      <app-app-user-education-delete-dialog [display]="displayAppUserEducationDeleteDialog" [selectedAppUserEducation]="selectedAppUserEducation" (displayChange)="onAppUserEducationDeleteDialogClose($event)"></app-app-user-education-delete-dialog>
+    </div>
+
+     <!-- Add App User Employment Record Dialog -->
+     <div *ngIf="selectedAppUser">
+        <app-app-user-employment-record-add-dialog [display]="displayAppUserEmploymentRecordAddDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onAppUserEmploymentRecordAddDialogClose($event)"></app-app-user-employment-record-add-dialog>
+      </div>
+
+    <!-- Delete App User Employment Record Dialog -->
+    <div *ngIf="selectedAppUserEmploymentRecord">
+      <app-app-user-employment-record-delete-dialog [display]="displayAppUserEmploymentRecordDeleteDialog" [selectedAppUserEmploymentRecord]="selectedAppUserEmploymentRecord" (displayChange)="onAppUserEmploymentRecordDeleteDialogClose($event)"></app-app-user-employment-record-delete-dialog>
+    </div>
+
+    <!-- Add App User Function Dialog -->
+    <div *ngIf="selectedAppUser">
+      <app-app-user-function-add-dialog [display]="displayAppUserFunctionAddDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onAppUserFunctionAddDialogClose($event)"></app-app-user-function-add-dialog>
+    </div>
+
+  <!-- Delete App User Function Dialog -->
+  <div *ngIf="selectedAppUserFunction">
+    <app-app-user-function-delete-dialog [display]="displayAppUserFunctionDeleteDialog" [selectedAppUserFunction]="selectedAppUserFunction" (displayChange)="onAppUserFunctionDeleteDialogClose($event)"></app-app-user-function-delete-dialog>
+  </div>
+
+  <!-- Add App User In Role Dialog -->
+  <div *ngIf="selectedAppUser">
+      <app-app-user-in-role-add-dialog [display]="displayAppUserInRoleAddDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onAppUserInRoleAddDialogClose($event)"></app-app-user-in-role-add-dialog>
+  </div>
+
+    <!-- Delete App User In Role Dialog -->
+  <div *ngIf="selectedAppUserInRole">
+    <app-app-user-in-role-delete-dialog [display]="displayAppUserInRoleDeleteDialog" [selectedAppUserInRole]="selectedAppUserInRole" (displayChange)="onAppUserInRoleDeleteDialogClose($event)"></app-app-user-in-role-delete-dialog>
+  </div>
+
+  <!-- Add App User Language Dialog -->
+  <div *ngIf="selectedAppUser">
+    <app-app-user-language-add-dialog [display]="displayAppUserLanguageAddDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onAppUserLanguageAddDialogClose($event)"></app-app-user-language-add-dialog>
+  </div>
+
+    <!-- Delete App User Language Dialog -->
+  <div *ngIf="selectedAppUserLanguage">
+    <app-app-user-language-delete-dialog [display]="displayAppUserLanguageDeleteDialog" [selectedAppUserLanguage]="selectedAppUserLanguage" (displayChange)="onAppUserLanguageDeleteDialogClose($event)"></app-app-user-language-delete-dialog>
+  </div>
+
+  <!-- Add App User Note Dialog -->
+  <div *ngIf="selectedAppUser">
+    <app-app-user-note-add-dialog [display]="displayAppUserNoteAddDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onAppUserNoteAddDialogClose($event)"></app-app-user-note-add-dialog>
+  </div>
+
+    <!-- Delete App User Note Dialog -->
+  <div *ngIf="selectedAppUserNote">
+    <app-app-user-note-delete-dialog [display]="displayAppUserNoteDeleteDialog" [selectedAppUserNote]="selectedAppUserNote" (displayChange)="onAppUserNoteDeleteDialogClose($event)"></app-app-user-note-delete-dialog>
+  </div>
+
+  <!-- Add App User Team Dialog -->
+  <div *ngIf="selectedAppUser">
+    <app-app-user-team-add-dialog [display]="displayAppUserTeamAddDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onAppUserTeamAddDialogClose($event)"></app-app-user-team-add-dialog>
+  </div>
+
+    <!-- Delete App User Team Dialog -->
+  <div *ngIf="selectedAppUserTeam">
+    <app-app-user-team-delete-dialog [display]="displayAppUserTeamDeleteDialog" [selectedAppUserTeam]="selectedAppUserTeam" (displayChange)="onAppUserTeamDeleteDialogClose($event)"></app-app-user-team-delete-dialog>
+  </div>
+
+    <!-- Add App User Team Assignment Dialog -->
+    <div *ngIf="selectedAppUser">
+      <app-app-user-team-assignment-add-dialog [display]="displayAppUserTeamAssignmentAddDialog" [selectedAppUser]="selectedAppUser" (displayChange)="onAppUserTeamAssignmentsAddDialogClose($event)"></app-app-user-team-assignment-add-dialog>
+    </div>
+
+      <!-- Delete App User Team Assignment Dialog -->
+    <div *ngIf="selectedAppUserTeamAssignment">
+      <app-app-user-team-assignment-delete-dialog [display]="displayAppUserTeamAssignmentDeleteDialog" [selectedAppUserTeamAssignment]="selectedAppUserTeamAssignment" (displayChange)="onAppUserTeamAssignmentsDeleteDialogClose($event)"></app-app-user-team-assignment-delete-dialog>
+    </div>
+
+

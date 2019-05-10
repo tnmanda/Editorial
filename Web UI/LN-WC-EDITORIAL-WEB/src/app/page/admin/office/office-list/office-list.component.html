@@ -1,0 +1,112 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Office List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtOffice.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtOffice [value]="offices" [globalFilterFields]="['officeName', 'company', 'city', 'country.countryName']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'officeName'">Name <p-sortIcon [field]="'officeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'company'">Company <p-sortIcon [field]="'company'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'city'">City <p-sortIcon [field]="'city'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'country.countryName'">Country <p-sortIcon [field]="'country.countryName'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isSales'">Is Sales <p-sortIcon [field]="'isSales'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isResearch'">Is Research <p-sortIcon [field]="'isResearch'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isMarketing'">Is Marketing <p-sortIcon [field]="'isMarketing'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isSupport'">Is Support <p-sortIcon [field]="'isSupport'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isActive'">Is Active <p-sortIcon [field]="'isActive'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-office>
+              <tr>
+
+                  <td class="td-cell">{{office.officeName}}</td>
+                  <td class="td-cell">{{office.company}}</td>
+                  <td class="td-cell">{{office.city}}</td>
+                  <td class="td-cell">{{office.country?.countryName}}</td>
+                  <td class="td-cell">
+                    <div *ngIf="office.isSales; else isDisabled">
+                        <div class="badge badge-pill badge-success">{{office.isSales}}</div>
+                    </div>
+                    <ng-template #isDisabled>
+                        <div class="badge badge-pill badge-secondary">{{office.isSales}}</div>
+                    </ng-template>
+                  </td>
+                  <td class="td-cell">
+                    <div *ngIf="office.isResearch; else isDisabled">
+                        <div class="badge badge-pill badge-success">{{office.isResearch}}</div>
+                    </div>
+                    <ng-template #isDisabled>
+                        <div class="badge badge-pill badge-secondary">{{office.isResearch}}</div>
+                    </ng-template>
+                  </td>
+                  <td class="td-cell">
+                    <div *ngIf="office.isMarketing; else isDisabled">
+                        <div class="badge badge-pill badge-success">{{office.isMarketing}}</div>
+                    </div>
+                    <ng-template #isDisabled>
+                        <div class="badge badge-pill badge-secondary">{{office.isMarketing}}</div>
+                    </ng-template>
+                  </td>
+                  <td class="td-cell">
+                    <div *ngIf="office.isSupport; else isDisabled">
+                        <div class="badge badge-pill badge-success">{{office.isSupport}}</div>
+                    </div>
+                    <ng-template #isDisabled>
+                        <div class="badge badge-pill badge-secondary">{{office.isSupport}}</div>
+                    </ng-template>
+                  </td>
+                  <td class="td-cell">
+                      <div *ngIf="office.isActive; else isDisabled">
+                          <div class="badge badge-pill badge-success">{{office.isActive}}</div>
+                      </div>
+                      <ng-template #isDisabled>
+                          <div class="badge badge-pill badge-secondary">{{office.isActive}}</div>
+                      </ng-template>
+                  </td>
+                  <td >
+                      <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="showEditDialog(office.officeID)"></button>
+                      <button pButton pTooltip="Delete" tooltipPosition="bottom" type="button" icon="fa fa-trash" class="ui-button-danger" (click)="showDeleteDialog(office.officeID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add Office Dialog -->
+<app-office-add-dialog [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-office-add-dialog>
+<!-- Edit Office Dialog -->
+<div *ngIf="selectedOffice">
+  <app-office-edit-dialog [display]="displayEditDialog" [selectedOffice]="selectedOffice" (displayChange)="onEditDialogClose($event)"></app-office-edit-dialog>
+</div>
+<!-- Delete Office Dialog -->
+<div *ngIf="selectedOffice">
+  <app-office-delete-dialog [display]="displayDeleteDialog" [selectedOffice]="selectedOffice" (displayChange)="onDeleteDialogClose($event)"></app-office-delete-dialog>
+</div>
+
+<p-toast></p-toast>

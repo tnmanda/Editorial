@@ -1,0 +1,541 @@
+2018-11-09 16:33:58.574 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-09 16:34:06.432 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/activity application/json 1596
+2018-11-09 16:34:06.432 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-09 16:34:06.432 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-09 16:34:06.659 +08:00 [Information] Request finished in 253.6965ms 200 
+2018-11-09 16:34:07.999 +08:00 [Information] Successfully validated the token.
+2018-11-09 16:34:08.759 +08:00 [Information] Route matched with "{action = \"AddActivity\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)"
+2018-11-09 16:34:08.759 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-09 16:34:08.844 +08:00 [Information] Authorization was successful.
+2018-11-09 16:34:08.855 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-09 16:34:08.870 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.4507ms.
+2018-11-09 16:34:08.920 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-09 16:34:09.025 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 249.1525ms
+2018-11-09 16:34:09.098 +08:00 [Information] Request finished in 2702.9038ms 200 application/json; charset=utf-8
+2018-11-09 16:34:09.483 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/favicon.ico  
+2018-11-09 16:34:09.501 +08:00 [Information] Request finished in 18.5714ms 404 
+2018-11-09 16:34:10.341 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestigationDataSave"]) - Validation state: Valid
+2018-11-09 16:34:17.982 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-09 16:34:19.764 +08:00 [Information] Executed DbCommand ("112"ms) [Parameters=["@__objupd_InvestigationID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[InvestigationID], [t].[Comments], [t].[CountryID], [t].[CountryOfRecord], [t].[CreatedBy], [t].[CreatedByIP], [t].[DOB], [t].[DateCreatedUTC], [t].[EntityName], [t].[FunctionTypeID], [t].[InvestigationDispositionsID], [t].[InvestigationStatusID], [t].[IsCanContactSubmitter], [t].[LastUpdatedUTC], [t].[MMMDDUsersID], [t].[OtherInfo], [t].[PriorityTypeID], [t].[Reason], [t].[RequestedBy], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [Investigation] AS [t]
+WHERE [t].[InvestigationID] = @__objupd_InvestigationID_0"
+2018-11-09 16:34:47.672 +08:00 [Error] Failed executing DbCommand ("18"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationActivity] ([ActivityTypeID], [AppUserID], [CreatedBy], [DateCreatedUTC], [FromValue], [InvestigationID], [LastUpdatedUTC], [ToValue], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [InvestigationActivityID]
+FROM [InvestigationActivity]
+WHERE @@ROWCOUNT = 1 AND [InvestigationActivityID] = scope_identity();"
+System.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_InvestigationActivity_AppUser". The conflict occurred in database "DevEditorial", table "dbo.AppUser", column 'AppUserID'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:3a335520-c2e4-4455-a4d8-b6c6043055ef
+Error Number:547,State:0,Class:16
+2018-11-09 16:34:48.005 +08:00 [Error] An exception occurred in the database while saving changes for context type '"LNWCOE.Data.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_InvestigationActivity_AppUser\". The conflict occurred in database \"DevEditorial\", table \"dbo.AppUser\", column 'AppUserID'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_InvestigationActivity_AppUser". The conflict occurred in database "DevEditorial", table "dbo.AppUser", column 'AppUserID'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2018-11-09 16:34:48.136 +08:00 [Error] a024fd0d-2966-44fb-b911-01bc756ec9bd - DbUpdateException error details - The INSERT statement conflicted with the FOREIGN KEY constraint "FK_InvestigationActivity_AppUser". The conflict occurred in database "DevEditorial", table "dbo.AppUser", column 'AppUserID'.
+The statement has been terminated.
+2018-11-09 16:35:35.558 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-09 16:35:36.792 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/activity application/json 1596
+2018-11-09 16:35:37.205 +08:00 [Information] Successfully validated the token.
+2018-11-09 16:35:37.917 +08:00 [Information] Route matched with "{action = \"AddActivity\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)"
+2018-11-09 16:35:37.975 +08:00 [Information] Authorization was successful.
+2018-11-09 16:35:38.581 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestigationDataSave"]) - Validation state: Valid
+2018-11-09 16:35:39.885 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-09 16:35:40.831 +08:00 [Information] Executed DbCommand ("99"ms) [Parameters=["@__objupd_InvestigationID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[InvestigationID], [t].[Comments], [t].[CountryID], [t].[CountryOfRecord], [t].[CreatedBy], [t].[CreatedByIP], [t].[DOB], [t].[DateCreatedUTC], [t].[EntityName], [t].[FunctionTypeID], [t].[InvestigationDispositionsID], [t].[InvestigationStatusID], [t].[IsCanContactSubmitter], [t].[LastUpdatedUTC], [t].[MMMDDUsersID], [t].[OtherInfo], [t].[PriorityTypeID], [t].[Reason], [t].[RequestedBy], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [Investigation] AS [t]
+WHERE [t].[InvestigationID] = @__objupd_InvestigationID_0"
+2018-11-09 16:35:41.362 +08:00 [Error] Failed executing DbCommand ("19"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationActivity] ([ActivityTypeID], [AppUserID], [CreatedBy], [DateCreatedUTC], [FromValue], [InvestigationID], [LastUpdatedUTC], [ToValue], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [InvestigationActivityID]
+FROM [InvestigationActivity]
+WHERE @@ROWCOUNT = 1 AND [InvestigationActivityID] = scope_identity();"
+System.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_InvestigationActivity_AppUser". The conflict occurred in database "DevEditorial", table "dbo.AppUser", column 'AppUserID'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:161b9e36-0d59-40b7-8a6e-fd2549e42aa9
+Error Number:547,State:0,Class:16
+2018-11-09 16:35:41.517 +08:00 [Error] An exception occurred in the database while saving changes for context type '"LNWCOE.Data.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_InvestigationActivity_AppUser\". The conflict occurred in database \"DevEditorial\", table \"dbo.AppUser\", column 'AppUserID'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_InvestigationActivity_AppUser". The conflict occurred in database "DevEditorial", table "dbo.AppUser", column 'AppUserID'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2018-11-09 16:35:41.547 +08:00 [Error] 2fc166a1-17f6-49bd-8ea4-707712acd51e - DbUpdateException error details - The INSERT statement conflicted with the FOREIGN KEY constraint "FK_InvestigationActivity_AppUser". The conflict occurred in database "DevEditorial", table "dbo.AppUser", column 'AppUserID'.
+The statement has been terminated.
+2018-11-09 16:35:41.556 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.NotFoundObjectResult" in 2958.0574ms.
+2018-11-09 16:35:41.601 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Helpers.ReturnData"'.
+2018-11-09 16:35:41.746 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)" in 3815.2148ms
+2018-11-09 16:35:41.799 +08:00 [Information] Request finished in 5015.1597ms 404 application/json; charset=utf-8
+2018-11-09 16:35:46.371 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/activity application/json 1594
+2018-11-09 16:35:46.371 +08:00 [Information] Successfully validated the token.
+2018-11-09 16:35:46.375 +08:00 [Information] Route matched with "{action = \"AddActivity\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)"
+2018-11-09 16:35:46.376 +08:00 [Information] Authorization was successful.
+2018-11-09 16:35:46.380 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestigationDataSave"]) - Validation state: Valid
+2018-11-09 16:35:46.383 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-09 16:35:46.394 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__objupd_InvestigationID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[InvestigationID], [t].[Comments], [t].[CountryID], [t].[CountryOfRecord], [t].[CreatedBy], [t].[CreatedByIP], [t].[DOB], [t].[DateCreatedUTC], [t].[EntityName], [t].[FunctionTypeID], [t].[InvestigationDispositionsID], [t].[InvestigationStatusID], [t].[IsCanContactSubmitter], [t].[LastUpdatedUTC], [t].[MMMDDUsersID], [t].[OtherInfo], [t].[PriorityTypeID], [t].[Reason], [t].[RequestedBy], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [Investigation] AS [t]
+WHERE [t].[InvestigationID] = @__objupd_InvestigationID_0"
+2018-11-09 16:35:46.401 +08:00 [Error] Failed executing DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationActivity] ([ActivityTypeID], [AppUserID], [CreatedBy], [DateCreatedUTC], [FromValue], [InvestigationID], [LastUpdatedUTC], [ToValue], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [InvestigationActivityID]
+FROM [InvestigationActivity]
+WHERE @@ROWCOUNT = 1 AND [InvestigationActivityID] = scope_identity();"
+System.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_InvestigationActivity_AppUser". The conflict occurred in database "DevEditorial", table "dbo.AppUser", column 'AppUserID'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:161b9e36-0d59-40b7-8a6e-fd2549e42aa9
+Error Number:547,State:0,Class:16
+2018-11-09 16:35:46.456 +08:00 [Error] An exception occurred in the database while saving changes for context type '"LNWCOE.Data.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_InvestigationActivity_AppUser\". The conflict occurred in database \"DevEditorial\", table \"dbo.AppUser\", column 'AppUserID'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_InvestigationActivity_AppUser". The conflict occurred in database "DevEditorial", table "dbo.AppUser", column 'AppUserID'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2018-11-09 16:35:46.482 +08:00 [Error] 6306940e-e04a-4429-8597-063e48c6757e - DbUpdateException error details - The INSERT statement conflicted with the FOREIGN KEY constraint "FK_InvestigationActivity_AppUser". The conflict occurred in database "DevEditorial", table "dbo.AppUser", column 'AppUserID'.
+The statement has been terminated.
+2018-11-09 16:35:46.482 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.NotFoundObjectResult" in 101.7272ms.
+2018-11-09 16:35:46.483 +08:00 [Information] Executing ObjectResult, writing value of type '"LNWCOE.Helpers.ReturnData"'.
+2018-11-09 16:35:46.483 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)" in 108.4785ms
+2018-11-09 16:35:46.484 +08:00 [Information] Request finished in 112.8384ms 404 application/json; charset=utf-8
+2018-11-09 16:36:02.642 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-09 16:36:04.546 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-09 16:36:04.546 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-09 16:36:04.826 +08:00 [Information] Request finished in 280.8468ms 200 
+2018-11-09 16:36:05.926 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-09 16:36:06.027 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-09 16:36:06.045 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.4871ms.
+2018-11-09 16:36:06.109 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-09 16:36:06.366 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 397.3178ms
+2018-11-09 16:36:06.406 +08:00 [Information] Request finished in 1885.0167ms 200 application/json; charset=utf-8
+2018-11-09 16:36:20.086 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/activity application/json 1594
+2018-11-09 16:36:20.276 +08:00 [Information] Successfully validated the token.
+2018-11-09 16:36:20.315 +08:00 [Information] Route matched with "{action = \"AddActivity\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)"
+2018-11-09 16:36:20.356 +08:00 [Information] Authorization was successful.
+2018-11-09 16:36:21.120 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestigationDataSave"]) - Validation state: Valid
+2018-11-09 16:36:26.056 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-09 16:36:27.183 +08:00 [Information] Executed DbCommand ("120"ms) [Parameters=["@__objupd_InvestigationID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[InvestigationID], [t].[Comments], [t].[CountryID], [t].[CountryOfRecord], [t].[CreatedBy], [t].[CreatedByIP], [t].[DOB], [t].[DateCreatedUTC], [t].[EntityName], [t].[FunctionTypeID], [t].[InvestigationDispositionsID], [t].[InvestigationStatusID], [t].[IsCanContactSubmitter], [t].[LastUpdatedUTC], [t].[MMMDDUsersID], [t].[OtherInfo], [t].[PriorityTypeID], [t].[Reason], [t].[RequestedBy], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [Investigation] AS [t]
+WHERE [t].[InvestigationID] = @__objupd_InvestigationID_0"
+2018-11-09 16:37:51.607 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-09 16:37:53.608 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-09 16:37:53.608 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-09 16:37:53.608 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/activity application/json 1594
+2018-11-09 16:37:53.947 +08:00 [Information] Request finished in 356.0046ms 200 
+2018-11-09 16:37:54.433 +08:00 [Information] Successfully validated the token.
+2018-11-09 16:37:55.166 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-09 16:37:55.166 +08:00 [Information] Route matched with "{action = \"AddActivity\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)"
+2018-11-09 16:37:55.254 +08:00 [Information] Authorization was successful.
+2018-11-09 16:37:55.273 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-09 16:37:55.292 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.3788ms.
+2018-11-09 16:37:55.384 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-09 16:37:55.557 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 378.535ms
+2018-11-09 16:37:55.629 +08:00 [Information] Request finished in 2055.2675ms 200 application/json; charset=utf-8
+2018-11-09 16:37:56.434 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestigationDataSave"]) - Validation state: Valid
+2018-11-09 16:38:02.295 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-09 16:38:03.440 +08:00 [Information] Executed DbCommand ("96"ms) [Parameters=["@__objupd_InvestigationID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[InvestigationID], [t].[Comments], [t].[CountryID], [t].[CountryOfRecord], [t].[CreatedBy], [t].[CreatedByIP], [t].[DOB], [t].[DateCreatedUTC], [t].[EntityName], [t].[FunctionTypeID], [t].[InvestigationDispositionsID], [t].[InvestigationStatusID], [t].[IsCanContactSubmitter], [t].[LastUpdatedUTC], [t].[MMMDDUsersID], [t].[OtherInfo], [t].[PriorityTypeID], [t].[Reason], [t].[RequestedBy], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [Investigation] AS [t]
+WHERE [t].[InvestigationID] = @__objupd_InvestigationID_0"
+2018-11-09 16:38:17.880 +08:00 [Information] Executed DbCommand ("14"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [InvestigationActivity] ([ActivityTypeID], [AppUserID], [CreatedBy], [DateCreatedUTC], [FromValue], [InvestigationID], [LastUpdatedUTC], [ToValue], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [InvestigationActivityID]
+FROM [InvestigationActivity]
+WHERE @@ROWCOUNT = 1 AND [InvestigationActivityID] = scope_identity();"
+2018-11-09 16:38:20.851 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 24406.0771ms.
+2018-11-09 16:38:20.858 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-09 16:38:20.860 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.AddActivity (LNWCOE)" in 25687.2732ms
+2018-11-09 16:38:20.872 +08:00 [Information] Request finished in 27297.7855ms 200 
+2018-11-09 20:59:51.950 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-09 20:59:56.172 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-09 20:59:56.172 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-09 20:59:56.173 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/PriorityType/  
+2018-11-09 20:59:56.558 +08:00 [Information] Request finished in 389.5766ms 200 
+2018-11-09 20:59:57.534 +08:00 [Information] Successfully validated the token.
+2018-11-09 20:59:58.452 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"PriorityType\"}". Executing action "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)"
+2018-11-09 20:59:58.452 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-09 20:59:58.523 +08:00 [Information] Authorization was successful.
+2018-11-09 20:59:58.539 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-09 20:59:58.551 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.6797ms.
+2018-11-09 20:59:58.602 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-09 20:59:58.813 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 346.8526ms
+2018-11-09 20:59:58.844 +08:00 [Information] Request finished in 2706.8335ms 200 application/json; charset=utf-8
+2018-11-09 20:59:59.505 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)" - Validation state: Valid
+2018-11-09 21:00:30.340 +08:00 [Information] Executed action "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)" in 31881.8776ms
+2018-11-09 21:00:30.358 +08:00 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The entity type 'InvestigationEmails' requires a primary key to be defined.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model)
+   at Microsoft.EntityFrameworkCore.Internal.SqlServerModelValidator.Validate(IModel model)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, IModelValidator validator)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Lazy`1.CreateValue()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Collections.Generic.IEnumerable<TEntity>.GetEnumerator()
+   at System.Collections.Generic.List`1.AddEnumerable(IEnumerable`1 enumerable)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at LNWCOE.Modules.INV.PriorityTypeController.Get() in C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE\LNWCOE\Modules\INV\PriorityTypeController.cs:line 30
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__23.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__16.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2018-11-09 21:00:31.422 +08:00 [Information] Request finished in 35284.3617ms 404 
+2018-11-09 21:01:41.442 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-09 21:01:43.642 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-09 21:01:43.642 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/PriorityType/  
+2018-11-09 21:01:43.642 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-09 21:01:44.037 +08:00 [Information] Request finished in 405.095ms 200 
+2018-11-09 21:01:44.468 +08:00 [Information] Successfully validated the token.
+2018-11-09 21:01:45.101 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"PriorityType\"}". Executing action "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)"
+2018-11-09 21:01:45.101 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-09 21:01:45.235 +08:00 [Information] Authorization was successful.
+2018-11-09 21:01:45.232 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-09 21:01:45.251 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.9257ms.
+2018-11-09 21:01:45.365 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-09 21:01:45.583 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 467.3694ms
+2018-11-09 21:01:45.655 +08:00 [Information] Request finished in 2040.5385ms 200 application/json; charset=utf-8
+2018-11-09 21:01:46.106 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)" - Validation state: Valid
+2018-11-09 21:01:51.757 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-09 21:01:53.176 +08:00 [Information] Executed DbCommand ("61"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[PriorityTypeID], [p].[CreatedBy], [p].[DateCreatedUTC], [p].[LastUpdatedUTC], [p].[PriorityDescription], [p].[PriorityName], [p].[PriorityWeight], [p].[UpdatedBy]
+FROM [PriorityType] AS [p]"
+2018-11-09 21:02:15.172 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 29066.1879ms.
+2018-11-09 21:02:15.181 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.INV.PriorityType, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-09 21:02:23.792 +08:00 [Information] Executed action "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)" in 38684.3213ms
+2018-11-09 21:02:23.803 +08:00 [Information] Request finished in 40185.851ms 200 application/json; charset=utf-8
+2018-11-09 21:06:44.857 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-09 21:06:46.612 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-09 21:06:46.612 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-09 21:06:46.890 +08:00 [Information] Request finished in 278.8166ms 200 
+2018-11-09 21:06:47.897 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-09 21:06:47.991 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-09 21:06:48.013 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 10.3885ms.
+2018-11-09 21:06:48.068 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-09 21:06:48.313 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 392.1026ms
+2018-11-09 21:06:48.377 +08:00 [Information] Request finished in 1787.099ms 200 application/json; charset=utf-8
+2018-11-09 21:06:51.220 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/PriorityType/  
+2018-11-09 21:06:51.405 +08:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/09/2018 13:01:28', Current time: '11/09/2018 13:06:51'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2018-11-09 21:06:51.973 +08:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/09/2018 13:01:28', Current time: '11/09/2018 13:06:51'."
+2018-11-09 21:06:51.985 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"PriorityType\"}". Executing action "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)"
+2018-11-09 21:06:52.054 +08:00 [Information] Authorization failed.
+2018-11-09 21:06:52.061 +08:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-09 21:06:52.075 +08:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-09 21:06:52.111 +08:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-09 21:06:52.112 +08:00 [Information] Executed action "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)" in 126.3692ms
+2018-11-09 21:06:52.114 +08:00 [Information] Request finished in 893.7903ms 401 
+2018-11-09 21:06:57.578 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-11-09 21:06:57.671 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-11-09 21:06:58.546 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-11-09 21:07:00.109 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-09 21:07:01.421 +08:00 [Information] Executed DbCommand ("203"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-11-09 21:07:02.087 +08:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-11-09 21:07:02.500 +08:00 [Information] Executed DbCommand ("96"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-11-09 21:07:02.535 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3982.887ms.
+2018-11-09 21:07:02.540 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType5`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-09 21:07:02.589 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 4918.0262ms
+2018-11-09 21:07:02.603 +08:00 [Information] Request finished in 5025.0931ms 200 application/json; charset=utf-8
+2018-11-09 21:07:05.183 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/PriorityType/  
+2018-11-09 21:07:05.207 +08:00 [Information] Successfully validated the token.
+2018-11-09 21:07:05.221 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"PriorityType\"}". Executing action "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)"
+2018-11-09 21:07:05.224 +08:00 [Information] Authorization was successful.
+2018-11-09 21:07:05.225 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)" - Validation state: Valid
+2018-11-09 21:07:07.992 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-09 21:07:08.012 +08:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[PriorityTypeID], [p].[CreatedBy], [p].[DateCreatedUTC], [p].[LastUpdatedUTC], [p].[PriorityDescription], [p].[PriorityName], [p].[PriorityWeight], [p].[UpdatedBy]
+FROM [PriorityType] AS [p]"
+2018-11-09 21:07:08.036 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 2811.0019ms.
+2018-11-09 21:07:08.057 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.INV.PriorityType, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-09 21:07:08.071 +08:00 [Information] Executed action "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)" in 2849.7266ms
+2018-11-09 21:07:08.071 +08:00 [Information] Request finished in 2887.8118ms 200 application/json; charset=utf-8
+2018-11-09 21:07:13.532 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/PriorityType/  
+2018-11-09 21:07:13.533 +08:00 [Information] Successfully validated the token.
+2018-11-09 21:07:13.533 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"PriorityType\"}". Executing action "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)"
+2018-11-09 21:07:13.533 +08:00 [Information] Authorization was successful.
+2018-11-09 21:07:13.534 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)" - Validation state: Valid
+2018-11-09 21:07:15.848 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-09 21:07:15.854 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[PriorityTypeID], [p].[CreatedBy], [p].[DateCreatedUTC], [p].[LastUpdatedUTC], [p].[PriorityDescription], [p].[PriorityName], [p].[PriorityWeight], [p].[UpdatedBy]
+FROM [PriorityType] AS [p]"
+2018-11-09 21:07:37.190 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 23654.5668ms.
+2018-11-09 21:07:37.198 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.INV.PriorityType, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-09 21:07:37.199 +08:00 [Information] Executed action "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)" in 23665.3279ms
+2018-11-09 21:07:37.199 +08:00 [Information] Request finished in 23666.5036ms 200 application/json; charset=utf-8
+2018-11-09 21:09:03.511 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-09 21:09:04.545 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-09 21:09:05.263 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-09 21:09:05.329 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-09 21:09:05.341 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.1842ms.
+2018-11-09 21:09:05.382 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-09 21:09:05.596 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 324.445ms
+2018-11-09 21:09:05.615 +08:00 [Information] Request finished in 1085.9417ms 200 application/json; charset=utf-8
+2018-11-09 21:10:56.959 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-09 21:10:58.715 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-09 21:10:58.715 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-09 21:10:58.960 +08:00 [Information] Request finished in 259.7007ms 200 
+2018-11-09 21:10:59.932 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-09 21:10:59.994 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-09 21:11:00.011 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.5283ms.
+2018-11-09 21:11:00.077 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-09 21:11:00.364 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 400.8896ms
+2018-11-09 21:11:00.425 +08:00 [Information] Request finished in 1742.5372ms 200 application/json; charset=utf-8
+2018-11-09 21:11:03.101 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/PriorityType/  
+2018-11-09 21:11:03.273 +08:00 [Information] Successfully validated the token.
+2018-11-09 21:11:03.287 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"PriorityType\"}". Executing action "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)"
+2018-11-09 21:11:03.335 +08:00 [Information] Authorization was successful.
+2018-11-09 21:11:03.722 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)" - Validation state: Valid
+2018-11-09 21:11:07.134 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-09 21:11:07.952 +08:00 [Information] Executed DbCommand ("56"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[PriorityTypeID], [p].[CreatedBy], [p].[DateCreatedUTC], [p].[LastUpdatedUTC], [p].[PriorityDescription], [p].[PriorityName], [p].[PriorityWeight], [p].[UpdatedBy]
+FROM [PriorityType] AS [p]"
+2018-11-09 21:11:08.151 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 4429.2629ms.
+2018-11-09 21:11:08.167 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.INV.PriorityType, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-09 21:11:08.212 +08:00 [Information] Executed action "LNWCOE.Modules.INV.PriorityTypeController.Get (LNWCOE)" in 4924.3092ms
+2018-11-09 21:11:08.219 +08:00 [Information] Request finished in 5117.2919ms 200 application/json; charset=utf-8
+2018-11-09 21:11:16.119 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/Investigation/199  
+2018-11-09 21:11:16.120 +08:00 [Information] Successfully validated the token.
+2018-11-09 21:11:16.230 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)"
+2018-11-09 21:11:16.232 +08:00 [Information] Authorization was successful.
+2018-11-09 21:11:16.346 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" with arguments (["199"]) - Validation state: Valid
+2018-11-09 21:11:16.363 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-09 21:11:17.124 +08:00 [Information] Executed DbCommand ("102"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationID], [x].[Comments], [x].[CountryID], [x].[CountryOfRecord], [x].[CreatedBy], [x].[CreatedByIP], [x].[DOB], [x].[DateCreatedUTC], [x].[EntityName], [x].[FunctionTypeID], [x].[InvestigationDispositionsID], [x].[InvestigationStatusID], [x].[IsCanContactSubmitter], [x].[LastUpdatedUTC], [x].[MMMDDUsersID], [x].[OtherInfo], [x].[PriorityTypeID], [x].[Reason], [x].[RequestedBy], [x].[UpdatedBy], [x].[WorkItemID], [x.InvestigationStatus].[InvestigationStatusID], [x.InvestigationStatus].[CreatedBy], [x.InvestigationStatus].[DateCreatedUTC], [x.InvestigationStatus].[InvestigationStatusDescription], [x.InvestigationStatus].[InvestigationStatusName], [x.InvestigationStatus].[IsDefault], [x.InvestigationStatus].[LastUpdatedUTC], [x.InvestigationStatus].[UpdatedBy], [x.InvestigationDispositions].[InvestigationDispositionsID], [x.InvestigationDispositions].[CreatedBy], [x.InvestigationDispositions].[DateCreatedUTC], [x.InvestigationDispositions].[DispositionDescription], [x.InvestigationDispositions].[DispositionType], [x.InvestigationDispositions].[LastUpdatedUTC], [x.InvestigationDispositions].[UpdatedBy], [x.FunctionType].[FunctionTypeID], [x.FunctionType].[CreatedBy], [x.FunctionType].[DateCreatedUTC], [x.FunctionType].[FunctionTypeDesc], [x.FunctionType].[FunctionTypeName], [x.FunctionType].[IsActive], [x.FunctionType].[IsInList], [x.FunctionType].[LastUpdatedUTC], [x.FunctionType].[UpdatedBy], [x.Country].[CountryID], [x.Country].[CountryAbbrev], [x.Country].[CountryName], [x.Country].[CreatedBy], [x.Country].[DateCreatedUTC], [x.Country].[FileFolder], [x.Country].[IsActive], [x.Country].[IsInList], [x.Country].[LastUpdatedUTC], [x.Country].[UpdatedBy], [x.PriorityType].[PriorityTypeID], [x.PriorityType].[CreatedBy], [x.PriorityType].[DateCreatedUTC], [x.PriorityType].[LastUpdatedUTC], [x.PriorityType].[PriorityDescription], [x.PriorityType].[PriorityName], [x.PriorityType].[PriorityWeight], [x.PriorityType].[UpdatedBy]
+FROM [Investigation] AS [x]
+LEFT JOIN [InvestigationStatus] AS [x.InvestigationStatus] ON [x].[InvestigationStatusID] = [x.InvestigationStatus].[InvestigationStatusID]
+LEFT JOIN [InvestigationDispositions] AS [x.InvestigationDispositions] ON [x].[InvestigationDispositionsID] = [x.InvestigationDispositions].[InvestigationDispositionsID]
+LEFT JOIN [FunctionType] AS [x.FunctionType] ON [x].[FunctionTypeID] = [x.FunctionType].[FunctionTypeID]
+LEFT JOIN [Country] AS [x.Country] ON [x].[CountryID] = [x.Country].[CountryID]
+LEFT JOIN [PriorityType] AS [x.PriorityType] ON [x].[PriorityTypeID] = [x.PriorityType].[PriorityTypeID]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-09 21:11:17.518 +08:00 [Information] Executed DbCommand ("52"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[InvestigationEntityID], [x].[CreatedBy], [x].[DateCreatedUTC], [x].[Ent_ID], [x].[InvestigationID], [x].[LastUpdatedUTC], [x].[UpdatedBy]
+FROM [InvestigationEntity] AS [x]
+WHERE [x].[InvestigationID] = @__id_0"
+2018-11-09 21:11:17.635 +08:00 [Warning] No type was specified for the decimal column '"CriminalAmount"' on entity type '"Entities"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-11-09 21:11:17.640 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"MMMDBContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-09 21:11:19.984 +08:00 [Information] Executed DbCommand ("9"ms) [Parameters=["@__thisEntityID_Ent_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Ent_ID], [x].[AID], [x].[Aka], [x].[Approved], [x].[ApprovedBy], [x].[ApprovedDate], [x].[BatchName], [x].[CiBit], [x].[CiElements], [x].[CiIndex], [x].[Country], [x].[CountryId], [x].[CriminalAmount], [x].[DOB], [x].[DOB2], [x].[DateEntered], [x].[DateUpdated], [x].[DobOriginal], [x].[EffectiveDate], [x].[EntLevel], [x].[EnteredBy], [x].[EntitiesLevelsId], [x].[EntitiesSourceID], [x].[EntryCategory], [x].[EntryCategoryID], [x].[EntrySubCategory], [x].[EntrySubCategoryID], [x].[EntryType], [x].[EntryTypeID], [x].[ExpirationDate], [x].[FirstName], [x].[Gender], [x].[GovDesignation], [x].[ImageSourceURL], [x].[JurisdictionID], [x].[LastInvestigatedBy], [x].[LastInvestigationDate], [x].[LastName], [x].[LastReviewedBy], [x].[LastReviewedDate], [x].[LinkedTo], [x].[LookUpId], [x].[MasterID], [x].[Name], [x].[NameClean], [x].[NameClean2], [x].[NameSource], [x].[NationalID], [x].[OldEntryCategory], [x].[OldEntrySubCategory], [x].[OldNameSource], [x].[Organization], [x].[OriginalLanguage], [x].[OriginalName], [x].[OriginalName2], [x].[OriginalName2NoChange], [x].[OriginalName3], [x].[OtherID], [x].[POB], [x].[ParentID], [x].[PassportID], [x].[PepCode], [x].[PictureFile], [x].[PictureFileOnly], [x].[Positions], [x].[Prefix], [x].[ProfileExists], [x].[QA_Approved], [x].[Rank1], [x].[Rank2], [x].[Rank3], [x].[Rank4], [x].[Rank5], [x].[RecViews], [x].[Rejected], [x].[RejectedBy], [x].[RejectedDate], [x].[Related_ID], [x].[Relationships], [x].[Remarks], [x].[SourceWebLink], [x].[SourceWebLink2], [x].[SpecialCollections], [x].[StatusEndDate], [x].[Suffix], [x].[TermEndDate], [x].[TermStartDate], [x].[TouchDate], [x].[UpdatedBy], [x].[WCGroupLevel], [x].[Watch]
+FROM [Entities] AS [x]
+WHERE [x].[Ent_ID] = @__thisEntityID_Ent_ID_0"
+2018-11-09 21:11:20.034 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 3679.547ms.
+2018-11-09 21:11:20.034 +08:00 [Information] Executing JsonResult, writing value of type '"Newtonsoft.Json.Linq.JObject"'.
+2018-11-09 21:11:20.046 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.Get (LNWCOE)" in 3815.6332ms
+2018-11-09 21:11:20.047 +08:00 [Information] Request finished in 3927.0533ms 200 application/json; charset=utf-8

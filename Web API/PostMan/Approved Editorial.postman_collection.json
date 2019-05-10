@@ -1,0 +1,6534 @@
+{
+	"info": {
+		"_postman_id": "3ea74f20-1fd4-4448-affd-1ad2cffcd04f",
+		"name": "Editorial App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Request Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "441a0ea9-93fa-4c1a-aef4-9a637212eae8",
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody)",
+									"",
+									"pm.globals.set(\"apitoken\", jsonData.apitokendata.token);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domain\" : \"hrev\",\r\n    \"userName\" : \"hrevuser1\",\r\n    \"password\" : \"testpw123!\",\r\n    \"groupcode\" : \"HRWCOJOB\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/api/Auth/apitoken",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"api",
+								"Auth",
+								"apitoken"
+							]
+						},
+						"description": "returns Api and HR tokens"
+					},
+					"response": []
+				},
+				{
+					"name": "HR token only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJocmV2dXNlcjEiLCJzaWQiOiI4OTI4MjkyNzI4MjI4MjgyODcxMDIiLCJqdGkiOiJmZDZjZDQwNC0wNmE2LTRhODUtODQyNS0yZjJiZDk5YzRiZmIiLCJyb2wiOlt7ImlzYWRtIjp0cnVlLCJybmFtZSI6ImhyLWFkbWluIiwiZ3JwIjpbeyJnbmFtZSI6IkhSV0NPSk9CIn1dfV0sImRtbl9hZG0iOlt7ImRuYW1lIjoiYWRmNDgxOGItYzQxYy00ZjZhLTg1NjAtM2U0NjQxNWQyYzkzIn1dLCJpcHMiOlsiMTI3LjAuMC4xLzEyNy4wLjAuMSJdLCJleHAiOjE1MzYzMjcyODYsImlzcyI6Imh0dHA6Ly9odW1hbnJldmlldy5hcGkucmlzay5sZXhpc25leGlzLmNvbSIsImF1ZCI6Imh0dHA6Ly9odW1hbnJldmlldy5yaXNrLmxleGlzbmV4aXMuY29tIn0.DdHlpNjxslxfPKRWpHI5NPKA6B732pnW-CCMjITwxlA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-HumanReviewApi-Version",
+								"value": "1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domain\" : \"hrev\",\r\n    \"userName\" : \"hrevuser1\",\r\n    \"password\" : \"testpw123!\",\r\n    \"groupcode\" : \"HRWCOJOB\"\r\n}"
+						},
+						"url": {
+							"raw": "{{hruri}}/api/auth/token",
+							"host": [
+								"{{hruri}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"token"
+							]
+						},
+						"description": "returns only the HR token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "AppUser GetAll",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-HumanReviewApi-Version",
+										"value": "1",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"domain\" : \"hrev\",\r\n    \"userName\" : \"hrevuser1\",\r\n    \"password\" : \"testpw123!\",\r\n    \"groupcode\" : \"HRWCOJOB\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/user/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"user",
+										""
+									]
+								},
+								"description": "Gets all users"
+							},
+							"response": []
+						},
+						{
+							"name": "AppUser get ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-HumanReviewApi-Version",
+										"value": "1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"domain\" : \"hrev\",\r\n    \"userName\" : \"hrevuser1\",\r\n    \"password\" : \"testpw123!\",\r\n    \"groupcode\" : \"HRWCOJOB\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/user/6",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"6"
+									]
+								},
+								"description": "Gets all users"
+							},
+							"response": []
+						},
+						{
+							"name": "AppUser ADD",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"appUserName\": \"test user\",\r\n  \"email\": \"testuser@user.com\",\r\n  \"photoImage\": \"\",\r\n  \"utcOffset\": \"8\",\r\n  \"isInternal\": 1,\r\n  \"isActive\": 1,\r\n  \"supervisorAppUserID\": \"6\",\r\n  \"officeID\": \"2\",\r\n  \"operationalRoleTypeID\": \"1\",\r\n  \"genderTypeID\": \"1\",\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/user",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/user/12",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"12"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n {\r\n \"op\" : \"replace\", \r\n \"path\" : \"/supervisorAppUserID\",\r\n \"value\" : 6\r\n }\r\n]"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/user/6",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Display ",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/user/disp",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"disp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Put",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"appUserID\": 6,\n    \"appUserName\": \"Juan Dela Cruz\",\n    \"email\": \"juandelacruz@gmail.com\",\n    \"photoImage\": null,\n    \"utcOffset\": 8,\n    \"isInternal\": true,\n    \"isActive\": true,\n    \"supervisorAppUserID\": 6,\n    \"officeID\": 2,\n    \"operationalRoleTypeID\": 2,\n    \"genderTypeID\": 1,\n    \"createdBy\": \"2\",\n    \"updatedBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/user/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"user",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Office",
+					"item": [
+						{
+							"name": "Office ALL",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/office",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"office"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Office ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/office/2",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"office",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Office Add",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"officeName\": \"Test Office\",\r\n  \"countryID\": 1,\r\n  \"company\": \"test company\",\r\n  \"city\": \"test sity\",\r\n  \"isSales\": 1,\r\n  \"isResearch\": 1,\r\n  \"isMarketing\": 1,\r\n  \"isSupport\": 1,\r\n  \"isActive\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/office",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"office"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Office Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/office/6",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"office",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Office Patch",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n {\r\n \"op\" : \"replace\", \r\n \"path\" : \"/Company\",\r\n \"value\" : \"test company xxxx\"\r\n }\r\n]"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/office/6",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"office",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Office Put",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"officeID\": 2,\n    \"officeName\": \"Paranaque\",\n    \"countryID\": 1,\n    \"company\": \"SPI\",\n    \"city\": \"Paranaque\",\n    \"isSales\": false,\n    \"isResearch\": true,\n    \"isMarketing\": true,\n    \"isSupport\": true,\n    \"isActive\": true,\n    \"createdBy\": \"2\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/office",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"office"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Operational Role",
+					"item": [
+						{
+							"name": "operationalrole All",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/operationalrole",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"operationalrole"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "operationalrole  ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/operationalrole/1",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"operationalrole",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "operationalrole Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/operationalrole/1",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"operationalrole",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "operationalrole  Add",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operationalRoleName\": \"Senior Researcher\",\n    \"operationalRoleDesc\": \"Senior Researcher\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}\n\n"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/operationalrole",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"operationalrole"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "operationalrole Patch",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n {\r\n \"op\" : \"replace\", \r\n \"path\" : \"/operationalRoleDesc\",\r\n \"value\" : \"Researcher I\"\r\n }\r\n]"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/operationalrole/2",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"operationalrole",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "operationalrole Put",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"operationalRoleTypeID\": 4,\n    \"operationalRoleName\": \"Senior Researcher\",\n    \"operationalRoleDesc\": \"Senior Researcher\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/operationalrole",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"operationalrole"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Country",
+					"item": [
+						{
+							"name": "Country All",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/country",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"country"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Country ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/country/2",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"country",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Country ADD",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"countryName\": \"Test Country\",\n    \"fileFolder\": null,\n    \"countryAbbrev\": \"TEST\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/country",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"country"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Country DEL",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/country/2",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"country",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Country Patch",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n {\r\n \"op\" : \"replace\", \r\n \"path\" : \"/countryName\",\r\n \"value\" : \"test coutnriy XXXX\"\r\n }\r\n]"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/country/3",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"country",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Country Put",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"countryID\": 1,\n    \"countryName\": \"PHILIPPINES\",\n    \"fileFolder\": null,\n    \"countryAbbrev\": \"PH\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/country",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"country"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "UserMap",
+					"item": [
+						{
+							"name": "User Map All",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/usermap",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"usermap"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Map ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/usermap/1",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"usermap",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Map ADD",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"appUserID\": 6,\r\n  \"humanReviewUserID\": \"test user 2\",\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/usermap",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"usermap"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Map Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/usermap/5",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"usermap",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Map Patch",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n {\r\n \"op\" : \"replace\", \r\n \"path\" : \"/humanReviewUserID\",\r\n \"value\" : \"Test MAp 1234\"\r\n }\r\n]"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/usermap/5",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"usermap",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UserMap PUT",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"hrEditorialUserMapID\": 1,\n    \"appUserID\": 6,\n    \"humanReviewUserID\": \"hrevuser1\",\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-07T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-07T00:00:00\"\n}"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/usermap",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"usermap"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Page Related",
+					"item": [
+						{
+							"name": "Pages",
+							"item": [
+								{
+									"name": "ALL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/page",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"page"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "by ID",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/page/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"page",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Page ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"pageName\": \"test page\",\r\n  \"fullPath\": \"test page\",\r\n  \"pagesDescription\": \"test page\",\r\n  \"isActive\": 1,\r\n  \"pagesGroupsID\": null,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/page",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"page"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Page Delete",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/page/1",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"page",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Page Patch",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n {\r\n \"op\" : \"replace\", \r\n \"path\" : \"/createdBy\",\r\n \"value\" : \"666\"\r\n }\r\n]\r\n"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/page/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"page",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Page Put",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"pagesID\": 1,\r\n\t\"pageName\": \"test page\",\r\n\t\"fullPath\": \"test page\",\r\n\t\"pagesDescription\": \"test page xxxxxxxx\",\r\n\t\"isActive\": 1,\r\n\t\"pagesGroupsID\": null,\r\n\t\"createdBy\": \"1\",\r\n\t\"updatedBy\": \"1\",\r\n\t\"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n\t\"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/page",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"page"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "PageInUserRole",
+							"item": [
+								{
+									"name": "PageInUserRole ALL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/PageInUserRole",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"PageInUserRole"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PageInUserRole ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"pagesID\": 1,\r\n  \"roleTypeID\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/PageInUserRole",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"PageInUserRole"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PageInUserRole Put",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"pageInUserRoleID\": 2,\r\n\t\"pagesID\": 1,\r\n\t\"roleTypeID\": 1,\r\n\t\"createdBy\": \"1\",\r\n\t\"updatedBy\": \"1\",\r\n\t\"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n\t\"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/PageInUserRole",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"PageInUserRole"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PageInUserRole ID",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/PageInUserRole/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"PageInUserRole",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "ParentGroup",
+							"item": [
+								{
+									"name": "ParentGroup ALL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/ParentGroup",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"ParentGroup"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ParentGroup ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"parentGroupName\": \"test\",\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/ParentGroup",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"ParentGroup"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ParentGroup ID",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/ParentGroup/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"ParentGroup",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ParentGroup PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"parentGroupID\": 1,\n    \"parentGroupName\": \"Admin\",\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/ParentGroup",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"ParentGroup"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ParentGroup DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/ParentGroup/4",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"ParentGroup",
+												"4"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ParentGroup Patch",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n {\r\n \"op\" : \"replace\", \r\n \"path\" : \"/createdBy\",\r\n \"value\" : \"666\"\r\n }\r\n]"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/ParentGroup/4",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"ParentGroup",
+												"4"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "PagesGroups",
+							"item": [
+								{
+									"name": "PagesGroups ALL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/PagesGroups",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"PagesGroups"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PagesGroups ID",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/PagesGroups/1",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"PagesGroups",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PagesGroups ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"parentGroupID\": 1,\r\n  \"pagesGroupsName\": \"test Group Name 2\",\r\n  \"pagesGroupsDescription\": \"test Group Name \",\r\n  \"sortOrder\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/PagesGroups",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"PagesGroups"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PagesGroups DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/PagesGroups/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"PagesGroups",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PagesGroups PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"pagesGroupsID\": 1,\r\n\t\"parentGroupID\": 1,\r\n\t\"pagesGroupsName\": \"Admin\",\r\n\t\"pagesGroupsDescription\": \"Admin Group\",\r\n\t\"sortOrder\": 1,\r\n\t\"createdBy\": \"1\",\r\n\t\"updatedBy\": \"1\",\r\n\t\"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n\t\"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/PagesGroups",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"PagesGroups"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "658a4f42-9061-4cb2-b7fc-a1c258c97a4e",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c1e32f0-fcee-4b36-b336-8f418a78812c",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Team",
+					"item": [
+						{
+							"name": "Team GET",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/Team",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"Team"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Team ADD",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"teamName\": \"Test Team\",\r\n  \"isActive\": 1,\r\n  \"comments\": \"Test team\",\r\n  \"isAlertsCoverage\": 1,\r\n  \"isNewsCoverage\": 1,\r\n  \"officeID\": 2,\r\n  \"languageTypeID\": 1,\r\n  \"leadUserID\": 6,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/Team",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"Team"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Team PUT",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"teamID\": 5,\n    \"teamName\": \"Test Team\",\n    \"isActive\": true,\n    \"comments\": \"Test xxxxxxxxxxxxxxxxxxxxxxxxx\",\n    \"isAlertsCoverage\": true,\n    \"isNewsCoverage\": true,\n    \"officeID\": 2,\n    \"languageTypeID\": 1,\n    \"leadUserID\": 6,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+								},
+								"url": {
+									"raw": "{{baseurl}}/api/Team",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"Team"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Team DEL",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{apitoken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{baseurl}}/api/Team/4",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"api",
+										"Team",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Types",
+					"item": [
+						{
+							"name": "AssignmentType",
+							"item": [
+								{
+									"name": "AssignmentType GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AssignmentType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AssignmentType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AssignmentType ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"assignmentTypeName\": \"test assignment type\",\r\n  \"assignmentDescription\": \"test assignment type\",\r\n  \"isInList\": 1,\r\n  \"isActive\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AssignmentType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AssignmentType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AssignmentType PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"assignmentTypeID\": 4,\n    \"assignmentTypeName\": \"test assignment type\",\n    \"assignmentDescription\": \"test assignment xxxxxxxxxxxxxxxxxx\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AssignmentType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AssignmentType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AssignmentType DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AssignmentType/3",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AssignmentType",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "ProficiencyType",
+							"item": [
+								{
+									"name": "ProficiencyType GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/ProficiencyType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"ProficiencyType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ProficiencyType ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"proficiencyTypeName\": \"test proficiency\",\r\n  \"proficiencyTypeDesc\": \"test proficiency\",\r\n  \"isInList\": 1,\r\n  \"isActive\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}\r\n"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/ProficiencyType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"ProficiencyType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ProficiencyType  PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"proficiencyTypeID\": 2,\n    \"proficiencyTypeName\": \"test proficiency\",\n    \"proficiencyTypeDesc\": \"test xxxxxxxxxxxx\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/ProficiencyType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"ProficiencyType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ProficiencyType DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/ProficiencyType/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"ProficiencyType",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "LanguageType",
+							"item": [
+								{
+									"name": "LanguageType GET ",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/LanguageType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"LanguageType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "LanguageType ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"languageTypeName\": \"test language\",\r\n  \"languageTypeDesc\":\"test language\",\r\n  \"isInList\": 1,\r\n  \"isActive\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/LanguageType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"LanguageType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "LanguageType PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"languageTypeID\": 2,\n    \"languageTypeName\": \"test language\",\n    \"languageTypeDesc\": \"test xxxxxxxxxxxxxxxxxxxxxx\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/LanguageType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"LanguageType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "LanguageType DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/LanguageType/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"LanguageType",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "workUnitType",
+							"item": [
+								{
+									"name": "workUnitType GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/workUnitType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"workUnitType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "workUnitType ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"workUnitTypeName\": \"test work unit\",\r\n  \"workUnitTypeDesc\": \"test work unit\",\r\n  \"isInList\": 1,\r\n  \"isActive\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}\r\n"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/workUnitType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"workUnitType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "workUnitType PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"workUnitTypeID\": 2,\n        \"workUnitTypeName\": \"test work unit\",\n        \"workUnitTypeDesc\": \"test work xxxxxxxxxxxxxxxxxxx\",\n        \"isInList\": true,\n        \"isActive\": true,\n        \"createdBy\": \"1\",\n        \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n        \"updatedBy\": \"1\",\n        \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n    }"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/workUnitType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"workUnitType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "workUnitType DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/workUnitType/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"workUnitType",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "FunctionType",
+							"item": [
+								{
+									"name": "FunctionType GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/functiontype",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"functiontype"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "FunctionType ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"functionTypeName\": \"test function\",\r\n  \"functionTypeDesc\": \"test function\",\r\n  \"isInList\": 1,\r\n  \"isActive\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}\r\n"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/functiontype",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"functiontype"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "FunctionType PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"functionTypeID\": 4,\n    \"functionTypeName\": \"test function\",\n    \"functionTypeDesc\": \"test xxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/functiontype",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"functiontype"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "FunctionType DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/functiontype/3",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"functiontype",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "DepartureType",
+							"item": [
+								{
+									"name": "DepartureType GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/DepartureType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"DepartureType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DepartureType ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"departureTypeName\": \"test departure type\",\r\n  \"departureTypeDesc\":  \"test departure type\",\r\n  \"isInList\": 1,\r\n  \"isActive\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/DepartureType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"DepartureType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DepartureType PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"departureTypeID\": 2,\n    \"departureTypeName\": \"test departure type\",\n    \"departureTypeDesc\": \"xxxxxxxxxxxxx\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/DepartureType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"DepartureType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DepartureType DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/DepartureType/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"DepartureType",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "ContractType",
+							"item": [
+								{
+									"name": "ContractType GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/ContractType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"ContractType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ContractType ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"contractTypeName\": \"tset Contracct\",\r\n  \"contractTypeDescr\": \"tset Contracct\",\r\n  \"isInList\": 1,\r\n  \"isActive\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/ContractType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"ContractType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ContractType PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"contractTypeID\": 2,\n        \"contractTypeName\": \"tset Contracct\",\n        \"contractTypeDescr\": \"tset xxxxxx\",\n        \"isInList\": true,\n        \"isActive\": true,\n        \"createdBy\": \"1\",\n        \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n        \"updatedBy\": \"1\",\n        \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n    }"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/ContractType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"ContractType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ContractType DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/ContractType/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"ContractType",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "ContactType",
+							"item": [
+								{
+									"name": "ContactType GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/contacttype",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"contacttype"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ContactType ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"contacTypeDesc\": \"Test Contact\",\r\n  \"contacTypeName\": \"Test Contact\",\r\n  \"isInList\": 1,\r\n  \"isActive\": 1,\r\n  \"contactTypeGroup\": 0,\r\n  \"sortOrder\": 0,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/contacttype",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"contacttype"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ContactType PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"contactTypeID\": 2,\r\n\t\"contacTypeDesc\": \"Test Contact\",\r\n\t\"contacTypeName\": \"Test Contact\",\r\n\t\"isInList\": 1,\r\n\t\"isActive\": 1,\r\n\t\"contactTypeGroup\": 0,\r\n\t\"sortOrder\": 0,\r\n\t\"createdBy\": \"1\",\r\n\t\"updatedBy\": \"1\",\r\n\t\"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n\t\"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/contacttype",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"contacttype"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ContactType DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/contacttype/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"contacttype",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "CertificateType",
+							"item": [
+								{
+									"name": "CertificateType GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/certificatetype",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"certificatetype"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "CertificateType ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"certificateTypeName\": \"test cert\",\r\n  \"certificateTypeDesc\": \"test cert\",\r\n  \"isInList\": 1,\r\n  \"isActive\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/certificatetype",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"certificatetype"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "CertificateType PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"certificateTypeID\": 2,\n    \"certificateTypeName\": \"test cert\",\n    \"certificateTypeDesc\": \"test cert r\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/certificatetype",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"certificatetype"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "CertificateType DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/certificatetype/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"certificatetype",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AddressType",
+							"item": [
+								{
+									"name": "AddressType ALL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/addresstype/",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"addresstype",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AddressType PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"addressTypeID\": 2,\n    \"addressTypeName\": \"test add\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/addresstype",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"addresstype"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AddressType ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"addressTypeName\": \"test address\",\r\n  \"isInList\": 1,\r\n  \"isActive\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/addresstype",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"addresstype"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AddressType DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/addresstype/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"addresstype",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AbsenceType",
+							"item": [
+								{
+									"name": "AbsenceType ALL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/absencetype",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"absencetype"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "absencetype add",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"absenceTypeName\": \"test 2\",\r\n  \"absenceTypeValue\": \"test 2\",\r\n  \"isInList\": 1,\r\n  \"isActive\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}\r\n"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/absencetype",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"absencetype"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "absencetype PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"absenceTypeID\": 1,\r\n\t\"absenceTypeName\": \"test\",\r\n\t\"absenceTypeValue\": \"test\",\r\n\t\"isInList\": 1,\r\n\t\"isActive\": 1,\r\n\t\"createdBy\": \"1\",\r\n\t\"updatedBy\": \"1\",\r\n\t\"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n\t\"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}\r\n"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/absencetype",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"absencetype"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "absencetype DELETE",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/absencetype/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"absencetype",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "RoleType v2 (dont use)",
+							"item": [
+								{
+									"name": "RoleType All",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/RoleType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"RoleType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "RoleType ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\n    \"roleTypeName\": \"Admin x\",\n    \"roleTypeDesc\": \"Administrator\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2020-01-01T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2020-01-01T00:00:00\"\n}\n"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/RoleType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"RoleType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "RoleType PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"roleTypeID\": 2,\n    \"roleTypeName\": \"Admin xxxx\",\n    \"roleTypeDesc\": \"Administrator\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2020-01-01T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2020-01-01T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/RoleType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"RoleType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "RoleType DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/RoleType/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"RoleType",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "RoleType ID",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/RoleType/3",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"RoleType",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d4c93f9d-f1be-4e0c-9cff-06efad867b33",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "8042660b-849c-4e20-8b29-5c168a33aac6",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "RoleType",
+							"item": [
+								{
+									"name": "RoleType All",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/RoleType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"RoleType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "RoleType ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\n    \"roleTypeName\": \"Admincccc x\",\n    \"roleTypeDesc\": \"Administrator\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2020-01-01T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2020-01-01T00:00:00\"\n}\n"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/RoleType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"RoleType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "RoleType PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"roleTypeID\": 4,\n    \"roleTypeName\": \"Coordinator\",\n    \"roleTypeDesc\": \"Coordinator\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2020-01-01T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2020-01-01T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/RoleType",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"RoleType"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "RoleType DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/RoleType/3",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"RoleType",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "RoleType ID",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/RoleType/3",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"RoleType",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d4c93f9d-f1be-4e0c-9cff-06efad867b33",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "8042660b-849c-4e20-8b29-5c168a33aac6",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "EducationType",
+							"item": [
+								{
+									"name": "Educ ALL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/education",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"education"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Educ ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"educationName\": \"Test Educ\",\r\n  \"educationDesc\": \"Test Education\",\r\n  \"isInList\": 1,\r\n  \"isActive\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/education",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"education"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Educ ID",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/education/1",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"education",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Educ Delete",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/education/3",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"education",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Educ Patch",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n {\r\n \"op\" : \"replace\", \r\n \"path\" : \"/EducationDesc\",\r\n \"value\" : \"Test Educ XXX\"\r\n }\r\n]"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/education/3",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"education",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Educ Put",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"educationTypeID\": 2,\n    \"educationName\": \"College under Graduate\",\n    \"educationDesc\": \"College under Graduate\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/education",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"education"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Gender",
+							"item": [
+								{
+									"name": "Gender ALL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/gender",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"gender"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Gender ID",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/gender/1",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"gender",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Gender ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"genderTypeName\": \"test gender\",\r\n  \"genderTypeAbbrev\": \"t\",\r\n  \"isInList\": 1,\r\n  \"isActive\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/gender/",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"gender",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Gender Delete",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/gender/4",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"gender",
+												"4"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Gender Patch",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n {\r\n \"op\" : \"replace\", \r\n \"path\" : \"/genderTypeName\",\r\n \"value\" : \"Test Gender XXX\"\r\n }\r\n]"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/gender/4",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"gender",
+												"4"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Gender Put",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"genderTypeID\": 2,\n    \"genderTypeName\": \"Female\",\n    \"genderTypeAbbrev\": \"F\",\n    \"isInList\": true,\n    \"isActive\": true,\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T13:42:11.663\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T13:42:11.667\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/gender",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"gender"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "AppUser Related",
+					"item": [
+						{
+							"name": "AppUserAbsence",
+							"item": [
+								{
+									"name": "AppUserAbsence GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserAbsence",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserAbsence"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserAbsence ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"appUserID\": 6,\r\n  \"startDateUTC\": \"2018-01-06 00:00:00.000\",\r\n  \"endDateUTC\": \"2019-01-06 00:00:00.000\",\r\n  \"absenceTypeID\": 1,\r\n  \"notes\": \"test\",\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserAbsence",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserAbsence"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserAbsence PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"appUserAbsenceID\": 2,\n    \"appUserID\": 6,\n    \"startDateUTC\": \"2018-01-06T00:00:00\",\n    \"endDateUTC\": \"2019-01-06T00:00:00\",\n    \"absenceTypeID\": 1,\n    \"notes\": \"test xxxxxxxxxxx\",\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserAbsence",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserAbsence"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserAbsence DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserAbsence/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserAbsence",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AppUserAddress",
+							"item": [
+								{
+									"name": "AppUserAddress GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserAddress",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserAddress"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserAddress ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"addressTypeID\": 1,\r\n  \"appUserID\": 6,\r\n  \"address1\": \"test address\",\r\n  \"address2\": \"test address\",\r\n  \"address3\": \"test address\",\r\n  \"city\": \"test address\",\r\n  \"provinceStateRegion\": \"test address\",\r\n  \"countryID\": 1,\r\n  \"postalCode\": 0,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserAddress",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserAddress"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserAddress PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"appUserAddressID\": 2,\n        \"addressTypeID\": 1,\n        \"appUserID\": 6,\n        \"address1\": \"test xxxxxxxxxxxxxxx\",\n        \"address2\": \"test xxxxx\",\n        \"address3\": \"test xxxxxxxxxxxxxxxxxxxxxxx\",\n        \"city\": \"test address\",\n        \"provinceStateRegion\": \"test address\",\n        \"countryID\": 1,\n        \"postalCode\": \"0\",\n        \"createdBy\": \"1\",\n        \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n        \"updatedBy\": \"1\",\n        \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n    }"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserAddress",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserAddress"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserAddress DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserAddress/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserAddress",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AppUserCertificate",
+							"item": [
+								{
+									"name": "AppUserCertificate GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserCertificate",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserCertificate"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserCertificate ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"appUserID\": 6,\r\n  \"certificateTypeID\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserCertificate",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserCertificate"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserCertificate PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"appUserCertificateID\": 3,\n    \"appUserID\": 6,\n    \"certificateTypeID\": 1,\n    \"createdBy\": \"1111111\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserCertificate",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserCertificate"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserCertificate DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserCertificate/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserCertificate",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AppUserContact",
+							"item": [
+								{
+									"name": "AppUserContact GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserContact",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserContact"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserContact ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"appUserID\": 6,\r\n  \"contactTypeID\": 1,\r\n  \"contactTypeValue\": \"test contact type value\",\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserContact",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserContact"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserContact PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"appUserContactID\": 3,\n        \"appUserID\": 6,\n        \"contactTypeID\": 1,\n        \"contactTypeValue\": \"test contact type value xxxxxxxxxxxxxxx\",\n        \"createdBy\": \"1\",\n        \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n        \"updatedBy\": \"1\",\n        \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n    }"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserContact",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserContact"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserContact DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserContact/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserContact",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AppUserContract",
+							"item": [
+								{
+									"name": "AppUserContract GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserContract",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserContract"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserContract ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"appUserID\": 6,\r\n  \"terminationDateUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"movedToProductionUTC\": \"2018-01-06 00:00:00.000\",\r\n  \"startDateUTC\": \"2018-01-06 00:00:00.000\",\r\n  \"contractTypeID\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}\r\n"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserContract",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserContract"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserContract PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"appUserContractID\": 3,\n        \"appUserID\": 6,\n        \"terminationDateUTC\": \"2018-09-06T00:00:00\",\n        \"movedToProductionUTC\": \"2018-01-06T00:00:00\",\n        \"startDateUTC\": \"2018-01-06T00:00:00\",\n        \"contractTypeID\": 1,\n        \"createdBy\": \"122\",\n        \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n        \"updatedBy\": \"1\",\n        \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n    }"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserContract",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserContract"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserContract DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserContract/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserContract",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AppUserCountry",
+							"item": [
+								{
+									"name": "AppUserCountry ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"appUserID\": 6,\r\n  \"countryID\": 1,\r\n  \"isLocked\": 0,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserCountry",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserCountry"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserCountry GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserCountry",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserCountry"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserCountry PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"appUserCountryID\": 3,\n    \"appUserID\": 6,\n    \"countryID\": 1,\n    \"isLocked\": false,\n    \"createdBy\": \"12121\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserCountry",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserCountry"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserCountry DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserCountry/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserCountry",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AppUserEducation",
+							"item": [
+								{
+									"name": "AppUserEducation GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserEducation",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserEducation"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserEducation ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"appUserID\": 6,\r\n  \"educationTypeID\": 2,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserEducation",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserEducation"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserEducation PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"appUserEducationID\": 3,\n    \"appUserID\": 6,\n    \"educationTypeID\": 2,\n    \"createdBy\": \"1222\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserEducation",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserEducation"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserEducation DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserEducation/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserEducation",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AppUserEmploymentRecord",
+							"item": [
+								{
+									"name": "AppUserEmploymentRecord GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserEmploymentRecord",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserEmploymentRecord"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserEmploymentRecord ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"appUserID\": 6,\r\n  \"startDateUTC\": \"2018-01-06 00:00:00.000\",\r\n  \"endDateUTC\": \"2018-01-06 00:00:00.000\",\r\n  \"contractTypeID\": 1,\r\n  \"departureDateUTC\": \"2018-10-06 00:00:00.000\",\r\n  \"departureTypeID\": 1,\r\n  \"isEligibleRehire\": false,\r\n  \"movedToProductionUTC\": \"2018-01-06 00:00:00.000\",\r\n  \"isReplaced\": false,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserEmploymentRecord",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserEmploymentRecord"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserEmploymentRecord PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"appUserEmploymentRecordID\": 3,\n    \"appUserID\": 6,\n    \"startDateUTC\": \"2018-01-06T00:00:00\",\n    \"endDateUTC\": \"2018-01-06T00:00:00\",\n    \"contractTypeID\": 1,\n    \"departureDateUTC\": \"2018-10-06T00:00:00\",\n    \"departureTypeID\": 1,\n    \"isEligibleRehire\": false,\n    \"movedToProductionUTC\": \"2018-01-06T00:00:00\",\n    \"isReplaced\": false,\n    \"createdBy\": \"11111\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserEmploymentRecord",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserEmploymentRecord"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserEmploymentRecord DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserEmploymentRecord/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserEmploymentRecord",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AppUserFunction",
+							"item": [
+								{
+									"name": "AppUserFunction GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserFunction",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserFunction"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserFunction ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"appUserID\": 6,\r\n  \"functionTypeID\": 2,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserFunction",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserFunction"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserFunction PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"appUserFunctionID\": 3,\n    \"appUserID\": 6,\n    \"functionTypeID\": 2,\n    \"createdBy\": \"11111\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserFunction",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserFunction"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserFunction DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserFunction/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserFunction",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AppUserInRole",
+							"item": [
+								{
+									"name": "AppUserInRole ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"appUserID\": 6,\r\n  \"roleTypeID\": 4,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}\r\n"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserInRole",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserInRole"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserInRole GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserInRole",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserInRole"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserInRole PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"appUserInRoleID\": 3,\n    \"appUserID\": 6,\n    \"roleTypeID\": 4,\n    \"createdBy\": \"1111\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserInRole",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserInRole"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserInRole DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserInRole/3",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserInRole",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AppUserLanguage",
+							"item": [
+								{
+									"name": "AppUserLanguage GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserLanguage",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserLanguage"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserLanguage ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"languageTypeID\": 1,\r\n  \"appUserID\": 6,\r\n  \"proficiencyTypeID\": 1,\r\n  \"isMonitored\": false,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserLanguage",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserLanguage"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserLanguage PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"appUserLanguageID\": 3,\n    \"languageTypeID\": 1,\n    \"appUserID\": 6,\n    \"proficiencyTypeID\": 1,\n    \"isMonitored\": false,\n    \"createdBy\": \"1211\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserLanguage",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserLanguage"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserLanguage DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserLanguage/3",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserLanguage",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AppUserNote",
+							"item": [
+								{
+									"name": "AppUserNote GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserNote",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserNote"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserNote ALL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"appUserID\": 6,\r\n  \"notes\": \"test user notes\",\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserNote",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserNote"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserNote PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"appUserNoteID\": 3,\n    \"appUserID\": 6,\n    \"notes\": \"test user notes xxxxxxxxxxxxxxx\",\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserNote",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserNote"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserNote DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserNote/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserNote",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AppUserResearchTeam",
+							"item": [
+								{
+									"name": "AppUserResearchTeam GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserResearchTeam",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserResearchTeam"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserResearchTeam ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"workUnitTypeID\": 1,\r\n  \"leadUserID\": 6,\r\n  \"countryID\": 1,\r\n  \"languageTypeID\": 1,\r\n  \"officeID\": 2,\r\n  \"teamID\": 3,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}\r\n"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserResearchTeam",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserResearchTeam"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserResearchTeam PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"appUserResearchTeamID\": 3,\n    \"workUnitTypeID\": 1,\n    \"leadUserID\": 6,\n    \"countryID\": 1,\n    \"languageTypeID\": 1,\n    \"officeID\": 2,\n    \"teamID\": 3,\n    \"createdBy\": \"1111\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserResearchTeam",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserResearchTeam"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserResearchTeam DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserResearchTeam/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserResearchTeam",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AppUserTeam",
+							"item": [
+								{
+									"name": "AppUserTeam GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserTeam",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserTeam"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserTeam ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"teamID\": 3,\r\n  \"appUserID\": 6,\r\n  \"comments\": \"test app user team \",\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserTeam",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserTeam"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserTeam PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"appUserTeamID\": 3,\n    \"teamID\": 3,\n    \"appUserID\": 6,\n    \"comments\": \"test app u \",\n    \"createdBy\": \"1\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserTeam",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserTeam"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserTeam DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserTeam/2",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserTeam",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AppUserTeamAssignment",
+							"item": [
+								{
+									"name": "AppUserTeamAssignment GET",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserTeamAssignment",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserTeamAssignment"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserTeamAssignment ADD",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"appUserID\": 6,\r\n  \"teamID\": 3,\r\n  \"assignmentTypeID\": 2,\r\n  \"isDone\": 1,\r\n  \"createdBy\": \"1\",\r\n  \"updatedBy\": \"1\",\r\n  \"dateCreatedUTC\": \"2018-09-06 00:00:00.000\",\r\n  \"lastUpdatedUTC\": \"2018-09-06 00:00:00.000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserTeamAssignment",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserTeamAssignment"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserTeamAssignment PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"appUserTeamAssignmentID\": 3,\n    \"appUserID\": 6,\n    \"teamID\": 3,\n    \"assignmentTypeID\": 2,\n    \"isDone\": true,\n    \"createdBy\": \"11111\",\n    \"dateCreatedUTC\": \"2018-09-06T00:00:00\",\n    \"updatedBy\": \"1\",\n    \"lastUpdatedUTC\": \"2018-09-06T00:00:00\"\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserTeamAssignment",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserTeamAssignment"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AppUserTeamAssignment DEL",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{apitoken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/api/AppUserTeamAssignment/3",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"api",
+												"AppUserTeamAssignment",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "acecef3a-95d3-4ee9-bb0f-01c300ca80ec",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c75bccaf-a9ca-4edf-b949-f44c0d96c0fd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,69 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Function List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtFunctionType.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtFunctionType [value]="functionTypes" [globalFilterFields]="['functionTypeName']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'functionTypeName'">Name <p-sortIcon [field]="'functionTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'functionTypeDesc'">Description <p-sortIcon [field]="'functionTypeDesc'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isInList'">In List <p-sortIcon [field]="'isInList'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isActive'">Is Active <p-sortIcon [field]="'isActive'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-functionType>
+              <tr>
+
+                  <td class="td-cell">{{functionType.functionTypeName}}</td>
+                  <td class="td-cell">{{functionType.functionTypeDesc}}</td>
+                  <td class="td-cell">
+                    <div class="badge badge-pill badge-secondary">{{functionType.isInList}}</div>
+                  </td>
+                  <td class="td-cell"><div class="badge badge-pill badge-secondary">{{functionType.isActive}}</div></td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-edit" class="ui-button-secondary btn-space" (click)="showEditDialog(functionType.functionTypeID)"></button>
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showDeleteDialog(functionType.functionTypeID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add Function Type Dialog -->
+<app-function-type-add-dialog  [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-function-type-add-dialog>
+<!-- Edit Function Type Dialog -->
+<div *ngIf="selectedFunctionType">
+  <app-function-type-edit-dialog [display]="displayEditDialog" [selectedFunctionType]="selectedFunctionType" (displayChange)="onEditDialogClose($event)"></app-function-type-edit-dialog>
+</div>
+<!-- Delete Function Type Dialog -->
+<div *ngIf="selectedFunctionType">
+  <app-function-type-delete-dialog [display]="displayDeleteDialog" [selectedFunctionType]="selectedFunctionType" (displayChange)="onDeleteDialogClose($event)"></app-function-type-delete-dialog>
+</div>
+
+<p-toast></p-toast>

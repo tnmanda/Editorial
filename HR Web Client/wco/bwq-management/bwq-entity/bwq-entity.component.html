@@ -1,0 +1,318 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+        <b> BATCH ENTITY DETAILS</b>
+  </div>
+  <div class="panel-body">
+      <div class="col-lg-12">
+      <div class="row">
+        <div class="col-lg-6">
+            <mat-form-field >
+                <input type="text" matInput placeholder="Entity ID" [(ngModel)]="bwqEntityObject?.entity.ent_ID" readonly="true">
+            </mat-form-field>
+          </div>
+        <div class="col-lg-6">
+            <mat-form-field >
+                <input type="text" matInput placeholder="Created Date" [(ngModel)]="bwqEntityObject?.entity.dateEntered" readonly="true">
+            </mat-form-field>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+            <mat-form-field >
+                <input type="text" matInput placeholder="Name" [(ngModel)]="bwqEntityObject?.entity.name" readonly="true">
+            </mat-form-field>
+          </div>
+        <div class="col-lg-6">
+            <mat-form-field >
+                <input type="text" matInput placeholder="Updated Date" [(ngModel)]="bwqEntityObject?.entity.dateUpdated" readonly="true">
+            </mat-form-field>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+            <mat-form-field >
+                <input type="text" matInput placeholder="Category" [(ngModel)]="bwqEntityObject?.entity.entryCategory" readonly="true">
+            </mat-form-field>
+          </div>
+        <div class="col-lg-6">
+            <mat-form-field >
+                <input type="text" matInput placeholder="Country Of Record" [(ngModel)]="bwqEntityObject?.entity.country" readonly="true">
+            </mat-form-field>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+            <mat-form-field >
+                <input type="text" matInput placeholder="Sub Category" [(ngModel)]="bwqEntityObject?.entity.entrySubCategory" readonly="true">
+            </mat-form-field>
+          </div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                      <b><div class="text-center"> Notes to Researchers</div> </b>
+                </div>
+                  <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <form (ngSubmit)="onSaveReturn(formDirective)" [formGroup]="humanReviewForm" #formDirective="ngForm">
+                        <div class="col-lg-3"><label>Item</label></div>
+                        <div class="col-lg-3"><label>Batch Name</label></div>
+                        <div class="col-lg-3"><label>Instructions</label></div>
+                        <div class="col-lg-3"><label>Disposition</label></div>
+                      <div class="form-group example-container" *ngFor="let instruction of bwqEntityObject.instructions">
+                          <div class="col-lg-3">
+                              <mat-form-field >
+                                  <input type="text" matInput formControlName="item{{instruction.bwqInstructionsID}}" readonly="true">
+                              </mat-form-field>
+                          </div>
+                          <div class="col-lg-3">
+                              <mat-form-field >
+                                  <input type="text" matInput formControlName="batchName{{instruction.bwqInstructionsID}}" readonly="true">
+                              </mat-form-field>
+                          </div>
+                          <div class="col-lg-3">
+                              <mat-form-field >
+                                  <input type="text" matInput formControlName="instructions{{instruction.bwqInstructionsID}}" readonly="true">
+                              </mat-form-field>
+                          </div>
+                          <div class="col-lg-3">
+                              <mat-form-field >
+                                  <mat-select formControlName="bwqDispositions{{instruction.bwqInstructionsID}}" [(value)]="instruction.bwqDispositionsID" >
+                                      <mat-option *ngFor="let disposition of bwqDispositions" [value]="disposition.bwqDispositionsID">
+                                        {{disposition.bwqDispositionsDescription}}
+                                      </mat-option>
+                                    </mat-select>
+                              </mat-form-field>
+                          </div>
+
+                      </div>
+                      <br>
+                      <div class="text-center">
+                          <!-- <button mat-raised-button>SAVE & NEXT RECORD</button> -->
+                          <button mat-raised-button type="submit">SAVE & RETURN TO LIST</button>
+                          <button mat-raised-button (click)="onCancel()">CANCEL</button>
+                      </div>
+                    </form>
+                    <!-- <mat-table class="lessons-table mat-elevation-z8" #table [dataSource]="bwqEntityObject?.instructions" matSort>
+
+                        <ng-container matColumnDef="item">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>Item</mat-header-cell>
+                            <mat-cell *matCellDef="let item">{{item.item}}</mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="batchName">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>Batch Name</mat-header-cell>
+                            <mat-cell *matCellDef="let item">{{item.batchName}}</mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="instructions">
+                          <mat-header-cell *matHeaderCellDef mat-sort-header>Instructions</mat-header-cell>
+                          <mat-cell *matCellDef="let item">{{item.instructions}}</mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="disposition" class="action-mat-header-cell">
+                            <mat-header-cell *matHeaderCellDef>Disposition</mat-header-cell>
+                              <mat-cell *matCellDef="let item" class="action-mat-cell">
+                                  <mat-form-field>
+                                      <mat-select [(value)]="item.bwqDispositionsID">
+                                        <mat-option *ngFor="let disposition of bwqDispositions" [value]="disposition.bwqDispositionsID">
+                                          {{disposition.bwqDispositionsDescription}}
+                                        </mat-option>
+                                      </mat-select>
+                                    </mat-form-field>
+                              </mat-cell>
+                          </ng-container>
+
+
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+                    </mat-table> -->
+                </div>
+        </div>
+
+      </div>
+
+
+      </div>
+
+      <br>
+      <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Entity
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="row">
+                <div class="col-lg-2 text-center">
+                    <img src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="..." class="img-thumbnail" width="150">
+                </div>
+                <div class="col-lg-9">
+                    <div class="row">
+                      <div class="col-lg-6">
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Title" [(ngModel)]="bwqEntityObject?.entity.prefix" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Primary Name" [(ngModel)]="bwqEntityObject?.entity.name" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="First Name" [(ngModel)]="bwqEntityObject?.entity.firstName" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Last Name" [(ngModel)]="bwqEntityObject?.entity.lastName" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Suffix" [(ngModel)]="bwqEntityObject?.entity.suffix" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Aliases" [(ngModel)]="bwqEntityObject?.entity.aka" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Nicknames" [(ngModel)]="bwqEntityObject?.entity.aka" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Gender" [(ngModel)]="bwqEntityObject?.entity.gender" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Category" [(ngModel)]="bwqEntityObject?.entity.entryCategory" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Sub Category" [(ngModel)]="bwqEntityObject?.entity.entrySubCategory" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Level" [(ngModel)]="bwqEntityObject?.entity.entLevel" readonly="true">
+                          </mat-form-field>
+                      </div>
+                      <div class="col-lg-6">
+
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Data Source" [(ngModel)]="bwqEntityObject?.entity.nameSource" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Designation" [(ngModel)]="bwqEntityObject?.entity.govDesignation" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Data(s) of Birth" [(ngModel)]="bwqEntityObject?.entity.dob" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Place of Birth" [(ngModel)]="bwqEntityObject?.entity.pob" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Primary Country" [(ngModel)]="bwqEntityObject?.entity.country" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Position" [(ngModel)]="bwqEntityObject?.entity.positions" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="National ID" [(ngModel)]="bwqEntityObject?.entity.nationalID" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Other ID" [(ngModel)]="bwqEntityObject?.entity.otherID" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Passport #" [(ngModel)]="bwqEntityObject?.entity.passportID" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Last Updated" [(ngModel)]="bwqEntityObject?.entity.dateUpdated" readonly="true">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field >
+                              <input type="text" matInput placeholder="Entity ID" [(ngModel)]="bwqEntityObject?.entity.ent_ID" readonly="true">
+                          </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Additional Information
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Reported Address
+                </mat-panel-title>
+
+              </mat-expansion-panel-header>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Individual Sources
+                </mat-panel-title>
+
+              </mat-expansion-panel-header>
+            </mat-expansion-panel>
+
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Relationships
+                  </mat-panel-title>
+
+                </mat-expansion-panel-header>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Source Link(S)
+                    </mat-panel-title>
+
+                  </mat-expansion-panel-header>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Documents
+                      </mat-panel-title>
+
+                    </mat-expansion-panel-header>
+                  </mat-expansion-panel>
+
+                  <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Legal Notice
+                        </mat-panel-title>
+
+                      </mat-expansion-panel-header>
+                    </mat-expansion-panel>
+
+        </mat-accordion>
+
+
+</div>

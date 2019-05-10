@@ -1,0 +1,40 @@
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.runtimeconfig.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.runtimeconfig.dev.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Investigations.Test\obj\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Investigations.Test\obj\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Investigations.Test\obj\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Investigations.Test\obj\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\LNWCOE.Module.Investigations.Test\obj\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.runtimeconfig.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.runtimeconfig.dev.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\obj\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.csprojAssemblyReference.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\obj\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\obj\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\obj\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\obj\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\obj\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\Helper.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\LNWCOE.Models.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\Repository.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\LNWCOE.Models.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\Helper.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\Repository.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\bin\Debug\netcoreapp2.0\Microsoft.IdentityModel.Tokens.xml
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\LNWCOE.Module.Investigations.Test\obj\Debug\netcoreapp2.0\LNWCOE.Module.Investigations.Test.csproj.CopyComplete

@@ -1,0 +1,9 @@
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-container > * {
+  width: 100%;
+
+}

@@ -1,0 +1,69 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Proficiency List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtProficiencyType.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtProficiencyType [value]="languageTypes" [globalFilterFields]="['languageTypeName']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'languageTypeName'">Name <p-sortIcon [field]="'languageTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'languageTypeDesc'">Description <p-sortIcon [field]="'languageTypeDesc'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isInList'">In List <p-sortIcon [field]="'isInList'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isActive'">Is Active <p-sortIcon [field]="'isActive'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-languageType>
+              <tr>
+
+                  <td class="td-cell">{{languageType.languageTypeName}}</td>
+                  <td class="td-cell">{{languageType.languageTypeDesc}}</td>
+                  <td class="td-cell">
+                    <div class="badge badge-pill badge-secondary">{{languageType.isInList}}</div>
+                  </td>
+                  <td class="td-cell"><div class="badge badge-pill badge-secondary">{{languageType.isActive}}</div></td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-edit" class="ui-button-secondary btn-space" (click)="showEditDialog(languageType.languageTypeID)"></button>
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showDeleteDialog(languageType.languageTypeID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add Language Type Dialog -->
+<app-language-type-add-dialog  [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-language-type-add-dialog>
+<!-- Edit Language Type Dialog -->
+<div *ngIf="selectedLanguageType">
+  <app-language-type-edit-dialog [display]="displayEditDialog" [selectedLanguageType]="selectedLanguageType" (displayChange)="onEditDialogClose($event)"></app-language-type-edit-dialog>
+</div>
+<!-- Delete Language Type Dialog -->
+<div *ngIf="selectedLanguageType">
+  <app-language-type-delete-dialog [display]="displayDeleteDialog" [selectedLanguageType]="selectedLanguageType" (displayChange)="onDeleteDialogClose($event)"></app-language-type-delete-dialog>
+</div>
+
+<p-toast></p-toast>

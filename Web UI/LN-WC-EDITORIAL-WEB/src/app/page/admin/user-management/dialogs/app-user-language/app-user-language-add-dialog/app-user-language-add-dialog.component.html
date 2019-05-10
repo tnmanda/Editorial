@@ -1,0 +1,46 @@
+<p-dialog *ngIf="selectedAppUser" [(visible)]="display" [modal]="true" [responsive]="true" [width]="550" [baseZIndex]="10000" [closable]="false">
+  <p-header>
+      <i class="fas fa-plus"></i>
+      Add User Language
+  </p-header>
+  <form (ngSubmit)="onSave(appUserLanguageForm)" [formGroup]="appUserLanguageForm" #formDirective="ngForm" >
+      <div class="ui-fluid">
+          <div class="container">
+              <br>
+              <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible" role="alert">
+                  {{ errorMessage }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onCloseMessage()">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+
+              <div class="form-group">
+                <label for="languageType">Language Type</label>
+                <p-dropdown name="languageType" [autoWidth]="false" [options]="languageTypes"placeholder="Select language type" optionLabel="languageTypeName"
+                formControlName="languageType" [ngClass]="{ 'is-invalid': isSubmitted && f.languageType.errors }"></p-dropdown>
+              </div>
+
+              <div class="form-group">
+                <label for="proficiencyType">Proficiency Type</label>
+                <p-dropdown name="proficiencyType" [autoWidth]="false" [options]="proficiencyTypes"placeholder="Select proficiency type" optionLabel="proficiencyTypeName"
+                formControlName="proficiencyType" [ngClass]="{ 'is-invalid': isSubmitted && f.proficiencyType.errors }"></p-dropdown>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="isMonitored">Is Monitored?</label><br>
+                        <p-inputSwitch name="isMonitored" formControlName="isMonitored"></p-inputSwitch>
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
+        <hr>
+        <div class="text-right">
+          <button type="submit" pButton label="Submit" class="btn-space"></button>
+          <button type="button" pButton (click)="onClose()"label="Cancel" class="ui-button-secondary"></button>
+        </div>
+    </form>
+</p-dialog>
+

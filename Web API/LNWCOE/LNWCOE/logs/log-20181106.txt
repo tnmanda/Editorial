@@ -1,0 +1,550 @@
+2018-11-06 17:53:08.585 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-06 17:53:14.058 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-06 17:53:14.058 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-06 17:53:14.390 +08:00 [Information] Request finished in 337.1656ms 200 
+2018-11-06 17:53:16.372 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-06 17:53:16.458 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-06 17:53:16.472 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 6.2463ms.
+2018-11-06 17:53:16.540 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-06 17:53:16.909 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 523.7886ms
+2018-11-06 17:53:16.923 +08:00 [Information] Request finished in 2885.6654ms 200 application/json; charset=utf-8
+2018-11-06 17:53:18.983 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/favicon.ico  
+2018-11-06 17:53:18.989 +08:00 [Information] Request finished in 6.1763ms 404 
+2018-11-06 17:57:03.237 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1093
+2018-11-06 17:57:03.398 +08:00 [Information] Successfully validated the token.
+2018-11-06 17:57:03.442 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-06 17:57:03.479 +08:00 [Information] Authorization was successful.
+2018-11-06 17:57:04.653 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-06 17:57:06.705 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-06 17:57:07.528 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 2864.658ms.
+2018-11-06 17:57:07.531 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-06 17:57:07.550 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 4107.9767ms
+2018-11-06 17:57:07.594 +08:00 [Information] Request finished in 4356.8682ms 400 application/json; charset=utf-8
+2018-11-06 17:57:13.414 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1093
+2018-11-06 17:57:13.415 +08:00 [Information] Successfully validated the token.
+2018-11-06 17:57:13.417 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-06 17:57:13.418 +08:00 [Information] Authorization was successful.
+2018-11-06 17:57:13.422 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-06 17:57:13.424 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-06 17:57:14.319 +08:00 [Information] Executed DbCommand ("46"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-06 17:57:14.470 +08:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-06 17:57:14.620 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-06 17:57:15.622 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-06 17:57:15.910 +08:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-06 17:57:15.915 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-06 17:57:15.941 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2518.3802ms.
+2018-11-06 17:57:15.941 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-06 17:57:15.941 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 2523.9407ms
+2018-11-06 17:57:15.944 +08:00 [Information] Request finished in 2530.1625ms 200 application/json; charset=utf-8
+2018-11-06 18:01:33.670 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-06 18:01:34.821 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/BWQ application/json 1093
+2018-11-06 18:01:35.212 +08:00 [Information] Successfully validated the token.
+2018-11-06 18:01:35.811 +08:00 [Information] Route matched with "{action = \"Create\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)"
+2018-11-06 18:01:35.869 +08:00 [Information] Authorization was successful.
+2018-11-06 18:01:36.450 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" with arguments (["LNWCOE.Models.BWQ.NewBatchObject"]) - Validation state: Valid
+2018-11-06 18:01:37.741 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-06 18:01:38.869 +08:00 [Information] Executed DbCommand ("73"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [mods].[QueueGuid]
+FROM [ApplicationModules] AS [mods]
+WHERE [mods].[ModuleName] = N'BWQ'"
+2018-11-06 18:01:39.047 +08:00 [Information] Executed DbCommand ("13"ms) [Parameters=["@__BatchIdOutput_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQEntitiesID], [t].[BWQID], [t].[CategoryName], [t].[CountryName], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[EntityName], [t].[LastUpdatedUTC], [t].[MMMEntityID], [t].[UpdatedBy], [t].[WorkItemID]
+FROM [BWQEntities] AS [t]
+WHERE [t].[BWQID] = @__BatchIdOutput_0"
+2018-11-06 18:01:39.189 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-06 18:01:40.399 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__bwqent_BWQEntitiesID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[BWQInstructionsID], [t].[BWQDispositionsID], [t].[BWQEntitiesID], [t].[BWQFieldSelectID], [t].[CreatedBy], [t].[DateCreatedUTC], [t].[Instructions], [t].[LastUpdatedUTC], [t].[UpdatedBy]
+FROM [BWQInstructions] AS [t]
+WHERE [t].[BWQEntitiesID] = @__bwqent_BWQEntitiesID_0"
+2018-11-06 18:01:40.639 +08:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-06 18:01:40.644 +08:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [BWQEntities] SET [WorkItemID] = @p0
+WHERE [BWQEntitiesID] = @p1;
+SELECT @@ROWCOUNT;"
+2018-11-06 18:01:40.688 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 4223.8314ms.
+2018-11-06 18:01:40.732 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-06 18:01:40.862 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.Create (LNWCOE)" in 5039.81ms
+2018-11-06 18:01:40.902 +08:00 [Information] Request finished in 6092.1904ms 200 application/json; charset=utf-8
+2018-11-06 18:01:40.923 +08:00 [Information] Request starting HTTP/1.1 POST http://127.0.0.1:17037/iisintegration  0
+2018-11-06 18:01:40.930 +08:00 [Information] Request finished in 7.1529ms 202 
+2018-11-06 20:51:20.228 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-06 20:51:22.963 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/bwq/nav/6  
+2018-11-06 20:51:22.963 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-06 20:51:22.963 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-06 20:51:23.254 +08:00 [Information] Request finished in 273.1447ms 200 
+2018-11-06 20:51:23.791 +08:00 [Information] Successfully validated the token.
+2018-11-06 20:51:24.639 +08:00 [Information] Route matched with "{action = \"GetNavWithCountsAndUser\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.GetNavWithCountsAndUser (LNWCOE)"
+2018-11-06 20:51:24.639 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-06 20:51:24.711 +08:00 [Information] Authorization was successful.
+2018-11-06 20:51:24.725 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-06 20:51:24.750 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 8.9181ms.
+2018-11-06 20:51:24.847 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-06 20:51:25.005 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 347.3721ms
+2018-11-06 20:51:25.099 +08:00 [Information] Request finished in 2159.2977ms 200 application/json; charset=utf-8
+2018-11-06 20:51:26.006 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.GetNavWithCountsAndUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-11-06 20:51:27.891 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-06 20:51:57.263 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].BatchName, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:51:57.290 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].BatchName, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:51:57.294 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:51:57.303 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:51:58.245 +08:00 [Error] Failed executing DbCommand ("181"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""usp_BWQGetNavigation_sel @p0"
+System.Data.SqlClient.SqlException (0x80131904): Procedure usp_BWQGetNavigation_sel has no parameters and arguments were supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:21171a83-9aa6-4517-a97b-e42bcf0e90b6
+Error Number:8146,State:2,Class:16
+2018-11-06 20:51:58.807 +08:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"LNWCOE.Data.AppDbContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Procedure usp_BWQGetNavigation_sel has no parameters and arguments were supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Lookup`2.Create[TSource](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   at System.Linq.GroupedEnumerable`3.ToArray()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.OrderedEnumerable`1.<GetEnumerator>d__3.MoveNext()
+   at System.Linq.Enumerable.SelectIPartitionIterator`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:21171a83-9aa6-4517-a97b-e42bcf0e90b6
+Error Number:8146,State:2,Class:16"
+System.Data.SqlClient.SqlException (0x80131904): Procedure usp_BWQGetNavigation_sel has no parameters and arguments were supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Lookup`2.Create[TSource](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   at System.Linq.GroupedEnumerable`3.ToArray()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.OrderedEnumerable`1.<GetEnumerator>d__3.MoveNext()
+   at System.Linq.Enumerable.SelectIPartitionIterator`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:21171a83-9aa6-4517-a97b-e42bcf0e90b6
+Error Number:8146,State:2,Class:16
+2018-11-06 20:53:02.585 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-06 20:53:04.228 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-06 20:53:04.228 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/bwq/nav/6  
+2018-11-06 20:53:04.228 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-06 20:53:04.513 +08:00 [Information] Request finished in 292.6643ms 200 
+2018-11-06 20:53:05.055 +08:00 [Information] Successfully validated the token.
+2018-11-06 20:53:05.739 +08:00 [Information] Route matched with "{action = \"GetNavWithCountsAndUser\", controller = \"BWQ\"}". Executing action "LNWCOE.Helpers.BWQ.BWQController.GetNavWithCountsAndUser (LNWCOE)"
+2018-11-06 20:53:05.739 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-06 20:53:05.803 +08:00 [Information] Authorization was successful.
+2018-11-06 20:53:05.813 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-06 20:53:05.828 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3.0747ms.
+2018-11-06 20:53:05.907 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-06 20:53:06.073 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 323.9978ms
+2018-11-06 20:53:06.092 +08:00 [Information] Request finished in 1887.2228ms 200 application/json; charset=utf-8
+2018-11-06 20:53:06.506 +08:00 [Information] Executing action method "LNWCOE.Helpers.BWQ.BWQController.GetNavWithCountsAndUser (LNWCOE)" with arguments (["6"]) - Validation state: Valid
+2018-11-06 20:53:08.298 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-06 20:53:08.942 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].BatchName, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:08.963 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].BatchName, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:08.969 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:08.975 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.541 +08:00 [Information] Executed DbCommand ("153"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""usp_BWQGetNavigationWithUser_sel @p0"
+2018-11-06 20:53:09.719 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.723 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.723 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.723 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.724 +08:00 [Warning] The LINQ expression '"GroupBy([subg].FunctionTypeName, [subg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.724 +08:00 [Warning] The LINQ expression '"GroupBy([subg].FunctionTypeName, [subg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.725 +08:00 [Warning] The LINQ expression '"orderby [SubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.725 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.785 +08:00 [Information] Executed DbCommand ("15"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""usp_BWQGetNavigationWithUser_sel @p0"
+2018-11-06 20:53:09.812 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].FunctionTypeName, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.818 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].FunctionTypeName, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.818 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.819 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.819 +08:00 [Warning] The LINQ expression '"GroupBy([subg].CountryName, [subg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.820 +08:00 [Warning] The LINQ expression '"GroupBy([subg].CountryName, [subg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.820 +08:00 [Warning] The LINQ expression '"orderby [SubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.820 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.839 +08:00 [Information] Executed DbCommand ("10"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""usp_BWQGetNavigationWithUser_sel @p0"
+2018-11-06 20:53:09.865 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].Aging, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.869 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].Aging, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.869 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.870 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.870 +08:00 [Warning] The LINQ expression '"GroupBy([subg].CountryName, [subg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.871 +08:00 [Warning] The LINQ expression '"GroupBy([subg].CountryName, [subg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.871 +08:00 [Warning] The LINQ expression '"orderby [SubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.871 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.871 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.872 +08:00 [Warning] The LINQ expression '"GroupBy([subsubg].FunctionTypeName, [subsubg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.872 +08:00 [Warning] The LINQ expression '"GroupBy([subsubg].FunctionTypeName, [subsubg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.872 +08:00 [Warning] The LINQ expression '"orderby [SubSubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.872 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.899 +08:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""usp_BWQGetNavigationWithUser_sel @p0"
+2018-11-06 20:53:09.934 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].BatchName, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.938 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].BatchName, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.938 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.938 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:09.963 +08:00 [Information] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""usp_BWQGetNavigation_sel"
+2018-11-06 20:53:10.019 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.022 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].CountryName, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.022 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.023 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.023 +08:00 [Warning] The LINQ expression '"GroupBy([subg].FunctionTypeName, [subg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.023 +08:00 [Warning] The LINQ expression '"GroupBy([subg].FunctionTypeName, [subg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.023 +08:00 [Warning] The LINQ expression '"orderby [SubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.024 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.045 +08:00 [Information] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""usp_BWQGetNavigation_sel"
+2018-11-06 20:53:10.094 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].FunctionTypeName, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.097 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].FunctionTypeName, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.097 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.098 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.098 +08:00 [Warning] The LINQ expression '"GroupBy([subg].CountryName, [subg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.098 +08:00 [Warning] The LINQ expression '"GroupBy([subg].CountryName, [subg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.099 +08:00 [Warning] The LINQ expression '"orderby [SubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.099 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.117 +08:00 [Information] Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""usp_BWQGetNavigation_sel"
+2018-11-06 20:53:10.166 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].Aging, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.171 +08:00 [Warning] The LINQ expression '"GroupBy([navdata].Aging, new BwqNavDataWithUser() {CountryID = [navdata].CountryID, CountryName = [navdata].CountryName, FunctionTypeID = [navdata].FunctionTypeID, FunctionTypeName = [navdata].FunctionTypeName, MMMEntityID = [navdata].MMMEntityID, BWQID = [navdata].BWQID, BatchName = [navdata].BatchName, StatusCollectionItemID = [navdata].StatusCollectionItemID, StartDateUTC = [navdata].StartDateUTC, AppUserId = [navdata].AppUserId, Aging = [navdata].Aging})"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.172 +08:00 [Warning] The LINQ expression '"orderby [Grouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.172 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.172 +08:00 [Warning] The LINQ expression '"GroupBy([subg].CountryName, [subg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.173 +08:00 [Warning] The LINQ expression '"GroupBy([subg].CountryName, [subg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.173 +08:00 [Warning] The LINQ expression '"orderby [SubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.173 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.173 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.174 +08:00 [Warning] The LINQ expression '"GroupBy([subsubg].FunctionTypeName, [subsubg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.174 +08:00 [Warning] The LINQ expression '"GroupBy([subsubg].FunctionTypeName, [subsubg])"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.174 +08:00 [Warning] The LINQ expression '"orderby [SubSubGrouping].Key asc"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.174 +08:00 [Warning] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2018-11-06 20:53:10.192 +08:00 [Information] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""usp_BWQGetNavigation_sel"
+2018-11-06 20:53:10.254 +08:00 [Information] Executed action method "LNWCOE.Helpers.BWQ.BWQController.GetNavWithCountsAndUser (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 3739.6138ms.
+2018-11-06 20:53:10.270 +08:00 [Information] Executing JsonResult, writing value of type '"Newtonsoft.Json.Linq.JArray"'.
+2018-11-06 20:53:10.292 +08:00 [Information] Executed action "LNWCOE.Helpers.BWQ.BWQController.GetNavWithCountsAndUser (LNWCOE)" in 4547.6077ms
+2018-11-06 20:53:10.315 +08:00 [Information] Request finished in 6110.2045ms 200 application/json; charset=utf-8
+2018-11-06 21:43:08.656 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-06 21:43:11.143 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-06 21:43:11.143 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-06 21:43:11.465 +08:00 [Information] Request finished in 323.0449ms 200 
+2018-11-06 21:43:12.732 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-06 21:43:12.803 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-06 21:43:12.814 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.7737ms.
+2018-11-06 21:43:12.856 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-06 21:43:13.107 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 354.0064ms
+2018-11-06 21:43:13.132 +08:00 [Information] Request finished in 2013.0591ms 200 application/json; charset=utf-8
+2018-11-06 21:44:35.501 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/filter text/plain 122
+2018-11-06 21:44:35.804 +08:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{"alg":"HS256","typ":"JWT"}.{"sub":"hrevuser2","sid":"892829272822828287102","jti":"8f6076db-4c4a-422a-ab71-1a3b3a38cf62","rol":[{"isadm":true,"rname":"hr-admin","grp":[{"gname":"HRWCOJOB"}]}],"dmn_adm":[],"ips":["127.0.0.1/127.0.0.1"],"exp":1541580262,"iss":"http://humanreview.api.risk.lexisnexis.com","aud":"http://humanreview.risk.lexisnexis.com"}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2018-11-06 21:44:36.028 +08:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{\"alg\":\"HS256\",\"typ\":\"JWT\"}.{\"sub\":\"hrevuser2\",\"sid\":\"892829272822828287102\",\"jti\":\"8f6076db-4c4a-422a-ab71-1a3b3a38cf62\",\"rol\":[{\"isadm\":true,\"rname\":\"hr-admin\",\"grp\":[{\"gname\":\"HRWCOJOB\"}]}],\"dmn_adm\":[],\"ips\":[\"127.0.0.1/127.0.0.1\"],\"exp\":1541580262,\"iss\":\"http://humanreview.api.risk.lexisnexis.com\",\"aud\":\"http://humanreview.risk.lexisnexis.com\"}'."
+2018-11-06 21:44:36.062 +08:00 [Information] Route matched with "{action = \"GenInvestigations\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)"
+2018-11-06 21:44:36.117 +08:00 [Information] Authorization failed.
+2018-11-06 21:44:36.122 +08:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-06 21:44:36.135 +08:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-06 21:44:36.162 +08:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-06 21:44:36.162 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" in 99.4525ms
+2018-11-06 21:44:36.164 +08:00 [Information] Request finished in 662.8422ms 401 
+2018-11-06 21:44:36.203 +08:00 [Information] Connection id ""0HLI3TN5C5K50"", Request id ""0HLI3TN5C5K50:00000001"": the application completed without reading the entire request body.
+2018-11-06 21:44:44.373 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Auth/apitoken application/json 121
+2018-11-06 21:44:44.377 +08:00 [Information] Route matched with "{action = \"Token\", controller = \"Auth\"}". Executing action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)"
+2018-11-06 21:44:45.255 +08:00 [Information] Executing action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" with arguments (["LNWCOE.Models.Auth.LoginInfo"]) - Validation state: Valid
+2018-11-06 21:44:46.636 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-06 21:44:47.830 +08:00 [Information] Executed DbCommand ("124"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HREditorialUserMap] AS [r]
+        WHERE [r].[HumanReviewUserID] = @__userName_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-11-06 21:44:53.027 +08:00 [Information] Executed DbCommand ("9"ms) [Parameters=["@__userName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[HREditorialUserMapID], [r].[AppUserID], [r].[CreatedBy], [r].[DateCreatedUTC], [r].[HumanReviewUserID], [r].[LastUpdatedUTC], [r].[UpdatedBy]
+FROM [HREditorialUserMap] AS [r]
+WHERE [r].[HumanReviewUserID] = @__userName_0"
+2018-11-06 21:44:53.325 +08:00 [Information] Executed DbCommand ("63"ms) [Parameters=["@__thisUser_AppUserID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [roletypes].[RoleTypeID], [users].[AppUserName]
+FROM [AppUser] AS [users]
+INNER JOIN [AppUserInRole] AS [roles] ON [users].[AppUserID] = [roles].[AppUserID]
+INNER JOIN [RoleType] AS [roletypes] ON [roles].[RoleTypeID] = [roletypes].[RoleTypeID]
+WHERE [users].[AppUserID] = @__thisUser_AppUserID_0"
+2018-11-06 21:44:53.346 +08:00 [Information] Executed action method "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 8083.9317ms.
+2018-11-06 21:44:53.350 +08:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType5`2[[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[LNWCOE.Models.Auth.TokenData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-06 21:44:53.386 +08:00 [Information] Executed action "LNWCOE.Helpers.Auth.AuthController.Token (LNWCOE)" in 9008.7865ms
+2018-11-06 21:44:53.398 +08:00 [Information] Request finished in 9025.3258ms 200 application/json; charset=utf-8
+2018-11-06 21:44:57.256 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/filter text/plain 122
+2018-11-06 21:44:57.257 +08:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{"alg":"HS256","typ":"JWT"}.{"sub":"hrevuser2","sid":"892829272822828287102","jti":"8f6076db-4c4a-422a-ab71-1a3b3a38cf62","rol":[{"isadm":true,"rname":"hr-admin","grp":[{"gname":"HRWCOJOB"}]}],"dmn_adm":[],"ips":["127.0.0.1/127.0.0.1"],"exp":1541580262,"iss":"http://humanreview.api.risk.lexisnexis.com","aud":"http://humanreview.risk.lexisnexis.com"}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2018-11-06 21:44:57.263 +08:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{\"alg\":\"HS256\",\"typ\":\"JWT\"}.{\"sub\":\"hrevuser2\",\"sid\":\"892829272822828287102\",\"jti\":\"8f6076db-4c4a-422a-ab71-1a3b3a38cf62\",\"rol\":[{\"isadm\":true,\"rname\":\"hr-admin\",\"grp\":[{\"gname\":\"HRWCOJOB\"}]}],\"dmn_adm\":[],\"ips\":[\"127.0.0.1/127.0.0.1\"],\"exp\":1541580262,\"iss\":\"http://humanreview.api.risk.lexisnexis.com\",\"aud\":\"http://humanreview.risk.lexisnexis.com\"}'."
+2018-11-06 21:44:57.266 +08:00 [Information] Route matched with "{action = \"GenInvestigations\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)"
+2018-11-06 21:44:57.267 +08:00 [Information] Authorization failed.
+2018-11-06 21:44:57.267 +08:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-06 21:44:57.267 +08:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-06 21:44:57.267 +08:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-06 21:44:57.267 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" in 0.8821ms
+2018-11-06 21:44:57.267 +08:00 [Information] Request finished in 11.5287ms 401 
+2018-11-06 21:44:57.315 +08:00 [Information] Connection id ""0HLI3TN5C5K50"", Request id ""0HLI3TN5C5K50:00000003"": the application completed without reading the entire request body.
+2018-11-06 21:45:19.580 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/filter text/plain 122
+2018-11-06 21:45:19.623 +08:00 [Information] Successfully validated the token.
+2018-11-06 21:45:19.634 +08:00 [Information] Route matched with "{action = \"GenInvestigations\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)"
+2018-11-06 21:45:19.636 +08:00 [Information] Authorization was successful.
+2018-11-06 21:45:19.666 +08:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 415
+2018-11-06 21:45:19.667 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" in 32.6581ms
+2018-11-06 21:45:19.668 +08:00 [Information] Request finished in 88.1217ms 415 
+2018-11-06 21:45:19.679 +08:00 [Information] Connection id ""0HLI3TN5C5K50"", Request id ""0HLI3TN5C5K50:00000004"": the application completed without reading the entire request body.
+2018-11-06 21:45:28.219 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/filter application/json 122
+2018-11-06 21:45:28.220 +08:00 [Information] Successfully validated the token.
+2018-11-06 21:45:28.220 +08:00 [Information] Route matched with "{action = \"GenInvestigations\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)"
+2018-11-06 21:45:28.220 +08:00 [Information] Authorization was successful.
+2018-11-06 21:45:28.253 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestigationFilter"]) - Validation state: Valid
+2018-11-06 21:45:28.262 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-06 21:45:28.387 +08:00 [Error] Failed executing DbCommand ("37"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetInvEntries_sel @countryName=@p0, @categoryName=@p1, @batchName=@p2, @aging=@p3, @appuser=@p4"
+System.Data.SqlClient.SqlException (0x80131904): @batchName is not a parameter for procedure usp_GetInvEntries_sel.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:b9e1afe0-229b-40cd-8290-792ef4cf8c7d
+Error Number:8145,State:1,Class:16
+2018-11-06 21:45:28.615 +08:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"LNWCOE.Data.AppDbContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): @batchName is not a parameter for procedure usp_GetInvEntries_sel.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:b9e1afe0-229b-40cd-8290-792ef4cf8c7d
+Error Number:8145,State:1,Class:16"
+System.Data.SqlClient.SqlException (0x80131904): @batchName is not a parameter for procedure usp_GetInvEntries_sel.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:b9e1afe0-229b-40cd-8290-792ef4cf8c7d
+Error Number:8145,State:1,Class:16
+2018-11-06 21:45:57.857 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-06 21:45:59.538 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-06 21:45:59.538 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-06 21:45:59.785 +08:00 [Information] Request finished in 238.5921ms 200 
+2018-11-06 21:46:00.745 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-06 21:46:00.805 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-06 21:46:00.818 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.4736ms.
+2018-11-06 21:46:00.862 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-06 21:46:01.073 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 306.8664ms
+2018-11-06 21:46:01.120 +08:00 [Information] Request finished in 1604.3844ms 200 application/json; charset=utf-8
+2018-11-06 21:46:03.887 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/filter application/json 122
+2018-11-06 21:46:04.020 +08:00 [Information] Successfully validated the token.
+2018-11-06 21:46:04.432 +08:00 [Information] Route matched with "{action = \"GenInvestigations\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)"
+2018-11-06 21:46:04.477 +08:00 [Information] Authorization was successful.
+2018-11-06 21:46:05.103 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestigationFilter"]) - Validation state: Valid
+2018-11-06 21:46:06.562 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-06 21:46:07.554 +08:00 [Information] Executed DbCommand ("136"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetInvEntries_sel @countryName=@p0, @categoryName=@p1, @aging=@p2, @appuser=@p3"
+2018-11-06 21:46:07.628 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 2515.7076ms.
+2018-11-06 21:46:07.646 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.INV.InvestigationData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-06 21:46:07.653 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" in 3220.4319ms
+2018-11-06 21:46:07.665 +08:00 [Information] Request finished in 3777.5615ms 200 application/json; charset=utf-8
+2018-11-06 21:46:20.703 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/filter application/json 122
+2018-11-06 21:46:20.704 +08:00 [Information] Successfully validated the token.
+2018-11-06 21:46:20.709 +08:00 [Information] Route matched with "{action = \"GenInvestigations\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)"
+2018-11-06 21:46:20.710 +08:00 [Information] Authorization was successful.
+2018-11-06 21:46:20.714 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestigationFilter"]) - Validation state: Valid
+2018-11-06 21:46:20.722 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-06 21:46:20.759 +08:00 [Information] Executed DbCommand ("19"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetInvEntries_sel @countryName=@p0, @categoryName=@p1, @aging=@p2, @appuser=@p3"
+2018-11-06 21:46:20.760 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 45.5581ms.
+2018-11-06 21:46:20.760 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.INV.InvestigationData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-06 21:46:20.760 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" in 51.1151ms
+2018-11-06 21:46:20.760 +08:00 [Information] Request finished in 57.6747ms 200 application/json; charset=utf-8
+2018-11-06 21:46:30.371 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/filter application/json 112
+2018-11-06 21:46:30.371 +08:00 [Information] Successfully validated the token.
+2018-11-06 21:46:30.372 +08:00 [Information] Route matched with "{action = \"GenInvestigations\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)"
+2018-11-06 21:46:30.372 +08:00 [Information] Authorization was successful.
+2018-11-06 21:46:30.373 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestigationFilter"]) - Validation state: Valid
+2018-11-06 21:46:30.373 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-06 21:46:30.384 +08:00 [Information] Executed DbCommand ("10"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetInvEntries_sel @countryName=@p0, @categoryName=@p1, @aging=@p2, @appuser=@p3"
+2018-11-06 21:46:30.875 +08:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"LNWCOE.Data.AppDbContext"'."
+""System.InvalidOperationException: An exception occurred while reading a database value for property 'InvestigationData.LastActivityDate'. The expected type was 'System.DateTime' but the actual value was null. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.TryReadValue[TValue](ValueBuffer& valueBuffer, Int32 index, IPropertyBase property)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.ThrowReadValueException[TValue](Exception exception, Object value, IPropertyBase property)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.TryReadValue[TValue](ValueBuffer& valueBuffer, Int32 index, IPropertyBase property)
+   at lambda_method(Closure , MaterializationContext )
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.UnbufferedEntityShaper`1.Shape(QueryContext queryContext, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.UnbufferedOffsetEntityShaper`1.Shape(QueryContext queryContext, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ProjectionShaper.TypedProjectionShaper`3.Shape(QueryContext queryContext, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()"
+System.InvalidOperationException: An exception occurred while reading a database value for property 'InvestigationData.LastActivityDate'. The expected type was 'System.DateTime' but the actual value was null. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.TryReadValue[TValue](ValueBuffer& valueBuffer, Int32 index, IPropertyBase property)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.ThrowReadValueException[TValue](Exception exception, Object value, IPropertyBase property)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.TryReadValue[TValue](ValueBuffer& valueBuffer, Int32 index, IPropertyBase property)
+   at lambda_method(Closure , MaterializationContext )
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.UnbufferedEntityShaper`1.Shape(QueryContext queryContext, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.UnbufferedOffsetEntityShaper`1.Shape(QueryContext queryContext, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.ProjectionShaper.TypedProjectionShaper`3.Shape(QueryContext queryContext, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+2018-11-06 21:47:12.000 +08:00 [Information] User profile is available. Using '"C:\Users\AManda.SPI-GLOBAL\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-06 21:47:14.420 +08:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:57308/  0
+2018-11-06 21:47:14.420 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:57308/api/values  
+2018-11-06 21:47:14.420 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/filter application/json 92
+2018-11-06 21:47:14.657 +08:00 [Information] Request finished in 238.3559ms 200 
+2018-11-06 21:47:15.067 +08:00 [Information] Successfully validated the token.
+2018-11-06 21:47:15.645 +08:00 [Information] Route matched with "{action = \"GenInvestigations\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)"
+2018-11-06 21:47:15.645 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)"
+2018-11-06 21:47:15.709 +08:00 [Information] Authorization was successful.
+2018-11-06 21:47:15.720 +08:00 [Information] Executing action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" - Validation state: Valid
+2018-11-06 21:47:15.733 +08:00 [Information] Executed action method "LNWCOE.Controllers.ValuesController.Get (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.7286ms.
+2018-11-06 21:47:15.806 +08:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-11-06 21:47:15.920 +08:00 [Information] Executed action "LNWCOE.Controllers.ValuesController.Get (LNWCOE)" in 260.9712ms
+2018-11-06 21:47:15.953 +08:00 [Information] Request finished in 1553.6071ms 200 application/json; charset=utf-8
+2018-11-06 21:47:16.451 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestigationFilter"]) - Validation state: Valid
+2018-11-06 21:47:18.007 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-06 21:47:18.990 +08:00 [Information] Executed DbCommand ("114"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetInvEntries_sel @countryName=@p0, @categoryName=@p1, @aging=@p2, @appuser=@p3"
+2018-11-06 21:47:19.157 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 2698.2788ms.
+2018-11-06 21:47:19.173 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.INV.InvestigationData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-06 21:47:19.202 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" in 3548.9379ms
+2018-11-06 21:47:19.214 +08:00 [Information] Request finished in 4814.9485ms 200 application/json; charset=utf-8
+2018-11-06 21:48:21.797 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/filter application/json 90
+2018-11-06 21:48:21.798 +08:00 [Information] Successfully validated the token.
+2018-11-06 21:48:21.817 +08:00 [Information] Route matched with "{action = \"GenInvestigations\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)"
+2018-11-06 21:48:21.818 +08:00 [Information] Authorization was successful.
+2018-11-06 21:48:21.821 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestigationFilter"]) - Validation state: Valid
+2018-11-06 21:48:24.386 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-06 21:48:24.430 +08:00 [Information] Executed DbCommand ("25"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetInvEntries_sel @countryName=@p0, @categoryName=@p1, @aging=@p2, @appuser=@p3"
+2018-11-06 21:48:24.431 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 2609.6565ms.
+2018-11-06 21:48:24.432 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.INV.InvestigationData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-06 21:48:24.432 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" in 2614.5221ms
+2018-11-06 21:48:24.432 +08:00 [Information] Request finished in 2634.8437ms 200 application/json; charset=utf-8
+2018-11-06 21:48:31.359 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/filter application/json 91
+2018-11-06 21:48:31.360 +08:00 [Information] Successfully validated the token.
+2018-11-06 21:48:31.363 +08:00 [Information] Route matched with "{action = \"GenInvestigations\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)"
+2018-11-06 21:48:31.364 +08:00 [Information] Authorization was successful.
+2018-11-06 21:48:31.365 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestigationFilter"]) - Validation state: Valid
+2018-11-06 21:48:31.366 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-06 21:48:31.376 +08:00 [Information] Executed DbCommand ("9"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetInvEntries_sel @countryName=@p0, @categoryName=@p1, @aging=@p2, @appuser=@p3"
+2018-11-06 21:48:31.377 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 11.836ms.
+2018-11-06 21:48:31.378 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.INV.InvestigationData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-06 21:48:31.378 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" in 14.5532ms
+2018-11-06 21:48:31.378 +08:00 [Information] Request finished in 18.5422ms 200 application/json; charset=utf-8
+2018-11-06 21:48:43.916 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:57308/api/Investigation/filter application/json 91
+2018-11-06 21:48:43.917 +08:00 [Information] Successfully validated the token.
+2018-11-06 21:48:43.918 +08:00 [Information] Route matched with "{action = \"GenInvestigations\", controller = \"Investigation\"}". Executing action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)"
+2018-11-06 21:48:43.918 +08:00 [Information] Authorization was successful.
+2018-11-06 21:48:43.922 +08:00 [Information] Executing action method "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" with arguments (["LNWCOE.Models.INV.InvestigationFilter"]) - Validation state: Valid
+2018-11-06 21:48:43.923 +08:00 [Information] Entity Framework Core "2.1.3-rtm-32065" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-06 21:48:44.044 +08:00 [Information] Executed DbCommand ("118"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""usp_GetInvEntries_sel @countryName=@p0, @categoryName=@p1, @aging=@p2, @appuser=@p3"
+2018-11-06 21:48:44.044 +08:00 [Information] Executed action method "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 121.2556ms.
+2018-11-06 21:48:44.044 +08:00 [Information] Executing JsonResult, writing value of type '"System.Collections.Generic.List`1[[LNWCOE.Models.INV.InvestigationData, LNWCOE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-06 21:48:44.044 +08:00 [Information] Executed action "LNWCOE.Modules.INV.InvestigationController.GenInvestigations (LNWCOE)" in 126.133ms
+2018-11-06 21:48:44.044 +08:00 [Information] Request finished in 128.339ms 200 application/json; charset=utf-8

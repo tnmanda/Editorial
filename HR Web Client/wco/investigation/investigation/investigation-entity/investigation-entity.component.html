@@ -1,0 +1,269 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+          <b> INVESTIGATION ENTITY DETAILS</b>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+          <div class="col-lg-6">
+              <mat-slide-toggle
+              class="example-margin"
+              [color]="lockRecordColor"
+              [(ngModel)]="checked"
+              [disabled]="disabled"
+              (change)="onChangeLockRecord($event)">
+               Lock Record
+              </mat-slide-toggle>
+            <!-- <button mat-raised-button>Activity Log</button> -->
+           </div>
+           <div class="col-lg-6">
+             <div class="text-right">
+                <button mat-raised-button (click)="openActivityLogsDialog()">Activity Log</button>
+             </div>
+           </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group text-container">
+                <mat-form-field >
+                    <input type="text" matInput placeholder="Entity Name" [(ngModel)]="invEntityObject?.investigation.entityName" readonly="true">
+                </mat-form-field>
+
+                <mat-form-field >
+                    <input type="text" matInput placeholder="Investigation No" [(ngModel)]="invEntityObject?.investigation.investigationID" readonly="true">
+                </mat-form-field>
+
+                <mat-form-field >
+                    <input type="text" matInput placeholder="Country of Record" [(ngModel)]="invEntityObject?.investigation.countryOfRecord" readonly="true">
+                </mat-form-field>
+
+                <mat-form-field >
+                    <input type="text" matInput placeholder="Submitted Date:" [(ngModel)]="invEntityObject?.investigation.dateCreatedUTC" readonly="true">
+                </mat-form-field>
+
+                <mat-form-field >
+                    <input type="text" matInput placeholder="LER" readonly="true" [(ngModel)]="invEntityObject?.entity.dateUpdated">
+                </mat-form-field>
+
+                <mat-form-field >
+                    <textarea matInput placeholder="Reason" [(ngModel)]="invReason" readonly="true" rows="5"></textarea>
+                </mat-form-field>
+
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group text-container">
+                <mat-form-field >
+                    <input type="text" matInput placeholder="Entity ID" [(ngModel)]="invEntityObject?.investigation.mmmddUsersID" readonly="true">
+                </mat-form-field>
+
+                <mat-form-field >
+                    <input type="text" matInput placeholder="Due" readonly="true">
+                </mat-form-field>
+
+                <mat-form-field >
+                    <input type="text" matInput placeholder="Category of Record" [(ngModel)]="invEntityObject?.investigation.functionType.functionTypeName" readonly="true">
+                </mat-form-field>
+
+                <mat-form-field >
+                    <input type="text" matInput placeholder="LEI" [(ngModel)]="invEntityObject?.investigation.lastUpdatedUTC" readonly="true">
+                </mat-form-field>
+
+                  <p>Notes</p>
+                    <!-- <textarea matInput placeholder="Notes" [(ngModel)]="invEntityObject?.investigation.comments" readonly="true" rows="5"></textarea> -->
+                    <div  class="note-container">
+                        <mat-card class="card-placeholder" *ngFor="let note of invEntityObject?.notes">
+                            <mat-card-header>
+                              <mat-card-title><b>Created By: </b> {{ note.createdBy }}</mat-card-title>
+                              <mat-card-subtitle><b>Created Date: </b> {{ note.dateCreated | date: 'MM/dd/yyyy HH:mm:ss a' }}</mat-card-subtitle>
+                            </mat-card-header>
+
+                            <mat-card-content>
+                              <p>
+                               {{ note.note }}
+                              </p>
+                            </mat-card-content>
+
+                          </mat-card>
+                    </div>
+
+
+            </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+          <div class="panel-body">
+            <form (ngSubmit)="onSubmit(formDirective)" [formGroup]="humanReviewForm" #formDirective="ngForm">
+              <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group text-container">
+                        <label>Priority:</label>
+                        <mat-select placeholder="Select Priority Type" formControlName="priority">
+                            <mat-option *ngFor="let priority of priorityTypes" [value]="priority.priorityTypeID">
+                              {{priority.priorityName}}
+                            </mat-option>
+                        </mat-select>
+                        <br>
+                        <label>Disposition:</label>
+                        <mat-select placeholder="Select Disposition" formControlName="disposition" >
+                            <mat-option *ngFor="let disposition of dispositions" [value]="disposition.investigationDispositionsID">
+                              {{disposition.dispositionType}}
+                            </mat-option>
+                        </mat-select>
+                        <br>
+                        <label>Country of Research:</label>
+                        <mat-select placeholder="Country of Research" formControlName="countryOfResearch" >
+                            <mat-option *ngFor="let country of countries" [value]="country.countryID">
+                              {{country.countryName}}
+                            </mat-option>
+                        </mat-select>
+                        <br>
+
+                        <mat-form-field >
+                            <textarea matInput placeholder="Add Notes" formControlName="note" rows="5"></textarea>
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group text-container">
+                        <label>Status:</label>
+                        <mat-select placeholder="Select Status" formControlName="status">
+                            <mat-option *ngFor="let status of statuses" [value]="status.investigationStatusID">
+                              {{status.investigationStatusName}}
+                            </mat-option>
+                        </mat-select>
+                        <br>
+                        <label>Category of Research:</label>
+                        <mat-select placeholder="Category of Research" formControlName="categoryOfResearch" >
+                            <mat-option *ngFor="let functionType of functionTypes" [value]="functionType.functionTypeID">
+                              {{functionType.functionTypeName}}
+                            </mat-option>
+                        </mat-select>
+                    </div>
+                </div>
+                <br>
+
+              </div>
+              <br>
+              <div class="text-center">
+                  <button mat-raised-button color="primary" [disabled]="humanReviewForm.invalid" type="submit">SUBMIT CHANGES</button>
+                  <button mat-raised-button (click)="onCancel()">BACK</button>
+              </div>
+            </form>
+          </div>
+      </div>
+
+      <mat-accordion>
+          <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Entity
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="row" *ngIf="invEntityObject?.entity">
+                  <div class="col-lg-2 text-center">
+                      <img src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="..." class="img-thumbnail" width="150">
+                  </div>
+                  <div class="col-lg-9">
+                      <div class="row">
+                        <div class="col-lg-6">
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Title" [(ngModel)]="invEntityObject?.entity.prefix" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Primary Name" [(ngModel)]="invEntityObject?.entity.name" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="First Name" [(ngModel)]="invEntityObject?.entity.firstName" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Last Name" [(ngModel)]="invEntityObject?.entity.lastName" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Suffix" [(ngModel)]="invEntityObject?.entity.suffix" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Aliases" [(ngModel)]="invEntityObject?.entity.aka" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Nicknames" [(ngModel)]="invEntityObject?.entity.aka" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Gender" [(ngModel)]="invEntityObject?.entity.gender" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Category" [(ngModel)]="invEntityObject?.entity.entryCategory" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Sub Category" [(ngModel)]="invEntityObject?.entity.entrySubCategory" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Level" [(ngModel)]="invEntityObject?.entity.entLevel" readonly="true">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-lg-6">
+
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Data Source" [(ngModel)]="invEntityObject?.entity.nameSource" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Designation" [(ngModel)]="invEntityObject?.entity.govDesignation" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Data(s) of Birth" [(ngModel)]="invEntityObject?.entity.dob" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Place of Birth" [(ngModel)]="invEntityObject?.entity.pob" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Primary Country" [(ngModel)]="invEntityObject?.entity.country" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Position" [(ngModel)]="invEntityObject?.entity.positions" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="National ID" [(ngModel)]="invEntityObject?.entity.nationalID" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Other ID" [(ngModel)]="invEntityObject?.entity.otherID" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Passport #" [(ngModel)]="invEntityObject?.entity.passportID" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Last Updated" [(ngModel)]="invEntityObject?.entity.dateUpdated" readonly="true">
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field >
+                                <input type="text" matInput placeholder="Entity ID" [(ngModel)]="invEntityObject?.entity.ent_ID" readonly="true">
+                            </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>

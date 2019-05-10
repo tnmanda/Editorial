@@ -1,0 +1,80 @@
+<p-dialog *ngIf="display" [(visible)]="display" [style]="{}" [modal]="true" [responsive]="true" [width]="1000" [baseZIndex]="10000" [closable]="false">
+  <p-header>
+      <i class="fas fa-plus"></i>
+      Add New Alert Job Queue
+  </p-header>
+  <form (ngSubmit)="onSave(alertsJobForm)" [formGroup]="alertsJobForm" #formDirective="ngForm">
+      <div class="ui-fluid">
+          <div class="container">
+            <br>
+            <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible" role="alert">
+                {{ errorMessage }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onCloseMessage()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <br>
+              <div class="alert alert-warning" role="alert">
+                  At least one (1) alert name must be supplied before performing save.
+              </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="startDate">Due Date</label>
+                      <p-calendar [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:3000" [showIcon]="true" formControlName="dueDateUTC"></p-calendar>
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <p-dropdown name="priority" [autoWidth]="false" [filter]="true" [options]="alertPriorities" placeholder="Select priority" optionLabel="itemText"
+                    formControlName="priority" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.priority.errors }"></p-dropdown>
+                  </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label for="alertsJob">Alert Job</label>
+                  <p-dropdown #ddAlertJob name="alertsJob" [autoWidth]="false" [filter]="true" [options]="alertJobs" placeholder="Select alert job" optionLabel="jobName"
+                  formControlName="alertsJob" [ngClass]="{ 'ui-dropdown-custom': isSubmitted && f.alertsJob.errors }" (onChange)="onAlertJobChange(ddAlertJob.value)"></p-dropdown>
+                </div>
+              </div>
+            </div>
+
+              <br>
+              <p-pickList [source]="sourceAlertNames" [target]="targetAlertNames" sourceHeader="Available Alert Names" targetHeader="Selected Alert Names" [responsive]="true" filterBy="jobName"
+              dragdrop="false" sourceFilterPlaceholder="Search by name" targetFilterPlaceholder="Search by name" [sourceStyle]="{'height':'300px'}" [targetStyle]="{'height':'300px'}">
+                <ng-template let-alertName pTemplate="item">
+                    <div class="ui-helper-clearfix">
+                        <p pTooltip="test">{{ alertName.nameEntry }}</p>
+                    </div>
+                </ng-template>
+            </p-pickList>
+
+          </div>
+        </div>
+        <br>
+        <div *ngIf="!isError">
+            <div  class="alert alert-danger" role="alert">
+                Empty selected alert names. Please supply at least (1) one before performing save.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onErrorMessageClose()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+            </div>
+        </div>
+
+
+        <hr>
+
+        <div class="text-right">
+          <button type="submit" pButton label="Submit" class="btn-space"></button>
+          <button type="button" pButton (click)="onClose()"label="Cancel" class="ui-button-secondary"></button>
+        </div>
+
+    </form>
+</p-dialog>
+<p-toast></p-toast>

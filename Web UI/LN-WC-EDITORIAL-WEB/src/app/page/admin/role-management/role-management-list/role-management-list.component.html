@@ -1,0 +1,85 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Role List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtRole.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtRole [value]="roleTypes" [globalFilterFields]="['roleTypeName', 'roleTypeDesc']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'roleTypeName'">Name <p-sortIcon [field]="'roleTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'roleTypeDesc'">Description <p-sortIcon [field]="'roleTypeDesc'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isInList'">InList <p-sortIcon [field]="'isInList'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isActive'">Active <p-sortIcon [field]="'isActive'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-roleType>
+              <tr>
+
+                  <td class="td-cell">{{roleType.roleTypeName}}</td>
+                  <td class="td-cell">{{roleType.roleTypeDesc}}</td>
+                  <td class="td-cell">
+                      <div *ngIf="roleType.isInList; else isDisabled">
+                          <div class="badge badge-pill badge-success">{{roleType.isInList}}</div>
+                      </div>
+                      <ng-template #isDisabled>
+                          <div class="badge badge-pill badge-secondary">{{roleType.isInList}}</div>
+                      </ng-template>
+                  </td>
+                  <td class="td-cell">
+                      <div *ngIf="roleType.isActive; else isDisabled">
+                          <div class="badge badge-pill badge-success">{{roleType.isActive}}</div>
+                      </div>
+                      <ng-template #isDisabled>
+                          <div class="badge badge-pill badge-secondary">{{roleType.isActive}}</div>
+                      </ng-template>
+                  </td>
+
+                  <td >
+                      <button pButton type="button" icon="fa fa-eye" class="ui-button-success btn-space" [routerLink]="['./role-management-detail', roleType.roleTypeID]"></button>
+                      <button pButton type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="showEditDialog(roleType.roleTypeID)"></button>
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-danger" (click)="showDeleteDialog(roleType.roleTypeID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add Absence Type Dialog -->
+<app-role-management-add-dialog [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-role-management-add-dialog>
+<!-- Edit Absence Type Dialog -->
+<div *ngIf="selectedRoleType">
+  <app-role-management-edit-dialog [display]="displayEditDialog" [selectedRoleType]="selectedRoleType" (displayChange)="onEditDialogClose($event)"></app-role-management-edit-dialog>
+</div>
+<!-- Delete Absence Type Dialog -->
+<div *ngIf="selectedRoleType">
+  <app-role-management-delete-dialog [display]="displayDeleteDialog" [selectedRoleType]="selectedRoleType" (displayChange)="onDeleteDialogClose($event)"></app-role-management-delete-dialog>
+</div>
+
+
+
+<p-toast></p-toast>

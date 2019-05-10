@@ -1,0 +1,69 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Work Unit List</span>
+      </div>
+  </p-header>
+      <br>
+
+
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtWorkUnitType.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtWorkUnitType [value]="workUnitTypes" [globalFilterFields]="['workUnitTypeName']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+
+                  <th [pSortableColumn]="'workUnitTypeName'">Name <p-sortIcon [field]="'workUnitTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'workUnitTypeDesc'">Description <p-sortIcon [field]="'workUnitTypeDesc'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isInList'">In List <p-sortIcon [field]="'isInList'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isActive'">Is Active <p-sortIcon [field]="'isActive'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-workUnitType>
+              <tr>
+
+                  <td class="td-cell">{{workUnitType.workUnitTypeName}}</td>
+                  <td class="td-cell">{{workUnitType.workUnitTypeDesc}}</td>
+                  <td class="td-cell">
+                    <div class="badge badge-pill badge-secondary">{{workUnitType.isInList}}</div>
+                  </td>
+                  <td class="td-cell"><div class="badge badge-pill badge-secondary">{{workUnitType.isActive}}</div></td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-edit" class="ui-button-secondary btn-space" (click)="showEditDialog(workUnitType.workUnitTypeID)"></button>
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-secondary" (click)="showDeleteDialog(workUnitType.workUnitTypeID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add Work Unit Type Dialog -->
+<app-work-unit-type-add-dialog  [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-work-unit-type-add-dialog>
+<!-- Edit Work Unit Type Dialog -->
+<div *ngIf="selectedWorkUnitType">
+  <app-work-unit-type-edit-dialog [display]="displayEditDialog" [selectedWorkUnitType]="selectedWorkUnitType" (displayChange)="onEditDialogClose($event)"></app-work-unit-type-edit-dialog>
+</div>
+<!-- Delete Work Unit Type Dialog -->
+<div *ngIf="selectedWorkUnitType">
+  <app-work-unit-type-delete-dialog [display]="displayDeleteDialog" [selectedWorkUnitType]="selectedWorkUnitType" (displayChange)="onDeleteDialogClose($event)"></app-work-unit-type-delete-dialog>
+</div>
+
+<p-toast></p-toast>

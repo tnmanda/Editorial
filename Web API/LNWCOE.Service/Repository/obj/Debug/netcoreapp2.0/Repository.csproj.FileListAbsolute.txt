@@ -1,0 +1,24 @@
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\bin\Debug\netcoreapp2.0\Repository.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\bin\Debug\netcoreapp2.0\Repository.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\bin\Debug\netcoreapp2.0\Repository.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.0\Repository.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.0\Repository.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.0\Repository.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.0\Repository.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.0\Repository.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.0\Repository.csprojAssemblyReference.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\bin\Debug\netcoreapp2.0\LNWCOE.Models.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\bin\Debug\netcoreapp2.0\LNWCOE.Models.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.0\Repository.csproj.CopyComplete
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Repository\bin\Debug\netcoreapp2.0\Repository.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Repository\bin\Debug\netcoreapp2.0\Repository.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Repository\bin\Debug\netcoreapp2.0\Repository.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Repository\bin\Debug\netcoreapp2.0\LNWCOE.Models.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Repository\bin\Debug\netcoreapp2.0\LNWCOE.Models.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.0\Repository.csprojAssemblyReference.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.0\Repository.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.0\Repository.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.0\Repository.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.0\Repository.csproj.CopyComplete
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.0\Repository.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Repository\obj\Debug\netcoreapp2.0\Repository.pdb

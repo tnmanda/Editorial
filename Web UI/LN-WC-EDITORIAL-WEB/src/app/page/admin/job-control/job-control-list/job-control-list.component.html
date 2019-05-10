@@ -1,0 +1,85 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Job List</span>
+      </div>
+  </p-header>
+      <br>
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtJobAlert.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtJobAlert [value]="alertJobs" [globalFilterFields]="['alertJobsID','jobName', 'jobAbbrev', 'country.countryName', 'isActive', 'dateCreatedUTC']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th [pSortableColumn]="'alertJobsID'">Job ID <p-sortIcon [field]="'alertJobsID'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'jobName'">Job Name <p-sortIcon [field]="'jobName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'jobAbbrev'">Job Abbrev <p-sortIcon [field]="'jobAbbrev'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'country'">Country <p-sortIcon [field]="'country'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'isActive'">Is Active <p-sortIcon [field]="'isActive'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'dateCreatedUTC'">Date Created <p-sortIcon [field]="'dateCreatedUTC'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th><p-multiSelect [style]="{'width':'100%', 'height':'35px', 'display':'block', 'text-overflow':'ellipsis', 'white-space':'nowrap'}"
+                  [options]="countries" optionLabel="countryName" [filter]="true" defaultLabel="All" (onChange)="onCountryChange($event, dtJobAlert)"></p-multiSelect></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-alertJob>
+              <tr>
+                <td class="td-cell">{{alertJob.alertJobsID}}</td>
+                  <td class="td-cell">{{alertJob.jobName}}</td>
+                  <td class="td-cell">{{alertJob.jobAbbrev}}</td>
+                  <td class="td-cell">{{alertJob.country?.countryName}}</td>
+                  <td class="td-cell">
+                    <div *ngIf="alertJob.isActive; else isDisabled">
+                        <div class="badge badge-pill badge-success">{{alertJob.isActive}}</div>
+                    </div>
+                    <ng-template #isDisabled>
+                        <div class="badge badge-pill badge-secondary">{{alertJob.isActive}}</div>
+                    </ng-template>
+                </td>
+                <td class="td-cell">{{alertJob.dateCreatedUTC | date: 'MM/dd/yyyy HH:mm:ss a'}}</td>
+                  <td >
+                      <button pButton pTooltip="Edit" tooltipPosition="bottom" type="button" icon="fa fa-edit" class="ui-button-info btn-space" (click)="showEditDialog(alertJob.alertJobsID)"></button>
+                      <button pButton pTooltip="Delete" tooltipPosition="bottom" type="button" icon="fa fa-trash" class="ui-button-danger" (click)="showDeleteDialog(alertJob.alertJobsID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add Job Dialog -->
+<app-job-control-add-dialog [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-job-control-add-dialog>
+
+<!-- Edit Job Dialog -->
+<div *ngIf="selectedAlertJob">
+  <app-job-control-edit-dialog [display]="displayEditDialog" [selectedAlertJob]="selectedAlertJob" (displayChange)="onEditDialogClose($event)"></app-job-control-edit-dialog>
+</div>
+<!-- Delete Job Dialog -->
+<div *ngIf="selectedAlertJob">
+  <app-job-control-delete-dialog [display]="displayDeleteDialog" [selectedAlertJob]="selectedAlertJob" (displayChange)="onDeleteDialogClose($event)"></app-job-control-delete-dialog>
+</div>
+
+<p-toast></p-toast>

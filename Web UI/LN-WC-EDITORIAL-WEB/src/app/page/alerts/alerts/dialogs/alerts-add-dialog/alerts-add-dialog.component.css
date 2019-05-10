@@ -1,0 +1,16 @@
+.btn-space {
+  margin-right: 5px;
+}
+
+.ui-dropdown-custom {
+  background: #ffffff;
+  border: 1px solid #dc3545;
+  transition: border-color 0.2s;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  vertical-align: middle;
+  width: 100%;
+  border-radius: 3px;
+}
+

@@ -1,0 +1,19 @@
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-container > * {
+  width: 50%;
+
+}
+
+.card-placeholder {
+  margin: 5px;
+}
+
+.note-container {
+  height: 150px;
+  max-height: 150px;
+  overflow: auto;
+}

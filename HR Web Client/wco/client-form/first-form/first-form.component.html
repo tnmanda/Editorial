@@ -1,0 +1,27 @@
+<form (ngSubmit)="onSubmit(formDirective)" [formGroup]="humanReviewForm" #formDirective="ngForm">
+
+  <div class="form-group example-container">
+    <mat-form-field >
+      <input type="text" matInput formControlName="FirstName" placeholder="FirstName">
+    </mat-form-field>
+    <mat-form-field >
+      <input type="text" matInput formControlName="LastName" placeholder="LastName">
+    </mat-form-field>
+    <mat-form-field >
+      <input type="text" matInput formControlName="Address" placeholder="Address">
+    </mat-form-field>
+    <mat-form-field >
+      <input type="text" matInput formControlName="City" placeholder="City">
+    </mat-form-field>
+    <mat-form-field >
+      <input type="text" matInput formControlName="State" placeholder="State">
+    </mat-form-field>
+    <mat-form-field >
+      <input type="text" matInput formControlName="ZipCode" placeholder="ZipCode">
+    </mat-form-field>
+    <mat-form-field >
+      <input type="text" matInput formControlName="Notes" placeholder="Notes">
+    </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary" [disabled]="humanReviewForm.invalid" type="submit">Submit</button>
+</form>

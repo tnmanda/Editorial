@@ -1,0 +1,28 @@
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Helper\obj\Debug\netcoreapp2.0\Helper.csprojAssemblyReference.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Helper\obj\Debug\netcoreapp2.0\Helper.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Helper\obj\Debug\netcoreapp2.0\Helper.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Helper\obj\Debug\netcoreapp2.0\Helper.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Helper\bin\Debug\netcoreapp2.0\Helper.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Helper\bin\Debug\netcoreapp2.0\Helper.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Helper\bin\Debug\netcoreapp2.0\Helper.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Helper\obj\Debug\netcoreapp2.0\Helper.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Helper\obj\Debug\netcoreapp2.0\Helper.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Helper\bin\Debug\netcoreapp2.0\LNWCOE.Models.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Helper\bin\Debug\netcoreapp2.0\LNWCOE.Models.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Helper\obj\Debug\netcoreapp2.0\Helper.csproj.CopyComplete
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Helper\bin\Debug\netcoreapp2.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LNWCOE.Service\Helper\bin\Debug\netcoreapp2.0\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Helper\obj\Debug\netcoreapp2.0\Helper.csprojAssemblyReference.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Helper\obj\Debug\netcoreapp2.0\Helper.csproj.CoreCompileInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Helper\obj\Debug\netcoreapp2.0\Helper.AssemblyInfoInputs.cache
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Helper\obj\Debug\netcoreapp2.0\Helper.AssemblyInfo.cs
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Helper\obj\Debug\netcoreapp2.0\Helper.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Helper\obj\Debug\netcoreapp2.0\Helper.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Helper\bin\Debug\netcoreapp2.0\Helper.deps.json
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Helper\bin\Debug\netcoreapp2.0\Helper.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Helper\bin\Debug\netcoreapp2.0\Helper.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Helper\bin\Debug\netcoreapp2.0\LNWCOE.Models.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Helper\bin\Debug\netcoreapp2.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Helper\bin\Debug\netcoreapp2.0\LNWCOE.Models.pdb
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Helper\bin\Debug\netcoreapp2.0\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\AManda.SPI-GLOBAL\Documents\LN_WC_Editorial_Dev\Web API\LNWCOE.Service\Helper\obj\Debug\netcoreapp2.0\Helper.csproj.CopyComplete

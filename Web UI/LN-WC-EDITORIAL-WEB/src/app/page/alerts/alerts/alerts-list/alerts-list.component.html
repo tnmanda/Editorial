@@ -1,0 +1,72 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Alert Job List</span>
+      </div>
+  </p-header>
+      <br>
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtAlertJob.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtAlertJob [value]="alertJobQueues" [globalFilterFields]="['alertJobsQueueID', 'jobName', 'description', 'created', 'due', 'status','priority','total','remaining']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th [pSortableColumn]="'alertJobsQueueID'">Job ID <p-sortIcon [field]="'alertJobsQueueID'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'jobName'">Job Name <p-sortIcon [field]="'jobName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'description'">Description <p-sortIcon [field]="'description'"></p-sortIcon></th>
+                  <th width="10%" [pSortableColumn]="'created'">Created Date <p-sortIcon [field]="'created'"></p-sortIcon></th>
+                  <th width="10%" [pSortableColumn]="'due'">Due Date <p-sortIcon [field]="'due'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'status'">Status <p-sortIcon [field]="'status'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'priority'">Priority <p-sortIcon [field]="'priority'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'total'">Total <p-sortIcon [field]="'total'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'remaining'">Remaining <p-sortIcon [field]="'remaining'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-alertJobQueue>
+              <tr>
+                  <td class="td-cell">{{alertJobQueue.alertJobsQueueID}}</td>
+                  <td class="td-cell">{{alertJobQueue.jobName}}</td>
+                  <td class="td-cell">{{alertJobQueue.description}}</td>
+                  <td class="td-cell">{{alertJobQueue.created | date: 'MM/dd/yyyy'}}</td>
+                  <td class="td-cell">{{alertJobQueue.due | date: 'MM/dd/yyyy'}}</td>
+                  <td class="td-cell">{{alertJobQueue.status}}</td>
+                  <td class="td-cell">{{alertJobQueue.priority}}</td>
+                  <td class="td-cell">{{alertJobQueue.total}}</td>
+                  <td class="td-cell">{{alertJobQueue.remaining}}</td>
+                  <td >
+                     <button pButton pTooltip="Delete" tooltipPosition="bottom" type="button" icon="fa fa-trash" class="ui-button-danger" (click)="showDeleteDialog(alertJobQueue.alertJobsQueueID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+
+</p-panel>
+
+<!-- Add Alerts Dialog -->
+<app-alerts-add-dialog [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-alerts-add-dialog>
+<!-- Edit Office Dialog -->
+<!-- <div *ngIf="selectedOffice">
+  <app-office-edit-dialog [display]="displayEditDialog" [selectedOffice]="selectedOffice" (displayChange)="onEditDialogClose($event)"></app-office-edit-dialog>
+</div> -->
+<!-- Delete Alerts Dialog -->
+<div *ngIf="selectedAlertJobQueue">
+  <app-alerts-delete-dialog [display]="displayDeleteDialog" [selectedAlertJobQueue]="selectedAlertJobQueue" (displayChange)="onDeleteDialogClose($event)"></app-alerts-delete-dialog>
+</div>
+
+<p-toast></p-toast>

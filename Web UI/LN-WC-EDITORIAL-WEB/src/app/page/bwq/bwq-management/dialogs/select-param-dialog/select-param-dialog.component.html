@@ -1,0 +1,159 @@
+<p-dialog *ngIf="display" [(visible)]="display" [style]="{}" [modal]="true" [responsive]="true" [width]="550" [baseZIndex]="10000" [closable]="false">
+  <p-header>
+      <!-- <i class="fas fa-plus"></i> -->
+      Select Parameters
+  </p-header>
+  <form (ngSubmit)="onSave(selectParamForm)" [formGroup]="selectParamForm" #formDirective="ngForm">
+      <div class="ui-fluid">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="dateEnteredFrom">Date Entered From:</label>
+                    <p-calendar [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:3000" [showIcon]="true" formControlName="dateEnteredFrom"></p-calendar>
+                  </div>
+                  <div class="form-group">
+                    <label for="dateUpdatedFrom">Date Updated From:</label>
+                    <p-calendar [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:3000" [showIcon]="true" formControlName="dateUpdatedFrom"></p-calendar>
+                  </div>
+                  <div class="form-group">
+                    <label for="lastReviewedDateFrom">Date Reviewed From:</label>
+                    <p-calendar [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:3000" [showIcon]="true" formControlName="lastReviewedDateFrom"></p-calendar>
+                  </div>
+              </div>
+              <div class="col-lg-6">
+                  <div class="form-group">
+                      <label for="dateEnteredTo">Date Entered To:</label>
+                      <p-calendar [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:3000" [showIcon]="true" formControlName="dateEnteredTo"></p-calendar>
+                    </div>
+                    <div class="form-group">
+                      <label for="dateUpdatedTo">Date Updated To:</label>
+                      <p-calendar [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:3000" [showIcon]="true" formControlName="dateUpdatedTo"></p-calendar>
+                    </div>
+                    <div class="form-group">
+                      <label for="lastReviewedDateTo">Date Reviewed To:</label>
+                      <p-calendar [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:3000" [showIcon]="true" formControlName="lastReviewedDateTo"></p-calendar>
+                    </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12">
+                  <div class="form-group">
+                    <label for="enteredBy">Entered By</label>
+                    <input  name="enteredBy" type="text" class="form-control" pInputText placeholder="Enter user name"
+                    formControlName="enteredBy">
+                  </div>
+                  <div class="form-group">
+                    <label for="updatedBy">Updated By</label>
+                    <input  name="updatedBy" type="text" class="form-control" pInputText placeholder="Enter user name"
+                    formControlName="updatedBy">
+                  </div>
+                  <div class="form-group">
+                    <label for="reviewedBy">Reviewed By</label>
+                    <input  name="reviewedBy" type="text" class="form-control" pInputText placeholder="Enter user name"
+                    formControlName="reviewedBy">
+                  </div>
+
+                  <!-- <div class="form-group">
+                    <label for="enteredBy">Entered By:</label>
+                    <p-dropdown name="enteredBy" [autoWidth]="false" [showClear]="true" [options]="appUsers" placeholder="Select User" optionLabel="appUserName"
+                    formControlName="enteredBy" [filter]="true"></p-dropdown>
+                  </div>
+                  <div class="form-group">
+                    <label for="updatedBy">Updated By:</label>
+                    <p-dropdown name="updatedBy" [autoWidth]="false" [showClear]="true" [options]="appUsers" placeholder="Select User" optionLabel="appUserName"
+                    formControlName="enteredBy" [filter]="true"></p-dropdown>
+                  </div>
+                  <div class="form-group">
+                    <label for="reviewedBy">Reviewed By:</label>
+                    <p-dropdown name="reviewedBy" [autoWidth]="false" [showClear]="true" [options]="appUsers" placeholder="Select User" optionLabel="appUserName"
+                    formControlName="reviewedBy" [filter]="true"></p-dropdown>
+                  </div> -->
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="dob">Empty DOB</label><br>
+                    <p-inputSwitch name="dob" formControlName="dob"></p-inputSwitch>
+                </div>
+                <div class="form-group">
+                    <label for="nationalID">Empty National ID</label><br>
+                    <p-inputSwitch name="nationalID" formControlName="nationalID"></p-inputSwitch>
+                </div>
+                <div class="form-group">
+                    <label for="passportID">Empty Passport ID</label><br>
+                    <p-inputSwitch name="passportID" formControlName="passportID"></p-inputSwitch>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                  <div class="form-group">
+                      <label for="doB2">Empty DOB 2</label><br>
+                      <p-inputSwitch name="doB2" formControlName="doB2"></p-inputSwitch>
+                  </div>
+                  <div class="form-group">
+                      <label for="otherID">Empty Other ID</label><br>
+                      <p-inputSwitch name="otherID" formControlName="otherID"></p-inputSwitch>
+                  </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12">
+                  <div class="form-group">
+                    <label for="sourceName">Source</label>
+                    <p-dropdown #ddSourceName name="sourceName" [autoWidth]="false" [showClear]="true" [options]="sources" placeholder="Select Source" optionLabel="sourceName"
+                    formControlName="source" [filter]="true"></p-dropdown>
+                  </div>
+                  <div class="form-group">
+                      <label for="country">Country</label>
+                      <p-multiSelect [options]="countries" formControlName="country" optionLabel="countryName"></p-multiSelect>
+                    </div>
+                  <div class="form-group">
+                    <label for="category">Category</label>
+                    <p-dropdown name="category" [autoWidth]="false" [showClear]="true" [options]="categories" placeholder="Select Category" optionLabel="entryCategory"
+                    formControlName="category" [filter]="true"></p-dropdown>
+                  </div>
+                  <div class="form-group">
+                    <label for="subCategory">Sub Category</label>
+                    <p-dropdown name="subCategory" [autoWidth]="false" [showClear]="true" [options]="subCategories" placeholder="Select Sub Category" optionLabel="subCatDesc"
+                    formControlName="subCategory" [filter]="true"></p-dropdown>
+                  </div>
+                  <div class="form-group">
+                    <label for="level">Level</label>
+                    <p-dropdown name="level" [autoWidth]="false" [showClear]="true" [options]="levels" placeholder="Select Level" optionLabel="levelDesc"
+                    formControlName="level" [filter]="true"></p-dropdown>
+                  </div>
+                  <div class="form-group">
+                    <label for="positions">Positions</label>
+                      <textarea pInputTextarea [rows]="3" name="positions" class="form-control" placeholder="Enter positions" formControlName="positions"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="additionalInformation">Additional Information</label>
+                      <textarea pInputTextarea [rows]="3" name="additionalInformation" class="form-control" placeholder="Enter additional information" formControlName="remarks"></textarea>
+                  </div>
+                  <div *ngIf="isSubmitted">
+                    <p-progressBar mode="indeterminate" [style]="{'height': '6px', 'color':'green'}"></p-progressBar>
+                  </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <br>
+
+        <b> Generated Entities: </b><b style="color:red">( {{bwqEntitiesCount}} items )</b>
+        <hr>
+
+        <div class="text-right">
+          <button type="submit" pButton label="Generate" class="btn-space"></button>
+          <span *ngIf="bwqEntitiesCount > 0">
+          <button type="button" pButton (click)="onSubmit()" label="Submit" class="ui-button-success btn-space"></button>
+          </span>
+          <button type="button" pButton (click)="onClose()"label="Cancel" class="ui-button-secondary"></button>
+        </div>
+
+    </form>
+</p-dialog>

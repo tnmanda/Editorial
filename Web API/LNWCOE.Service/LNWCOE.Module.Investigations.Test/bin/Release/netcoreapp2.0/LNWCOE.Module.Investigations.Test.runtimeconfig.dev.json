@@ -1,0 +1,9 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\AManda.SPI-GLOBAL\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\AManda.SPI-GLOBAL\\.nuget\\packages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ]
+  }
+}

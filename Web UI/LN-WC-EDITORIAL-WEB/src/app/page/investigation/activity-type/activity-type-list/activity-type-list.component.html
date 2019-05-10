@@ -1,0 +1,63 @@
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<br>
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><i class="far fa-list-alt"></i> Activity Type List</span>
+      </div>
+  </p-header>
+      <br>
+          <div class="row">
+          <div class="col-lg-6">
+              <div class="ui-inputgroup">
+                  <input type="text" pInputText placeholder="Global Search..." (input)="dtFunctionType.filterGlobal($event.target.value, 'contains')">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+              </div>
+
+          </div>
+        <div class="col-lg-6">
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-success" style="float:right" (click)="showAddDialog()"></button>
+        </div>
+      </div>
+
+      <br>
+      <p-table #dtFunctionType [value]="activityTypes" [globalFilterFields]="['activityTypeName','activityTypeDescription']" [paginator]="true" [rows]="10">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th [pSortableColumn]="'activityTypeName'">Name <p-sortIcon [field]="'activityTypeName'"></p-sortIcon></th>
+                  <th [pSortableColumn]="'activityTypeDescription'">Description <p-sortIcon [field]="'activityTypeDescription'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isInList'">In List <p-sortIcon [field]="'isInList'"></p-sortIcon></th>
+                  <th width="8%" [pSortableColumn]="'isActive'">Is Active <p-sortIcon [field]="'isActive'"></p-sortIcon></th>
+                  <th width="10%">Option</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-activityType>
+              <tr>
+                  <td class="td-cell">{{activityType.activityTypeName}}</td>
+                  <td class="td-cell">{{activityType.activityTypeDescription}}</td>
+                  <td class="td-cell">
+                    <div class="badge badge-pill badge-secondary">{{activityType.isInList}}</div>
+                  </td>
+                  <td class="td-cell"><div class="badge badge-pill badge-secondary">{{activityType.isActive}}</div></td>
+                  <td >
+                      <button pButton type="button" icon="fa fa-edit" class="ui-button-primary btn-space" (click)="showEditDialog(activityType.activityTypeID)"></button>
+                      <button pButton type="button" icon="fa fa-trash" class="ui-button-danger" (click)="showDeleteDialog(activityType.activityTypeID)"></button>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+</p-panel>
+
+<!-- Add Activity Type Dialog -->
+<app-activity-type-add-dialog [display]="displayAddDialog" (displayChange)="onAddDialogClose($event)"></app-activity-type-add-dialog>
+<!-- Edit Activity Type Dialog -->
+<div *ngIf="selectedActivityType">
+  <app-activity-type-edit-dialog [display]="displayEditDialog" [selectedActivityType]="selectedActivityType" (displayChange)="onEditDialogClose($event)"></app-activity-type-edit-dialog>
+</div>
+<!-- Delete Activity Type Dialog -->
+<div *ngIf="selectedActivityType">
+  <app-activity-type-delete-dialog [display]="displayDeleteDialog" [selectedActivityType]="selectedActivityType" (displayChange)="onDeleteDialogClose($event)"></app-activity-type-delete-dialog>
+</div>
+
+<p-toast></p-toast>
